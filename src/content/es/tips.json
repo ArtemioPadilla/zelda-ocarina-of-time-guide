@@ -34,5 +34,13 @@
     "El Business Scrub de cada gruta vende objetos únicos (recarga de flechas, Deku Nuts, corazones extra) a buen precio si le asustas primero.",
     "Vende gemas y tesoros sueltos en la tienda Zora o en el Bazar si necesitas rupias rápido para una compra puntual.",
     "El Foso de Tiro (Villa Castillo) da una Bolsa de Flechas más grande si superas cierta puntuación."
-  ], "order": 6 }
+  ], "order": 6 },
+  { "id": "tip-training-ground", "title": "Campo de Entrenamiento Gerudo, sala por sala", "items": [
+    "Las salas de rupias plateadas no te dejan salir hasta que las recojas todas — revisa las esquinas y el agua antes de rendirte y reiniciar.",
+    "Las Botas de Aire vuelven inofensiva la sala de las arenas movedizas — no dejes de moverte y evita detenerte en la arena.",
+    "Un pasadizo del laberinto es invisible sin la Lente de la Verdad — repasa con ella cada pared sin salida antes de darte por vencido.",
+    "La sala de rupias bajo el agua necesita la Túnica Zora y las Botas de Hierro a la vez, no solo una de las dos.",
+    "El Martillo Megatón derriba de un solo golpe el tótem que bloquea el cofre protegido por llamas.",
+    "Las últimas puertas cerradas se abren en un orden fijo — vuelve atrás a por cualquier Llave Pequeña que te dejaras en vez de bombear paredes al azar."
+  ], "order": 7 }
 ]

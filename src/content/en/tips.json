@@ -34,5 +34,13 @@
     "Every grotto's Business Scrub sells a unique item (arrow refills, Deku Nuts, extra hearts) cheap if you scare him first.",
     "Sell spare gems and treasures at the Zora shop or the Bazaar if you need quick rupees for a one-off purchase.",
     "The Shooting Gallery (Castle Town) gives a bigger Quiver if you beat a high enough score."
-  ], "order": 6 }
+  ], "order": 6 },
+  { "id": "tip-training-ground", "title": "Gerudo Training Ground, room by room", "items": [
+    "Silver rupee rooms won't let you leave until you've grabbed every rupee in them — check corners and underwater before backing out to reset.",
+    "The Hover Boots turn the quicksand-floor room into a non-issue — just keep moving and don't stop on the sand.",
+    "One passage in the maze room is invisible without the Lens of Truth — sweep every dead-end wall with it before giving up.",
+    "The underwater rupee room wants the Zora Tunic and Iron Boots together, not just one or the other.",
+    "The Megaton Hammer knocks down the totem pole guarding the flame-locked chest in a single hit.",
+    "The final locked doors open in a fixed order — backtrack for any Small Key you skipped instead of bombing walls at random."
+  ], "order": 7 }
 ]
