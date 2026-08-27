@@ -3,6 +3,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import * as yaml from 'js-yaml';
+import { AREA_ORDER, AREA_REGIONS, type SkulltulaArea } from '@/lib/skulltula-map-layout';
 
 // Plain Node/fs checks against the raw content files — deliberately NOT going
 // through astro:content (that requires the full Astro Vite pipeline). This
@@ -65,12 +66,54 @@ describe('content: es/en parity', () => {
   });
 });
 
+interface SkulltulaShape {
+  id: string;
+  number: number;
+  zone: string;
+  area: SkulltulaArea;
+  x: number;
+  y: number;
+}
+
 describe('content: skulltulas', () => {
   it('has exactly 100 entries numbered 1-100 with no gaps or duplicates', () => {
     const skulltulas = loadJson<{ id: string; number: number }>('es', 'skulltulas');
     expect(skulltulas).toHaveLength(100);
     const numbers = skulltulas.map((s) => s.number).sort((a, b) => a - b);
     expect(numbers).toEqual(Array.from({ length: 100 }, (_, i) => i + 1));
+  });
+
+  it.each(['es', 'en'] as const)('%s: every entry has a valid map area and an in-range x/y', (locale) => {
+    const skulltulas = loadJson<SkulltulaShape>(locale, 'skulltulas');
+    for (const s of skulltulas) {
+      expect(AREA_ORDER, `${s.id} has an unknown area ${s.area}`).toContain(s.area);
+      expect(s.x, `${s.id}.x`).toBeGreaterThanOrEqual(0);
+      expect(s.x, `${s.id}.x`).toBeLessThanOrEqual(100);
+      expect(s.y, `${s.id}.y`).toBeGreaterThanOrEqual(0);
+      expect(s.y, `${s.id}.y`).toBeLessThanOrEqual(100);
+    }
+  });
+
+  it('every entry\'s x/y falls inside its own zone\'s drawn region — pins can never render off the map', () => {
+    // AREA_REGIONS' `zone` keys are authored in English (skulltula-map-layout.ts
+    // is locale-agnostic map data, not translated UI copy) — cross-check
+    // against the en content file, not es's translated zone names.
+    const skulltulas = loadJson<SkulltulaShape & { zone: string }>('en', 'skulltulas');
+    for (const s of skulltulas) {
+      const region = AREA_REGIONS[s.area].find((r) => r.zone === s.zone);
+      expect(region, `no region for zone ${s.zone} in area ${s.area} (skulltula ${s.id})`).toBeTruthy();
+      const [x0, y0, x1, y1] = region!.box;
+      expect(s.x, `${s.id}.x within [${x0}, ${x1}]`).toBeGreaterThanOrEqual(x0);
+      expect(s.x, `${s.id}.x within [${x0}, ${x1}]`).toBeLessThanOrEqual(x1);
+      expect(s.y, `${s.id}.y within [${y0}, ${y1}]`).toBeGreaterThanOrEqual(y0);
+      expect(s.y, `${s.id}.y within [${y0}, ${y1}]`).toBeLessThanOrEqual(y1);
+    }
+  });
+
+  it('every zone referenced by skulltulas.json has a drawn region somewhere in AREA_REGIONS', () => {
+    const skulltulas = loadJson<{ id: string; zone: string }>('en', 'skulltulas');
+    const allZones = new Set(Object.values(AREA_REGIONS).flatMap((regions) => regions.map((r) => r.zone)));
+    for (const s of skulltulas) expect(allZones.has(s.zone), s.zone).toBe(true);
   });
 });
 
@@ -102,6 +145,25 @@ describe('content: equipment', () => {
   it('every item has a valid category', () => {
     const equipment = loadJson<{ id: string; category: string }>('es', 'equipment');
     for (const e of equipment) expect(VALID_CATEGORIES.has(e.category)).toBe(true);
+  });
+
+  it.each(['es', 'en'] as const)('%s: every optional stat is a positive number with a label and unit', (locale) => {
+    type EquipmentShape = { id: string; stat?: { label: string; value: number; unit: string } };
+    const equipment = loadJson<EquipmentShape>(locale, 'equipment');
+    for (const e of equipment.filter((e) => e.stat)) {
+      expect(e.stat!.value, e.id).toBeGreaterThan(0);
+      expect(e.stat!.label, e.id).toBeTruthy();
+      expect(e.stat!.unit, e.id).toBeTruthy();
+    }
+  });
+
+  it('the Hookshot -> Longshot reach chain is a real doubling (not a flat/fabricated number)', () => {
+    type EquipmentShape = { id: string; upgradeOf?: string; name: string; stat?: { value: number } };
+    const equipment = loadJson<EquipmentShape>('es', 'equipment');
+    const byName = new Map(equipment.map((e) => [e.name, e]));
+    const longshot = equipment.find((e) => e.id === 'eq-longshot')!;
+    const hookshot = byName.get(longshot.upgradeOf!)!;
+    expect(longshot.stat!.value).toBeGreaterThan(hookshot.stat!.value);
   });
 });
 

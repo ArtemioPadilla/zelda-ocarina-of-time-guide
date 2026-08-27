@@ -34,6 +34,16 @@ const songsSchema = z.object({
 
 // Equipment & upgrades — swords, shields, tunics, magic/bottle items and the
 // postgame Biggoron's Sword. Analog of RE4's weapons collection.
+//
+// `stat` is a small optional numeric progression — only present on the
+// handful of items where an actual documented in-game number exists *and*
+// a before/after comparison is meaningful (the sword-damage chain, the
+// Hookshot→Longshot reach chain). Most equipment entries have no numeric
+// game stat at all (OoT never exposes shield "defense" or tunic values as
+// numbers), so this stays optional rather than becoming a required field
+// with fabricated data. `value` is expressed in `unit` (hearts of damage
+// for swords, meters for hookshot reach), sourced from Zelda Wiki /
+// CloudModding's OoT damage charts (see EquipmentPage's stat bar caption).
 const equipmentSchema = z.object({
   name: z.string(),
   category: z.enum(['swords', 'shields', 'tunics', 'magic', 'bottles', 'postgame']),
@@ -42,13 +52,36 @@ const equipmentSchema = z.object({
   upgradeOf: z.string().optional(),
   notes: z.string().optional(),
   recommended: z.boolean().default(false),
+  stat: z.object({ label: z.string(), value: z.number().positive(), unit: z.string() }).optional(),
 });
 
+// The 7 top-level overworld hubs the interactive Skulltula map is grouped
+// into — a coarser grouping than the 31 fine-grained `zone` values (which
+// stay untouched; see CLAUDE.md's Content TODO). Each hub gets its own
+// hand-authored schematic SVG in `src/lib/skulltula-map-layout.ts`.
+const skulltulaAreaSchema = z.enum([
+  'kokiri',
+  'hyrule-field',
+  'kakariko',
+  'death-mountain',
+  'zora',
+  'lake-hylia',
+  'gerudo',
+]);
+
 // The 100 Gold Skulltulas — this guide's primary completionist checklist
-// (analog of RE4's 15 blue medallions).
+// (analog of RE4's 15 blue medallions). `area`/`x`/`y` place each token on
+// the interactive map (Skulltulas page, Map view) — `x`/`y` are percentages
+// (0-100) within that skulltula's `area` map's own coordinate space, laid
+// out in `src/lib/skulltula-map-layout.ts` (the same module the map island
+// reads its background regions from, so pins and regions can never drift
+// apart).
 const skulltulasSchema = z.object({
   number: z.number().min(1).max(100),
   zone: z.string(),
+  area: skulltulaAreaSchema,
+  x: z.number().min(0).max(100),
+  y: z.number().min(0).max(100),
   location: z.string(),
   note: z.string().optional(),
 });

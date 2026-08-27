@@ -2,10 +2,11 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SectionHead from '@/components/common/SectionHead.astro';
 import ErrorBoundary from '@/components/islands/ErrorBoundary';
-import SkulltulaChecklist from '@/components/islands/SkulltulaChecklist';
+import SkulltulaViewToggle from '@/components/islands/SkulltulaViewToggle';
 import { getLocalized } from '@/lib/content';
 import { useTranslations } from '@/i18n/utils';
-import type { Locale } from '@/i18n/ui';
+import type { Locale, UiKey } from '@/i18n/ui';
+import { AREA_ORDER, type SkulltulaArea } from '@/lib/skulltula-map-layout';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -13,14 +14,46 @@ const t = useTranslations(locale);
 
 const skulltulas = (await getLocalized('skulltulas', locale))
   .sort((a, b) => a.data.number - b.data.number)
-  .map((s) => ({ id: s.id, number: s.data.number, zone: s.data.zone, location: s.data.location, note: s.data.note }));
+  .map((s) => ({
+    id: s.id,
+    number: s.data.number,
+    zone: s.data.zone,
+    area: s.data.area,
+    x: s.data.x,
+    y: s.data.y,
+    location: s.data.location,
+    note: s.data.note,
+  }));
+
+// Maps each of the 7 map-hub ids to its localized label — kept here (not in
+// skulltula-map-layout.ts) since that module is locale-agnostic data shared
+// with the map island, while labels are UI copy.
+const AREA_UI_KEY: Record<SkulltulaArea, UiKey> = {
+  kokiri: 'skulltulas.area.kokiri',
+  'hyrule-field': 'skulltulas.area.hyruleField',
+  kakariko: 'skulltulas.area.kakariko',
+  'death-mountain': 'skulltulas.area.deathMountain',
+  zora: 'skulltulas.area.zora',
+  'lake-hylia': 'skulltulas.area.lakeHylia',
+  gerudo: 'skulltulas.area.gerudo',
+};
+const areaLabels = Object.fromEntries(AREA_ORDER.map((a) => [a, t(AREA_UI_KEY[a])])) as Record<SkulltulaArea, string>;
 ---
 <BaseLayout title={`${t('skulltulas.title')} · ${t('site.name')}`} lang={locale}>
   <main id="main" class="mx-auto max-w-4xl px-5 py-14">
     <SectionHead level="h1" title={t('skulltulas.title')} tight />
     <p class="mb-6 text-sm text-muted-foreground">{t('skulltulas.note')}</p>
-    <ErrorBoundary client:load name="SkulltulaChecklist" messageLabel={t('a11y.errorBoundaryMessage')} reportLabel={t('a11y.errorBoundaryReport')}>
-      <SkulltulaChecklist items={skulltulas} progressLabel={t('skulltulas.progress')} />
+    <ErrorBoundary client:load name="SkulltulaViewToggle" messageLabel={t('a11y.errorBoundaryMessage')} reportLabel={t('a11y.errorBoundaryReport')}>
+      <SkulltulaViewToggle
+        items={skulltulas}
+        progressLabel={t('skulltulas.progress')}
+        viewToggleLabel={t('skulltulas.viewToggleLabel')}
+        listLabel={t('skulltulas.viewList')}
+        mapLabel={t('skulltulas.viewMap')}
+        areaLabels={areaLabels}
+        doneLabel={t('skulltulas.pinDone')}
+        pendingLabel={t('skulltulas.pinPending')}
+      />
     </ErrorBoundary>
   </main>
 </BaseLayout>
