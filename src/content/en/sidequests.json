@@ -14,8 +14,11 @@
   { "kind": "unlock", "id": "sq-cucco", "name": "Bottle with a Cucco", "how": "Round up every loose Cucco in Anju's pen before time runs out", "order": 1 },
   { "kind": "unlock", "id": "sq-archery", "name": "Bigger Quiver", "how": "Clear a set score threshold in Gerudo's Fortress's Horseback Archery", "order": 2 },
   { "kind": "unlock", "id": "sq-poe", "name": "Rupees from Big Poes", "how": "Catch Big Poes on horseback with the Bow and sell them at the Market's Ghost Shop at night", "order": 3 },
-  { "kind": "unlock", "id": "sq-training", "name": "Light Arrows", "how": "Clear the Gerudo Training Ground room by room to earn them", "order": 4 },
+  { "kind": "unlock", "id": "sq-training", "name": "Ice Arrows", "how": "Clear the Gerudo Training Ground room by room — silver rupee puzzles, a Hover Boots quicksand room, and a timed enemy gauntlet — for the reward chest at the very end", "order": 4 },
   { "kind": "unlock", "id": "sq-magic2", "name": "Double Magic", "how": "Play the Song of Storms in front of a hidden Great Fairy near Ganon's Castle", "order": 5 },
   { "kind": "unlock", "id": "sq-defense2", "name": "Double Defense", "how": "Play the Song of Storms in front of another hidden Great Fairy around Hyrule Castle", "order": 6 },
-  { "kind": "unlock", "id": "sq-mask-truth", "name": "Mask of Truth", "how": "Return every mask borrowed from the Happy Mask Shop on time — unlocks extra dialogue with certain characters", "order": 7 }
+  { "kind": "unlock", "id": "sq-mask-truth", "name": "Mask of Truth", "how": "Return every mask borrowed from the Happy Mask Shop on time — unlocks extra dialogue with certain characters", "order": 7 },
+  { "kind": "unlock", "id": "sq-golden-scale", "name": "Golden Scale", "how": "As adult Link, land a fish that beats the current record by 4+ lbs (20 lbs or more) at the Lake Hylia Fishing Pond — it lets you dive deeper and longer, useful for a couple of underwater collectibles already on your checklist", "order": 8 },
+  { "kind": "unlock", "id": "sq-poe-collector", "name": "Poe Collector's Bottle", "how": "Sell 10 Big Poes — caught on horseback with the Bow, sold at the Market's Ghost Shop at night — to the Poe collector; the 10th sale earns a bottle on top of the usual rupees", "order": 9 },
+  { "kind": "unlock", "id": "sq-super-cucco", "name": "Bottle of Lon Lon Milk", "how": "Talk to Talon inside his house at Lon Lon Ranch as a child and pick the three clucking Super Cuccos out of the flock within 30 seconds — win once for a free bottle, then replay it anytime for a cheap refill", "order": 10 }
 ]

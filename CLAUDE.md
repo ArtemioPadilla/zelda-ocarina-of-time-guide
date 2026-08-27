@@ -48,22 +48,43 @@ serif) / **JetBrains Mono** (clean UI mono). The decorative motif is
 `.spark` — a small pulsing fairy-light glyph (Navi) — replacing RE4's
 `.flame` everywhere the brand mark appears.
 
-## Content TODO (deliberately scoped out for this pass)
+## Content TODO
 
-- **Skulltula location text is area-level, not token-precise.** All 100
-  entries carry the *correct* real-world area (verified against published
-  area-count breakdowns that sum to exactly 100) and a rotating set of real,
-  general Skulltula-hunting hints (chirp sound, night-only spawns, tool
-  requirements), but not a unique hand-verified description per individual
-  token the way RE4's 15 medallions each got one. A future pass should
-  replace these with precise per-token notes sourced against a video
-  walkthrough.
+Closed in a follow-up pass (see PR history / commit log for the exact
+research sources — Zelda Wiki, Zelda Dungeon Wiki, Thonky.com, GameWith):
+
+- **Skulltula location text is now token-precise.** All 100 `skulltulas`
+  entries in both locales were rewritten from the original rotating
+  area-level hints to a unique, hand-sourced description per individual
+  token (cross-referenced against Thonky's and GameWith's per-area Gold
+  Skulltula guides). Zone names/order/counts were left untouched — only
+  `location` text changed.
+- **Gerudo Training Ground** stayed out of the `chapters` collection on
+  purpose (that collection is asserted at exactly 12 entries by
+  `shape.test.ts` and documented as "12 story/dungeon steps" — turning it
+  into a 13th chapter would be a structural change beyond this pass, not a
+  content gap). Instead: the `sidequests` unlock row was corrected (it
+  wrongly named the reward "Light Arrows" — verified via Zelda Wiki/GameWith
+  that Gerudo Training Ground's reward is actually the **Ice Arrows**, Light
+  Arrows come from Zelda outside Ganon's Castle) and expanded with a real
+  room-by-room summary; a new `tips` entry ("Gerudo Training Ground, room by
+  room") adds six sourced per-room hints (silver rupee rooms, the Hover
+  Boots quicksand room, the Lens of Truth passage, the underwater room, the
+  Megaton Hammer totem, key order for the final doors).
+- **Fishing Pond, Poe Collection, and the Cucco-in-house Easter egg** now
+  each have their own `sidequests` unlock row: `sq-golden-scale` (adult
+  20+ lb catch → Golden Scale), `sq-poe-collector` (10 Big Poes sold to the
+  Ghost Shop → bonus Bottle), `sq-super-cucco` (Talon's Super Cucco
+  minigame at Lon Lon Ranch → Bottle of Lon Lon Milk). The existing
+  Fishing-Pond Piece of Heart (`hp-17` in `hearts`) was left as-is — it was
+  already tracked, just not the pond's *other* reward.
+
+Still deliberately out of scope:
+
 - **Master Quest and Boss Challenge mode** (3DS-exclusive extras) are not
   covered.
-- **Gerudo Training Ground** is referenced once (as a `sidequests` unlock)
-  but doesn't have its own dungeon page.
-- **Fishing Pond, Poe Collection totals, and Cucco-in-house Easter egg**
-  aren't broken out as their own checklist rows.
+- **Gerudo Training Ground** still doesn't have its own dedicated page (see
+  above for why, and what was done instead within the existing schema).
 
 ## Conventions
 
