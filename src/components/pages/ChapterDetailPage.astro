@@ -41,6 +41,7 @@ const nextChapter = currentIndex >= 0 && currentIndex < allChapters.length - 1 ?
       <span class="ml-auto">
         <ErrorBoundary client:load name="SetCurrentChapterButton" messageLabel={t('a11y.errorBoundaryMessage')} reportLabel={t('a11y.errorBoundaryReport')}>
           <SetCurrentChapterButton
+            client:load
             chapterId={entry.id}
             label={t('chapter.markCurrent')}
             currentLabel={t('chapter.isCurrent')}
