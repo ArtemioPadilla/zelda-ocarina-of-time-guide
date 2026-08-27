@@ -1,0 +1,40 @@
+---
+// Compact visual comparison for equipment.json's optional `stat` field
+// (content.config.ts) — a small bar (or, when this item upgrades another
+// tracked item, a stacked before/after pair) instead of a flat text
+// number. Purely presentational/static: no store, no client JS, so it
+// costs nothing on top of the existing equipment table. The bar is
+// decorative (aria-hidden) — the numbers are already plain text right
+// above it, so nothing is lost to assistive tech.
+interface Props {
+  label: string;
+  value: number;
+  unit: string;
+  /** This item's pre-upgrade value, when `upgradeOf` points at another
+   * tracked item and the two values actually differ. */
+  previousValue?: number;
+  /** Category-wide max `stat.value`, so every bar in the same category
+   * shares one scale and is visually comparable. */
+  max: number;
+}
+const { label, value, unit, previousValue, max } = Astro.props;
+const pct = (v: number) => Math.max(4, Math.round((v / max) * 100));
+---
+<div class="mt-2.5 border-t border-border/70 pt-2.5">
+  <div class="mb-1 flex items-baseline justify-between font-mono text-[10px] uppercase tracking-wide text-muted-foreground">
+    <span>{label}</span>
+    <span class="text-foreground">
+      {previousValue !== undefined ? `${previousValue} → ` : ''}{value} {unit}
+    </span>
+  </div>
+  <div class="space-y-1" aria-hidden="true">
+    {previousValue !== undefined ? (
+      <div class="h-1.5 overflow-hidden rounded-full bg-muted">
+        <div class="h-full rounded-full bg-muted-foreground/40" style={`width: ${pct(previousValue)}%`}></div>
+      </div>
+    ) : null}
+    <div class="h-1.5 overflow-hidden rounded-full bg-muted">
+      <div class="h-full rounded-full bg-gradient-to-r from-primary/60 to-primary" style={`width: ${pct(value)}%`}></div>
+    </div>
+  </div>
+</div>

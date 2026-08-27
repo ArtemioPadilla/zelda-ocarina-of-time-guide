@@ -2,6 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SectionHead from '@/components/common/SectionHead.astro';
 import SubsectionHead from '@/components/common/SubsectionHead.astro';
+import EquipmentStatBar from '@/components/common/EquipmentStatBar.astro';
 import { getLocalized } from '@/lib/content';
 import { useTranslations } from '@/i18n/utils';
 import type { Locale } from '@/i18n/ui';
@@ -11,6 +12,13 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 
 const equipment = await getLocalized('equipment', locale);
+
+// `stat` only exists on the handful of items with a genuine, sourced
+// numeric progression (sword damage, hookshot/longshot reach — see
+// content.config.ts). Looked up by name so an upgraded item ("Giant's
+// Knife", upgradeOf "Kokiri Sword") can render a before→after pair instead
+// of a lone bar.
+const statByName = new Map(equipment.filter((w) => w.data.stat).map((w) => [w.data.name, w.data.stat!]));
 
 const CATEGORY_KEY = {
   swords: 'equipment.cat.swords',
@@ -29,6 +37,9 @@ const categories = ['swords', 'shields', 'tunics', 'magic', 'bottles', 'postgame
     {categories.map((cat) => {
       const items = equipment.filter((w) => w.data.category === cat).sort((a, b) => Number(b.data.recommended) - Number(a.data.recommended));
       if (items.length === 0) return null;
+      // One shared scale per category so every stat bar in it is visually
+      // comparable (e.g. Kokiri Sword's bar reads as a quarter of Biggoron's).
+      const catMax = Math.max(1, ...items.filter((w) => w.data.stat).map((w) => w.data.stat!.value));
       return (
         <section class="mb-10">
           <SubsectionHead title={t(CATEGORY_KEY[cat])}>
@@ -36,24 +47,32 @@ const categories = ['swords', 'shields', 'tunics', 'magic', 'bottles', 'postgame
             <span class="font-mono text-[10px] text-muted-foreground">{items.length}</span>
           </SubsectionHead>
           <div class="grid gap-3 sm:grid-cols-2">
-            {items.map((w) => (
-              <div class="panel p-4" style={w.data.recommended ? '--panel-accent: var(--primary)' : undefined}>
-                <p class={w.data.recommended ? 'font-display font-semibold text-primary' : 'font-display font-semibold text-foreground'}>
-                  {w.data.recommended ? '★ ' : ''}{w.data.name}
-                </p>
-                {w.data.notes ? <p class="mt-1 text-xs text-muted-foreground">{w.data.notes}</p> : null}
-                <div class="mt-3 grid grid-cols-2 gap-2 border-t border-border/70 pt-2.5">
-                  <div>
-                    <p class="font-mono text-[10px] uppercase tracking-wide text-muted-foreground">{t('equipment.obtain')}</p>
-                    <p class="text-xs text-foreground">{w.data.obtain}</p>
+            {items.map((w) => {
+              const stat = w.data.stat;
+              const previous = w.data.upgradeOf ? statByName.get(w.data.upgradeOf) : undefined;
+              const previousValue = previous && stat && previous.value !== stat.value ? previous.value : undefined;
+              return (
+                <div class="panel p-4" style={w.data.recommended ? '--panel-accent: var(--primary)' : undefined}>
+                  <p class={w.data.recommended ? 'font-display font-semibold text-primary' : 'font-display font-semibold text-foreground'}>
+                    {w.data.recommended ? '★ ' : ''}{w.data.name}
+                  </p>
+                  {w.data.notes ? <p class="mt-1 text-xs text-muted-foreground">{w.data.notes}</p> : null}
+                  <div class="mt-3 grid grid-cols-2 gap-2 border-t border-border/70 pt-2.5">
+                    <div>
+                      <p class="font-mono text-[10px] uppercase tracking-wide text-muted-foreground">{t('equipment.obtain')}</p>
+                      <p class="text-xs text-foreground">{w.data.obtain}</p>
+                    </div>
+                    <div>
+                      <p class="font-mono text-[10px] uppercase tracking-wide text-muted-foreground">{t('equipment.effect')}</p>
+                      <p class="text-xs text-foreground">{w.data.effect ?? '—'}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p class="font-mono text-[10px] uppercase tracking-wide text-muted-foreground">{t('equipment.effect')}</p>
-                    <p class="text-xs text-foreground">{w.data.effect ?? '—'}</p>
-                  </div>
+                  {stat ? (
+                    <EquipmentStatBar label={stat.label} value={stat.value} unit={stat.unit} previousValue={previousValue} max={catMax} />
+                  ) : null}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
       );

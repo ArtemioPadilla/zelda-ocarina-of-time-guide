@@ -3,600 +3,900 @@
     "id": "sk-001",
     "number": 1,
     "zone": "Inside the Deku Tree",
+    "area": "kokiri",
+    "x": 71.2,
+    "y": 27.2,
     "location": "Clinging to the wall of the 3F Compass Room — walk up and strike it once you spot it."
   },
   {
     "id": "sk-002",
     "number": 2,
     "zone": "Inside the Deku Tree",
+    "area": "kokiri",
+    "x": 80.8,
+    "y": 27.2,
     "location": "On the vines you land on after dropping through the web from 1F down to B1 — knock it down with the Slingshot."
   },
   {
     "id": "sk-003",
     "number": 3,
     "zone": "Inside the Deku Tree",
+    "area": "kokiri",
+    "x": 71.2,
+    "y": 36.8,
     "location": "Behind the iron bars at the base of the huge cobweb — line up a shot through the bars to reach it."
   },
   {
     "id": "sk-004",
     "number": 4,
     "zone": "Inside the Deku Tree",
+    "area": "kokiri",
+    "x": 80.8,
+    "y": 36.8,
     "location": "Behind a bombable wall in the room where three Baby Gohma hatch — blow the wall open, then reel it in with the Boomerang."
   },
   {
     "id": "sk-005",
     "number": 5,
     "zone": "Kokiri Forest",
+    "area": "kokiri",
+    "x": 63.9,
+    "y": 67.9,
     "location": "Behind the Know-It-All Brothers' house — walk around back to spot it on the wall."
   },
   {
     "id": "sk-006",
     "number": 6,
     "zone": "Kokiri Forest",
+    "area": "kokiri",
+    "x": 76.1,
+    "y": 67.9,
     "location": "In the soft soil beside the Kokiri Shop — empty a Bottled Bug into the dirt to flush it out."
   },
   {
     "id": "sk-007",
     "number": 7,
     "zone": "Kokiri Forest",
+    "area": "kokiri",
+    "x": 70.0,
+    "y": 78.1,
     "location": "On the roof of the House of Twins — as an adult, reach it with the Hookshot."
   },
   {
     "id": "sk-008",
     "number": 8,
     "zone": "Hyrule Castle Market",
+    "area": "hyrule-field",
+    "x": 50.0,
+    "y": 15.0,
     "location": "Inside a wooden crate in the guardhouse near the drawbridge — roll into it to break it open."
   },
   {
     "id": "sk-009",
     "number": 9,
     "zone": "Hyrule Castle",
+    "area": "hyrule-field",
+    "x": 45.9,
+    "y": 37.0,
     "location": "In the tree ringed by three small boulders along the path up to the castle — roll straight into the trunk."
   },
   {
     "id": "sk-010",
     "number": 10,
     "zone": "Hyrule Castle",
+    "area": "hyrule-field",
+    "x": 54.1,
+    "y": 37.0,
     "location": "Behind a hidden wall by the tree at the bend in the moat's water channel — play the Song of Storms to expose it, bomb the wall, then reel it in with the Boomerang."
   },
   {
     "id": "sk-011",
     "number": 11,
     "zone": "Lon Lon Ranch",
+    "area": "hyrule-field",
+    "x": 65.9,
+    "y": 65.9,
     "location": "In the tree just inside the ranch gate — roll into the trunk to knock it loose."
   },
   {
     "id": "sk-012",
     "number": 12,
     "zone": "Lon Lon Ranch",
+    "area": "hyrule-field",
+    "x": 78.1,
+    "y": 65.9,
     "location": "Clinging to the outside of the ranch's perimeter fence — walk the fence line until you spot it."
   },
   {
     "id": "sk-013",
     "number": 13,
     "zone": "Lon Lon Ranch",
+    "area": "hyrule-field",
+    "x": 65.9,
+    "y": 77.1,
     "location": "High on the outer wall of the ranch house's second floor — reel it in with the Boomerang."
   },
   {
     "id": "sk-014",
     "number": 14,
     "zone": "Lon Lon Ranch",
+    "area": "hyrule-field",
+    "x": 78.1,
+    "y": 77.1,
     "location": "On the outer wall to the southwest of the ranch house — reel it in with the Boomerang."
   },
   {
     "id": "sk-015",
     "number": 15,
     "zone": "Kakariko Village",
+    "area": "kakariko",
+    "x": 42.3,
+    "y": 58.2,
     "location": "In the tree near the village entrance — roll into the trunk to knock it down."
   },
   {
     "id": "sk-016",
     "number": 16,
     "zone": "Kakariko Village",
+    "area": "kakariko",
+    "x": 52.5,
+    "y": 58.2,
     "location": "On the wall of the house still under construction — look up along the scaffolding."
   },
   {
     "id": "sk-017",
     "number": 17,
     "zone": "Kakariko Village",
+    "area": "kakariko",
+    "x": 62.7,
+    "y": 58.2,
     "location": "On the outer wall of the Skulltula House itself, facing the village square."
   },
   {
     "id": "sk-018",
     "number": 18,
     "zone": "Kakariko Village",
+    "area": "kakariko",
+    "x": 42.3,
+    "y": 71.8,
     "location": "On the watchtower's ladder — pick it off with the Slingshot from the ground."
   },
   {
     "id": "sk-019",
     "number": 19,
     "zone": "Kakariko Village",
+    "area": "kakariko",
+    "x": 52.5,
+    "y": 71.8,
     "location": "On the outer wall of the house nearest the entrance to the Death Mountain Trail."
   },
   {
     "id": "sk-020",
     "number": 20,
     "zone": "Kakariko Village",
+    "area": "kakariko",
+    "x": 62.7,
+    "y": 71.8,
     "location": "On the roof of the southern house — as an adult, get up there with the Hookshot."
   },
   {
     "id": "sk-021",
     "number": 21,
     "zone": "Lost Woods",
+    "area": "kokiri",
+    "x": 32.6,
+    "y": 60.6,
     "location": "In the soft soil of the southwest clearing, near the Business Scrubs — empty a Bottled Bug into the dirt."
   },
   {
     "id": "sk-022",
     "number": 22,
     "zone": "Lost Woods",
+    "area": "kokiri",
+    "x": 41.4,
+    "y": 60.6,
     "location": "In the soft soil of the central clearing — empty a Bottled Bug into the dirt."
   },
   {
     "id": "sk-023",
     "number": 23,
     "zone": "Lost Woods",
+    "area": "kokiri",
+    "x": 37.0,
+    "y": 71.4,
     "location": "On a high ledge deep in the woods — plant a Magic Bean there as a child, then fly up on the sprouted stalk as an adult."
   },
   {
     "id": "sk-024",
     "number": 24,
     "zone": "Graveyard",
+    "area": "kakariko",
+    "x": 41.5,
+    "y": 27.5,
     "location": "In the soft soil in the northwest corner of the graveyard — empty a Bottled Bug into the dirt."
   },
   {
     "id": "sk-025",
     "number": 25,
     "zone": "Graveyard",
+    "area": "kakariko",
+    "x": 53.5,
+    "y": 27.5,
     "location": "On the wall to the southeast, past the rows of graves — reel it in with the Boomerang."
   },
   {
     "id": "sk-026",
     "number": 26,
     "zone": "Death Mountain Trail",
+    "area": "death-mountain",
+    "x": 67.2,
+    "y": 66.5,
     "location": "In the soft soil right at the entrance to Dodongo's Cavern — empty a Bottled Bug into the dirt."
   },
   {
     "id": "sk-027",
     "number": 27,
     "zone": "Death Mountain Trail",
+    "area": "death-mountain",
+    "x": 79.8,
+    "y": 66.5,
     "location": "Behind a bombable wall further up the trail — blow it open, then reel it in with the Boomerang."
   },
   {
     "id": "sk-028",
     "number": 28,
     "zone": "Death Mountain Trail",
+    "area": "death-mountain",
+    "x": 67.2,
+    "y": 78.5,
     "location": "Behind the large boulder near the Bomb Flowers — as an adult, smash it with the Megaton Hammer."
   },
   {
     "id": "sk-029",
     "number": 29,
     "zone": "Death Mountain Trail",
+    "area": "death-mountain",
+    "x": 79.8,
+    "y": 78.5,
     "location": "Behind another large boulder partway up toward the summit — as an adult, smash it with the Megaton Hammer."
   },
   {
     "id": "sk-030",
     "number": 30,
     "zone": "Dodongo's Cavern",
+    "area": "death-mountain",
+    "x": 61.8,
+    "y": 35.9,
     "location": "In the room full of Bomb Flowers — knock it down with the Slingshot."
   },
   {
     "id": "sk-031",
     "number": 31,
     "zone": "Dodongo's Cavern",
+    "area": "death-mountain",
+    "x": 67.5,
+    "y": 35.9,
     "location": "Behind a bombable wall in the eastern corridor of 1F — blow it open to reach it."
   },
   {
     "id": "sk-032",
     "number": 32,
     "zone": "Dodongo's Cavern",
+    "area": "death-mountain",
+    "x": 73.2,
+    "y": 35.9,
     "location": "Behind a bombable wall to the north on 1F — blow it open to reach it."
   },
   {
     "id": "sk-033",
     "number": 33,
     "zone": "Dodongo's Cavern",
+    "area": "death-mountain",
+    "x": 63.2,
+    "y": 44.1,
     "location": "Above the stairs in the Bomb Flower room — climb to the upper floor and reel it in with the Boomerang."
   },
   {
     "id": "sk-034",
     "number": 34,
     "zone": "Dodongo's Cavern",
+    "area": "death-mountain",
+    "x": 71.8,
+    "y": 44.1,
     "location": "In the eastern corridor of 1F — as an adult, play the Scarecrow's Song to summon Pierre, then reach it with the Hookshot."
   },
   {
     "id": "sk-035",
     "number": 35,
     "zone": "Goron City",
+    "area": "death-mountain",
+    "x": 29.9,
+    "y": 62.5,
     "location": "In a wooden crate in the northwest room — bomb the boulders blocking the doorway, then roll into the crate."
   },
   {
     "id": "sk-036",
     "number": 36,
     "zone": "Goron City",
+    "area": "death-mountain",
+    "x": 40.1,
+    "y": 62.5,
     "location": "On the rope-suspended platform overhead — as an adult, pull it down with the Hookshot."
   },
   {
     "id": "sk-037",
     "number": 37,
     "zone": "Death Mountain Crater",
+    "area": "death-mountain",
+    "x": 64.9,
+    "y": 15.0,
     "location": "In a wooden crate just past the entrance — roll into it to break it open."
   },
   {
     "id": "sk-038",
     "number": 38,
     "zone": "Death Mountain Crater",
+    "area": "death-mountain",
+    "x": 75.1,
+    "y": 15.0,
     "location": "In the soft soil near the warp point — warp in with Bolero of Fire, then empty a Bottled Bug into the dirt."
   },
   {
     "id": "sk-039",
     "number": 39,
     "zone": "Zora's River",
+    "area": "zora",
+    "x": 67.2,
+    "y": 70.6,
     "location": "In the tree near the entrance from Hyrule Field — roll into the trunk."
   },
   {
     "id": "sk-040",
     "number": 40,
     "zone": "Zora's River",
+    "area": "zora",
+    "x": 79.8,
+    "y": 70.6,
     "location": "On the ladder at the base of the waterfall — check it as you climb past."
   },
   {
     "id": "sk-041",
     "number": 41,
     "zone": "Zora's River",
+    "area": "zora",
+    "x": 67.2,
+    "y": 81.4,
     "location": "On the wall above the pit past the upper bridge — as an adult, reel it in with the Hookshot."
   },
   {
     "id": "sk-042",
     "number": 42,
     "zone": "Zora's River",
+    "area": "zora",
+    "x": 79.8,
+    "y": 81.4,
     "location": "On the wall near the upper bridge — as an adult, reel it in with the Hookshot."
   },
   {
     "id": "sk-043",
     "number": 43,
     "zone": "Zora's Domain",
+    "area": "zora",
+    "x": 70.0,
+    "y": 46.5,
     "location": "On the wall beside the frozen waterfall — as an adult, reel it in with the Hookshot."
   },
   {
     "id": "sk-044",
     "number": 44,
     "zone": "Zora's Fountain",
+    "area": "zora",
+    "x": 64.9,
+    "y": 15.9,
     "location": "In the tree on the southeast shore — roll into the trunk."
   },
   {
     "id": "sk-045",
     "number": 45,
     "zone": "Zora's Fountain",
+    "area": "zora",
+    "x": 75.1,
+    "y": 15.9,
     "location": "On the wall visible from the floating log — reel it in with the Boomerang."
   },
   {
     "id": "sk-046",
     "number": 46,
     "zone": "Zora's Fountain",
+    "area": "zora",
+    "x": 70.0,
+    "y": 24.1,
     "location": "In a hole beneath a boulder — as an adult, clear the boulder with the Silver Gauntlets."
   },
   {
     "id": "sk-047",
     "number": 47,
     "zone": "Lake Hylia",
+    "area": "lake-hylia",
+    "x": 31.9,
+    "y": 38.1,
     "location": "In the soft soil in front of the Lakeside Laboratory — empty a Bottled Bug into the dirt."
   },
   {
     "id": "sk-048",
     "number": 48,
     "zone": "Lake Hylia",
+    "area": "lake-hylia",
+    "x": 50.0,
+    "y": 38.1,
     "location": "On the side of the stone monument on the small square island in the middle of the lake."
   },
   {
     "id": "sk-049",
     "number": 49,
     "zone": "Lake Hylia",
+    "area": "lake-hylia",
+    "x": 68.1,
+    "y": 38.1,
     "location": "On the back outer wall of the Lakeside Laboratory — reel it in with the Boomerang."
   },
   {
     "id": "sk-050",
     "number": 50,
     "zone": "Lake Hylia",
+    "area": "lake-hylia",
+    "x": 36.4,
+    "y": 61.9,
     "location": "In a wooden crate at the bottom of the lab's flooded room — as an adult, dive down in the Iron Boots, roll into the crate, then reel the piece in with the Hookshot."
   },
   {
     "id": "sk-051",
     "number": 51,
     "zone": "Lake Hylia",
+    "area": "lake-hylia",
+    "x": 63.6,
+    "y": 61.9,
     "location": "Atop the tree near the warp point on the Water Temple's island — as an adult, reach it with the Longshot."
   },
   {
     "id": "sk-052",
     "number": 52,
     "zone": "Inside Jabu-Jabu's Belly",
+    "area": "zora",
+    "x": 37.3,
+    "y": 65.9,
     "location": "On the wall in the corridor just before the boss room."
   },
   {
     "id": "sk-053",
     "number": 53,
     "zone": "Inside Jabu-Jabu's Belly",
+    "area": "zora",
+    "x": 44.7,
+    "y": 65.9,
     "location": "Behind the western hole in the central room of 1F — reel it in with the Boomerang."
   },
   {
     "id": "sk-054",
     "number": 54,
     "zone": "Inside Jabu-Jabu's Belly",
+    "area": "zora",
+    "x": 37.3,
+    "y": 77.1,
     "location": "Behind the eastern hole in the central room of 1F — reel it in with the Boomerang."
   },
   {
     "id": "sk-055",
     "number": 55,
     "zone": "Inside Jabu-Jabu's Belly",
+    "area": "zora",
+    "x": 44.7,
+    "y": 77.1,
     "location": "On the vines in the eastern room of B1 — raise the water level or reel it in with the Boomerang."
   },
   {
     "id": "sk-056",
     "number": 56,
     "zone": "Sacred Forest Meadow",
+    "area": "kokiri",
+    "x": 15.0,
+    "y": 72.0,
     "location": "On the high wall to the east of the maze — as an adult, you have to be standing on top of it to reach it."
   },
   {
     "id": "sk-057",
     "number": 57,
     "zone": "Forest Temple",
+    "area": "kokiri",
+    "x": 13.7,
+    "y": 25.2,
     "location": "On the vines to the east in the first room — as an adult."
   },
   {
     "id": "sk-058",
     "number": 58,
     "zone": "Forest Temple",
+    "area": "kokiri",
+    "x": 20.0,
+    "y": 25.2,
     "location": "On the wall of the central hall on 1F."
   },
   {
     "id": "sk-059",
     "number": 59,
     "zone": "Forest Temple",
+    "area": "kokiri",
+    "x": 26.3,
+    "y": 25.2,
     "location": "On the wall of the northeast room on 1F."
   },
   {
     "id": "sk-060",
     "number": 60,
     "zone": "Forest Temple",
+    "area": "kokiri",
+    "x": 15.2,
+    "y": 36.8,
     "location": "On the wall of the northwest room on 1F."
   },
   {
     "id": "sk-061",
     "number": 61,
     "zone": "Forest Temple",
+    "area": "kokiri",
+    "x": 24.8,
+    "y": 36.8,
     "location": "On the wall of the rotating room just before the boss door."
   },
   {
     "id": "sk-062",
     "number": 62,
     "zone": "Fire Temple",
+    "area": "death-mountain",
+    "x": 24.0,
+    "y": 18.6,
     "location": "In the room on the east side of 1F — play the Song of Time to shift the block blocking it."
   },
   {
     "id": "sk-063",
     "number": 63,
     "zone": "Fire Temple",
+    "area": "death-mountain",
+    "x": 31.5,
+    "y": 18.6,
     "location": "In the room where a giant boulder rolls — bomb the cracked wall to get in."
   },
   {
     "id": "sk-064",
     "number": 64,
     "zone": "Fire Temple",
+    "area": "death-mountain",
+    "x": 39.0,
+    "y": 18.6,
     "location": "On the fence reached by riding the rising platform — play the Scarecrow's Song to summon Pierre, then reel it in with the Hookshot."
   },
   {
     "id": "sk-065",
     "number": 65,
     "zone": "Fire Temple",
+    "area": "death-mountain",
+    "x": 25.9,
+    "y": 29.4,
     "location": "On the wall of the room with the large hole on 5F — reel it in with the Hookshot."
   },
   {
     "id": "sk-066",
     "number": 66,
     "zone": "Fire Temple",
+    "area": "death-mountain",
+    "x": 37.1,
+    "y": 29.4,
     "location": "Behind the door beside the stairs at the temple entrance."
   },
   {
     "id": "sk-067",
     "number": 67,
     "zone": "Ice Cavern",
+    "area": "zora",
+    "x": 37.3,
+    "y": 15.9,
     "location": "On the wall of the room with the spinning blade traps — reel it in with the Hookshot."
   },
   {
     "id": "sk-068",
     "number": 68,
     "zone": "Ice Cavern",
+    "area": "zora",
+    "x": 44.7,
+    "y": 15.9,
     "location": "On the wall of the room with the movable ice blocks — reel it in with the Hookshot."
   },
   {
     "id": "sk-069",
     "number": 69,
     "zone": "Ice Cavern",
+    "area": "zora",
+    "x": 41.0,
+    "y": 24.1,
     "location": "On the wall of the Compass Room — reel it in with the Hookshot."
   },
   {
     "id": "sk-070",
     "number": 70,
     "zone": "Water Temple",
+    "area": "zora",
+    "x": 11.3,
+    "y": 49.9,
     "location": "At the end of the corridor to the south on the lowest floor — bomb the wall, then hit the switch with a spin attack."
   },
   {
     "id": "sk-071",
     "number": 71,
     "zone": "Water Temple",
+    "area": "zora",
+    "x": 16.5,
+    "y": 49.9,
     "location": "On the wall of the room with the diagonally sliding platforms — reel it in with the Longshot."
   },
   {
     "id": "sk-072",
     "number": 72,
     "zone": "Water Temple",
+    "area": "zora",
+    "x": 21.7,
+    "y": 49.9,
     "location": "On the wall of the whirlpool channel — swim it in the Iron Boots, then reel it in with the Longshot."
   },
   {
     "id": "sk-073",
     "number": 73,
     "zone": "Water Temple",
+    "area": "zora",
+    "x": 12.6,
+    "y": 65.2,
     "location": "On the wall inside the central pillar building — reel it in with the Longshot."
   },
   {
     "id": "sk-074",
     "number": 74,
     "zone": "Water Temple",
+    "area": "zora",
+    "x": 20.4,
+    "y": 65.2,
     "location": "On the wall of the water channel where a giant boulder rolls — reel it in with the Longshot."
   },
   {
     "id": "sk-075",
     "number": 75,
     "zone": "Bottom of the Well",
+    "area": "kakariko",
+    "x": 84.6,
+    "y": 53.9,
     "location": "Behind the locked door west of the central hall — use a Small Key, then reel it in with the Boomerang."
   },
   {
     "id": "sk-076",
     "number": 76,
     "zone": "Bottom of the Well",
+    "area": "kakariko",
+    "x": 91.4,
+    "y": 53.9,
     "location": "Behind the locked door east of the central hall — use a Small Key, then reel it in with the Boomerang."
   },
   {
     "id": "sk-077",
     "number": 77,
     "zone": "Bottom of the Well",
+    "area": "kakariko",
+    "x": 88.0,
+    "y": 63.1,
     "location": "Behind the locked door in the eastern corridor — use a Small Key, then reel it in with the Boomerang."
   },
   {
     "id": "sk-078",
     "number": 78,
     "zone": "Shadow Temple",
+    "area": "kakariko",
+    "x": 11.3,
+    "y": 17.9,
     "location": "In the cell of the room with the spikes that rise and fall."
   },
   {
     "id": "sk-079",
     "number": 79,
     "zone": "Shadow Temple",
+    "area": "kakariko",
+    "x": 16.5,
+    "y": 17.9,
     "location": "On the wall behind the giant skull pot."
   },
   {
     "id": "sk-080",
     "number": 80,
     "zone": "Shadow Temple",
+    "area": "kakariko",
+    "x": 21.7,
+    "y": 17.9,
     "location": "Past the room with the invisible spinning blades — clear the enemies to move on."
   },
   {
     "id": "sk-081",
     "number": 81,
     "zone": "Shadow Temple",
+    "area": "kakariko",
+    "x": 12.6,
+    "y": 28.1,
     "location": "On the wall of the room where the ferry boat is docked — play the Scarecrow's Song, then swing over with the Longshot."
   },
   {
     "id": "sk-082",
     "number": 82,
     "zone": "Shadow Temple",
+    "area": "kakariko",
+    "x": 20.4,
+    "y": 28.1,
     "location": "On the wall of the room with three huge spinning skull pots."
   },
   {
     "id": "sk-083",
     "number": 83,
     "zone": "Gerudo Valley",
+    "area": "gerudo",
+    "x": 76.9,
+    "y": 65.9,
     "location": "On the wall behind the carpenters' tent."
   },
   {
     "id": "sk-084",
     "number": 84,
     "zone": "Gerudo Valley",
+    "area": "gerudo",
+    "x": 86.1,
+    "y": 65.9,
     "location": "On the arch-shaped rock formation by the first bridge — reel it in with the Hookshot."
   },
   {
     "id": "sk-085",
     "number": 85,
     "zone": "Gerudo Valley",
+    "area": "gerudo",
+    "x": 76.9,
+    "y": 77.1,
     "location": "On the wall by the wooden bridge — as a child, reel it in with the Boomerang."
   },
   {
     "id": "sk-086",
     "number": 86,
     "zone": "Gerudo Valley",
+    "area": "gerudo",
+    "x": 86.1,
+    "y": 77.1,
     "location": "In the soft soil by the river below the second bridge — empty a Bottled Bug into the dirt."
   },
   {
     "id": "sk-087",
     "number": 87,
     "zone": "Gerudo's Fortress",
+    "area": "gerudo",
+    "x": 76.9,
+    "y": 31.5,
     "location": "On the wall atop the fortress roof — reel it in with the Hookshot."
   },
   {
     "id": "sk-088",
     "number": 88,
     "zone": "Gerudo's Fortress",
+    "area": "gerudo",
+    "x": 86.1,
+    "y": 31.5,
     "location": "On the farthest target in the archery range — reel it in with the Hookshot."
   },
   {
     "id": "sk-089",
     "number": 89,
     "zone": "Haunted Wasteland",
+    "area": "gerudo",
+    "x": 50.0,
+    "y": 63.5,
     "location": "On the wall inside the stone building near the Desert Colossus side of the wasteland."
   },
   {
     "id": "sk-090",
     "number": 90,
     "zone": "Desert Colossus",
+    "area": "gerudo",
+    "x": 45.9,
+    "y": 19.2,
     "location": "In the palm tree to the south — reel it in with the Longshot."
   },
   {
     "id": "sk-091",
     "number": 91,
     "zone": "Desert Colossus",
+    "area": "gerudo",
+    "x": 54.1,
+    "y": 19.2,
     "location": "On the rock mound near the center — reel it in with the Longshot."
   },
   {
     "id": "sk-092",
     "number": 92,
     "zone": "Desert Colossus",
+    "area": "gerudo",
+    "x": 50.0,
+    "y": 28.8,
     "location": "In the soft soil by the Spirit Temple entrance — as a child, empty a Bottled Bug into the dirt."
   },
   {
     "id": "sk-093",
     "number": 93,
     "zone": "Spirit Temple",
+    "area": "gerudo",
+    "x": 12.4,
+    "y": 34.8,
     "location": "In the room with the iron fence — reel it in with the Boomerang."
   },
   {
     "id": "sk-094",
     "number": 94,
     "zone": "Spirit Temple",
+    "area": "gerudo",
+    "x": 18.5,
+    "y": 34.8,
     "location": "In the vertical shaft leading to the room where a Bombchu blasts open the wall — reel it in with the Boomerang."
   },
   {
     "id": "sk-095",
     "number": 95,
     "zone": "Spirit Temple",
+    "area": "gerudo",
+    "x": 24.6,
+    "y": 34.8,
     "location": "In the corridor just before the Iron Knuckle's room — reel it in with the Boomerang."
   },
   {
     "id": "sk-096",
     "number": 96,
     "zone": "Spirit Temple",
+    "area": "gerudo",
+    "x": 13.9,
+    "y": 55.2,
     "location": "Behind the block in the rolling-boulder room — as an adult, play the Song of Time to reveal it."
   },
   {
     "id": "sk-097",
     "number": 97,
     "zone": "Spirit Temple",
+    "area": "gerudo",
+    "x": 23.1,
+    "y": 55.2,
     "location": "On the wall beside the large statue — as an adult, reel it in with the Longshot."
   },
   {
     "id": "sk-098",
     "number": 98,
     "zone": "Ganon's Castle",
+    "area": "hyrule-field",
+    "x": 50.0,
+    "y": 50.5,
     "location": "Behind the broken gate to the east of the entrance hall."
   },
   {
     "id": "sk-099",
     "number": 99,
     "zone": "Hyrule Field",
+    "area": "hyrule-field",
+    "x": 21.9,
+    "y": 73.5,
     "location": "Under the ring of stones out past the turnoff to Gerudo Valley — bomb the stone circle to reveal it."
   },
   {
     "id": "sk-100",
     "number": 100,
     "zone": "Hyrule Field",
+    "area": "hyrule-field",
+    "x": 34.1,
+    "y": 73.5,
     "location": "Inside the lone tree east of the entrance to Hyrule Castle Town — bomb the trunk to knock it loose."
   }
 ]
