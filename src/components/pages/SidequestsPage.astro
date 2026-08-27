@@ -1,0 +1,51 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import { getLocalized } from '@/lib/content';
+import { useTranslations } from '@/i18n/utils';
+import type { Locale } from '@/i18n/ui';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const entries = await getLocalized('sidequests', locale);
+const unlocks = entries
+  .filter((e) => e.data.kind === 'unlock')
+  .sort((a, b) => a.data.order - b.data.order);
+const route = entries
+  .filter((e) => e.data.kind === 'route')
+  .sort((a, b) => a.data.step - b.data.step);
+---
+<BaseLayout title={`${t('sidequests.title')} · ${t('site.name')}`} lang={locale}>
+  <main id="main" class="mx-auto max-w-4xl px-5 py-14">
+    <SectionHead level="h1" title={t('sidequests.title')} note={t('sidequests.note')} tight />
+
+    <section class="mb-10 mt-6">
+      <h2 class="mb-3 font-display text-sm font-semibold uppercase tracking-wide text-primary">{t('sidequests.unlocksTitle')}</h2>
+      <div class="space-y-3">
+        {unlocks.map((u) => (
+          <div class="panel p-4">
+            <p class="text-sm font-medium text-foreground">{u.data.name}</p>
+            <p class="mt-1 text-xs text-muted-foreground">{u.data.how}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h2 class="mb-3 font-display text-sm font-semibold uppercase tracking-wide text-primary">{t('sidequests.routeTitle')}</h2>
+      <ol class="space-y-3">
+        {route.map((r) => (
+          <li class="panel flex gap-4 p-4" style="--panel-accent: var(--primary)">
+            <span class="font-display text-2xl font-black leading-none text-primary/85">{r.data.step}</span>
+            <div>
+              <p class="text-sm font-semibold text-foreground">{r.data.title}</p>
+              <p class="mt-1 text-xs text-muted-foreground">{r.data.body}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  </main>
+</BaseLayout>

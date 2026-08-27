@@ -1,0 +1,40 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import { getLocalized } from '@/lib/content';
+import { useTranslations } from '@/i18n/utils';
+import type { Locale } from '@/i18n/ui';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const songs = (await getLocalized('songs', locale)).sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout title={`${t('songs.title')} · ${t('site.name')}`} lang={locale}>
+  <main id="main" class="mx-auto max-w-4xl px-5 py-14">
+    <SectionHead level="h1" title={t('songs.title')} note={t('songs.note')} class="mb-8" />
+    <div class="ledger overflow-x-auto">
+      <table class="w-full min-w-[560px] text-sm">
+        <thead>
+          <tr class="border-b border-border/70 text-left font-mono text-[10px] uppercase tracking-wide text-muted-foreground">
+            <th scope="col" class="p-3 font-medium">{t('songs.name')}</th>
+            <th scope="col" class="p-3 font-medium">{t('songs.notation')}</th>
+            <th scope="col" class="p-3 font-medium">{t('songs.learnedFrom')}</th>
+            <th scope="col" class="p-3 font-medium">{t('songs.effect')}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {songs.map((s) => (
+            <tr class="border-b border-border/70 last:border-0 align-top">
+              <td class="p-3 font-display font-semibold text-foreground whitespace-nowrap">{s.data.name}</td>
+              <td class="p-3 font-mono text-primary whitespace-nowrap">{s.data.notation}</td>
+              <td class="p-3 text-xs text-muted-foreground">{s.data.learnedFrom}</td>
+              <td class="p-3 text-xs text-foreground/90">{s.data.effect}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </main>
+</BaseLayout>

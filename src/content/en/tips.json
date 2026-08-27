@@ -1,0 +1,38 @@
+[
+  { "id": "tip-combat", "title": "Combat and Z-targeting", "items": [
+    "Hold Z to lock onto a target: you'll roll to dodge and strafe around it automatically.",
+    "A well-timed shield (hold B with a shield equipped) bounces back arrows and projectiles.",
+    "The spin attack (hold B, then release) deals extra damage but costs a bar of magic.",
+    "Jump while Z-targeting and attack in midair for a stronger downward strike."
+  ], "order": 1 },
+  { "id": "tip-magic", "title": "Magic and bottles", "items": [
+    "The magic meter refills on its own over time; green potions top it off instantly.",
+    "A bottled fairy automatically revives you the moment you hit 0 hearts.",
+    "Lon Lon Milk heals in portions — sip it whenever, you don't have to drink the whole bottle at once.",
+    "You can empty an item bottle at any time to catch something else instead."
+  ], "order": 2 },
+  { "id": "tip-explosives", "title": "Bombs, Bombchus, and Deku Nuts", "items": [
+    "Deku Nuts stun almost anything nearby — great for breaking free from a crowd.",
+    "Bombchus hug walls and can be thrown into water — ideal for switches you can't reach directly.",
+    "A bomb tossed into an open mouth is usually the trick to a boss fight (Dodongo, Gohma…).",
+    "You can pick a lit bomb back up with Z + A if you change your mind."
+  ], "order": 3 },
+  { "id": "tip-timing", "title": "Missable and time-limited items", "items": [
+    "Several trading-sequence steps spoil within minutes of real playtime — don't leave one half-finished.",
+    "The Piece of Heart from the white dog in Castle Town only appears at night.",
+    "Big Poes must be caught on horseback before they dissipate — always carry an empty bottle.",
+    "Treasure Chest Game chests reshuffle every attempt — there's no fixed 'correct' chest."
+  ], "order": 4 },
+  { "id": "tip-navigation", "title": "Getting around fast", "items": [
+    "Kaepora Gaebora (the owl) lets you skip long stretches if you accept his offer to fly you down.",
+    "Sheik's six warp songs are the fastest way to move around adult-era Hyrule.",
+    "The Scarecrow's Song works as a personal warp point once you've taught it.",
+    "Each dungeon map marks chests, the boss room, and any room with an unclaimed Skulltula."
+  ], "order": 5 },
+  { "id": "tip-money", "title": "Rupees and shops", "items": [
+    "Upgrade your wallet with Skulltulas (10 and 30) before you start hoarding rupees — overflow just gets wasted.",
+    "Every grotto's Business Scrub sells a unique item (arrow refills, Deku Nuts, extra hearts) cheap if you scare him first.",
+    "Sell spare gems and treasures at the Zora shop or the Bazaar if you need quick rupees for a one-off purchase.",
+    "The Shooting Gallery (Castle Town) gives a bigger Quiver if you beat a high enough score."
+  ], "order": 6 }
+]

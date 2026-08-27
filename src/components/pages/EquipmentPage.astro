@@ -1,0 +1,62 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import SubsectionHead from '@/components/common/SubsectionHead.astro';
+import { getLocalized } from '@/lib/content';
+import { useTranslations } from '@/i18n/utils';
+import type { Locale } from '@/i18n/ui';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const equipment = await getLocalized('equipment', locale);
+
+const CATEGORY_KEY = {
+  swords: 'equipment.cat.swords',
+  shields: 'equipment.cat.shields',
+  tunics: 'equipment.cat.tunics',
+  magic: 'equipment.cat.magic',
+  bottles: 'equipment.cat.bottles',
+  postgame: 'equipment.cat.postgame',
+} as const;
+const categories = ['swords', 'shields', 'tunics', 'magic', 'bottles', 'postgame'] as const;
+---
+<BaseLayout title={`${t('equipment.title')} · ${t('site.name')}`} lang={locale}>
+  <main id="main" class="mx-auto max-w-4xl px-5 py-14">
+    <SectionHead level="h1" title={t('equipment.title')} note={t('equipment.note')} />
+
+    {categories.map((cat) => {
+      const items = equipment.filter((w) => w.data.category === cat).sort((a, b) => Number(b.data.recommended) - Number(a.data.recommended));
+      if (items.length === 0) return null;
+      return (
+        <section class="mb-10">
+          <SubsectionHead title={t(CATEGORY_KEY[cat])}>
+            <span class="h-px flex-1 bg-border"></span>
+            <span class="font-mono text-[10px] text-muted-foreground">{items.length}</span>
+          </SubsectionHead>
+          <div class="grid gap-3 sm:grid-cols-2">
+            {items.map((w) => (
+              <div class="panel p-4" style={w.data.recommended ? '--panel-accent: var(--primary)' : undefined}>
+                <p class={w.data.recommended ? 'font-display font-semibold text-primary' : 'font-display font-semibold text-foreground'}>
+                  {w.data.recommended ? '★ ' : ''}{w.data.name}
+                </p>
+                {w.data.notes ? <p class="mt-1 text-xs text-muted-foreground">{w.data.notes}</p> : null}
+                <div class="mt-3 grid grid-cols-2 gap-2 border-t border-border/70 pt-2.5">
+                  <div>
+                    <p class="font-mono text-[10px] uppercase tracking-wide text-muted-foreground">{t('equipment.obtain')}</p>
+                    <p class="text-xs text-foreground">{w.data.obtain}</p>
+                  </div>
+                  <div>
+                    <p class="font-mono text-[10px] uppercase tracking-wide text-muted-foreground">{t('equipment.effect')}</p>
+                    <p class="text-xs text-foreground">{w.data.effect ?? '—'}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      );
+    })}
+  </main>
+</BaseLayout>

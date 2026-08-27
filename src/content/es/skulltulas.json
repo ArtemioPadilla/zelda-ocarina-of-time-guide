@@ -1,0 +1,602 @@
+[
+  {
+    "id": "sk-001",
+    "number": 1,
+    "zone": "Interior del Árbol Deku",
+    "location": "Escúchala: el chirrido se oye antes de verla — revisa techos y vigas altas."
+  },
+  {
+    "id": "sk-002",
+    "number": 2,
+    "zone": "Interior del Árbol Deku",
+    "location": "Cuelga de una telaraña en una esquina alta de la sala; ilumínala si está oscura."
+  },
+  {
+    "id": "sk-003",
+    "number": 3,
+    "zone": "Interior del Árbol Deku",
+    "location": "Detrás de una reja o bloque empujable — puede requerir un objeto de la propia mazmorra."
+  },
+  {
+    "id": "sk-004",
+    "number": 4,
+    "zone": "Interior del Árbol Deku",
+    "location": "En una sala secundaria fuera de la ruta principal — no te la saltes al ir directo al jefe."
+  },
+  {
+    "id": "sk-005",
+    "number": 5,
+    "zone": "Bosque Kokiri",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-006",
+    "number": 6,
+    "zone": "Bosque Kokiri",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  },
+  {
+    "id": "sk-007",
+    "number": 7,
+    "zone": "Bosque Kokiri",
+    "location": "Escondida tras un muro o seto — bombea o corta para revelarla."
+  },
+  {
+    "id": "sk-008",
+    "number": 8,
+    "zone": "Mercado de Villa Castillo",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-009",
+    "number": 9,
+    "zone": "Castillo de Hyrule",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-010",
+    "number": 10,
+    "zone": "Castillo de Hyrule",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  },
+  {
+    "id": "sk-011",
+    "number": 11,
+    "zone": "Rancho Lon Lon",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-012",
+    "number": 12,
+    "zone": "Rancho Lon Lon",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  },
+  {
+    "id": "sk-013",
+    "number": 13,
+    "zone": "Rancho Lon Lon",
+    "location": "Escondida tras un muro o seto — bombea o corta para revelarla."
+  },
+  {
+    "id": "sk-014",
+    "number": 14,
+    "zone": "Rancho Lon Lon",
+    "location": "Sobre un tejado o saliente — el Gancho o una Cucco planeando te dejan arriba."
+  },
+  {
+    "id": "sk-015",
+    "number": 15,
+    "zone": "Pueblo Kakariko",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-016",
+    "number": 16,
+    "zone": "Pueblo Kakariko",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  },
+  {
+    "id": "sk-017",
+    "number": 17,
+    "zone": "Pueblo Kakariko",
+    "location": "Escondida tras un muro o seto — bombea o corta para revelarla."
+  },
+  {
+    "id": "sk-018",
+    "number": 18,
+    "zone": "Pueblo Kakariko",
+    "location": "Sobre un tejado o saliente — el Gancho o una Cucco planeando te dejan arriba."
+  },
+  {
+    "id": "sk-019",
+    "number": 19,
+    "zone": "Pueblo Kakariko",
+    "location": "A pie de camino, fácil de pasar de largo si no te detienes a escuchar el chirrido."
+  },
+  {
+    "id": "sk-020",
+    "number": 20,
+    "zone": "Pueblo Kakariko",
+    "location": "Dentro de una gruta o hueco lateral — busca tierra removida o un agujero de bomba."
+  },
+  {
+    "id": "sk-021",
+    "number": 21,
+    "zone": "Bosque Perdido",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-022",
+    "number": 22,
+    "zone": "Bosque Perdido",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  },
+  {
+    "id": "sk-023",
+    "number": 23,
+    "zone": "Bosque Perdido",
+    "location": "Escondida tras un muro o seto — bombea o corta para revelarla."
+  },
+  {
+    "id": "sk-024",
+    "number": 24,
+    "zone": "Cementerio",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-025",
+    "number": 25,
+    "zone": "Cementerio",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  },
+  {
+    "id": "sk-026",
+    "number": 26,
+    "zone": "Sendero de la Montaña de la Muerte",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-027",
+    "number": 27,
+    "zone": "Sendero de la Montaña de la Muerte",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  },
+  {
+    "id": "sk-028",
+    "number": 28,
+    "zone": "Sendero de la Montaña de la Muerte",
+    "location": "Escondida tras un muro o seto — bombea o corta para revelarla."
+  },
+  {
+    "id": "sk-029",
+    "number": 29,
+    "zone": "Sendero de la Montaña de la Muerte",
+    "location": "Sobre un tejado o saliente — el Gancho o una Cucco planeando te dejan arriba."
+  },
+  {
+    "id": "sk-030",
+    "number": 30,
+    "zone": "Caverna Dodongo",
+    "location": "Escúchala: el chirrido se oye antes de verla — revisa techos y vigas altas."
+  },
+  {
+    "id": "sk-031",
+    "number": 31,
+    "zone": "Caverna Dodongo",
+    "location": "Cuelga de una telaraña en una esquina alta de la sala; ilumínala si está oscura."
+  },
+  {
+    "id": "sk-032",
+    "number": 32,
+    "zone": "Caverna Dodongo",
+    "location": "Detrás de una reja o bloque empujable — puede requerir un objeto de la propia mazmorra."
+  },
+  {
+    "id": "sk-033",
+    "number": 33,
+    "zone": "Caverna Dodongo",
+    "location": "En una sala secundaria fuera de la ruta principal — no te la saltes al ir directo al jefe."
+  },
+  {
+    "id": "sk-034",
+    "number": 34,
+    "zone": "Caverna Dodongo",
+    "location": "Sobre una plataforma elevada — el Boomerang o el Gancho la baja de un golpe."
+  },
+  {
+    "id": "sk-035",
+    "number": 35,
+    "zone": "Ciudad Goron",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-036",
+    "number": 36,
+    "zone": "Ciudad Goron",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  },
+  {
+    "id": "sk-037",
+    "number": 37,
+    "zone": "Cráter de la Montaña de la Muerte",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-038",
+    "number": 38,
+    "zone": "Cráter de la Montaña de la Muerte",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  },
+  {
+    "id": "sk-039",
+    "number": 39,
+    "zone": "Río Zora",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-040",
+    "number": 40,
+    "zone": "Río Zora",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  },
+  {
+    "id": "sk-041",
+    "number": 41,
+    "zone": "Río Zora",
+    "location": "Escondida tras un muro o seto — bombea o corta para revelarla."
+  },
+  {
+    "id": "sk-042",
+    "number": 42,
+    "zone": "Río Zora",
+    "location": "Sobre un tejado o saliente — el Gancho o una Cucco planeando te dejan arriba."
+  },
+  {
+    "id": "sk-043",
+    "number": 43,
+    "zone": "Dominio Zora",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-044",
+    "number": 44,
+    "zone": "Fuente Zora",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-045",
+    "number": 45,
+    "zone": "Fuente Zora",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  },
+  {
+    "id": "sk-046",
+    "number": 46,
+    "zone": "Fuente Zora",
+    "location": "Escondida tras un muro o seto — bombea o corta para revelarla."
+  },
+  {
+    "id": "sk-047",
+    "number": 47,
+    "zone": "Lago Hylia",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-048",
+    "number": 48,
+    "zone": "Lago Hylia",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  },
+  {
+    "id": "sk-049",
+    "number": 49,
+    "zone": "Lago Hylia",
+    "location": "Escondida tras un muro o seto — bombea o corta para revelarla."
+  },
+  {
+    "id": "sk-050",
+    "number": 50,
+    "zone": "Lago Hylia",
+    "location": "Sobre un tejado o saliente — el Gancho o una Cucco planeando te dejan arriba."
+  },
+  {
+    "id": "sk-051",
+    "number": 51,
+    "zone": "Lago Hylia",
+    "location": "A pie de camino, fácil de pasar de largo si no te detienes a escuchar el chirrido."
+  },
+  {
+    "id": "sk-052",
+    "number": 52,
+    "zone": "Interior de Jabu-Jabu",
+    "location": "Escúchala: el chirrido se oye antes de verla — revisa techos y vigas altas."
+  },
+  {
+    "id": "sk-053",
+    "number": 53,
+    "zone": "Interior de Jabu-Jabu",
+    "location": "Cuelga de una telaraña en una esquina alta de la sala; ilumínala si está oscura."
+  },
+  {
+    "id": "sk-054",
+    "number": 54,
+    "zone": "Interior de Jabu-Jabu",
+    "location": "Detrás de una reja o bloque empujable — puede requerir un objeto de la propia mazmorra."
+  },
+  {
+    "id": "sk-055",
+    "number": 55,
+    "zone": "Interior de Jabu-Jabu",
+    "location": "En una sala secundaria fuera de la ruta principal — no te la saltes al ir directo al jefe."
+  },
+  {
+    "id": "sk-056",
+    "number": 56,
+    "zone": "Prado del Bosque Sagrado",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-057",
+    "number": 57,
+    "zone": "Templo del Bosque",
+    "location": "Escúchala: el chirrido se oye antes de verla — revisa techos y vigas altas."
+  },
+  {
+    "id": "sk-058",
+    "number": 58,
+    "zone": "Templo del Bosque",
+    "location": "Cuelga de una telaraña en una esquina alta de la sala; ilumínala si está oscura."
+  },
+  {
+    "id": "sk-059",
+    "number": 59,
+    "zone": "Templo del Bosque",
+    "location": "Detrás de una reja o bloque empujable — puede requerir un objeto de la propia mazmorra."
+  },
+  {
+    "id": "sk-060",
+    "number": 60,
+    "zone": "Templo del Bosque",
+    "location": "En una sala secundaria fuera de la ruta principal — no te la saltes al ir directo al jefe."
+  },
+  {
+    "id": "sk-061",
+    "number": 61,
+    "zone": "Templo del Bosque",
+    "location": "Sobre una plataforma elevada — el Boomerang o el Gancho la baja de un golpe."
+  },
+  {
+    "id": "sk-062",
+    "number": 62,
+    "zone": "Templo del Fuego",
+    "location": "Escúchala: el chirrido se oye antes de verla — revisa techos y vigas altas."
+  },
+  {
+    "id": "sk-063",
+    "number": 63,
+    "zone": "Templo del Fuego",
+    "location": "Cuelga de una telaraña en una esquina alta de la sala; ilumínala si está oscura."
+  },
+  {
+    "id": "sk-064",
+    "number": 64,
+    "zone": "Templo del Fuego",
+    "location": "Detrás de una reja o bloque empujable — puede requerir un objeto de la propia mazmorra."
+  },
+  {
+    "id": "sk-065",
+    "number": 65,
+    "zone": "Templo del Fuego",
+    "location": "En una sala secundaria fuera de la ruta principal — no te la saltes al ir directo al jefe."
+  },
+  {
+    "id": "sk-066",
+    "number": 66,
+    "zone": "Templo del Fuego",
+    "location": "Sobre una plataforma elevada — el Boomerang o el Gancho la baja de un golpe."
+  },
+  {
+    "id": "sk-067",
+    "number": 67,
+    "zone": "Caverna de Hielo",
+    "location": "Escúchala: el chirrido se oye antes de verla — revisa techos y vigas altas."
+  },
+  {
+    "id": "sk-068",
+    "number": 68,
+    "zone": "Caverna de Hielo",
+    "location": "Cuelga de una telaraña en una esquina alta de la sala; ilumínala si está oscura."
+  },
+  {
+    "id": "sk-069",
+    "number": 69,
+    "zone": "Caverna de Hielo",
+    "location": "Detrás de una reja o bloque empujable — puede requerir un objeto de la propia mazmorra."
+  },
+  {
+    "id": "sk-070",
+    "number": 70,
+    "zone": "Templo del Agua",
+    "location": "Escúchala: el chirrido se oye antes de verla — revisa techos y vigas altas."
+  },
+  {
+    "id": "sk-071",
+    "number": 71,
+    "zone": "Templo del Agua",
+    "location": "Cuelga de una telaraña en una esquina alta de la sala; ilumínala si está oscura."
+  },
+  {
+    "id": "sk-072",
+    "number": 72,
+    "zone": "Templo del Agua",
+    "location": "Detrás de una reja o bloque empujable — puede requerir un objeto de la propia mazmorra."
+  },
+  {
+    "id": "sk-073",
+    "number": 73,
+    "zone": "Templo del Agua",
+    "location": "En una sala secundaria fuera de la ruta principal — no te la saltes al ir directo al jefe."
+  },
+  {
+    "id": "sk-074",
+    "number": 74,
+    "zone": "Templo del Agua",
+    "location": "Sobre una plataforma elevada — el Boomerang o el Gancho la baja de un golpe."
+  },
+  {
+    "id": "sk-075",
+    "number": 75,
+    "zone": "Fondo del Pozo",
+    "location": "Escúchala: el chirrido se oye antes de verla — revisa techos y vigas altas."
+  },
+  {
+    "id": "sk-076",
+    "number": 76,
+    "zone": "Fondo del Pozo",
+    "location": "Cuelga de una telaraña en una esquina alta de la sala; ilumínala si está oscura."
+  },
+  {
+    "id": "sk-077",
+    "number": 77,
+    "zone": "Fondo del Pozo",
+    "location": "Detrás de una reja o bloque empujable — puede requerir un objeto de la propia mazmorra."
+  },
+  {
+    "id": "sk-078",
+    "number": 78,
+    "zone": "Templo de las Sombras",
+    "location": "Escúchala: el chirrido se oye antes de verla — revisa techos y vigas altas."
+  },
+  {
+    "id": "sk-079",
+    "number": 79,
+    "zone": "Templo de las Sombras",
+    "location": "Cuelga de una telaraña en una esquina alta de la sala; ilumínala si está oscura."
+  },
+  {
+    "id": "sk-080",
+    "number": 80,
+    "zone": "Templo de las Sombras",
+    "location": "Detrás de una reja o bloque empujable — puede requerir un objeto de la propia mazmorra."
+  },
+  {
+    "id": "sk-081",
+    "number": 81,
+    "zone": "Templo de las Sombras",
+    "location": "En una sala secundaria fuera de la ruta principal — no te la saltes al ir directo al jefe."
+  },
+  {
+    "id": "sk-082",
+    "number": 82,
+    "zone": "Templo de las Sombras",
+    "location": "Sobre una plataforma elevada — el Boomerang o el Gancho la baja de un golpe."
+  },
+  {
+    "id": "sk-083",
+    "number": 83,
+    "zone": "Valle Gerudo",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-084",
+    "number": 84,
+    "zone": "Valle Gerudo",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  },
+  {
+    "id": "sk-085",
+    "number": 85,
+    "zone": "Valle Gerudo",
+    "location": "Escondida tras un muro o seto — bombea o corta para revelarla."
+  },
+  {
+    "id": "sk-086",
+    "number": 86,
+    "zone": "Valle Gerudo",
+    "location": "Sobre un tejado o saliente — el Gancho o una Cucco planeando te dejan arriba."
+  },
+  {
+    "id": "sk-087",
+    "number": 87,
+    "zone": "Fortaleza Gerudo",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-088",
+    "number": 88,
+    "zone": "Fortaleza Gerudo",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  },
+  {
+    "id": "sk-089",
+    "number": 89,
+    "zone": "Desierto Embrujado",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-090",
+    "number": 90,
+    "zone": "Coloso del Desierto",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-091",
+    "number": 91,
+    "zone": "Coloso del Desierto",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  },
+  {
+    "id": "sk-092",
+    "number": 92,
+    "zone": "Coloso del Desierto",
+    "location": "Escondida tras un muro o seto — bombea o corta para revelarla."
+  },
+  {
+    "id": "sk-093",
+    "number": 93,
+    "zone": "Templo del Espíritu",
+    "location": "Escúchala: el chirrido se oye antes de verla — revisa techos y vigas altas."
+  },
+  {
+    "id": "sk-094",
+    "number": 94,
+    "zone": "Templo del Espíritu",
+    "location": "Cuelga de una telaraña en una esquina alta de la sala; ilumínala si está oscura."
+  },
+  {
+    "id": "sk-095",
+    "number": 95,
+    "zone": "Templo del Espíritu",
+    "location": "Detrás de una reja o bloque empujable — puede requerir un objeto de la propia mazmorra."
+  },
+  {
+    "id": "sk-096",
+    "number": 96,
+    "zone": "Templo del Espíritu",
+    "location": "En una sala secundaria fuera de la ruta principal — no te la saltes al ir directo al jefe."
+  },
+  {
+    "id": "sk-097",
+    "number": 97,
+    "zone": "Templo del Espíritu",
+    "location": "Sobre una plataforma elevada — el Boomerang o el Gancho la baja de un golpe."
+  },
+  {
+    "id": "sk-098",
+    "number": 98,
+    "zone": "Castillo de Ganon",
+    "location": "Escúchala: el chirrido se oye antes de verla — revisa techos y vigas altas."
+  },
+  {
+    "id": "sk-099",
+    "number": 99,
+    "zone": "Campo de Hyrule",
+    "location": "Solo aparece de noche — toca la Canción del Sol para adelantar el reloj si hace falta."
+  },
+  {
+    "id": "sk-100",
+    "number": 100,
+    "zone": "Campo de Hyrule",
+    "location": "En lo alto de un árbol o poste — dispárala con la Resortera o el Arco."
+  }
+]

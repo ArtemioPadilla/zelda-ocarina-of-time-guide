@@ -1,0 +1,8 @@
+[
+  { "id": "rw-10", "threshold": "10 Skulltulas", "reward": "Adult's Wallet", "effect": "Raises your rupee cap from 99 to 200" },
+  { "id": "rw-20", "threshold": "20 Skulltulas", "reward": "Stone of Agony", "effect": "Rumbles near secrets, bombable cracks, and hidden switches" },
+  { "id": "rw-30", "threshold": "30 Skulltulas", "reward": "Giant's Wallet", "effect": "Raises your rupee cap to 500" },
+  { "id": "rw-40", "threshold": "40 Skulltulas", "reward": "Bombchus", "effect": "Adds Bombchus to your item inventory" },
+  { "id": "rw-50", "threshold": "50 Skulltulas", "reward": "Piece of Heart", "effect": "An extra heart, handed to you directly — nothing to find in the field" },
+  { "id": "rw-100", "threshold": "100 Skulltulas", "reward": "Infinite rupees", "effect": "Talk to the freed family as many times as you like: 200 rupees every time" }
+]

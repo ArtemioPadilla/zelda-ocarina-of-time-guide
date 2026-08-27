@@ -1,0 +1,21 @@
+[
+  { "kind": "route", "id": "trade-01", "step": 1, "title": "Huevo Raro", "body": "Regálalo la mujer que cuida los Cuccos en Pueblo Kakariko. Cárgalo contigo hasta que eclosione durante la noche en un Pocket Cucco." },
+  { "kind": "route", "id": "trade-02", "step": 2, "title": "Pocket Cucco", "body": "Úsalo para despertar a Talon (en el Rancho Lon Lon o en Kakariko) y luego devuélveselo a la cuidadora de Cuccos." },
+  { "kind": "route", "id": "trade-03", "step": 3, "title": "Cojiro", "body": "El raro Cucco azul que recibes a cambio. No caduca — puedes tomarte tu tiempo con este paso." },
+  { "kind": "route", "id": "trade-04", "step": 4, "title": "Hongo Raro", "body": "Cambia a Cojiro por él con el cazador furtivo escondido en el Bosque Perdido." },
+  { "kind": "route", "id": "trade-05", "step": 5, "title": "Poción Rara", "body": "Llévaselo a la anciana de la tienda de pociones en menos de 3 minutos — el hongo se echa a perder." },
+  { "kind": "route", "id": "trade-06", "step": 6, "title": "Sierra del Cazador", "body": "Entrégasela a la joven Kokiri perdida en el laberinto del Bosque Perdido." },
+  { "kind": "route", "id": "trade-07", "step": 7, "title": "Espada Rota del Goron", "body": "El Maestro Carpintero del Valle Gerudo la repara a cambio de la sierra — te da la espada rota como paso siguiente." },
+  { "kind": "route", "id": "trade-08", "step": 8, "title": "Receta", "body": "Sube a lo alto de la Montaña de la Muerte y dale la espada rota a Biggoron; te pide una receta a cambio." },
+  { "kind": "route", "id": "trade-09", "step": 9, "title": "Rana con Ojo", "body": "Entrega la receta al Rey Zora (ya liberado del hielo); él se la lleva a las ranas médico y te trae una rana con el ojo listo." },
+  { "kind": "route", "id": "trade-10", "step": 10, "title": "Colirio", "body": "Corre con la rana hasta el laboratorio del Lago Hylia en menos de 3 minutos para conseguir «el mejor colirio del mundo»." },
+  { "kind": "route", "id": "trade-11", "step": 11, "title": "Resguardo", "body": "Lleva el colirio a Biggoron en menos de 4 minutos; tarda 3 días de juego en forjar la espada y te da un resguardo." },
+  { "kind": "route", "id": "trade-12", "step": 12, "title": "Espada de Biggoron", "body": "Vuelve tras esos 3 días con el resguardo — Biggoron te entrega el arma más poderosa del juego." },
+  { "kind": "unlock", "id": "sq-cucco", "name": "Botella con un Cucco", "how": "Junta todos los Cuccos sueltos del pueblo en el corral de Anju antes de que se acabe el tiempo", "order": 1 },
+  { "kind": "unlock", "id": "sq-archery", "name": "Carcaj más grande", "how": "Supera cierta puntuación en el Tiro con Arco a Caballo de la Fortaleza Gerudo", "order": 2 },
+  { "kind": "unlock", "id": "sq-poe", "name": "Rupias por Big Poes", "how": "Atrapa Big Poes a caballo con el Arco y véndelos de noche en la Tienda Fantasma del Mercado", "order": 3 },
+  { "kind": "unlock", "id": "sq-training", "name": "Flechas de Luz", "how": "Completa el Campo de Entrenamiento Gerudo, sala por sala, para conseguirlas", "order": 4 },
+  { "kind": "unlock", "id": "sq-magic2", "name": "Doble de Magia", "how": "Toca la Canción de la Tormenta frente a una Gran Hada oculta cerca del Castillo de Ganon", "order": 5 },
+  { "kind": "unlock", "id": "sq-defense2", "name": "Doble Defensa", "how": "Toca la Canción de la Tormenta frente a otra Gran Hada oculta en los alrededores del Castillo de Hyrule", "order": 6 },
+  { "kind": "unlock", "id": "sq-mask-truth", "name": "Máscara de la Verdad", "how": "Devuelve a tiempo cada máscara prestada de la Tienda de Máscaras Feliz — desbloquea diálogo extra con ciertos personajes", "order": 7 }
+]

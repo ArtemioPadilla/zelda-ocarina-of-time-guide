@@ -1,0 +1,26 @@
+---
+// Repeated section-heading motif: spark + title + optional right-aligned
+// mono note. Used at the top of every page and before every major
+// subsection so the spark mark reads as a signature, not a one-off nav
+// decoration.
+interface Props {
+  title: string;
+  note?: string;
+  level?: 'h1' | 'h2';
+  /** Tighter bottom margin for headers immediately followed by a note
+   * paragraph the caller wants grouped close underneath (e.g. Skulltulas,
+   * Hearts). A plain `class="mb-2"` override doesn't work here — the
+   * component's own `mb-5` utility wins Tailwind's generated cascade order
+   * regardless of prop order, so this is a real variant, not a class merge. */
+  tight?: boolean;
+  class?: string;
+}
+const { title, note, level = 'h2', tight = false, class: className = '' } = Astro.props;
+const Tag = level;
+const sizeClass = level === 'h1' ? 'text-2xl sm:text-3xl' : 'text-lg sm:text-xl';
+---
+<div class={`${tight ? 'mb-2' : 'mb-5'} flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-border pb-3 ${className}`}>
+  <span class="spark shrink-0 self-center" aria-hidden="true"></span>
+  <Tag class={`font-display font-semibold text-foreground ${sizeClass}`}>{title}</Tag>
+  {note ? <span class="ml-auto font-mono text-xs text-muted-foreground">{note}</span> : null}
+</div>

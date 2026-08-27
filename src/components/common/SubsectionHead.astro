@@ -1,0 +1,15 @@
+---
+// Small stripe + uppercase h2 — reused across EquipmentPage and HeartsPage.
+// ChaptersPage's era headings use a visually distinct, larger, non-uppercase
+// treatment with per-era stripe colors, so they stay bespoke instead of
+// being forced into this shape.
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+<div class="mb-3 flex items-center gap-2.5">
+  <span class="h-[3px] w-6 rounded-full bg-primary/70"></span>
+  <h2 class="font-display text-sm font-semibold uppercase tracking-wide text-primary">{title}</h2>
+  <slot />
+</div>

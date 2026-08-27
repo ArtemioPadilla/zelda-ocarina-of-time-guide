@@ -1,0 +1,65 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+import { useTranslations, localizedHref, swapLocaleHref } from '@/i18n/utils';
+import type { Locale } from '@/i18n/ui';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const nav = [
+  { path: '/', key: 'nav.home' as const },
+  { path: '/equipment/', key: 'nav.equipment' as const },
+  { path: '/songs/', key: 'nav.songs' as const },
+  { path: '/skulltulas/', key: 'nav.skulltulas' as const },
+  { path: '/hearts/', key: 'nav.hearts' as const },
+  { path: '/chapters/', key: 'nav.chapters' as const },
+  { path: '/bosses/', key: 'nav.bosses' as const },
+  { path: '/tips/', key: 'nav.tips' as const },
+  { path: '/sidequests/', key: 'nav.sidequests' as const },
+];
+
+// Language switcher: same route, other locale — route segments are always
+// English regardless of locale (see swapLocaleHref), only the /en/ prefix
+// and UI copy change.
+const otherLocale: Locale = locale === 'es' ? 'en' : 'es';
+const switchHref = swapLocaleHref(otherLocale, Astro.url.pathname);
+
+// Active-section highlight: route segments are always English (see above),
+// so comparing the base-stripped, locale-prefix-stripped pathname against
+// each nav entry's `path` works for both locales without extra mapping.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+let routePath = Astro.url.pathname;
+if (base && routePath.startsWith(base)) routePath = routePath.slice(base.length);
+if (routePath.startsWith('/en/')) routePath = routePath.slice(3);
+else if (routePath === '/en') routePath = '/';
+if (!routePath) routePath = '/';
+const isActive = (path: string) => (path === '/' ? routePath === '/' : routePath.startsWith(path));
+---
+<header class="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-md">
+  <div class="mx-auto flex max-w-6xl items-center gap-3 px-5 pt-2.5">
+    <a href={localizedHref(locale, '/')} class="flex items-center gap-2.5 whitespace-nowrap font-display text-lg font-bold tracking-tight text-foreground">
+      <span class="spark" aria-hidden="true"></span>
+      {t('site.name')}
+    </a>
+    <div class="ml-auto flex items-center gap-2">
+      <a href={switchHref} class="rounded-md border border-border/70 px-2 py-1 font-mono text-xs text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary" hreflang={otherLocale}>
+        {otherLocale.toUpperCase()}
+      </a>
+      <ThemeToggle locale={locale} />
+    </div>
+  </div>
+  <nav
+    class="mx-auto flex max-w-6xl items-center gap-0.5 overflow-x-auto px-5 py-2.5 font-mono text-[11px] tracking-wide sm:text-xs"
+    style="mask-image: linear-gradient(to right, black calc(100% - 24px), transparent); -webkit-mask-image: linear-gradient(to right, black calc(100% - 24px), transparent);"
+    aria-label={locale === 'es' ? 'Secciones de la guía' : 'Guide sections'}
+  >
+    {nav.map((n) => (
+      <a
+        href={localizedHref(locale, n.path)}
+        aria-current={isActive(n.path) ? 'page' : undefined}
+        class="rounded-md border border-transparent px-2.5 py-1.5 whitespace-nowrap text-muted-foreground transition-colors hover:border-border hover:text-primary aria-[current=page]:border-border aria-[current=page]:text-primary"
+      >{t(n.key)}</a>
+    ))}
+  </nav>
+</header>

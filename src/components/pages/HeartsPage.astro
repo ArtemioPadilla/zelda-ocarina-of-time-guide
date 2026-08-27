@@ -1,0 +1,88 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import SubsectionHead from '@/components/common/SubsectionHead.astro';
+import ErrorBoundary from '@/components/islands/ErrorBoundary';
+import HeartChecklist from '@/components/islands/HeartChecklist';
+import { getLocalized } from '@/lib/content';
+import { useTranslations } from '@/i18n/utils';
+import type { Locale } from '@/i18n/ui';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const hearts = await getLocalized('hearts', locale);
+const rewards = (await getLocalized('rewards', locale));
+
+type HeartEntry = (typeof hearts)[number];
+const isPiece = (
+  h: HeartEntry,
+): h is HeartEntry & { data: Extract<HeartEntry['data'], { kind: 'piece' }> } => h.data.kind === 'piece';
+const isContainer = (
+  h: HeartEntry,
+): h is HeartEntry & { data: Extract<HeartEntry['data'], { kind: 'container' }> } => h.data.kind === 'container';
+
+const HERO_LABEL: Record<'child' | 'adult' | 'either', string> = { child: '🧒', adult: '🧑', either: '' };
+
+const pieces = hearts.filter(isPiece).map((h) => {
+  const heroKey = h.data.hero as keyof typeof HERO_LABEL;
+  const heroTag = HERO_LABEL[heroKey];
+  return {
+    id: h.id,
+    name: h.data.name,
+    detail: `${h.data.area} · ${h.data.method}${heroTag ? ' ' + heroTag : ''}`,
+    missable: h.data.missable,
+  };
+});
+
+const containers = hearts.filter(isContainer).map((h) => ({
+  id: h.id,
+  name: h.data.name,
+  detail: h.data.source,
+}));
+---
+<BaseLayout title={`${t('hearts.title')} · ${t('site.name')}`} lang={locale}>
+  <main id="main" class="mx-auto max-w-4xl px-5 py-14">
+    <SectionHead level="h1" title={t('hearts.title')} tight />
+    <p class="mb-8 text-sm text-muted-foreground">{t('hearts.note')}</p>
+
+    <section class="mb-10">
+      <SubsectionHead title={t('hearts.pieces')} />
+      <ErrorBoundary client:load name="HeartChecklist:pieces" messageLabel={t('a11y.errorBoundaryMessage')} reportLabel={t('a11y.errorBoundaryReport')}>
+        <HeartChecklist items={pieces} progressLabel={t('hearts.pieces')} missableLabel={t('hearts.missable')} />
+      </ErrorBoundary>
+    </section>
+
+    <section class="mb-10">
+      <SubsectionHead title={t('hearts.containers')} />
+      <ErrorBoundary client:load name="HeartChecklist:containers" messageLabel={t('a11y.errorBoundaryMessage')} reportLabel={t('a11y.errorBoundaryReport')}>
+        <HeartChecklist items={containers} progressLabel={t('hearts.containers')} missableLabel={t('hearts.missable')} />
+      </ErrorBoundary>
+    </section>
+
+    <section>
+      <SubsectionHead title={t('hearts.rewardsTitle')} />
+      <div class="ledger overflow-x-auto">
+        <table class="w-full min-w-[480px] text-sm">
+          <thead class="sr-only">
+            <tr>
+              <th scope="col">{t('hearts.rewardThreshold')}</th>
+              <th scope="col">{t('hearts.rewardName')}</th>
+              <th scope="col">{t('hearts.rewardEffect')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rewards.map((r) => (
+              <tr class="border-b border-border/70 last:border-0">
+                <td class="whitespace-nowrap p-3 align-top font-mono text-xs text-primary">{r.data.threshold}</td>
+                <td class="p-3 align-top font-medium text-foreground">{r.data.reward}</td>
+                <td class="p-3 align-top text-xs text-muted-foreground">{r.data.effect}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

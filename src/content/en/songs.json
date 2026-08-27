@@ -1,0 +1,15 @@
+[
+  { "id": "song-zelda-lullaby", "name": "Zelda's Lullaby", "notation": "◄ ▲ ► ◄ ▲ ►", "learnedFrom": "Impa, after meeting Zelda in Hyrule Castle", "effect": "Activates Triforce symbols to open doors and trigger Royal Family events", "order": 1 },
+  { "id": "song-saria", "name": "Saria's Song", "notation": "▼ ► ◄ ▼ ► ◄", "learnedFrom": "Saria, at the Sacred Forest Meadow", "effect": "Contacts Saria for hints and unlocks Darunia's dance in Goron City", "order": 2 },
+  { "id": "song-epona", "name": "Epona's Song", "notation": "▲ ► ◄ ▲ ► ◄", "learnedFrom": "Malon, at Lon Lon Ranch", "effect": "Fills empty bottles with milk; as adult, summons Epona if you already have her", "order": 3 },
+  { "id": "song-sun", "name": "Sun's Song", "notation": "► ▼ ▲ ► ▼ ▲", "learnedFrom": "The Composer Brothers' grave, Kakariko Graveyard", "effect": "Instantly toggles day and night; briefly stuns ReDeads and Gibdos", "order": 4 },
+  { "id": "song-time", "name": "Song of Time", "notation": "► ● ▼ ► ● ▼", "learnedFrom": "Zelda's message at the Temple of Time, after gathering all 3 Spiritual Stones", "effect": "Opens the Door of Time; moves or removes blue Time Blocks", "order": 5 },
+  { "id": "song-storms", "name": "Song of Storms", "notation": "● ▼ ▲ ● ▼ ▲", "learnedFrom": "Guru-Guru, in the Kakariko windmill (as adult)", "effect": "Summons rain; instantly grows Magic Beans and reveals hidden holes", "order": 6 },
+  { "id": "song-minuet", "name": "Minuet of Forest", "notation": "● ▲ ◄ ► ◄ ►", "learnedFrom": "Sheik, in the Sacred Forest Meadow maze", "effect": "Warps to the Sacred Forest Meadow, beside the Forest Temple", "order": 7 },
+  { "id": "song-bolero", "name": "Bolero of Fire", "notation": "▼ ● ▼ ● ► ▼ ► ▼", "learnedFrom": "Sheik, atop Goron City after clearing the path with the Hookshot", "effect": "Warps to Death Mountain Crater, beside the Fire Temple", "order": 8 },
+  { "id": "song-serenade", "name": "Serenade of Water", "notation": "● ▼ ► ► ◄", "learnedFrom": "Sheik, at Lake Hylia after leaving the Ice Cavern", "effect": "Warps to Lake Hylia, beside the Water Temple", "order": 9 },
+  { "id": "song-nocturne", "name": "Nocturne of Shadow", "notation": "◄ ► ► ● ◄ ► ▼", "learnedFrom": "Sheik, at Kakariko Graveyard after clearing the Water Temple", "effect": "Warps to the Graveyard, beside the Shadow Temple", "order": 10 },
+  { "id": "song-requiem", "name": "Requiem of Spirit", "notation": "● ▼ ● ► ▼ ●", "learnedFrom": "Sheik, at Desert Colossus after rescuing the carpenters with the Hover Boots", "effect": "Warps to Desert Colossus, beside the Spirit Temple", "order": 11 },
+  { "id": "song-prelude", "name": "Prelude of Light", "notation": "▲ ► ▲ ► ◄ ▲", "learnedFrom": "Sheik, at the Temple of Time pedestal after clearing any adult temple", "effect": "Warps to the Temple of Time", "order": 12 },
+  { "id": "song-scarecrow", "name": "Scarecrow's Song", "notation": "any 8 notes you choose", "learnedFrom": "Compose 8 notes for Bonooru (child), then repeat them for Pierre (adult)", "effect": "Summons a scarecrow platform wherever you play the melody afterward", "order": 13 }
+]

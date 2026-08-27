@@ -1,0 +1,78 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import ErrorBoundary from '@/components/islands/ErrorBoundary';
+import HomeProgress from '@/components/islands/HomeProgress';
+import { getLocalized } from '@/lib/content';
+import { useTranslations } from '@/i18n/utils';
+import type { Locale } from '@/i18n/ui';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const rules = (await getLocalized('rules', locale)).sort((a, b) => a.data.order - b.data.order);
+const skulltulas = await getLocalized('skulltulas', locale);
+const hearts = await getLocalized('hearts', locale);
+const heartPieceCount = hearts.filter((h) => h.data.kind === 'piece').length;
+const chapters = (await getLocalized('chapters', locale)).sort((a, b) => a.data.order - b.data.order);
+const chapterOptions = chapters.map((c) => ({ id: c.id, number: c.data.number, title: c.data.title }));
+
+const tags = [
+  `${chapters.length} ${t('home.tagChapters')} · ${t('home.tagAreas')}`,
+  `${skulltulas.length} ${t('home.tagSkulltulas')}`,
+  `${heartPieceCount} ${t('home.tagHearts')}`,
+  t('home.tagSongs'),
+];
+---
+<BaseLayout title={t('site.name')} description={t('site.tagline')} lang={locale}>
+  <header class="relative overflow-hidden">
+    <div class="glow-brand pointer-events-none absolute inset-0" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-4xl px-5 pb-10 pt-16 sm:pt-20">
+      <p class="rise mb-4 flex items-center gap-2.5 font-mono text-xs tracking-wide text-primary/90" style="animation-delay: 0ms">
+        <span class="spark" aria-hidden="true"></span>{t('site.naviLine')}
+      </p>
+      <h1 class="rise font-display text-5xl font-black tracking-tight text-foreground sm:text-6xl" style="animation-delay: 60ms">
+        {t('site.name')}
+      </h1>
+      <p class="rise mt-4 max-w-xl text-lg text-muted-foreground" style="animation-delay: 120ms">{t('site.tagline')}</p>
+      <div class="rise mt-6 flex flex-wrap gap-2.5" style="animation-delay: 180ms">
+        {tags.map((tag) => (
+          <span class="rounded-sm border border-border/80 bg-card/60 px-3 py-1.5 font-mono text-xs text-muted-foreground">{tag}</span>
+        ))}
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="mx-auto max-w-4xl px-5 pb-24">
+    <section class="panel mb-12 p-5 sm:p-6">
+      <h2 class="mb-4 flex items-center gap-2.5 font-display text-lg font-semibold text-foreground">
+        <span class="spark" aria-hidden="true"></span>{t('home.progressTitle')}
+      </h2>
+      <ErrorBoundary client:load name="HomeProgress" messageLabel={t('a11y.errorBoundaryMessage')} reportLabel={t('a11y.errorBoundaryReport')}>
+        <HomeProgress
+          totalSkulltulas={skulltulas.length}
+          totalHearts={heartPieceCount}
+          chapters={chapterOptions}
+          skulltulasLabel={t('home.skulltulasProgress')}
+          heartsLabel={t('home.heartsProgress')}
+          chapterLabel={t('home.currentChapter')}
+          resetLabel={t('home.resetProgress')}
+          resetConfirmMessage={t('home.resetConfirm')}
+        />
+      </ErrorBoundary>
+    </section>
+
+    <section>
+      <SectionHead title={t('home.rulesTitle')} note={t('home.rulesNote')} />
+      <div class="grid gap-4 sm:grid-cols-2">
+        {rules.map((rule) => (
+          <div class="panel p-4" style="--panel-accent: var(--primary)">
+            <h3 class="mb-1.5 font-display text-sm font-semibold text-foreground">{rule.data.title}</h3>
+            <p class="text-sm text-muted-foreground">{rule.data.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

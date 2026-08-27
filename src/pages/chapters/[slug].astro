@@ -1,0 +1,12 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import ChapterDetailPage from '@/components/pages/ChapterDetailPage.astro';
+
+export async function getStaticPaths() {
+  const chapters = await getCollection('chapters_es');
+  return chapters.map((entry: CollectionEntry<'chapters_es'>) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+---
+<ChapterDetailPage locale="es" entry={entry} />

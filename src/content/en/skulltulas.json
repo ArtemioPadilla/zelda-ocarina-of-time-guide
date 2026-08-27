@@ -1,0 +1,602 @@
+[
+  {
+    "id": "sk-001",
+    "number": 1,
+    "zone": "Inside the Deku Tree",
+    "location": "Listen first — the chirp gives it away before you spot it. Check ceilings and high beams."
+  },
+  {
+    "id": "sk-002",
+    "number": 2,
+    "zone": "Inside the Deku Tree",
+    "location": "Hanging from a web in a high corner of the room; light it up if the room is dark."
+  },
+  {
+    "id": "sk-003",
+    "number": 3,
+    "zone": "Inside the Deku Tree",
+    "location": "Behind a grate or pushable block — may require an item found earlier in this dungeon."
+  },
+  {
+    "id": "sk-004",
+    "number": 4,
+    "zone": "Inside the Deku Tree",
+    "location": "In a side room off the critical path — easy to miss if you rush straight for the boss."
+  },
+  {
+    "id": "sk-005",
+    "number": 5,
+    "zone": "Kokiri Forest",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-006",
+    "number": 6,
+    "zone": "Kokiri Forest",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  },
+  {
+    "id": "sk-007",
+    "number": 7,
+    "zone": "Kokiri Forest",
+    "location": "Tucked behind a wall or hedge — bomb or cut through to reveal it."
+  },
+  {
+    "id": "sk-008",
+    "number": 8,
+    "zone": "Hyrule Castle Market",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-009",
+    "number": 9,
+    "zone": "Hyrule Castle",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-010",
+    "number": 10,
+    "zone": "Hyrule Castle",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  },
+  {
+    "id": "sk-011",
+    "number": 11,
+    "zone": "Lon Lon Ranch",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-012",
+    "number": 12,
+    "zone": "Lon Lon Ranch",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  },
+  {
+    "id": "sk-013",
+    "number": 13,
+    "zone": "Lon Lon Ranch",
+    "location": "Tucked behind a wall or hedge — bomb or cut through to reveal it."
+  },
+  {
+    "id": "sk-014",
+    "number": 14,
+    "zone": "Lon Lon Ranch",
+    "location": "On a rooftop or ledge — Hookshot up, or glide in on a Cucco."
+  },
+  {
+    "id": "sk-015",
+    "number": 15,
+    "zone": "Kakariko Village",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-016",
+    "number": 16,
+    "zone": "Kakariko Village",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  },
+  {
+    "id": "sk-017",
+    "number": 17,
+    "zone": "Kakariko Village",
+    "location": "Tucked behind a wall or hedge — bomb or cut through to reveal it."
+  },
+  {
+    "id": "sk-018",
+    "number": 18,
+    "zone": "Kakariko Village",
+    "location": "On a rooftop or ledge — Hookshot up, or glide in on a Cucco."
+  },
+  {
+    "id": "sk-019",
+    "number": 19,
+    "zone": "Kakariko Village",
+    "location": "Right along the path — easy to walk past if you don’t stop to listen for the chirp."
+  },
+  {
+    "id": "sk-020",
+    "number": 20,
+    "zone": "Kakariko Village",
+    "location": "Inside a side grotto — look for loose soil or a bombable wall nearby."
+  },
+  {
+    "id": "sk-021",
+    "number": 21,
+    "zone": "Lost Woods",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-022",
+    "number": 22,
+    "zone": "Lost Woods",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  },
+  {
+    "id": "sk-023",
+    "number": 23,
+    "zone": "Lost Woods",
+    "location": "Tucked behind a wall or hedge — bomb or cut through to reveal it."
+  },
+  {
+    "id": "sk-024",
+    "number": 24,
+    "zone": "Graveyard",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-025",
+    "number": 25,
+    "zone": "Graveyard",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  },
+  {
+    "id": "sk-026",
+    "number": 26,
+    "zone": "Death Mountain Trail",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-027",
+    "number": 27,
+    "zone": "Death Mountain Trail",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  },
+  {
+    "id": "sk-028",
+    "number": 28,
+    "zone": "Death Mountain Trail",
+    "location": "Tucked behind a wall or hedge — bomb or cut through to reveal it."
+  },
+  {
+    "id": "sk-029",
+    "number": 29,
+    "zone": "Death Mountain Trail",
+    "location": "On a rooftop or ledge — Hookshot up, or glide in on a Cucco."
+  },
+  {
+    "id": "sk-030",
+    "number": 30,
+    "zone": "Dodongo's Cavern",
+    "location": "Listen first — the chirp gives it away before you spot it. Check ceilings and high beams."
+  },
+  {
+    "id": "sk-031",
+    "number": 31,
+    "zone": "Dodongo's Cavern",
+    "location": "Hanging from a web in a high corner of the room; light it up if the room is dark."
+  },
+  {
+    "id": "sk-032",
+    "number": 32,
+    "zone": "Dodongo's Cavern",
+    "location": "Behind a grate or pushable block — may require an item found earlier in this dungeon."
+  },
+  {
+    "id": "sk-033",
+    "number": 33,
+    "zone": "Dodongo's Cavern",
+    "location": "In a side room off the critical path — easy to miss if you rush straight for the boss."
+  },
+  {
+    "id": "sk-034",
+    "number": 34,
+    "zone": "Dodongo's Cavern",
+    "location": "On a raised ledge — Boomerang or Hookshot knocks it down in one hit."
+  },
+  {
+    "id": "sk-035",
+    "number": 35,
+    "zone": "Goron City",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-036",
+    "number": 36,
+    "zone": "Goron City",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  },
+  {
+    "id": "sk-037",
+    "number": 37,
+    "zone": "Death Mountain Crater",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-038",
+    "number": 38,
+    "zone": "Death Mountain Crater",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  },
+  {
+    "id": "sk-039",
+    "number": 39,
+    "zone": "Zora's River",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-040",
+    "number": 40,
+    "zone": "Zora's River",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  },
+  {
+    "id": "sk-041",
+    "number": 41,
+    "zone": "Zora's River",
+    "location": "Tucked behind a wall or hedge — bomb or cut through to reveal it."
+  },
+  {
+    "id": "sk-042",
+    "number": 42,
+    "zone": "Zora's River",
+    "location": "On a rooftop or ledge — Hookshot up, or glide in on a Cucco."
+  },
+  {
+    "id": "sk-043",
+    "number": 43,
+    "zone": "Zora's Domain",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-044",
+    "number": 44,
+    "zone": "Zora's Fountain",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-045",
+    "number": 45,
+    "zone": "Zora's Fountain",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  },
+  {
+    "id": "sk-046",
+    "number": 46,
+    "zone": "Zora's Fountain",
+    "location": "Tucked behind a wall or hedge — bomb or cut through to reveal it."
+  },
+  {
+    "id": "sk-047",
+    "number": 47,
+    "zone": "Lake Hylia",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-048",
+    "number": 48,
+    "zone": "Lake Hylia",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  },
+  {
+    "id": "sk-049",
+    "number": 49,
+    "zone": "Lake Hylia",
+    "location": "Tucked behind a wall or hedge — bomb or cut through to reveal it."
+  },
+  {
+    "id": "sk-050",
+    "number": 50,
+    "zone": "Lake Hylia",
+    "location": "On a rooftop or ledge — Hookshot up, or glide in on a Cucco."
+  },
+  {
+    "id": "sk-051",
+    "number": 51,
+    "zone": "Lake Hylia",
+    "location": "Right along the path — easy to walk past if you don’t stop to listen for the chirp."
+  },
+  {
+    "id": "sk-052",
+    "number": 52,
+    "zone": "Inside Jabu-Jabu's Belly",
+    "location": "Listen first — the chirp gives it away before you spot it. Check ceilings and high beams."
+  },
+  {
+    "id": "sk-053",
+    "number": 53,
+    "zone": "Inside Jabu-Jabu's Belly",
+    "location": "Hanging from a web in a high corner of the room; light it up if the room is dark."
+  },
+  {
+    "id": "sk-054",
+    "number": 54,
+    "zone": "Inside Jabu-Jabu's Belly",
+    "location": "Behind a grate or pushable block — may require an item found earlier in this dungeon."
+  },
+  {
+    "id": "sk-055",
+    "number": 55,
+    "zone": "Inside Jabu-Jabu's Belly",
+    "location": "In a side room off the critical path — easy to miss if you rush straight for the boss."
+  },
+  {
+    "id": "sk-056",
+    "number": 56,
+    "zone": "Sacred Forest Meadow",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-057",
+    "number": 57,
+    "zone": "Forest Temple",
+    "location": "Listen first — the chirp gives it away before you spot it. Check ceilings and high beams."
+  },
+  {
+    "id": "sk-058",
+    "number": 58,
+    "zone": "Forest Temple",
+    "location": "Hanging from a web in a high corner of the room; light it up if the room is dark."
+  },
+  {
+    "id": "sk-059",
+    "number": 59,
+    "zone": "Forest Temple",
+    "location": "Behind a grate or pushable block — may require an item found earlier in this dungeon."
+  },
+  {
+    "id": "sk-060",
+    "number": 60,
+    "zone": "Forest Temple",
+    "location": "In a side room off the critical path — easy to miss if you rush straight for the boss."
+  },
+  {
+    "id": "sk-061",
+    "number": 61,
+    "zone": "Forest Temple",
+    "location": "On a raised ledge — Boomerang or Hookshot knocks it down in one hit."
+  },
+  {
+    "id": "sk-062",
+    "number": 62,
+    "zone": "Fire Temple",
+    "location": "Listen first — the chirp gives it away before you spot it. Check ceilings and high beams."
+  },
+  {
+    "id": "sk-063",
+    "number": 63,
+    "zone": "Fire Temple",
+    "location": "Hanging from a web in a high corner of the room; light it up if the room is dark."
+  },
+  {
+    "id": "sk-064",
+    "number": 64,
+    "zone": "Fire Temple",
+    "location": "Behind a grate or pushable block — may require an item found earlier in this dungeon."
+  },
+  {
+    "id": "sk-065",
+    "number": 65,
+    "zone": "Fire Temple",
+    "location": "In a side room off the critical path — easy to miss if you rush straight for the boss."
+  },
+  {
+    "id": "sk-066",
+    "number": 66,
+    "zone": "Fire Temple",
+    "location": "On a raised ledge — Boomerang or Hookshot knocks it down in one hit."
+  },
+  {
+    "id": "sk-067",
+    "number": 67,
+    "zone": "Ice Cavern",
+    "location": "Listen first — the chirp gives it away before you spot it. Check ceilings and high beams."
+  },
+  {
+    "id": "sk-068",
+    "number": 68,
+    "zone": "Ice Cavern",
+    "location": "Hanging from a web in a high corner of the room; light it up if the room is dark."
+  },
+  {
+    "id": "sk-069",
+    "number": 69,
+    "zone": "Ice Cavern",
+    "location": "Behind a grate or pushable block — may require an item found earlier in this dungeon."
+  },
+  {
+    "id": "sk-070",
+    "number": 70,
+    "zone": "Water Temple",
+    "location": "Listen first — the chirp gives it away before you spot it. Check ceilings and high beams."
+  },
+  {
+    "id": "sk-071",
+    "number": 71,
+    "zone": "Water Temple",
+    "location": "Hanging from a web in a high corner of the room; light it up if the room is dark."
+  },
+  {
+    "id": "sk-072",
+    "number": 72,
+    "zone": "Water Temple",
+    "location": "Behind a grate or pushable block — may require an item found earlier in this dungeon."
+  },
+  {
+    "id": "sk-073",
+    "number": 73,
+    "zone": "Water Temple",
+    "location": "In a side room off the critical path — easy to miss if you rush straight for the boss."
+  },
+  {
+    "id": "sk-074",
+    "number": 74,
+    "zone": "Water Temple",
+    "location": "On a raised ledge — Boomerang or Hookshot knocks it down in one hit."
+  },
+  {
+    "id": "sk-075",
+    "number": 75,
+    "zone": "Bottom of the Well",
+    "location": "Listen first — the chirp gives it away before you spot it. Check ceilings and high beams."
+  },
+  {
+    "id": "sk-076",
+    "number": 76,
+    "zone": "Bottom of the Well",
+    "location": "Hanging from a web in a high corner of the room; light it up if the room is dark."
+  },
+  {
+    "id": "sk-077",
+    "number": 77,
+    "zone": "Bottom of the Well",
+    "location": "Behind a grate or pushable block — may require an item found earlier in this dungeon."
+  },
+  {
+    "id": "sk-078",
+    "number": 78,
+    "zone": "Shadow Temple",
+    "location": "Listen first — the chirp gives it away before you spot it. Check ceilings and high beams."
+  },
+  {
+    "id": "sk-079",
+    "number": 79,
+    "zone": "Shadow Temple",
+    "location": "Hanging from a web in a high corner of the room; light it up if the room is dark."
+  },
+  {
+    "id": "sk-080",
+    "number": 80,
+    "zone": "Shadow Temple",
+    "location": "Behind a grate or pushable block — may require an item found earlier in this dungeon."
+  },
+  {
+    "id": "sk-081",
+    "number": 81,
+    "zone": "Shadow Temple",
+    "location": "In a side room off the critical path — easy to miss if you rush straight for the boss."
+  },
+  {
+    "id": "sk-082",
+    "number": 82,
+    "zone": "Shadow Temple",
+    "location": "On a raised ledge — Boomerang or Hookshot knocks it down in one hit."
+  },
+  {
+    "id": "sk-083",
+    "number": 83,
+    "zone": "Gerudo Valley",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-084",
+    "number": 84,
+    "zone": "Gerudo Valley",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  },
+  {
+    "id": "sk-085",
+    "number": 85,
+    "zone": "Gerudo Valley",
+    "location": "Tucked behind a wall or hedge — bomb or cut through to reveal it."
+  },
+  {
+    "id": "sk-086",
+    "number": 86,
+    "zone": "Gerudo Valley",
+    "location": "On a rooftop or ledge — Hookshot up, or glide in on a Cucco."
+  },
+  {
+    "id": "sk-087",
+    "number": 87,
+    "zone": "Gerudo's Fortress",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-088",
+    "number": 88,
+    "zone": "Gerudo's Fortress",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  },
+  {
+    "id": "sk-089",
+    "number": 89,
+    "zone": "Haunted Wasteland",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-090",
+    "number": 90,
+    "zone": "Desert Colossus",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-091",
+    "number": 91,
+    "zone": "Desert Colossus",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  },
+  {
+    "id": "sk-092",
+    "number": 92,
+    "zone": "Desert Colossus",
+    "location": "Tucked behind a wall or hedge — bomb or cut through to reveal it."
+  },
+  {
+    "id": "sk-093",
+    "number": 93,
+    "zone": "Spirit Temple",
+    "location": "Listen first — the chirp gives it away before you spot it. Check ceilings and high beams."
+  },
+  {
+    "id": "sk-094",
+    "number": 94,
+    "zone": "Spirit Temple",
+    "location": "Hanging from a web in a high corner of the room; light it up if the room is dark."
+  },
+  {
+    "id": "sk-095",
+    "number": 95,
+    "zone": "Spirit Temple",
+    "location": "Behind a grate or pushable block — may require an item found earlier in this dungeon."
+  },
+  {
+    "id": "sk-096",
+    "number": 96,
+    "zone": "Spirit Temple",
+    "location": "In a side room off the critical path — easy to miss if you rush straight for the boss."
+  },
+  {
+    "id": "sk-097",
+    "number": 97,
+    "zone": "Spirit Temple",
+    "location": "On a raised ledge — Boomerang or Hookshot knocks it down in one hit."
+  },
+  {
+    "id": "sk-098",
+    "number": 98,
+    "zone": "Ganon's Castle",
+    "location": "Listen first — the chirp gives it away before you spot it. Check ceilings and high beams."
+  },
+  {
+    "id": "sk-099",
+    "number": 99,
+    "zone": "Hyrule Field",
+    "location": "Night-only spawn — play the Sun’s Song to skip ahead if you need daylight back after."
+  },
+  {
+    "id": "sk-100",
+    "number": 100,
+    "zone": "Hyrule Field",
+    "location": "High in a tree or on a post — snipe it with the Slingshot or Bow."
+  }
+]

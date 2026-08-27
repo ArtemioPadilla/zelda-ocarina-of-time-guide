@@ -1,0 +1,8 @@
+[
+  { "id": "rw-10", "threshold": "10 Skulltulas", "reward": "Billetera Adulta", "effect": "Sube el límite de rupias de 99 a 200" },
+  { "id": "rw-20", "threshold": "20 Skulltulas", "reward": "Piedra de la Agonía", "effect": "Vibra cerca de secretos, agujeros de bomba e interruptores ocultos" },
+  { "id": "rw-30", "threshold": "30 Skulltulas", "reward": "Billetera Gigante", "effect": "Sube el límite de rupias a 500" },
+  { "id": "rw-40", "threshold": "40 Skulltulas", "reward": "Bombchus", "effect": "Añade los Bombchus a tu inventario de objetos" },
+  { "id": "rw-50", "threshold": "50 Skulltulas", "reward": "Pieza de Corazón", "effect": "Corazón extra directo, sin buscarlo en el mundo" },
+  { "id": "rw-100", "threshold": "100 Skulltulas", "reward": "Rupias infinitas", "effect": "Habla con la familia liberada de la maldición cuantas veces quieras: 200 rupias cada vez" }
+]

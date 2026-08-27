@@ -1,0 +1,28 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import { getLocalized } from '@/lib/content';
+import { useTranslations } from '@/i18n/utils';
+import type { Locale } from '@/i18n/ui';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const cards = (await getLocalized('tips', locale)).sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout title={`${t('tips.title')} · ${t('site.name')}`} lang={locale}>
+  <main id="main" class="mx-auto max-w-4xl px-5 py-14">
+    <SectionHead level="h1" title={t('tips.title')} class="mb-8" />
+    <div class="grid gap-4 sm:grid-cols-2">
+      {cards.map((card) => (
+        <div class="panel p-4">
+          <h2 class="mb-2 font-display text-sm font-semibold text-foreground">{card.data.title}</h2>
+          <ul class="list-disc space-y-1.5 pl-4 text-sm text-muted-foreground marker:text-primary/70">
+            {card.data.items.map((item: string) => <li>{item}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

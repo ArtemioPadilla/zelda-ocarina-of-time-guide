@@ -1,0 +1,10 @@
+[
+  { "id": "r-save", "title": "Save often", "body": "The 3DS version lets you save from the pause menu almost anywhere — you don’t need to find a save point like in the original N64 release.", "order": 1 },
+  { "id": "r-navi", "title": "Listen to Navi", "body": "When Navi flashes yellow over an object or enemy, target it with C-up: there’s almost always a hint, a key item, or a boss weakness behind it.", "order": 2 },
+  { "id": "r-stone", "title": "Get the Stone of Agony as early as you can", "body": "It’s the 20-Gold-Skulltula reward and rumbles near secrets — bomb-able cracks, hidden switches, soft soil. Start hunting Skulltulas from Kokiri Forest onward.", "order": 3 },
+  { "id": "r-bottles", "title": "Keep a fairy bottled", "body": "Catch at least one fairy from a hollow tree or Great Fairy fountain before a hard dungeon — it’s a free automatic revive.", "order": 4 },
+  { "id": "r-daynight", "title": "Control the clock with your ocarina", "body": "The Sun’s Song instantly flips day and night — use it to skip waiting around, scare off ReDeads, or catch a shop only open at a certain time.", "order": 5 },
+  { "id": "r-shields", "title": "Swap shields before fire", "body": "The Deku Shield burns up in lava and fire attacks. Switch to the Hylian Shield (or the Mirror Shield, as adult) before Death Mountain and the Fire Temple.", "order": 6 },
+  { "id": "r-trading", "title": "Start the trading sequence early", "body": "Several items in the chain toward Biggoron’s Sword spoil within minutes or in-game hours. Check the Sidequests page as soon as you have the adult Ocarina and plan your route.", "order": 7 },
+  { "id": "r-bombchu", "title": "Never run out of Bombchus", "body": "Buy them at Bombchu Bowling (Castle Town) and from the night-time traveling merchant in Kokiri Forest — they’re the only way to hit certain distant switches and eyes.", "order": 8 }
+]

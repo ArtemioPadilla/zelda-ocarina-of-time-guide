@@ -1,0 +1,30 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import { getLocalized } from '@/lib/content';
+import { useTranslations } from '@/i18n/utils';
+import type { Locale } from '@/i18n/ui';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const bosses = (await getLocalized('bosses', locale)).sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout title={`${t('bosses.title')} · ${t('site.name')}`} lang={locale}>
+  <main id="main" class="mx-auto max-w-4xl px-5 py-14">
+    <SectionHead level="h1" title={t('bosses.title')} note={t('bosses.note')} class="mb-8" />
+    <div class="grid gap-4 sm:grid-cols-2">
+      {bosses.map((boss) => (
+        <div class="panel p-4" style="--panel-accent: color-mix(in oklch, var(--destructive) 55%, var(--border))">
+          <div class="mb-1.5 flex items-baseline gap-2">
+            <h2 class="font-display text-base font-semibold text-foreground">{boss.data.name}</h2>
+            <span class="ml-auto font-mono text-[11px] text-muted-foreground">{boss.data.chapters}</span>
+          </div>
+          <p class="text-sm text-foreground/90">{boss.data.strategy}</p>
+          {boss.data.drop && boss.data.drop !== '—' ? <p class="mt-2 font-mono text-xs text-primary">{boss.data.drop}</p> : null}
+        </div>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

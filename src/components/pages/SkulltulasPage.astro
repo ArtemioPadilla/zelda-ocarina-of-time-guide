@@ -1,0 +1,26 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import ErrorBoundary from '@/components/islands/ErrorBoundary';
+import SkulltulaChecklist from '@/components/islands/SkulltulaChecklist';
+import { getLocalized } from '@/lib/content';
+import { useTranslations } from '@/i18n/utils';
+import type { Locale } from '@/i18n/ui';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const skulltulas = (await getLocalized('skulltulas', locale))
+  .sort((a, b) => a.data.number - b.data.number)
+  .map((s) => ({ id: s.id, number: s.data.number, zone: s.data.zone, location: s.data.location, note: s.data.note }));
+---
+<BaseLayout title={`${t('skulltulas.title')} · ${t('site.name')}`} lang={locale}>
+  <main id="main" class="mx-auto max-w-4xl px-5 py-14">
+    <SectionHead level="h1" title={t('skulltulas.title')} tight />
+    <p class="mb-6 text-sm text-muted-foreground">{t('skulltulas.note')}</p>
+    <ErrorBoundary client:load name="SkulltulaChecklist" messageLabel={t('a11y.errorBoundaryMessage')} reportLabel={t('a11y.errorBoundaryReport')}>
+      <SkulltulaChecklist items={skulltulas} progressLabel={t('skulltulas.progress')} />
+    </ErrorBoundary>
+  </main>
+</BaseLayout>

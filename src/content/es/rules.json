@@ -1,0 +1,10 @@
+[
+  { "id": "r-save", "title": "Guarda seguido", "body": "En la versión 3DS puedes guardar desde el menú de pausa en casi cualquier momento — no esperes a un punto de guardado como en el original de N64.", "order": 1 },
+  { "id": "r-navi", "title": "Escucha a Navi", "body": "Cuando Navi brilla en amarillo sobre un objeto o enemigo, apunta con C-arriba: casi siempre hay una pista, un ítem clave o una debilidad de jefe detrás.", "order": 2 },
+  { "id": "r-stone", "title": "Consigue la Piedra de la Agonía cuanto antes", "body": "Se obtiene con 20 Gold Skulltulas y hace vibrar el mando cerca de secretos — agujeros de bomba, interruptores ocultos y grietas. Empieza a cazar skulltulas desde el Bosque Kokiri.", "order": 3 },
+  { "id": "r-bottles", "title": "Llena tus botellas de hadas", "body": "Atrapa al menos una hada en cualquier árbol hueco o Gran Hada antes de una mazmorra dura — es una resurrección automática gratis.", "order": 4 },
+  { "id": "r-daynight", "title": "Controla el reloj con la ocarina", "body": "La Canción del Sol adelanta el día o la noche al instante — úsala para saltarte esperas, ahuyentar ReDeads o abrir tiendas nocturnas/diurnas.", "order": 5 },
+  { "id": "r-shields", "title": "Cambia de escudo antes del fuego", "body": "El Escudo Deku arde y se destruye en la lava y con ataques de fuego. Cambia al Escudo Hyliano (o al Espejo, de adulto) antes de la Montaña de la Muerte y el Templo del Fuego.", "order": 6 },
+  { "id": "r-trading", "title": "Empieza la secuencia de intercambio pronto", "body": "Varios objetos de la cadena hacia la Espada de Biggoron caducan en minutos u horas de juego. Revisa la sección de Secundarias antes de tener la Ocarina de adulto y planifica la ruta.", "order": 7 },
+  { "id": "r-bombchu", "title": "No te quedes sin Bombchus", "body": "Se compran en la Bolera de Bombchus (Villa Castillo) y en la tienda ambulante nocturna del Bosque Kokiri — son la única forma de golpear ciertos interruptores y ojos a distancia.", "order": 8 }
+]

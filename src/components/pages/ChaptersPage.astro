@@ -1,0 +1,49 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import { getLocalized } from '@/lib/content';
+import { useTranslations, localizedHref } from '@/i18n/utils';
+import { PILL_STYLE, type PillType } from '@/lib/pills';
+import type { Locale } from '@/i18n/ui';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const chapters = (await getLocalized('chapters', locale)).sort((a, b) => a.data.order - b.data.order);
+const acts = ['child', 'adult', 'end'] as const;
+const ACT_KEY = { child: 'chapters.act.child', adult: 'chapters.act.adult', end: 'chapters.act.end' } as const;
+const ACT_COLOR = { child: 'oklch(0.62 0.13 135)', adult: 'oklch(0.62 0.14 305)', end: 'oklch(0.65 0.16 45)' } as const;
+---
+<BaseLayout title={`${t('chapters.title')} · ${t('site.name')}`} lang={locale}>
+  <main id="main" class="mx-auto max-w-4xl px-5 py-14">
+    <SectionHead level="h1" title={t('chapters.title')} note={t('chapters.note')} class="mb-8" />
+
+    {acts.map((act) => (
+      <section class="mb-8">
+        <div class="mb-3 flex items-center gap-3">
+          <span class="h-[3px] w-6 rounded-full" style={`background:${ACT_COLOR[act]}`}></span>
+          <h2 class="font-display text-base font-semibold text-foreground">{t(ACT_KEY[act])}</h2>
+        </div>
+        <div class="space-y-2">
+          {chapters.filter((c) => c.data.act === act).map((c) => (
+            <a
+              href={localizedHref(locale, `/chapters/${c.id}/`)}
+              data-interactive
+              class="panel flex flex-wrap items-center gap-2 px-4 py-3"
+              style={`--panel-accent:${ACT_COLOR[act]}`}
+            >
+              <span class="font-display text-sm font-bold text-primary">{c.data.number}</span>
+              <span class="text-sm text-foreground">{c.data.title}</span>
+              <span class="ml-auto flex flex-wrap gap-1.5">
+                {c.data.pills.map((p: { type: PillType; label: string }) => (
+                  <span class={`rounded-full border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wide ${PILL_STYLE[p.type]}`}>{p.label}</span>
+                ))}
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+  </main>
+</BaseLayout>

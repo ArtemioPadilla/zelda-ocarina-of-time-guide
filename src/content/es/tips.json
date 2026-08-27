@@ -1,0 +1,38 @@
+[
+  { "id": "tip-combat", "title": "Combate y objetivo Z", "items": [
+    "Mantén Z para fijar el objetivo: esquivas rodando y giras alrededor del enemigo automáticamente.",
+    "Un escudo bien cronometrado (mantén B con escudo activo) rebota flechas y proyectiles.",
+    "El giro cargado (mantén B y suelta) hace más daño pero gasta un cuadro de magia.",
+    "Salta con el objetivo fijado y ataca en el aire para un golpe descendente extra fuerte."
+  ], "order": 1 },
+  { "id": "tip-magic", "title": "Magia y botellas", "items": [
+    "El medidor de magia se recarga solo con el tiempo; las pociones verdes lo rellenan al instante.",
+    "Una hada guardada en botella te revive automáticamente al caer a 0 corazones.",
+    "La leche (Botella de Lon Lon) cura por partes — bébela cuando quieras, no toda de golpe.",
+    "Puedes vaciar una botella con objeto en cualquier momento para atrapar otra cosa."
+  ], "order": 2 },
+  { "id": "tip-explosives", "title": "Bombas, Bombchus y Deku Nuts", "items": [
+    "Las Deku Nuts aturden a casi todo lo que tengas cerca — úsalas para escapar de grupos.",
+    "Los Bombchus siguen paredes y se pueden lanzar al agua — ideales para interruptores lejanos.",
+    "Una bomba lanzada dentro de una boca abierta suele ser la clave de un jefe (Dodongo, Gohma…).",
+    "Puedes recoger de vuelta una bomba encendida con Z + A si cambiaste de idea."
+  ], "order": 3 },
+  { "id": "tip-timing", "title": "Objetos perdibles y con límite de tiempo", "items": [
+    "Varios pasos de la secuencia de intercambio caducan en minutos de juego real — no los dejes a medias.",
+    "La Pieza de Corazón del perro blanco en Villa Castillo solo aparece de noche.",
+    "El Big Poe hay que atraparlo a caballo antes de que se disipe — lleva siempre una botella vacía.",
+    "Los cofres del Juego del Cofre del Tesoro cambian cada intento — no hay un cofre 'correcto' fijo."
+  ], "order": 4 },
+  { "id": "tip-navigation", "title": "Navegación rápida", "items": [
+    "Kaepora Gaebora (el búho) te deja saltar tramos largos si aceptas su oferta de vuelo.",
+    "Las seis canciones de teletransporte de Sheik son la forma más rápida de moverse por Hyrule adulto.",
+    "La Canción del Espantapájaros funciona como un teletransporte personal una vez que la enseñas.",
+    "El mapa de cada mazmorra marca cofres, el jefe y las salas con Skulltula pendiente."
+  ], "order": 5 },
+  { "id": "tip-money", "title": "Rupias y tiendas", "items": [
+    "Sube de billetera con Skulltulas (10 y 30) antes de acumular rupias — si tu bolsa está llena, las de más se pierden.",
+    "El Business Scrub de cada gruta vende objetos únicos (recarga de flechas, Deku Nuts, corazones extra) a buen precio si le asustas primero.",
+    "Vende gemas y tesoros sueltos en la tienda Zora o en el Bazar si necesitas rupias rápido para una compra puntual.",
+    "El Foso de Tiro (Villa Castillo) da una Bolsa de Flechas más grande si superas cierta puntuación."
+  ], "order": 6 }
+]

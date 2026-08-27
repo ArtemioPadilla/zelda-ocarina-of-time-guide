@@ -1,0 +1,21 @@
+[
+  { "kind": "route", "id": "trade-01", "step": 1, "title": "Weird Egg", "body": "A gift from the Cucco-keeping woman in Kakariko Village. Carry it around until it hatches into a Pocket Cucco overnight." },
+  { "kind": "route", "id": "trade-02", "step": 2, "title": "Pocket Cucco", "body": "Use it to wake sleepy Talon (at Lon Lon Ranch or in Kakariko), then bring it back to the Cucco lady." },
+  { "kind": "route", "id": "trade-03", "step": 3, "title": "Cojiro", "body": "The rare blue Cucco you get in return. It never spoils, so take your time on this step." },
+  { "kind": "route", "id": "trade-04", "step": 4, "title": "Odd Mushroom", "body": "Trade Cojiro for it with the poacher hiding in the Lost Woods." },
+  { "kind": "route", "id": "trade-05", "step": 5, "title": "Odd Potion", "body": "Rush it to the old woman at the potion shop within 3 minutes — the mushroom spoils fast." },
+  { "kind": "route", "id": "trade-06", "step": 6, "title": "Poacher's Saw", "body": "Hand it to the young Kokiri woman lost in the Lost Woods maze." },
+  { "kind": "route", "id": "trade-07", "step": 7, "title": "Broken Goron's Sword", "body": "The Master Carpenter in Gerudo Valley fixes his mold in exchange for the saw and hands you the broken sword next." },
+  { "kind": "route", "id": "trade-08", "step": 8, "title": "Prescription", "body": "Climb Death Mountain and give the broken sword to Biggoron; he asks for a prescription in return." },
+  { "kind": "route", "id": "trade-09", "step": 9, "title": "Eyeball Frog", "body": "Deliver the prescription to King Zora (already freed from the ice); he passes it to the doctor frogs and brings back an eyeball frog." },
+  { "kind": "route", "id": "trade-10", "step": 10, "title": "Eyedrops", "body": "Rush the frog to the Lake Hylia lab within 3 minutes for the 'world's finest eye drops.'" },
+  { "kind": "route", "id": "trade-11", "step": 11, "title": "Claim Check", "body": "Bring the eyedrops to Biggoron within 4 minutes; he takes 3 in-game days to reforge the sword and hands you a claim check." },
+  { "kind": "route", "id": "trade-12", "step": 12, "title": "Biggoron's Sword", "body": "Return after those 3 days with the claim check — Biggoron hands over the strongest weapon in the game." },
+  { "kind": "unlock", "id": "sq-cucco", "name": "Bottle with a Cucco", "how": "Round up every loose Cucco in Anju's pen before time runs out", "order": 1 },
+  { "kind": "unlock", "id": "sq-archery", "name": "Bigger Quiver", "how": "Clear a set score threshold in Gerudo's Fortress's Horseback Archery", "order": 2 },
+  { "kind": "unlock", "id": "sq-poe", "name": "Rupees from Big Poes", "how": "Catch Big Poes on horseback with the Bow and sell them at the Market's Ghost Shop at night", "order": 3 },
+  { "kind": "unlock", "id": "sq-training", "name": "Light Arrows", "how": "Clear the Gerudo Training Ground room by room to earn them", "order": 4 },
+  { "kind": "unlock", "id": "sq-magic2", "name": "Double Magic", "how": "Play the Song of Storms in front of a hidden Great Fairy near Ganon's Castle", "order": 5 },
+  { "kind": "unlock", "id": "sq-defense2", "name": "Double Defense", "how": "Play the Song of Storms in front of another hidden Great Fairy around Hyrule Castle", "order": 6 },
+  { "kind": "unlock", "id": "sq-mask-truth", "name": "Mask of Truth", "how": "Return every mask borrowed from the Happy Mask Shop on time — unlocks extra dialogue with certain characters", "order": 7 }
+]
