@@ -45,6 +45,7 @@ const areaLabels = Object.fromEntries(AREA_ORDER.map((a) => [a, t(AREA_UI_KEY[a]
     <p class="mb-6 text-sm text-muted-foreground">{t('skulltulas.note')}</p>
     <ErrorBoundary client:load name="SkulltulaViewToggle" messageLabel={t('a11y.errorBoundaryMessage')} reportLabel={t('a11y.errorBoundaryReport')}>
       <SkulltulaViewToggle
+        client:load
         items={skulltulas}
         progressLabel={t('skulltulas.progress')}
         viewToggleLabel={t('skulltulas.viewToggleLabel')}

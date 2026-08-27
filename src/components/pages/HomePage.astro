@@ -51,6 +51,7 @@ const tags = [
       </h2>
       <ErrorBoundary client:load name="HomeProgress" messageLabel={t('a11y.errorBoundaryMessage')} reportLabel={t('a11y.errorBoundaryReport')}>
         <HomeProgress
+        client:load
           totalSkulltulas={skulltulas.length}
           totalHearts={heartPieceCount}
           chapters={chapterOptions}

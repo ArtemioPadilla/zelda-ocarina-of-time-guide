@@ -50,14 +50,14 @@ const containers = hearts.filter(isContainer).map((h) => ({
     <section class="mb-10">
       <SubsectionHead title={t('hearts.pieces')} />
       <ErrorBoundary client:load name="HeartChecklist:pieces" messageLabel={t('a11y.errorBoundaryMessage')} reportLabel={t('a11y.errorBoundaryReport')}>
-        <HeartChecklist items={pieces} progressLabel={t('hearts.pieces')} missableLabel={t('hearts.missable')} />
+        <HeartChecklist client:load items={pieces} progressLabel={t('hearts.pieces')} missableLabel={t('hearts.missable')} />
       </ErrorBoundary>
     </section>
 
     <section class="mb-10">
       <SubsectionHead title={t('hearts.containers')} />
       <ErrorBoundary client:load name="HeartChecklist:containers" messageLabel={t('a11y.errorBoundaryMessage')} reportLabel={t('a11y.errorBoundaryReport')}>
-        <HeartChecklist items={containers} progressLabel={t('hearts.containers')} missableLabel={t('hearts.missable')} />
+        <HeartChecklist client:load items={containers} progressLabel={t('hearts.containers')} missableLabel={t('hearts.missable')} />
       </ErrorBoundary>
     </section>
 
