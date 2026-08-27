@@ -13,9 +13,11 @@ const asset = (p) => `${BASE.replace(/\/$/, '')}/${p.replace(/^\//, '')}`;
 const SCOPE = BASE.endsWith('/') ? BASE : `${BASE}/`;
 
 export default defineConfig({
-  // Default GitHub Pages domain for this account (no custom domain configured
-  // for this project yet, unlike the RE4 sibling guide).
-  site: 'https://artemiopadilla.github.io',
+  // The account's Pages sites are served from its custom domain, not
+  // <user>.github.io — confirmed via `gh api .../pages` returning
+  // html_url: https://artemiop.com/zelda-ocarina-of-time-guide/ (same
+  // account-wide custom domain the RE4 sibling guide uses).
+  site: 'https://artemiop.com',
   base: BASE,
   // Spanish is the source/default language (matches the sibling RE4 guide's
   // convention) and stays unprefixed at the root; English lives under /en/.
