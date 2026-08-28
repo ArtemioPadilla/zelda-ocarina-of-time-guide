@@ -18,8 +18,8 @@ vi.mock('idb-keyval', () => ({
 }));
 
 const items = [
-  { id: 'sk-01', number: 1, zone: 'Kokiri Forest', location: 'Above the shop door', x: 60, y: 70 },
-  { id: 'sk-02', number: 2, zone: 'Lost Woods', location: 'Behind a hollow log', note: 'night only', x: 30, y: 60 },
+  { id: 'sk-01', number: 1, zoneKey: 'Kokiri Forest', location: 'Above the shop door', x: 60, y: 70 },
+  { id: 'sk-02', number: 2, zoneKey: 'Lost Woods', location: 'Behind a hollow log', note: 'night only', x: 30, y: 60 },
 ];
 
 describe('SkulltulaMap', () => {
@@ -30,7 +30,7 @@ describe('SkulltulaMap', () => {
 
   it('renders one pin button per item, positioned at its x/y%', async () => {
     const { default: SkulltulaMap } = await import('./SkulltulaMap');
-    render(<SkulltulaMap area="kokiri" items={items} doneLabel="collected" pendingLabel="not collected" />);
+    render(<SkulltulaMap zoneKey="Kokiri Forest" items={items} doneLabel="collected" pendingLabel="not collected" />);
 
     const pin = screen.getByRole('button', { name: /Above the shop door/ });
     expect(pin).toHaveStyle({ left: '60%', top: '70%' });
@@ -38,7 +38,7 @@ describe('SkulltulaMap', () => {
 
   it('gives each pin an aria-label combining the location text and checked state', async () => {
     const { default: SkulltulaMap } = await import('./SkulltulaMap');
-    render(<SkulltulaMap area="kokiri" items={items} doneLabel="collected" pendingLabel="not collected" />);
+    render(<SkulltulaMap zoneKey="Kokiri Forest" items={items} doneLabel="collected" pendingLabel="not collected" />);
 
     expect(screen.getByRole('button', { name: '#1 Above the shop door — not collected' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '#2 Behind a hollow log night only — not collected' })).toBeInTheDocument();
@@ -48,7 +48,7 @@ describe('SkulltulaMap', () => {
     const user = userEvent.setup();
     const { skulltulasStore } = await import('@/stores/checklist');
     const { default: SkulltulaMap } = await import('./SkulltulaMap');
-    render(<SkulltulaMap area="kokiri" items={items} doneLabel="collected" pendingLabel="not collected" />);
+    render(<SkulltulaMap zoneKey="Kokiri Forest" items={items} doneLabel="collected" pendingLabel="not collected" />);
 
     expect(skulltulasStore.$checked.get().has('sk-01')).toBe(false);
 
@@ -63,5 +63,22 @@ describe('SkulltulaMap', () => {
 
     await user.click(pin);
     expect(skulltulasStore.$checked.get().has('sk-01')).toBe(false);
+  });
+
+  it('uses a real sourced image as the base layer when the zone has one, with an attribution link', async () => {
+    const { default: SkulltulaMap } = await import('./SkulltulaMap');
+    render(<SkulltulaMap zoneKey="Kokiri Forest" items={items} doneLabel="collected" pendingLabel="not collected" />);
+
+    const image = screen.getByRole('img', { name: 'Kokiri Forest' });
+    expect(image).toHaveAttribute('src', '/images/skulltulas/kokiri-forest.webp');
+    expect(screen.getByRole('link')).toHaveAttribute('href', expect.stringContaining('zeldawiki.wiki'));
+  });
+
+  it('falls back to the schematic single-region fill for a zone with no sourced image', async () => {
+    const { default: SkulltulaMap } = await import('./SkulltulaMap');
+    render(<SkulltulaMap zoneKey="Lost Woods" items={items} doneLabel="collected" pendingLabel="not collected" />);
+
+    expect(screen.queryByRole('img')).not.toBeInTheDocument();
+    expect(screen.queryByRole('link')).not.toBeInTheDocument();
   });
 });

@@ -55,10 +55,10 @@ const equipmentSchema = z.object({
   stat: z.object({ label: z.string(), value: z.number().positive(), unit: z.string() }).optional(),
 });
 
-// The 7 top-level overworld hubs the interactive Skulltula map is grouped
-// into — a coarser grouping than the 31 fine-grained `zone` values (which
-// stay untouched; see CLAUDE.md's Content TODO). Each hub gets its own
-// hand-authored schematic SVG in `src/lib/skulltula-map-layout.ts`.
+// The 7 top-level overworld hubs the interactive Skulltula map's List view
+// groups its 31 fine-grained `zone` headings under. Purely a navigation
+// grouping now — the map itself renders one canvas per `zoneKey` (see
+// `src/lib/skulltula-map-layout.ts`), not one per hub.
 const skulltulaAreaSchema = z.enum([
   'kokiri',
   'hyrule-field',
@@ -70,15 +70,20 @@ const skulltulaAreaSchema = z.enum([
 ]);
 
 // The 100 Gold Skulltulas — this guide's primary completionist checklist
-// (analog of RE4's 15 blue medallions). `area`/`x`/`y` place each token on
-// the interactive map (Skulltulas page, Map view) — `x`/`y` are percentages
-// (0-100) within that skulltula's `area` map's own coordinate space, laid
-// out in `src/lib/skulltula-map-layout.ts` (the same module the map island
-// reads its background regions from, so pins and regions can never drift
-// apart).
+// (analog of RE4's 15 blue medallions). `zone` is the localized, human-
+// readable heading shown in the UI (translated per locale); `zoneKey` is
+// the same zone but as a stable, untranslated identifier (always the
+// English name, identical in both `es/skulltulas.json` and
+// `en/skulltulas.json` — the same non-localized-key pattern `area` already
+// uses) that `src/lib/skulltula-map-layout.ts`'s `ZONE_MAPS` is keyed by.
+// `x`/`y` are percentages (0-100) within that skulltula's *own zone's* map
+// canvas — either a real sourced photo/screenshot of that zone (see
+// `ZONE_MAPS[zoneKey].image`) or, where no real image was sourced, a
+// single-region schematic fallback that fills the whole 0-100 canvas.
 const skulltulasSchema = z.object({
   number: z.number().min(1).max(100),
   zone: z.string(),
+  zoneKey: z.string(),
   area: skulltulaAreaSchema,
   x: z.number().min(0).max(100),
   y: z.number().min(0).max(100),

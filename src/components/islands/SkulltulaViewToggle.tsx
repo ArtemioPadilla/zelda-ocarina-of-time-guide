@@ -7,6 +7,7 @@ interface Item {
   id: string;
   number: number;
   zone: string;
+  zoneKey: string;
   area: SkulltulaArea;
   location: string;
   note?: string;

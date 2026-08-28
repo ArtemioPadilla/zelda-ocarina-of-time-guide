@@ -3,7 +3,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import * as yaml from 'js-yaml';
-import { AREA_ORDER, AREA_REGIONS, type SkulltulaArea } from '@/lib/skulltula-map-layout';
+import { AREA_ORDER, ZONE_MAP_BY_KEY, type SkulltulaArea } from '@/lib/skulltula-map-layout';
 
 // Plain Node/fs checks against the raw content files — deliberately NOT going
 // through astro:content (that requires the full Astro Vite pipeline). This
@@ -70,6 +70,7 @@ interface SkulltulaShape {
   id: string;
   number: number;
   zone: string;
+  zoneKey: string;
   area: SkulltulaArea;
   x: number;
   y: number;
@@ -94,26 +95,54 @@ describe('content: skulltulas', () => {
     }
   });
 
-  it('every entry\'s x/y falls inside its own zone\'s drawn region — pins can never render off the map', () => {
-    // AREA_REGIONS' `zone` keys are authored in English (skulltula-map-layout.ts
-    // is locale-agnostic map data, not translated UI copy) — cross-check
-    // against the en content file, not es's translated zone names.
-    const skulltulas = loadJson<SkulltulaShape & { zone: string }>('en', 'skulltulas');
-    for (const s of skulltulas) {
-      const region = AREA_REGIONS[s.area].find((r) => r.zone === s.zone);
-      expect(region, `no region for zone ${s.zone} in area ${s.area} (skulltula ${s.id})`).toBeTruthy();
-      const [x0, y0, x1, y1] = region!.box;
-      expect(s.x, `${s.id}.x within [${x0}, ${x1}]`).toBeGreaterThanOrEqual(x0);
-      expect(s.x, `${s.id}.x within [${x0}, ${x1}]`).toBeLessThanOrEqual(x1);
-      expect(s.y, `${s.id}.y within [${y0}, ${y1}]`).toBeGreaterThanOrEqual(y0);
-      expect(s.y, `${s.id}.y within [${y0}, ${y1}]`).toBeLessThanOrEqual(y1);
+  it('every entry\'s zoneKey (es and en alike — it is a stable, untranslated identifier, same pattern as `area`) has a matching zone map', () => {
+    // ZONE_MAP_BY_KEY's keys are authored in English (skulltula-map-layout.ts
+    // is locale-agnostic map data, not translated UI copy) — `zoneKey` is
+    // deliberately untranslated in both locale files, unlike the localized
+    // `zone` display text, so it can be cross-checked directly regardless
+    // of locale.
+    for (const locale of ['es', 'en'] as const) {
+      const skulltulas = loadJson<SkulltulaShape>(locale, 'skulltulas');
+      for (const s of skulltulas) {
+        expect(ZONE_MAP_BY_KEY[s.zoneKey], `${locale} ${s.id}: no zone map for zoneKey ${s.zoneKey}`).toBeTruthy();
+        expect(ZONE_MAP_BY_KEY[s.zoneKey].hub, `${s.id}: zoneKey ${s.zoneKey}'s hub doesn't match its area`).toBe(s.area);
+      }
     }
   });
 
-  it('every zone referenced by skulltulas.json has a drawn region somewhere in AREA_REGIONS', () => {
-    const skulltulas = loadJson<{ id: string; zone: string }>('en', 'skulltulas');
-    const allZones = new Set(Object.values(AREA_REGIONS).flatMap((regions) => regions.map((r) => r.zone)));
-    for (const s of skulltulas) expect(allZones.has(s.zone), s.zone).toBe(true);
+  it('every zoneKey referenced by skulltulas.json exists in ZONE_MAP_BY_KEY, and vice versa every zone map is used', () => {
+    const skulltulas = loadJson<{ id: string; zoneKey: string }>('en', 'skulltulas');
+    const usedKeys = new Set(skulltulas.map((s) => s.zoneKey));
+    for (const s of skulltulas) expect(ZONE_MAP_BY_KEY[s.zoneKey], s.zoneKey).toBeTruthy();
+    for (const zoneKey of Object.keys(ZONE_MAP_BY_KEY)) {
+      expect(usedKeys.has(zoneKey), `zone map "${zoneKey}" is never referenced by any skulltula`).toBe(true);
+    }
+  });
+
+  it('no two skulltulas in the same zone render pins closer than a safe minimum distance apart — regression guard for the sk-053/sk-054-style pin-collision bugs this map has had before', () => {
+    // Each zone is its own independent 0-100 canvas now (see
+    // skulltula-map-layout.ts), so "same zone" is exactly "same zoneKey".
+    const MIN_DISTANCE = 3; // percent, on a 0-100 canvas
+    const skulltulas = loadJson<SkulltulaShape>('en', 'skulltulas');
+    const byZone = new Map<string, SkulltulaShape[]>();
+    for (const s of skulltulas) {
+      const list = byZone.get(s.zoneKey) ?? [];
+      list.push(s);
+      byZone.set(s.zoneKey, list);
+    }
+    for (const [zoneKey, items] of byZone) {
+      for (let i = 0; i < items.length; i++) {
+        for (let j = i + 1; j < items.length; j++) {
+          const a = items[i];
+          const b = items[j];
+          const distance = Math.hypot(a.x - b.x, a.y - b.y);
+          expect(
+            distance,
+            `${zoneKey}: ${a.id} (${a.x},${a.y}) and ${b.id} (${b.x},${b.y}) are only ${distance.toFixed(2)} apart`,
+          ).toBeGreaterThanOrEqual(MIN_DISTANCE);
+        }
+      }
+    }
   });
 });
 
