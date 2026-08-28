@@ -809,9 +809,10 @@
     "zone": "Templo de las Sombras",
     "zoneKey": "Shadow Temple",
     "area": "kakariko",
-    "x": 27.4,
-    "y": 33.0,
-    "location": "En la celda de la sala con los pinchos que suben y bajan."
+    "x": 68.0,
+    "y": 88.0,
+    "location": "En la celda de la sala con los pinchos que suben y bajan.",
+    "floor": "main"
   },
   {
     "id": "sk-079",
@@ -819,9 +820,10 @@
     "zone": "Templo de las Sombras",
     "zoneKey": "Shadow Temple",
     "area": "kakariko",
-    "x": 50.0,
-    "y": 33.0,
-    "location": "En la pared tras la gran vasija con calavera."
+    "x": 15.0,
+    "y": 55.0,
+    "location": "En la pared tras la gran vasija con calavera.",
+    "floor": "main"
   },
   {
     "id": "sk-080",
@@ -829,9 +831,10 @@
     "zone": "Templo de las Sombras",
     "zoneKey": "Shadow Temple",
     "area": "kakariko",
-    "x": 72.6,
-    "y": 33.0,
-    "location": "Tras la sala con las cuchillas giratorias invisibles — vence a los enemigos para avanzar."
+    "x": 85.0,
+    "y": 45.0,
+    "location": "Tras la sala con las cuchillas giratorias invisibles — vence a los enemigos para avanzar.",
+    "floor": "main"
   },
   {
     "id": "sk-081",
@@ -839,9 +842,10 @@
     "zone": "Templo de las Sombras",
     "zoneKey": "Shadow Temple",
     "area": "kakariko",
-    "x": 33.0,
-    "y": 67.0,
-    "location": "En la pared de la sala donde atraca la barca — toca la Canción del Espantapájaros y cruza con el Gancho Largo."
+    "x": 15.0,
+    "y": 25.0,
+    "location": "En la pared de la sala donde atraca la barca — toca la Canción del Espantapájaros y cruza con el Gancho Largo.",
+    "floor": "main"
   },
   {
     "id": "sk-082",
@@ -849,9 +853,10 @@
     "zone": "Templo de las Sombras",
     "zoneKey": "Shadow Temple",
     "area": "kakariko",
-    "x": 67.0,
-    "y": 67.0,
-    "location": "En la pared de la sala con tres grandes vasijas giratorias con calavera."
+    "x": 85.0,
+    "y": 20.0,
+    "location": "En la pared de la sala con tres grandes vasijas giratorias con calavera.",
+    "floor": "main"
   },
   {
     "id": "sk-083",
@@ -959,9 +964,10 @@
     "zone": "Templo del Espíritu",
     "zoneKey": "Spirit Temple",
     "area": "gerudo",
-    "x": 27.4,
-    "y": 33.0,
-    "location": "En la sala con la verja de hierro — recupérala con el Bumerán."
+    "x": 15.0,
+    "y": 55.0,
+    "location": "En la sala con la verja de hierro — recupérala con el Bumerán.",
+    "floor": "main"
   },
   {
     "id": "sk-094",
@@ -970,8 +976,9 @@
     "zoneKey": "Spirit Temple",
     "area": "gerudo",
     "x": 50.0,
-    "y": 33.0,
-    "location": "En el pozo vertical que lleva a la sala donde un Bombchu abre la pared — recupérala con el Bumerán."
+    "y": 22.0,
+    "location": "En el pozo vertical que lleva a la sala donde un Bombchu abre la pared — recupérala con el Bumerán.",
+    "floor": "main"
   },
   {
     "id": "sk-095",
@@ -979,9 +986,10 @@
     "zone": "Templo del Espíritu",
     "zoneKey": "Spirit Temple",
     "area": "gerudo",
-    "x": 72.6,
-    "y": 33.0,
-    "location": "En el pasillo justo antes de la sala del Caballero de Hierro — recupérala con el Bumerán."
+    "x": 90.0,
+    "y": 70.0,
+    "location": "En el pasillo justo antes de la sala del Caballero de Hierro — recupérala con el Bumerán.",
+    "floor": "main"
   },
   {
     "id": "sk-096",
@@ -989,9 +997,10 @@
     "zone": "Templo del Espíritu",
     "zoneKey": "Spirit Temple",
     "area": "gerudo",
-    "x": 33.0,
-    "y": 67.0,
-    "location": "Tras el bloque de la sala de las rocas rodantes — de adulto, toca la Canción del Tiempo para revelarla."
+    "x": 25.0,
+    "y": 88.0,
+    "location": "Tras el bloque de la sala de las rocas rodantes — de adulto, toca la Canción del Tiempo para revelarla.",
+    "floor": "main"
   },
   {
     "id": "sk-097",
@@ -999,9 +1008,10 @@
     "zone": "Templo del Espíritu",
     "zoneKey": "Spirit Temple",
     "area": "gerudo",
-    "x": 67.0,
-    "y": 67.0,
-    "location": "En la pared junto a la gran estatua — de adulto, recupérala con el Gancho Largo."
+    "x": 85.0,
+    "y": 45.0,
+    "location": "En la pared junto a la gran estatua — de adulto, recupérala con el Gancho Largo.",
+    "floor": "main"
   },
   {
     "id": "sk-098",
@@ -1009,9 +1019,10 @@
     "zone": "Castillo de Ganon",
     "zoneKey": "Ganon's Castle",
     "area": "hyrule-field",
-    "x": 50.0,
-    "y": 50.0,
-    "location": "Tras la verja rota al este del vestíbulo de entrada."
+    "x": 80.0,
+    "y": 42.0,
+    "location": "Tras la verja rota al este del vestíbulo de entrada.",
+    "floor": "main"
   },
   {
     "id": "sk-099",

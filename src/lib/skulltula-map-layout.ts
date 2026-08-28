@@ -171,7 +171,22 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
   // --- Hyrule Field hub ---
   { zone: 'Hyrule Castle Market', hub: 'hyrule-field', interior: false },
   { zone: 'Hyrule Castle', hub: 'hyrule-field', interior: false },
-  { zone: "Ganon's Castle", hub: 'hyrule-field', interior: true },
+  {
+    zone: "Ganon's Castle",
+    hub: 'hyrule-field',
+    interior: true,
+    floors: [
+      floor(
+        'main',
+        'Interior',
+        'dungeons/ganons-castle/main.webp',
+        1400,
+        841,
+        "Zelda Wiki — OoT3D Ganon's Castle, entrance hall",
+        "https://zeldawiki.wiki/wiki/File:OoT3D_Ganon's_Tower_Entrance.png",
+      ),
+    ],
+  },
   { zone: 'Hyrule Field', hub: 'hyrule-field', interior: false },
   {
     zone: 'Lon Lon Ranch',
@@ -198,7 +213,22 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
       'https://zeldawiki.wiki/wiki/File:OoT3D_Kakariko_Village_Graveyard.png',
     ),
   },
-  { zone: 'Shadow Temple', hub: 'kakariko', interior: true },
+  {
+    zone: 'Shadow Temple',
+    hub: 'kakariko',
+    interior: true,
+    floors: [
+      floor(
+        'main',
+        'Interior',
+        'dungeons/shadow-temple/main.webp',
+        1400,
+        788,
+        'Zelda Wiki — OoT3D Shadow Temple, rising/falling spike platform',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Shadow_Temple.png',
+      ),
+    ],
+  },
   {
     zone: 'Kakariko Village',
     hub: 'kakariko',
@@ -363,7 +393,22 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
   { zone: "Gerudo's Fortress", hub: 'gerudo', interior: false },
   { zone: 'Desert Colossus', hub: 'gerudo', interior: false },
   { zone: 'Haunted Wasteland', hub: 'gerudo', interior: false },
-  { zone: 'Spirit Temple', hub: 'gerudo', interior: true },
+  {
+    zone: 'Spirit Temple',
+    hub: 'gerudo',
+    interior: true,
+    floors: [
+      floor(
+        'main',
+        'Interior',
+        'dungeons/spirit-temple/main.webp',
+        1400,
+        788,
+        'Zelda Wiki — OoT3D Spirit Temple, main entrance hall',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Spirit_Temple.png',
+      ),
+    ],
+  },
   {
     zone: 'Gerudo Valley',
     hub: 'gerudo',
