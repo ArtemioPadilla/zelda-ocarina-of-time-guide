@@ -215,7 +215,7 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
         'Rotating Hall',
         'dungeons/forest-temple/rotating-hallway.webp',
         1400,
-        788,
+        840,
         'Zelda Wiki — OoT3D Forest Temple, twisted/rotating hallway',
         'https://zeldawiki.wiki/wiki/File:OoT3D_Twisted_Hallway.png',
       ),
