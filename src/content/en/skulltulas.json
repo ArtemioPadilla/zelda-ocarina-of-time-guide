@@ -633,9 +633,10 @@
     "zone": "Fire Temple",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 87.9,
-    "y": 33.1,
-    "location": "In the room on the east side of 1F — play the Song of Time to shift the block blocking it."
+    "x": 15.0,
+    "y": 75.0,
+    "location": "In the room on the east side of 1F — play the Song of Time to shift the block blocking it.",
+    "floor": "main"
   },
   {
     "id": "sk-063",
@@ -643,9 +644,10 @@
     "zone": "Fire Temple",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 50.0,
-    "y": 33.1,
-    "location": "In the room where a giant boulder rolls — bomb the cracked wall to get in."
+    "x": 85.0,
+    "y": 75.0,
+    "location": "In the room where a giant boulder rolls — bomb the cracked wall to get in.",
+    "floor": "main"
   },
   {
     "id": "sk-064",
@@ -653,9 +655,10 @@
     "zone": "Fire Temple",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 72.7,
-    "y": 33.1,
-    "location": "On the fence reached by riding the rising platform — play the Scarecrow's Song to summon Pierre, then reel it in with the Hookshot."
+    "x": 15.0,
+    "y": 20.0,
+    "location": "On the fence reached by riding the rising platform — play the Scarecrow's Song to summon Pierre, then reel it in with the Hookshot.",
+    "floor": "main"
   },
   {
     "id": "sk-065",
@@ -663,9 +666,10 @@
     "zone": "Fire Temple",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 33.0,
-    "y": 66.9,
-    "location": "On the wall of the room with the large hole on 5F — reel it in with the Hookshot."
+    "x": 85.0,
+    "y": 20.0,
+    "location": "On the wall of the room with the large hole on 5F — reel it in with the Hookshot.",
+    "floor": "main"
   },
   {
     "id": "sk-066",
@@ -673,9 +677,10 @@
     "zone": "Fire Temple",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 67.0,
-    "y": 66.9,
-    "location": "Behind the door beside the stairs at the temple entrance."
+    "x": 35.0,
+    "y": 55.0,
+    "location": "Behind the door beside the stairs at the temple entrance.",
+    "floor": "main"
   },
   {
     "id": "sk-067",
@@ -683,9 +688,10 @@
     "zone": "Ice Cavern",
     "zoneKey": "Ice Cavern",
     "area": "zora",
-    "x": 33.2,
-    "y": 32.9,
-    "location": "On the wall of the room with the spinning blade traps — reel it in with the Hookshot."
+    "x": 15.0,
+    "y": 25.0,
+    "location": "On the wall of the room with the spinning blade traps — reel it in with the Hookshot.",
+    "floor": "main"
   },
   {
     "id": "sk-068",
@@ -693,9 +699,10 @@
     "zone": "Ice Cavern",
     "zoneKey": "Ice Cavern",
     "area": "zora",
-    "x": 66.8,
-    "y": 32.9,
-    "location": "On the wall of the room with the movable ice blocks — reel it in with the Hookshot."
+    "x": 45.0,
+    "y": 45.0,
+    "location": "On the wall of the room with the movable ice blocks — reel it in with the Hookshot.",
+    "floor": "main"
   },
   {
     "id": "sk-069",
@@ -703,9 +710,10 @@
     "zone": "Ice Cavern",
     "zoneKey": "Ice Cavern",
     "area": "zora",
-    "x": 50.0,
-    "y": 67.1,
-    "location": "On the wall of the Compass Room — reel it in with the Hookshot."
+    "x": 85.0,
+    "y": 70.0,
+    "location": "On the wall of the Compass Room — reel it in with the Hookshot.",
+    "floor": "main"
   },
   {
     "id": "sk-070",

@@ -230,7 +230,22 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
       ),
     ],
   },
-  { zone: 'Fire Temple', hub: 'death-mountain', interior: true },
+  {
+    zone: 'Fire Temple',
+    hub: 'death-mountain',
+    interior: true,
+    floors: [
+      floor(
+        'main',
+        'Interior',
+        'dungeons/fire-temple/1f.webp',
+        1120,
+        840,
+        'Zelda Wiki — OoT Fire Temple entrance hall',
+        'https://zeldawiki.wiki/wiki/File:FireTemple.jpg',
+      ),
+    ],
+  },
   { zone: 'Goron City', hub: 'death-mountain', interior: true },
   { zone: 'Death Mountain Trail', hub: 'death-mountain', interior: false },
   // --- Zora hub ---
@@ -246,7 +261,22 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
       "https://zeldawiki.wiki/wiki/File:OoT3D_Zora's_Fountain.png",
     ),
   },
-  { zone: 'Ice Cavern', hub: 'zora', interior: true },
+  {
+    zone: 'Ice Cavern',
+    hub: 'zora',
+    interior: true,
+    floors: [
+      floor(
+        'main',
+        'Interior',
+        'dungeons/ice-cavern/main.webp',
+        1120,
+        672,
+        'Zelda Wiki — OoT3D Ice Cavern, movable ice block room',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Ice_Cavern.png',
+      ),
+    ],
+  },
   { zone: "Zora's Domain", hub: 'zora', interior: false },
   { zone: 'Water Temple', hub: 'zora', interior: true },
   {

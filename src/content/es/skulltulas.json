@@ -633,9 +633,10 @@
     "zone": "Templo del Fuego",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 87.9,
-    "y": 33.1,
-    "location": "En la sala del lado este del 1F — toca la Canción del Tiempo para mover el bloque que la tapa."
+    "x": 15.0,
+    "y": 75.0,
+    "location": "En la sala del lado este del 1F — toca la Canción del Tiempo para mover el bloque que la tapa.",
+    "floor": "main"
   },
   {
     "id": "sk-063",
@@ -643,9 +644,10 @@
     "zone": "Templo del Fuego",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 50.0,
-    "y": 33.1,
-    "location": "En la sala donde rueda una roca gigante — bombea la pared agrietada para entrar."
+    "x": 85.0,
+    "y": 75.0,
+    "location": "En la sala donde rueda una roca gigante — bombea la pared agrietada para entrar.",
+    "floor": "main"
   },
   {
     "id": "sk-064",
@@ -653,9 +655,10 @@
     "zone": "Templo del Fuego",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 72.7,
-    "y": 33.1,
-    "location": "En la valla a la que llegas subido en la plataforma ascendente — toca la Canción del Espantapájaros para invocar a Pierre y recupérala con el Gancho."
+    "x": 15.0,
+    "y": 20.0,
+    "location": "En la valla a la que llegas subido en la plataforma ascendente — toca la Canción del Espantapájaros para invocar a Pierre y recupérala con el Gancho.",
+    "floor": "main"
   },
   {
     "id": "sk-065",
@@ -663,9 +666,10 @@
     "zone": "Templo del Fuego",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 33.0,
-    "y": 66.9,
-    "location": "En la pared de la sala con el gran agujero del 5F — recupérala con el Gancho."
+    "x": 85.0,
+    "y": 20.0,
+    "location": "En la pared de la sala con el gran agujero del 5F — recupérala con el Gancho.",
+    "floor": "main"
   },
   {
     "id": "sk-066",
@@ -673,9 +677,10 @@
     "zone": "Templo del Fuego",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 67.0,
-    "y": 66.9,
-    "location": "Tras la puerta junto a las escaleras de la entrada del templo."
+    "x": 35.0,
+    "y": 55.0,
+    "location": "Tras la puerta junto a las escaleras de la entrada del templo.",
+    "floor": "main"
   },
   {
     "id": "sk-067",
@@ -683,9 +688,10 @@
     "zone": "Caverna de Hielo",
     "zoneKey": "Ice Cavern",
     "area": "zora",
-    "x": 33.2,
-    "y": 32.9,
-    "location": "En la pared de la sala con las cuchillas giratorias — recupérala con el Gancho."
+    "x": 15.0,
+    "y": 25.0,
+    "location": "En la pared de la sala con las cuchillas giratorias — recupérala con el Gancho.",
+    "floor": "main"
   },
   {
     "id": "sk-068",
@@ -693,9 +699,10 @@
     "zone": "Caverna de Hielo",
     "zoneKey": "Ice Cavern",
     "area": "zora",
-    "x": 66.8,
-    "y": 32.9,
-    "location": "En la pared de la sala con los bloques de hielo movibles — recupérala con el Gancho."
+    "x": 45.0,
+    "y": 45.0,
+    "location": "En la pared de la sala con los bloques de hielo movibles — recupérala con el Gancho.",
+    "floor": "main"
   },
   {
     "id": "sk-069",
@@ -703,9 +710,10 @@
     "zone": "Caverna de Hielo",
     "zoneKey": "Ice Cavern",
     "area": "zora",
-    "x": 50.0,
-    "y": 67.1,
-    "location": "En la pared de la Sala de la Brújula — recupérala con el Gancho."
+    "x": 85.0,
+    "y": 70.0,
+    "location": "En la pared de la Sala de la Brújula — recupérala con el Gancho.",
+    "floor": "main"
   },
   {
     "id": "sk-070",
