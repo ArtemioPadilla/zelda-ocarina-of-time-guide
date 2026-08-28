@@ -9,10 +9,13 @@
  * that zone (an OoT/OoT3D screenshot from Zelda Wiki — see each entry's
  * `attribution`/`sourceUrl`) used as the map's base layer, with every pin
  * in that zone hand-recalibrated in `src/content/{es,en}/skulltulas.json`
- * against that image's actual geometry (see the PR that introduced this —
- * commit history/PR description list which pins were landmark-anchored
- * vs. compass-approximated when a described landmark fell outside the
- * photographed frame). OoT's 100 Gold Skulltulas span far more distinct
+ * against that image's actual geometry. Most pins are landmark-anchored;
+ * a few per zone (mainly Kakariko Village and Zora's River) are
+ * compass-approximated instead, where a described landmark fell outside
+ * the photographed frame — no per-pin list of which is which exists
+ * beyond that qualitative note, so treat any single pin's precision as
+ * "real position, landmark confidence not individually recorded".
+ * OoT's 100 Gold Skulltulas span far more distinct
  * areas than a single overworld map image could ever cover at usable
  * precision (unlike, say, Wind Waker's one Sea Chart) — and OoT is a 3D
  * game with no official top-down overworld map at all, so "real image"
