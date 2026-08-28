@@ -158,7 +158,9 @@ const chaptersSchema = z.object({
   act: z.enum(['child', 'adult', 'end']),
   order: z.number(),
   skulltulaCount: z.number().optional(),
-  pills: z.array(z.object({ type: z.enum(['dungeon', 'boss', 'song', 'info']), label: z.string() })),
+  pills: z.array(
+    z.object({ type: z.enum(['dungeon', 'boss', 'song', 'info']), label: z.string() }),
+  ),
 });
 
 export const collections = {
@@ -171,6 +173,12 @@ export const collections = {
   ...localizedJson('bosses', bossesSchema),
   ...localizedJson('tips', tipsSchema),
   ...localizedJson('sidequests', sidequestsSchema),
-  chapters_es: defineCollection({ loader: glob({ pattern: '*.md', base: 'src/content/es/chapters' }), schema: chaptersSchema }),
-  chapters_en: defineCollection({ loader: glob({ pattern: '*.md', base: 'src/content/en/chapters' }), schema: chaptersSchema }),
+  chapters_es: defineCollection({
+    loader: glob({ pattern: '*.md', base: 'src/content/es/chapters' }),
+    schema: chaptersSchema,
+  }),
+  chapters_en: defineCollection({
+    loader: glob({ pattern: '*.md', base: 'src/content/en/chapters' }),
+    schema: chaptersSchema,
+  }),
 };

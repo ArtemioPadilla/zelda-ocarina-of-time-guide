@@ -8,7 +8,9 @@ import { useTranslations } from '@/i18n/utils';
 import type { Locale, UiKey } from '@/i18n/ui';
 import { AREA_ORDER, type SkulltulaArea } from '@/lib/skulltula-map-layout';
 
-interface Props { locale: Locale }
+interface Props {
+  locale: Locale;
+}
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 
@@ -39,13 +41,22 @@ const AREA_UI_KEY: Record<SkulltulaArea, UiKey> = {
   'lake-hylia': 'skulltulas.area.lakeHylia',
   gerudo: 'skulltulas.area.gerudo',
 };
-const areaLabels = Object.fromEntries(AREA_ORDER.map((a) => [a, t(AREA_UI_KEY[a])])) as Record<SkulltulaArea, string>;
+const areaLabels = Object.fromEntries(AREA_ORDER.map((a) => [a, t(AREA_UI_KEY[a])])) as Record<
+  SkulltulaArea,
+  string
+>;
 ---
+
 <BaseLayout title={`${t('skulltulas.title')} · ${t('site.name')}`} lang={locale}>
   <main id="main" class="mx-auto max-w-4xl px-5 py-14">
     <SectionHead level="h1" title={t('skulltulas.title')} tight />
     <p class="mb-6 text-sm text-muted-foreground">{t('skulltulas.note')}</p>
-    <ErrorBoundary client:load name="SkulltulaViewToggle" messageLabel={t('a11y.errorBoundaryMessage')} reportLabel={t('a11y.errorBoundaryReport')}>
+    <ErrorBoundary
+      client:load
+      name="SkulltulaViewToggle"
+      messageLabel={t('a11y.errorBoundaryMessage')}
+      reportLabel={t('a11y.errorBoundaryReport')}
+    >
       <SkulltulaViewToggle
         client:load
         items={skulltulas}

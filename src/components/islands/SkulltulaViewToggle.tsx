@@ -49,13 +49,19 @@ export default function SkulltulaViewToggle({
 
   return (
     <div>
-      <div role="group" aria-label={viewToggleLabel} className="mb-4 inline-flex rounded-lg border border-border p-0.5 font-mono text-xs">
+      <div
+        role="group"
+        aria-label={viewToggleLabel}
+        className="mb-4 inline-flex rounded-lg border border-border p-0.5 font-mono text-xs"
+      >
         <button
           type="button"
           aria-pressed={view === 'list'}
           onClick={() => setView('list')}
           className={`rounded-md px-3 py-1.5 transition-colors ${
-            view === 'list' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
+            view === 'list'
+              ? 'bg-primary text-primary-foreground'
+              : 'text-muted-foreground hover:text-foreground'
           }`}
         >
           {listLabel}
@@ -65,7 +71,9 @@ export default function SkulltulaViewToggle({
           aria-pressed={view === 'map'}
           onClick={() => setView('map')}
           className={`rounded-md px-3 py-1.5 transition-colors ${
-            view === 'map' ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground'
+            view === 'map'
+              ? 'bg-primary text-primary-foreground'
+              : 'text-muted-foreground hover:text-foreground'
           }`}
         >
           {mapLabel}

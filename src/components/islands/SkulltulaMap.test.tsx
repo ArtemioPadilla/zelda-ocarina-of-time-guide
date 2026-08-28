@@ -76,7 +76,11 @@ describe('SkulltulaMap', () => {
 
   it('falls back to the schematic single-region fill for a zone with no sourced image', async () => {
     const { default: SkulltulaMap } = await import('./SkulltulaMap');
-    render(<SkulltulaMap zoneKey="Lost Woods" items={items} doneLabel="collected" pendingLabel="not collected" />);
+    // Every real zoneKey now has either `image` or `floors` (100/100 pins on
+    // real imagery) — use a zoneKey absent from ZONE_MAP_BY_KEY to exercise
+    // the schematic fallback path itself, decoupled from which real zones
+    // currently have a sourced photo.
+    render(<SkulltulaMap zoneKey="Nonexistent Zone" items={items} doneLabel="collected" pendingLabel="not collected" />);
 
     expect(screen.queryByRole('img')).not.toBeInTheDocument();
     expect(screen.queryByRole('link')).not.toBeInTheDocument();

@@ -49,7 +49,9 @@ export default function SkulltulaMap({ zoneKey, items, doneLabel, pendingLabel }
   const aspect = image ? `${image.width} / ${image.height}` : '16 / 10';
   // A floored zone only shows the pins that belong to the selected floor —
   // every skulltula in a floored zone carries a matching `floor` field.
-  const visibleItems = floors ? items.filter((item) => item.floor === (currentFloor?.key ?? selectedFloor)) : items;
+  const visibleItems = floors
+    ? items.filter((item) => item.floor === (currentFloor?.key ?? selectedFloor))
+    : items;
 
   return (
     <div>
@@ -74,7 +76,10 @@ export default function SkulltulaMap({ zoneKey, items, doneLabel, pendingLabel }
         </div>
       ) : null}
 
-      <div className="relative w-full overflow-hidden rounded-lg border border-border bg-card" style={{ aspectRatio: aspect }}>
+      <div
+        className="relative w-full overflow-hidden rounded-lg border border-border bg-card"
+        style={{ aspectRatio: aspect }}
+      >
         {image ? (
           <img
             src={withBase(image.src)}
@@ -83,7 +88,12 @@ export default function SkulltulaMap({ zoneKey, items, doneLabel, pendingLabel }
             className="absolute inset-0 h-full w-full object-cover"
           />
         ) : (
-          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 h-full w-full" aria-hidden="true">
+          <svg
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            className="absolute inset-0 h-full w-full"
+            aria-hidden="true"
+          >
             <rect
               x={0}
               y={0}
@@ -128,7 +138,12 @@ export default function SkulltulaMap({ zoneKey, items, doneLabel, pendingLabel }
       </div>
       {image ? (
         <p className="mt-1 text-right text-[10px] text-muted-foreground">
-          <a href={image.sourceUrl} target="_blank" rel="noopener noreferrer" className="hover:text-foreground hover:underline">
+          <a
+            href={image.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground hover:underline"
+          >
             {image.attribution}
           </a>
         </p>

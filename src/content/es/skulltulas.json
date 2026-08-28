@@ -5,8 +5,8 @@
     "zone": "Interior del Árbol Deku",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 30.0,
-    "y": 42.0,
+    "x": 30,
+    "y": 42,
     "location": "En la pared de la Sala de la Brújula, en el 3F — acércate y golpéala en cuanto la veas.",
     "floor": "3f"
   },
@@ -16,8 +16,8 @@
     "zone": "Interior del Árbol Deku",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 45.0,
-    "y": 80.0,
+    "x": 45,
+    "y": 80,
     "location": "En las enredaderas donde caes tras atravesar la telaraña del 1F hacia el B1 — derríbala con la Resortera.",
     "floor": "b1"
   },
@@ -27,8 +27,8 @@
     "zone": "Interior del Árbol Deku",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 24.0,
-    "y": 48.0,
+    "x": 24,
+    "y": 48,
     "location": "Tras los barrotes de hierro al pie de la gran telaraña — apunta a través de los barrotes para alcanzarla.",
     "floor": "b1"
   },
@@ -38,8 +38,8 @@
     "zone": "Interior del Árbol Deku",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 75.0,
-    "y": 30.0,
+    "x": 75,
+    "y": 30,
     "location": "Tras una pared bombeable en la sala donde eclosionan tres Gohma Larvae — vuela la pared y recupérala con el Bumerán.",
     "floor": "b1"
   },
@@ -79,8 +79,8 @@
     "zone": "Mercado de Villa Castillo",
     "zoneKey": "Hyrule Castle Market",
     "area": "hyrule-field",
-    "x": 50.0,
-    "y": 50.0,
+    "x": 25,
+    "y": 55,
     "location": "Dentro de una caja de madera en la garita junto al puente levadizo — rueda contra ella para romperla."
   },
   {
@@ -89,8 +89,8 @@
     "zone": "Castillo de Hyrule",
     "zoneKey": "Hyrule Castle",
     "area": "hyrule-field",
-    "x": 32.9,
-    "y": 50.0,
+    "x": 88,
+    "y": 75,
     "location": "En el árbol rodeado de tres rocas pequeñas junto al camino al castillo — rueda contra el tronco."
   },
   {
@@ -99,8 +99,8 @@
     "zone": "Castillo de Hyrule",
     "zoneKey": "Hyrule Castle",
     "area": "hyrule-field",
-    "x": 67.1,
-    "y": 50.0,
+    "x": 95,
+    "y": 70,
     "location": "Tras una pared oculta junto al árbol en el recodo del canal del foso — toca la Canción de la Tormenta para revelarla, bombea la pared y recupérala con el Bumerán."
   },
   {
@@ -209,8 +209,8 @@
     "zone": "Bosque Perdido",
     "zoneKey": "Lost Woods",
     "area": "kokiri",
-    "x": 15.4,
-    "y": 75.0,
+    "x": 20,
+    "y": 70,
     "location": "En la tierra removida del claro suroeste, cerca de los Business Scrub — suelta un insecto de una Botella."
   },
   {
@@ -219,8 +219,8 @@
     "zone": "Bosque Perdido",
     "zoneKey": "Lost Woods",
     "area": "kokiri",
-    "x": 66.9,
-    "y": 33.1,
+    "x": 50,
+    "y": 75,
     "location": "En la tierra removida del claro central — suelta un insecto de una Botella."
   },
   {
@@ -229,8 +229,8 @@
     "zone": "Bosque Perdido",
     "zoneKey": "Lost Woods",
     "area": "kokiri",
-    "x": 50.0,
-    "y": 66.9,
+    "x": 65,
+    "y": 25,
     "location": "En un saliente alto, en lo profundo del bosque — planta una Habichuela Mágica ahí de niño y sube por el tallo de adulto."
   },
   {
@@ -259,8 +259,8 @@
     "zone": "Sendero de la Montaña de la Muerte",
     "zoneKey": "Death Mountain Trail",
     "area": "death-mountain",
-    "x": 33.0,
-    "y": 32.9,
+    "x": 20,
+    "y": 60,
     "location": "En la tierra removida justo en la entrada de la Caverna Dodongo — suelta un insecto de una Botella."
   },
   {
@@ -269,8 +269,8 @@
     "zone": "Sendero de la Montaña de la Muerte",
     "zoneKey": "Death Mountain Trail",
     "area": "death-mountain",
-    "x": 67.0,
-    "y": 32.9,
+    "x": 45,
+    "y": 45,
     "location": "Tras una pared bombeable más arriba del sendero — vuélala y recupérala con el Bumerán."
   },
   {
@@ -279,8 +279,8 @@
     "zone": "Sendero de la Montaña de la Muerte",
     "zoneKey": "Death Mountain Trail",
     "area": "death-mountain",
-    "x": 33.0,
-    "y": 67.1,
+    "x": 65,
+    "y": 30,
     "location": "Tras la gran roca cercana a las Flores Bomba — de adulto, rómpela con el Martillo Megatón."
   },
   {
@@ -289,8 +289,8 @@
     "zone": "Sendero de la Montaña de la Muerte",
     "zoneKey": "Death Mountain Trail",
     "area": "death-mountain",
-    "x": 67.0,
-    "y": 67.1,
+    "x": 85,
+    "y": 15,
     "location": "Tras otra gran roca a medio camino de la cima — de adulto, rómpela con el Martillo Megatón."
   },
   {
@@ -299,8 +299,8 @@
     "zone": "Caverna Dodongo",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 15.0,
-    "y": 55.0,
+    "x": 15,
+    "y": 55,
     "location": "En la sala llena de Flores Bomba — derríbala con la Resortera.",
     "floor": "1f"
   },
@@ -310,8 +310,8 @@
     "zone": "Caverna Dodongo",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 85.0,
-    "y": 45.0,
+    "x": 85,
+    "y": 45,
     "location": "Tras una pared bombeable en el pasillo este del 1F — vuélala para alcanzarla.",
     "floor": "1f"
   },
@@ -321,8 +321,8 @@
     "zone": "Caverna Dodongo",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 50.0,
-    "y": 12.0,
+    "x": 50,
+    "y": 12,
     "location": "Tras una pared bombeable al norte del 1F — vuélala para alcanzarla.",
     "floor": "1f"
   },
@@ -332,8 +332,8 @@
     "zone": "Caverna Dodongo",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 15.0,
-    "y": 35.0,
+    "x": 15,
+    "y": 35,
     "location": "Sobre las escaleras de la sala de las Flores Bomba — sube al piso superior y recupérala con el Bumerán.",
     "floor": "1f"
   },
@@ -343,8 +343,8 @@
     "zone": "Caverna Dodongo",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 90.0,
-    "y": 62.0,
+    "x": 90,
+    "y": 62,
     "location": "En el pasillo este del 1F — de adulto, toca la Canción del Espantapájaros para invocar a Pierre y alcánzala con el Gancho.",
     "floor": "1f"
   },
@@ -354,8 +354,8 @@
     "zone": "Ciudad Goron",
     "zoneKey": "Goron City",
     "area": "death-mountain",
-    "x": 33.0,
-    "y": 25.7,
+    "x": 15,
+    "y": 45,
     "location": "En una caja de madera de la sala noroeste — bombea las rocas que bloquean la puerta y rueda contra la caja."
   },
   {
@@ -364,8 +364,8 @@
     "zone": "Ciudad Goron",
     "zoneKey": "Goron City",
     "area": "death-mountain",
-    "x": 67.0,
-    "y": 50.0,
+    "x": 48,
+    "y": 48,
     "location": "En la plataforma colgante que cuelga de una cuerda — de adulto, tírala con el Gancho."
   },
   {
@@ -374,8 +374,8 @@
     "zone": "Cráter de la Montaña de la Muerte",
     "zoneKey": "Death Mountain Crater",
     "area": "death-mountain",
-    "x": 33.0,
-    "y": 50.0,
+    "x": 15,
+    "y": 25,
     "location": "En una caja de madera justo tras la entrada — rueda contra ella para romperla."
   },
   {
@@ -384,8 +384,8 @@
     "zone": "Cráter de la Montaña de la Muerte",
     "zoneKey": "Death Mountain Crater",
     "area": "death-mountain",
-    "x": 67.0,
-    "y": 50.0,
+    "x": 53,
+    "y": 45,
     "location": "En la tierra removida junto al punto de teletransporte — llega con el Bolero del Fuego y suelta un insecto de una Botella."
   },
   {
@@ -434,8 +434,8 @@
     "zone": "Dominio Zora",
     "zoneKey": "Zora's Domain",
     "area": "zora",
-    "x": 50.0,
-    "y": 50.0,
+    "x": 45,
+    "y": 35,
     "location": "En la pared junto a la cascada helada — de adulto, recupérala con el Gancho."
   },
   {
@@ -524,8 +524,8 @@
     "zone": "Interior de Jabu-Jabu",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 15.0,
-    "y": 30.0,
+    "x": 15,
+    "y": 30,
     "location": "En la pared del pasillo justo antes de la sala del jefe.",
     "floor": "b1"
   },
@@ -535,8 +535,8 @@
     "zone": "Interior de Jabu-Jabu",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 35.0,
-    "y": 65.0,
+    "x": 35,
+    "y": 65,
     "location": "Tras el agujero oeste de la sala central del 1F — recupérala con el Bumerán.",
     "floor": "1f"
   },
@@ -546,8 +546,8 @@
     "zone": "Interior de Jabu-Jabu",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 68.0,
-    "y": 58.0,
+    "x": 68,
+    "y": 58,
     "location": "Tras el agujero este de la sala central del 1F — recupérala con el Bumerán.",
     "floor": "1f"
   },
@@ -557,8 +557,8 @@
     "zone": "Interior de Jabu-Jabu",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 85.0,
-    "y": 45.0,
+    "x": 85,
+    "y": 45,
     "location": "En las enredaderas de la sala este del B1 — sube el nivel del agua o recupérala con el Bumerán.",
     "floor": "b1"
   },
@@ -568,8 +568,8 @@
     "zone": "Prado del Bosque Sagrado",
     "zoneKey": "Sacred Forest Meadow",
     "area": "kokiri",
-    "x": 50.0,
-    "y": 50.0,
+    "x": 80,
+    "y": 35,
     "location": "En la pared alta al este del laberinto — de adulto, tienes que subirte encima para alcanzarla."
   },
   {
@@ -578,10 +578,10 @@
     "zone": "Templo del Bosque",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 10.0,
-    "y": 80.0,
+    "x": 54,
+    "y": 30,
     "location": "En las enredaderas al este de la primera sala — de adulto.",
-    "floor": "1f"
+    "floor": "entrance-courtyard"
   },
   {
     "id": "sk-058",
@@ -589,10 +589,10 @@
     "zone": "Templo del Bosque",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 62.0,
-    "y": 40.0,
+    "x": 16,
+    "y": 46,
     "location": "En la pared del salón central del 1F.",
-    "floor": "1f"
+    "floor": "main-hall"
   },
   {
     "id": "sk-059",
@@ -600,10 +600,10 @@
     "zone": "Templo del Bosque",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 88.0,
-    "y": 22.0,
+    "x": 83,
+    "y": 28,
     "location": "En la pared de la sala noreste del 1F.",
-    "floor": "1f"
+    "floor": "main-hall"
   },
   {
     "id": "sk-060",
@@ -611,10 +611,10 @@
     "zone": "Templo del Bosque",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 15.0,
-    "y": 20.0,
+    "x": 80,
+    "y": 45,
     "location": "En la pared de la sala noroeste del 1F.",
-    "floor": "1f"
+    "floor": "west-courtyard"
   },
   {
     "id": "sk-061",
@@ -622,10 +622,10 @@
     "zone": "Templo del Bosque",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 80.0,
-    "y": 40.0,
+    "x": 25,
+    "y": 38,
     "location": "En la pared de la sala giratoria justo antes de la puerta del jefe.",
-    "floor": "b1"
+    "floor": "rotating-hallway"
   },
   {
     "id": "sk-062",
@@ -633,8 +633,8 @@
     "zone": "Templo del Fuego",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 15.0,
-    "y": 75.0,
+    "x": 15,
+    "y": 75,
     "location": "En la sala del lado este del 1F — toca la Canción del Tiempo para mover el bloque que la tapa.",
     "floor": "main"
   },
@@ -644,8 +644,8 @@
     "zone": "Templo del Fuego",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 85.0,
-    "y": 75.0,
+    "x": 85,
+    "y": 75,
     "location": "En la sala donde rueda una roca gigante — bombea la pared agrietada para entrar.",
     "floor": "main"
   },
@@ -655,8 +655,8 @@
     "zone": "Templo del Fuego",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 15.0,
-    "y": 20.0,
+    "x": 15,
+    "y": 20,
     "location": "En la valla a la que llegas subido en la plataforma ascendente — toca la Canción del Espantapájaros para invocar a Pierre y recupérala con el Gancho.",
     "floor": "main"
   },
@@ -666,8 +666,8 @@
     "zone": "Templo del Fuego",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 85.0,
-    "y": 20.0,
+    "x": 85,
+    "y": 20,
     "location": "En la pared de la sala con el gran agujero del 5F — recupérala con el Gancho.",
     "floor": "main"
   },
@@ -677,8 +677,8 @@
     "zone": "Templo del Fuego",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 35.0,
-    "y": 55.0,
+    "x": 35,
+    "y": 55,
     "location": "Tras la puerta junto a las escaleras de la entrada del templo.",
     "floor": "main"
   },
@@ -688,8 +688,8 @@
     "zone": "Caverna de Hielo",
     "zoneKey": "Ice Cavern",
     "area": "zora",
-    "x": 15.0,
-    "y": 25.0,
+    "x": 15,
+    "y": 25,
     "location": "En la pared de la sala con las cuchillas giratorias — recupérala con el Gancho.",
     "floor": "main"
   },
@@ -699,8 +699,8 @@
     "zone": "Caverna de Hielo",
     "zoneKey": "Ice Cavern",
     "area": "zora",
-    "x": 45.0,
-    "y": 45.0,
+    "x": 45,
+    "y": 45,
     "location": "En la pared de la sala con los bloques de hielo movibles — recupérala con el Gancho.",
     "floor": "main"
   },
@@ -710,8 +710,8 @@
     "zone": "Caverna de Hielo",
     "zoneKey": "Ice Cavern",
     "area": "zora",
-    "x": 85.0,
-    "y": 70.0,
+    "x": 85,
+    "y": 70,
     "location": "En la pared de la Sala de la Brújula — recupérala con el Gancho.",
     "floor": "main"
   },
@@ -721,8 +721,8 @@
     "zone": "Templo del Agua",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 12.0,
-    "y": 80.0,
+    "x": 12,
+    "y": 80,
     "location": "Al final del pasillo sur del piso más bajo — bombea la pared y golpea el interruptor con un giro cargado.",
     "floor": "main"
   },
@@ -732,8 +732,8 @@
     "zone": "Templo del Agua",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 88.0,
-    "y": 20.0,
+    "x": 88,
+    "y": 20,
     "location": "En la pared de la sala con las plataformas que se deslizan en diagonal — recupérala con el Gancho Largo.",
     "floor": "main"
   },
@@ -743,8 +743,8 @@
     "zone": "Templo del Agua",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 88.0,
-    "y": 80.0,
+    "x": 88,
+    "y": 80,
     "location": "En la pared del canal de remolinos — nada con las Botas de Hierro y recupérala con el Gancho Largo.",
     "floor": "main"
   },
@@ -754,8 +754,8 @@
     "zone": "Templo del Agua",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 45.0,
-    "y": 25.0,
+    "x": 45,
+    "y": 25,
     "location": "En la pared del interior de la torre central — recupérala con el Gancho Largo.",
     "floor": "main"
   },
@@ -765,8 +765,8 @@
     "zone": "Templo del Agua",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 12.0,
-    "y": 20.0,
+    "x": 12,
+    "y": 20,
     "location": "En la pared del canal donde rueda una roca gigante — recupérala con el Gancho Largo.",
     "floor": "main"
   },
@@ -776,8 +776,8 @@
     "zone": "Fondo del Pozo",
     "zoneKey": "Bottom of the Well",
     "area": "kakariko",
-    "x": 20.0,
-    "y": 62.0,
+    "x": 20,
+    "y": 62,
     "location": "Tras la puerta cerrada al oeste del salón central — usa una Llave Pequeña y recupérala con el Bumerán.",
     "floor": "main"
   },
@@ -787,8 +787,8 @@
     "zone": "Fondo del Pozo",
     "zoneKey": "Bottom of the Well",
     "area": "kakariko",
-    "x": 80.0,
-    "y": 62.0,
+    "x": 80,
+    "y": 62,
     "location": "Tras la puerta cerrada al este del salón central — usa una Llave Pequeña y recupérala con el Bumerán.",
     "floor": "main"
   },
@@ -798,8 +798,8 @@
     "zone": "Fondo del Pozo",
     "zoneKey": "Bottom of the Well",
     "area": "kakariko",
-    "x": 62.0,
-    "y": 38.0,
+    "x": 62,
+    "y": 38,
     "location": "Tras la puerta cerrada del pasillo este — usa una Llave Pequeña y recupérala con el Bumerán.",
     "floor": "main"
   },
@@ -809,8 +809,8 @@
     "zone": "Templo de las Sombras",
     "zoneKey": "Shadow Temple",
     "area": "kakariko",
-    "x": 68.0,
-    "y": 88.0,
+    "x": 25,
+    "y": 40,
     "location": "En la celda de la sala con los pinchos que suben y bajan.",
     "floor": "main"
   },
@@ -820,8 +820,8 @@
     "zone": "Templo de las Sombras",
     "zoneKey": "Shadow Temple",
     "area": "kakariko",
-    "x": 15.0,
-    "y": 55.0,
+    "x": 55,
+    "y": 30,
     "location": "En la pared tras la gran vasija con calavera.",
     "floor": "main"
   },
@@ -831,8 +831,8 @@
     "zone": "Templo de las Sombras",
     "zoneKey": "Shadow Temple",
     "area": "kakariko",
-    "x": 85.0,
-    "y": 45.0,
+    "x": 40,
+    "y": 55,
     "location": "Tras la sala con las cuchillas giratorias invisibles — vence a los enemigos para avanzar.",
     "floor": "main"
   },
@@ -842,8 +842,8 @@
     "zone": "Templo de las Sombras",
     "zoneKey": "Shadow Temple",
     "area": "kakariko",
-    "x": 15.0,
-    "y": 25.0,
+    "x": 75,
+    "y": 25,
     "location": "En la pared de la sala donde atraca la barca — toca la Canción del Espantapájaros y cruza con el Gancho Largo.",
     "floor": "main"
   },
@@ -853,8 +853,8 @@
     "zone": "Templo de las Sombras",
     "zoneKey": "Shadow Temple",
     "area": "kakariko",
-    "x": 85.0,
-    "y": 20.0,
+    "x": 15,
+    "y": 20,
     "location": "En la pared de la sala con tres grandes vasijas giratorias con calavera.",
     "floor": "main"
   },
@@ -904,8 +904,8 @@
     "zone": "Fortaleza Gerudo",
     "zoneKey": "Gerudo's Fortress",
     "area": "gerudo",
-    "x": 33.0,
-    "y": 50.0,
+    "x": 87,
+    "y": 48,
     "location": "En la pared sobre el tejado de la fortaleza — recupérala con el Gancho."
   },
   {
@@ -914,8 +914,8 @@
     "zone": "Fortaleza Gerudo",
     "zoneKey": "Gerudo's Fortress",
     "area": "gerudo",
-    "x": 67.0,
-    "y": 50.0,
+    "x": 95,
+    "y": 15,
     "location": "En la diana más lejana de la galería de tiro — recupérala con el Gancho."
   },
   {
@@ -924,8 +924,8 @@
     "zone": "Desierto Embrujado",
     "zoneKey": "Haunted Wasteland",
     "area": "gerudo",
-    "x": 50.0,
-    "y": 50.0,
+    "x": 20,
+    "y": 45,
     "location": "En la pared del interior del edificio de piedra, cerca del lado del Coloso del Desierto."
   },
   {
@@ -934,8 +934,8 @@
     "zone": "Coloso del Desierto",
     "zoneKey": "Desert Colossus",
     "area": "gerudo",
-    "x": 25.0,
-    "y": 78.6,
+    "x": 9,
+    "y": 55,
     "location": "En la palmera al sur — recupérala con el Gancho Largo."
   },
   {
@@ -944,8 +944,8 @@
     "zone": "Coloso del Desierto",
     "zoneKey": "Desert Colossus",
     "area": "gerudo",
-    "x": 50.0,
-    "y": 50.0,
+    "x": 40,
+    "y": 48,
     "location": "En el montículo rocoso cerca del centro — recupérala con el Gancho Largo."
   },
   {
@@ -954,8 +954,8 @@
     "zone": "Coloso del Desierto",
     "zoneKey": "Desert Colossus",
     "area": "gerudo",
-    "x": 8.3,
-    "y": 71.4,
+    "x": 45,
+    "y": 30,
     "location": "En la tierra removida junto a la entrada del Templo del Espíritu — de niño, suelta un insecto de una Botella."
   },
   {
@@ -964,8 +964,8 @@
     "zone": "Templo del Espíritu",
     "zoneKey": "Spirit Temple",
     "area": "gerudo",
-    "x": 15.0,
-    "y": 55.0,
+    "x": 50,
+    "y": 25,
     "location": "En la sala con la verja de hierro — recupérala con el Bumerán.",
     "floor": "main"
   },
@@ -975,8 +975,8 @@
     "zone": "Templo del Espíritu",
     "zoneKey": "Spirit Temple",
     "area": "gerudo",
-    "x": 50.0,
-    "y": 22.0,
+    "x": 75,
+    "y": 60,
     "location": "En el pozo vertical que lleva a la sala donde un Bombchu abre la pared — recupérala con el Bumerán.",
     "floor": "main"
   },
@@ -986,8 +986,8 @@
     "zone": "Templo del Espíritu",
     "zoneKey": "Spirit Temple",
     "area": "gerudo",
-    "x": 90.0,
-    "y": 70.0,
+    "x": 85,
+    "y": 35,
     "location": "En el pasillo justo antes de la sala del Caballero de Hierro — recupérala con el Bumerán.",
     "floor": "main"
   },
@@ -997,8 +997,8 @@
     "zone": "Templo del Espíritu",
     "zoneKey": "Spirit Temple",
     "area": "gerudo",
-    "x": 25.0,
-    "y": 88.0,
+    "x": 35,
+    "y": 70,
     "location": "Tras el bloque de la sala de las rocas rodantes — de adulto, toca la Canción del Tiempo para revelarla.",
     "floor": "main"
   },
@@ -1008,8 +1008,8 @@
     "zone": "Templo del Espíritu",
     "zoneKey": "Spirit Temple",
     "area": "gerudo",
-    "x": 85.0,
-    "y": 45.0,
+    "x": 15,
+    "y": 50,
     "location": "En la pared junto a la gran estatua — de adulto, recupérala con el Gancho Largo.",
     "floor": "main"
   },
@@ -1019,8 +1019,8 @@
     "zone": "Castillo de Ganon",
     "zoneKey": "Ganon's Castle",
     "area": "hyrule-field",
-    "x": 80.0,
-    "y": 42.0,
+    "x": 70,
+    "y": 55,
     "location": "Tras la verja rota al este del vestíbulo de entrada.",
     "floor": "main"
   },
@@ -1030,8 +1030,8 @@
     "zone": "Campo de Hyrule",
     "zoneKey": "Hyrule Field",
     "area": "hyrule-field",
-    "x": 33.1,
-    "y": 50.0,
+    "x": 83,
+    "y": 35,
     "location": "Bajo el círculo de piedras, pasado el desvío al Valle Gerudo — bombea el círculo para revelarla."
   },
   {
@@ -1040,8 +1040,8 @@
     "zone": "Campo de Hyrule",
     "zoneKey": "Hyrule Field",
     "area": "hyrule-field",
-    "x": 66.9,
-    "y": 50.0,
+    "x": 15,
+    "y": 37,
     "location": "En el árbol solitario al este de la entrada a Villa Castillo — bombea el tronco para derribarla."
   }
 ]
