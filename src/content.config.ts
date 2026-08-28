@@ -89,6 +89,14 @@ const skulltulasSchema = z.object({
   y: z.number().min(0).max(100),
   location: z.string(),
   note: z.string().optional(),
+  // Present only for skulltulas inside the 11 dungeon interiors that got a
+  // per-floor real-image treatment (see `ZONE_MAPS[zoneKey].floors` in
+  // skulltula-map-layout.ts) — a stable floor key (e.g. "1f", "b1") this
+  // token's x/y are positioned within. `x`/`y` for a floored zone are
+  // percentages within *that specific floor's* image, not the zone as a
+  // whole — a pin on "b1" and a pin on "1f" can share the same x/y without
+  // colliding, since they render on different floor tabs.
+  floor: z.string().optional(),
 });
 
 // Discriminated by `kind`: a Piece of Heart always carries area/method/hero,

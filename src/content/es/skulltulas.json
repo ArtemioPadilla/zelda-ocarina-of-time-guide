@@ -5,9 +5,10 @@
     "zone": "Interior del Árbol Deku",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 50.0,
-    "y": 14.3,
-    "location": "En la pared de la Sala de la Brújula, en el 3F — acércate y golpéala en cuanto la veas."
+    "x": 30.0,
+    "y": 42.0,
+    "location": "En la pared de la Sala de la Brújula, en el 3F — acércate y golpéala en cuanto la veas.",
+    "floor": "3f"
   },
   {
     "id": "sk-002",
@@ -15,9 +16,10 @@
     "zone": "Interior del Árbol Deku",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 78.6,
-    "y": 78.6,
-    "location": "En las enredaderas donde caes tras atravesar la telaraña del 1F hacia el B1 — derríbala con la Resortera."
+    "x": 45.0,
+    "y": 80.0,
+    "location": "En las enredaderas donde caes tras atravesar la telaraña del 1F hacia el B1 — derríbala con la Resortera.",
+    "floor": "b1"
   },
   {
     "id": "sk-003",
@@ -25,9 +27,10 @@
     "zone": "Interior del Árbol Deku",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 50.0,
-    "y": 78.6,
-    "location": "Tras los barrotes de hierro al pie de la gran telaraña — apunta a través de los barrotes para alcanzarla."
+    "x": 24.0,
+    "y": 48.0,
+    "location": "Tras los barrotes de hierro al pie de la gran telaraña — apunta a través de los barrotes para alcanzarla.",
+    "floor": "b1"
   },
   {
     "id": "sk-004",
@@ -35,9 +38,10 @@
     "zone": "Interior del Árbol Deku",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 14.3,
-    "y": 78.6,
-    "location": "Tras una pared bombeable en la sala donde eclosionan tres Gohma Larvae — vuela la pared y recupérala con el Bumerán."
+    "x": 75.0,
+    "y": 30.0,
+    "location": "Tras una pared bombeable en la sala donde eclosionan tres Gohma Larvae — vuela la pared y recupérala con el Bumerán.",
+    "floor": "b1"
   },
   {
     "id": "sk-005",
@@ -295,9 +299,10 @@
     "zone": "Caverna Dodongo",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 27.2,
-    "y": 32.9,
-    "location": "En la sala llena de Flores Bomba — derríbala con la Resortera."
+    "x": 15.0,
+    "y": 55.0,
+    "location": "En la sala llena de Flores Bomba — derríbala con la Resortera.",
+    "floor": "1f"
   },
   {
     "id": "sk-031",
@@ -305,9 +310,10 @@
     "zone": "Caverna Dodongo",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 50.0,
-    "y": 32.9,
-    "location": "Tras una pared bombeable en el pasillo este del 1F — vuélala para alcanzarla."
+    "x": 85.0,
+    "y": 45.0,
+    "location": "Tras una pared bombeable en el pasillo este del 1F — vuélala para alcanzarla.",
+    "floor": "1f"
   },
   {
     "id": "sk-032",
@@ -315,9 +321,10 @@
     "zone": "Caverna Dodongo",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 72.8,
-    "y": 32.9,
-    "location": "Tras una pared bombeable al norte del 1F — vuélala para alcanzarla."
+    "x": 50.0,
+    "y": 12.0,
+    "location": "Tras una pared bombeable al norte del 1F — vuélala para alcanzarla.",
+    "floor": "1f"
   },
   {
     "id": "sk-033",
@@ -325,9 +332,10 @@
     "zone": "Caverna Dodongo",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 32.8,
-    "y": 67.1,
-    "location": "Sobre las escaleras de la sala de las Flores Bomba — sube al piso superior y recupérala con el Bumerán."
+    "x": 15.0,
+    "y": 35.0,
+    "location": "Sobre las escaleras de la sala de las Flores Bomba — sube al piso superior y recupérala con el Bumerán.",
+    "floor": "1f"
   },
   {
     "id": "sk-034",
@@ -335,9 +343,10 @@
     "zone": "Caverna Dodongo",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 67.2,
-    "y": 67.1,
-    "location": "En el pasillo este del 1F — de adulto, toca la Canción del Espantapájaros para invocar a Pierre y alcánzala con el Gancho."
+    "x": 90.0,
+    "y": 62.0,
+    "location": "En el pasillo este del 1F — de adulto, toca la Canción del Espantapájaros para invocar a Pierre y alcánzala con el Gancho.",
+    "floor": "1f"
   },
   {
     "id": "sk-035",
@@ -515,9 +524,10 @@
     "zone": "Interior de Jabu-Jabu",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 33.2,
-    "y": 33.0,
-    "location": "En la pared del pasillo justo antes de la sala del jefe."
+    "x": 15.0,
+    "y": 30.0,
+    "location": "En la pared del pasillo justo antes de la sala del jefe.",
+    "floor": "b1"
   },
   {
     "id": "sk-053",
@@ -525,9 +535,10 @@
     "zone": "Interior de Jabu-Jabu",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 13.6,
-    "y": 45.5,
-    "location": "Tras el agujero oeste de la sala central del 1F — recupérala con el Bumerán."
+    "x": 35.0,
+    "y": 65.0,
+    "location": "Tras el agujero oeste de la sala central del 1F — recupérala con el Bumerán.",
+    "floor": "1f"
   },
   {
     "id": "sk-054",
@@ -535,9 +546,10 @@
     "zone": "Interior de Jabu-Jabu",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 50.0,
-    "y": 45.5,
-    "location": "Tras el agujero este de la sala central del 1F — recupérala con el Bumerán."
+    "x": 68.0,
+    "y": 58.0,
+    "location": "Tras el agujero este de la sala central del 1F — recupérala con el Bumerán.",
+    "floor": "1f"
   },
   {
     "id": "sk-055",
@@ -545,9 +557,10 @@
     "zone": "Interior de Jabu-Jabu",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 66.8,
-    "y": 67.0,
-    "location": "En las enredaderas de la sala este del B1 — sube el nivel del agua o recupérala con el Bumerán."
+    "x": 85.0,
+    "y": 45.0,
+    "location": "En las enredaderas de la sala este del B1 — sube el nivel del agua o recupérala con el Bumerán.",
+    "floor": "b1"
   },
   {
     "id": "sk-056",
@@ -565,9 +578,10 @@
     "zone": "Templo del Bosque",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 27.5,
-    "y": 32.9,
-    "location": "En las enredaderas al este de la primera sala — de adulto."
+    "x": 10.0,
+    "y": 80.0,
+    "location": "En las enredaderas al este de la primera sala — de adulto.",
+    "floor": "1f"
   },
   {
     "id": "sk-058",
@@ -575,9 +589,10 @@
     "zone": "Templo del Bosque",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 50.0,
-    "y": 32.9,
-    "location": "En la pared del salón central del 1F."
+    "x": 62.0,
+    "y": 40.0,
+    "location": "En la pared del salón central del 1F.",
+    "floor": "1f"
   },
   {
     "id": "sk-059",
@@ -585,9 +600,10 @@
     "zone": "Templo del Bosque",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 72.5,
-    "y": 32.9,
-    "location": "En la pared de la sala noreste del 1F."
+    "x": 88.0,
+    "y": 22.0,
+    "location": "En la pared de la sala noreste del 1F.",
+    "floor": "1f"
   },
   {
     "id": "sk-060",
@@ -595,9 +611,10 @@
     "zone": "Templo del Bosque",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 32.9,
-    "y": 67.1,
-    "location": "En la pared de la sala noroeste del 1F."
+    "x": 15.0,
+    "y": 20.0,
+    "location": "En la pared de la sala noroeste del 1F.",
+    "floor": "1f"
   },
   {
     "id": "sk-061",
@@ -605,9 +622,10 @@
     "zone": "Templo del Bosque",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 67.1,
-    "y": 67.1,
-    "location": "En la pared de la sala giratoria justo antes de la puerta del jefe."
+    "x": 80.0,
+    "y": 40.0,
+    "location": "En la pared de la sala giratoria justo antes de la puerta del jefe.",
+    "floor": "b1"
   },
   {
     "id": "sk-062",

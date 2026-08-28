@@ -57,13 +57,29 @@ export interface ZoneMapImage {
   sourceUrl: string;
 }
 
+export interface ZoneMapFloor {
+  /** Stable key matching the `floor` field on that zone's skulltulas.json
+   * entries (e.g. "b1", "1f") — untranslated, same pattern as `zoneKey`. */
+  key: string;
+  /** Short tab label shown in the floor switcher, e.g. "B1", "1F". */
+  label: string;
+  image: ZoneMapImage;
+}
+
 export interface ZoneMapConfig {
   zone: string;
   hub: SkulltulaArea;
   /** Dungeon/interior zones get a slightly different schematic fill (see
-   * SkulltulaMap.tsx) when they have no real `image`. */
+   * SkulltulaMap.tsx) when they have no real `image`/`floors`. */
   interior: boolean;
   image?: ZoneMapImage;
+  /** Present only for the 11 dungeon interiors that got a per-floor real-
+   * image treatment: one real screenshot per floor, switched via a floor
+   * tab UI in SkulltulaMap.tsx, instead of a single zone-wide `image`.
+   * Mutually exclusive with `image` in practice (a floored zone leaves
+   * `image` unset). Each dungeon's skulltulas.json entries carry a matching
+   * `floor` key so the map knows which tab a given pin belongs to. */
+  floors?: ZoneMapFloor[];
 }
 
 const img = (
@@ -73,6 +89,16 @@ const img = (
   attribution: string,
   sourceUrl: string,
 ): ZoneMapImage => ({ src: `/images/skulltulas/${file}`, width, height, attribution, sourceUrl });
+
+const floor = (
+  key: string,
+  label: string,
+  file: string,
+  width: number,
+  height: number,
+  attribution: string,
+  sourceUrl: string,
+): ZoneMapFloor => ({ key, label, image: img(file, width, height, attribution, sourceUrl) });
 
 // Ordered per hub, matching the original AREA_REGIONS authoring order —
 // `ZONES_BY_HUB` (derived below) preserves that order for the Map view.
@@ -90,10 +116,58 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
       'https://zeldawiki.wiki/wiki/File:OoT3D_Kokiri_Forest_Map.png',
     ),
   },
-  { zone: 'Inside the Deku Tree', hub: 'kokiri', interior: true },
+  {
+    zone: 'Inside the Deku Tree',
+    hub: 'kokiri',
+    interior: true,
+    floors: [
+      floor(
+        '3f',
+        '3F',
+        'dungeons/deku-tree/3f.webp',
+        1400,
+        788,
+        'Zelda Wiki — OoT3D Inside the Deku Tree, 3F',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Floor_3_(Inside_the_Deku_Tree).png',
+      ),
+      floor(
+        'b1',
+        'B1',
+        'dungeons/deku-tree/b1.webp',
+        1400,
+        788,
+        'Zelda Wiki — OoT3D Inside the Deku Tree, B1',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Basement_1_(Inside_the_Deku_Tree).png',
+      ),
+    ],
+  },
   { zone: 'Lost Woods', hub: 'kokiri', interior: false },
   { zone: 'Sacred Forest Meadow', hub: 'kokiri', interior: false },
-  { zone: 'Forest Temple', hub: 'kokiri', interior: true },
+  {
+    zone: 'Forest Temple',
+    hub: 'kokiri',
+    interior: true,
+    floors: [
+      floor(
+        '1f',
+        '1F',
+        'dungeons/forest-temple/1f.webp',
+        1400,
+        788,
+        'Zelda Wiki — OoT3D Forest Temple, Main Room',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Main_Room.png',
+      ),
+      floor(
+        'b1',
+        'B1',
+        'dungeons/forest-temple/b1.webp',
+        1400,
+        788,
+        'Zelda Wiki — OoT3D Forest Temple, Basement rotating room',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Basement.png',
+      ),
+    ],
+  },
   // --- Hyrule Field hub ---
   { zone: 'Hyrule Castle Market', hub: 'hyrule-field', interior: false },
   { zone: 'Hyrule Castle', hub: 'hyrule-field', interior: false },
@@ -140,7 +214,22 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
   { zone: 'Bottom of the Well', hub: 'kakariko', interior: true },
   // --- Death Mountain hub ---
   { zone: 'Death Mountain Crater', hub: 'death-mountain', interior: false },
-  { zone: "Dodongo's Cavern", hub: 'death-mountain', interior: true },
+  {
+    zone: "Dodongo's Cavern",
+    hub: 'death-mountain',
+    interior: true,
+    floors: [
+      floor(
+        '1f',
+        '1F',
+        'dungeons/dodongos-cavern/1f.webp',
+        1400,
+        788,
+        "Zelda Wiki — OoT3D Dodongo's Cavern entrance hall",
+        "https://zeldawiki.wiki/wiki/File:OoT3D_Dodongo's_Cavern.png",
+      ),
+    ],
+  },
   { zone: 'Fire Temple', hub: 'death-mountain', interior: true },
   { zone: 'Goron City', hub: 'death-mountain', interior: true },
   { zone: 'Death Mountain Trail', hub: 'death-mountain', interior: false },
@@ -160,7 +249,31 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
   { zone: 'Ice Cavern', hub: 'zora', interior: true },
   { zone: "Zora's Domain", hub: 'zora', interior: false },
   { zone: 'Water Temple', hub: 'zora', interior: true },
-  { zone: "Inside Jabu-Jabu's Belly", hub: 'zora', interior: true },
+  {
+    zone: "Inside Jabu-Jabu's Belly",
+    hub: 'zora',
+    interior: true,
+    floors: [
+      floor(
+        '1f',
+        '1F',
+        'dungeons/jabu-jabu/1f.webp',
+        1400,
+        788,
+        "Zelda Wiki — OoT3D Inside Jabu-Jabu's Belly, 1F",
+        "https://zeldawiki.wiki/wiki/File:OoT3D_Floor_1_(Inside_Jabu-Jabu's_Belly).png",
+      ),
+      floor(
+        'b1',
+        'B1',
+        'dungeons/jabu-jabu/b1.webp',
+        1400,
+        788,
+        "Zelda Wiki — OoT3D Inside Jabu-Jabu's Belly, B1",
+        "https://zeldawiki.wiki/wiki/File:OoT3D_Basement_1_(Inside_Jabu-Jabu's_Belly).png",
+      ),
+    ],
+  },
   {
     zone: "Zora's River",
     hub: 'zora',

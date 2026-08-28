@@ -13,6 +13,7 @@ interface Item {
   note?: string;
   x: number;
   y: number;
+  floor?: string;
 }
 
 interface Props {

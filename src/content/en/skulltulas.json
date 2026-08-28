@@ -5,9 +5,10 @@
     "zone": "Inside the Deku Tree",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 50.0,
-    "y": 14.3,
-    "location": "Clinging to the wall of the 3F Compass Room — walk up and strike it once you spot it."
+    "x": 30.0,
+    "y": 42.0,
+    "location": "Clinging to the wall of the 3F Compass Room — walk up and strike it once you spot it.",
+    "floor": "3f"
   },
   {
     "id": "sk-002",
@@ -15,9 +16,10 @@
     "zone": "Inside the Deku Tree",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 78.6,
-    "y": 78.6,
-    "location": "On the vines you land on after dropping through the web from 1F down to B1 — knock it down with the Slingshot."
+    "x": 45.0,
+    "y": 80.0,
+    "location": "On the vines you land on after dropping through the web from 1F down to B1 — knock it down with the Slingshot.",
+    "floor": "b1"
   },
   {
     "id": "sk-003",
@@ -25,9 +27,10 @@
     "zone": "Inside the Deku Tree",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 50.0,
-    "y": 78.6,
-    "location": "Behind the iron bars at the base of the huge cobweb — line up a shot through the bars to reach it."
+    "x": 24.0,
+    "y": 48.0,
+    "location": "Behind the iron bars at the base of the huge cobweb — line up a shot through the bars to reach it.",
+    "floor": "b1"
   },
   {
     "id": "sk-004",
@@ -35,9 +38,10 @@
     "zone": "Inside the Deku Tree",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 14.3,
-    "y": 78.6,
-    "location": "Behind a bombable wall in the room where three Baby Gohma hatch — blow the wall open, then reel it in with the Boomerang."
+    "x": 75.0,
+    "y": 30.0,
+    "location": "Behind a bombable wall in the room where three Baby Gohma hatch — blow the wall open, then reel it in with the Boomerang.",
+    "floor": "b1"
   },
   {
     "id": "sk-005",
@@ -295,9 +299,10 @@
     "zone": "Dodongo's Cavern",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 27.2,
-    "y": 32.9,
-    "location": "In the room full of Bomb Flowers — knock it down with the Slingshot."
+    "x": 15.0,
+    "y": 55.0,
+    "location": "In the room full of Bomb Flowers — knock it down with the Slingshot.",
+    "floor": "1f"
   },
   {
     "id": "sk-031",
@@ -305,9 +310,10 @@
     "zone": "Dodongo's Cavern",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 50.0,
-    "y": 32.9,
-    "location": "Behind a bombable wall in the eastern corridor of 1F — blow it open to reach it."
+    "x": 85.0,
+    "y": 45.0,
+    "location": "Behind a bombable wall in the eastern corridor of 1F — blow it open to reach it.",
+    "floor": "1f"
   },
   {
     "id": "sk-032",
@@ -315,9 +321,10 @@
     "zone": "Dodongo's Cavern",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 72.8,
-    "y": 32.9,
-    "location": "Behind a bombable wall to the north on 1F — blow it open to reach it."
+    "x": 50.0,
+    "y": 12.0,
+    "location": "Behind a bombable wall to the north on 1F — blow it open to reach it.",
+    "floor": "1f"
   },
   {
     "id": "sk-033",
@@ -325,9 +332,10 @@
     "zone": "Dodongo's Cavern",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 32.8,
-    "y": 67.1,
-    "location": "Above the stairs in the Bomb Flower room — climb to the upper floor and reel it in with the Boomerang."
+    "x": 15.0,
+    "y": 35.0,
+    "location": "Above the stairs in the Bomb Flower room — climb to the upper floor and reel it in with the Boomerang.",
+    "floor": "1f"
   },
   {
     "id": "sk-034",
@@ -335,9 +343,10 @@
     "zone": "Dodongo's Cavern",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 67.2,
-    "y": 67.1,
-    "location": "In the eastern corridor of 1F — as an adult, play the Scarecrow's Song to summon Pierre, then reach it with the Hookshot."
+    "x": 90.0,
+    "y": 62.0,
+    "location": "In the eastern corridor of 1F — as an adult, play the Scarecrow's Song to summon Pierre, then reach it with the Hookshot.",
+    "floor": "1f"
   },
   {
     "id": "sk-035",
@@ -515,9 +524,10 @@
     "zone": "Inside Jabu-Jabu's Belly",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 33.2,
-    "y": 33.0,
-    "location": "On the wall in the corridor just before the boss room."
+    "x": 15.0,
+    "y": 30.0,
+    "location": "On the wall in the corridor just before the boss room.",
+    "floor": "b1"
   },
   {
     "id": "sk-053",
@@ -525,9 +535,10 @@
     "zone": "Inside Jabu-Jabu's Belly",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 13.6,
-    "y": 45.5,
-    "location": "Behind the western hole in the central room of 1F — reel it in with the Boomerang."
+    "x": 35.0,
+    "y": 65.0,
+    "location": "Behind the western hole in the central room of 1F — reel it in with the Boomerang.",
+    "floor": "1f"
   },
   {
     "id": "sk-054",
@@ -535,9 +546,10 @@
     "zone": "Inside Jabu-Jabu's Belly",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 50.0,
-    "y": 45.5,
-    "location": "Behind the eastern hole in the central room of 1F — reel it in with the Boomerang."
+    "x": 68.0,
+    "y": 58.0,
+    "location": "Behind the eastern hole in the central room of 1F — reel it in with the Boomerang.",
+    "floor": "1f"
   },
   {
     "id": "sk-055",
@@ -545,9 +557,10 @@
     "zone": "Inside Jabu-Jabu's Belly",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 66.8,
-    "y": 67.0,
-    "location": "On the vines in the eastern room of B1 — raise the water level or reel it in with the Boomerang."
+    "x": 85.0,
+    "y": 45.0,
+    "location": "On the vines in the eastern room of B1 — raise the water level or reel it in with the Boomerang.",
+    "floor": "b1"
   },
   {
     "id": "sk-056",
@@ -565,9 +578,10 @@
     "zone": "Forest Temple",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 27.5,
-    "y": 32.9,
-    "location": "On the vines to the east in the first room — as an adult."
+    "x": 10.0,
+    "y": 80.0,
+    "location": "On the vines to the east in the first room — as an adult.",
+    "floor": "1f"
   },
   {
     "id": "sk-058",
@@ -575,9 +589,10 @@
     "zone": "Forest Temple",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 50.0,
-    "y": 32.9,
-    "location": "On the wall of the central hall on 1F."
+    "x": 62.0,
+    "y": 40.0,
+    "location": "On the wall of the central hall on 1F.",
+    "floor": "1f"
   },
   {
     "id": "sk-059",
@@ -585,9 +600,10 @@
     "zone": "Forest Temple",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 72.5,
-    "y": 32.9,
-    "location": "On the wall of the northeast room on 1F."
+    "x": 88.0,
+    "y": 22.0,
+    "location": "On the wall of the northeast room on 1F.",
+    "floor": "1f"
   },
   {
     "id": "sk-060",
@@ -595,9 +611,10 @@
     "zone": "Forest Temple",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 32.9,
-    "y": 67.1,
-    "location": "On the wall of the northwest room on 1F."
+    "x": 15.0,
+    "y": 20.0,
+    "location": "On the wall of the northwest room on 1F.",
+    "floor": "1f"
   },
   {
     "id": "sk-061",
@@ -605,9 +622,10 @@
     "zone": "Forest Temple",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 67.1,
-    "y": 67.1,
-    "location": "On the wall of the rotating room just before the boss door."
+    "x": 80.0,
+    "y": 40.0,
+    "location": "On the wall of the rotating room just before the boss door.",
+    "floor": "b1"
   },
   {
     "id": "sk-062",

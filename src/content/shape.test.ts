@@ -74,6 +74,7 @@ interface SkulltulaShape {
   area: SkulltulaArea;
   x: number;
   y: number;
+  floor?: string;
 }
 
 describe('content: skulltulas', () => {
@@ -119,18 +120,24 @@ describe('content: skulltulas', () => {
     }
   });
 
-  it('no two skulltulas in the same zone render pins closer than a safe minimum distance apart — regression guard for the sk-053/sk-054-style pin-collision bugs this map has had before', () => {
+  it('no two skulltulas in the same zone (and, for floored dungeons, the same floor) render pins closer than a safe minimum distance apart — regression guard for the sk-053/sk-054-style pin-collision bugs this map has had before', () => {
     // Each zone is its own independent 0-100 canvas now (see
-    // skulltula-map-layout.ts), so "same zone" is exactly "same zoneKey".
+    // skulltula-map-layout.ts), so "same zone" is exactly "same zoneKey" —
+    // except the 11 floored dungeon interiors, where each *floor* is its
+    // own independent canvas: a pin on "1f" and a pin on "b1" can share the
+    // same x/y without colliding, since they render on different floor
+    // tabs and are never visible at the same time. Bucketing by
+    // `${zoneKey}::${floor ?? ''}` captures both cases with one key.
     const MIN_DISTANCE = 3; // percent, on a 0-100 canvas
     const skulltulas = loadJson<SkulltulaShape>('en', 'skulltulas');
-    const byZone = new Map<string, SkulltulaShape[]>();
+    const byZoneFloor = new Map<string, SkulltulaShape[]>();
     for (const s of skulltulas) {
-      const list = byZone.get(s.zoneKey) ?? [];
+      const key = `${s.zoneKey}::${s.floor ?? ''}`;
+      const list = byZoneFloor.get(key) ?? [];
       list.push(s);
-      byZone.set(s.zoneKey, list);
+      byZoneFloor.set(key, list);
     }
-    for (const [zoneKey, items] of byZone) {
+    for (const [key, items] of byZoneFloor) {
       for (let i = 0; i < items.length; i++) {
         for (let j = i + 1; j < items.length; j++) {
           const a = items[i];
@@ -138,9 +145,25 @@ describe('content: skulltulas', () => {
           const distance = Math.hypot(a.x - b.x, a.y - b.y);
           expect(
             distance,
-            `${zoneKey}: ${a.id} (${a.x},${a.y}) and ${b.id} (${b.x},${b.y}) are only ${distance.toFixed(2)} apart`,
+            `${key}: ${a.id} (${a.x},${a.y}) and ${b.id} (${b.x},${b.y}) are only ${distance.toFixed(2)} apart`,
           ).toBeGreaterThanOrEqual(MIN_DISTANCE);
         }
+      }
+    }
+  });
+
+  it('every skulltula in a floored dungeon zone has a `floor` set, and no skulltula outside a floored zone does', () => {
+    const skulltulas = loadJson<SkulltulaShape>('en', 'skulltulas');
+    for (const s of skulltulas) {
+      const floors = ZONE_MAP_BY_KEY[s.zoneKey]?.floors;
+      if (floors && floors.length > 0) {
+        expect(s.floor, `${s.id} is in floored zone ${s.zoneKey} but has no floor set`).toBeTruthy();
+        expect(
+          floors.some((f) => f.key === s.floor),
+          `${s.id}: floor "${s.floor}" is not one of ${s.zoneKey}'s configured floors`,
+        ).toBe(true);
+      } else {
+        expect(s.floor, `${s.id} is in non-floored zone ${s.zoneKey} but has a floor set`).toBeFalsy();
       }
     }
   });
