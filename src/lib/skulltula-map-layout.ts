@@ -211,7 +211,22 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
       'https://zeldawiki.wiki/wiki/File:OoT3D_Kakariko_Village.png',
     ),
   },
-  { zone: 'Bottom of the Well', hub: 'kakariko', interior: true },
+  {
+    zone: 'Bottom of the Well',
+    hub: 'kakariko',
+    interior: true,
+    floors: [
+      floor(
+        'main',
+        'Interior',
+        'dungeons/bottom-of-the-well/main.webp',
+        1400,
+        788,
+        'Zelda Wiki — OoT3D Bottom of the Well, central corridor',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Bottom_of_the_Well.png',
+      ),
+    ],
+  },
   // --- Death Mountain hub ---
   { zone: 'Death Mountain Crater', hub: 'death-mountain', interior: false },
   {
@@ -278,7 +293,22 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
     ],
   },
   { zone: "Zora's Domain", hub: 'zora', interior: false },
-  { zone: 'Water Temple', hub: 'zora', interior: true },
+  {
+    zone: 'Water Temple',
+    hub: 'zora',
+    interior: true,
+    floors: [
+      floor(
+        'main',
+        'Interior',
+        'dungeons/water-temple/main.webp',
+        1400,
+        713,
+        'Zelda Wiki — OoT3D Water Temple, central pillar building',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Water_Temple.png',
+      ),
+    ],
+  },
   {
     zone: "Inside Jabu-Jabu's Belly",
     hub: 'zora',

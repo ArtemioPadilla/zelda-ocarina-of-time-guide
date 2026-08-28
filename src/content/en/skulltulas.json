@@ -721,9 +721,10 @@
     "zone": "Water Temple",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 27.4,
-    "y": 33.1,
-    "location": "At the end of the corridor to the south on the lowest floor — bomb the wall, then hit the switch with a spin attack."
+    "x": 12.0,
+    "y": 80.0,
+    "location": "At the end of the corridor to the south on the lowest floor — bomb the wall, then hit the switch with a spin attack.",
+    "floor": "main"
   },
   {
     "id": "sk-071",
@@ -731,9 +732,10 @@
     "zone": "Water Temple",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 50.0,
-    "y": 33.1,
-    "location": "On the wall of the room with the diagonally sliding platforms — reel it in with the Longshot."
+    "x": 88.0,
+    "y": 20.0,
+    "location": "On the wall of the room with the diagonally sliding platforms — reel it in with the Longshot.",
+    "floor": "main"
   },
   {
     "id": "sk-072",
@@ -741,9 +743,10 @@
     "zone": "Water Temple",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 72.6,
-    "y": 33.1,
-    "location": "On the wall of the whirlpool channel — swim it in the Iron Boots, then reel it in with the Longshot."
+    "x": 88.0,
+    "y": 80.0,
+    "location": "On the wall of the whirlpool channel — swim it in the Iron Boots, then reel it in with the Longshot.",
+    "floor": "main"
   },
   {
     "id": "sk-073",
@@ -751,9 +754,10 @@
     "zone": "Water Temple",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 33.0,
-    "y": 67.1,
-    "location": "On the wall inside the central pillar building — reel it in with the Longshot."
+    "x": 45.0,
+    "y": 25.0,
+    "location": "On the wall inside the central pillar building — reel it in with the Longshot.",
+    "floor": "main"
   },
   {
     "id": "sk-074",
@@ -761,9 +765,10 @@
     "zone": "Water Temple",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 67.0,
-    "y": 67.1,
-    "location": "On the wall of the water channel where a giant boulder rolls — reel it in with the Longshot."
+    "x": 12.0,
+    "y": 20.0,
+    "location": "On the wall of the water channel where a giant boulder rolls — reel it in with the Longshot.",
+    "floor": "main"
   },
   {
     "id": "sk-075",
@@ -771,9 +776,10 @@
     "zone": "Bottom of the Well",
     "zoneKey": "Bottom of the Well",
     "area": "kakariko",
-    "x": 33.0,
-    "y": 33.0,
-    "location": "Behind the locked door west of the central hall — use a Small Key, then reel it in with the Boomerang."
+    "x": 20.0,
+    "y": 62.0,
+    "location": "Behind the locked door west of the central hall — use a Small Key, then reel it in with the Boomerang.",
+    "floor": "main"
   },
   {
     "id": "sk-076",
@@ -781,9 +787,10 @@
     "zone": "Bottom of the Well",
     "zoneKey": "Bottom of the Well",
     "area": "kakariko",
-    "x": 67.0,
-    "y": 33.0,
-    "location": "Behind the locked door east of the central hall — use a Small Key, then reel it in with the Boomerang."
+    "x": 80.0,
+    "y": 62.0,
+    "location": "Behind the locked door east of the central hall — use a Small Key, then reel it in with the Boomerang.",
+    "floor": "main"
   },
   {
     "id": "sk-077",
@@ -791,9 +798,10 @@
     "zone": "Bottom of the Well",
     "zoneKey": "Bottom of the Well",
     "area": "kakariko",
-    "x": 50.0,
-    "y": 67.0,
-    "location": "Behind the locked door in the eastern corridor — use a Small Key, then reel it in with the Boomerang."
+    "x": 62.0,
+    "y": 38.0,
+    "location": "Behind the locked door in the eastern corridor — use a Small Key, then reel it in with the Boomerang.",
+    "floor": "main"
   },
   {
     "id": "sk-078",

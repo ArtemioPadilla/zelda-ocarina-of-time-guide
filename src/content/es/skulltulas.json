@@ -721,9 +721,10 @@
     "zone": "Templo del Agua",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 27.4,
-    "y": 33.1,
-    "location": "Al final del pasillo sur del piso más bajo — bombea la pared y golpea el interruptor con un giro cargado."
+    "x": 12.0,
+    "y": 80.0,
+    "location": "Al final del pasillo sur del piso más bajo — bombea la pared y golpea el interruptor con un giro cargado.",
+    "floor": "main"
   },
   {
     "id": "sk-071",
@@ -731,9 +732,10 @@
     "zone": "Templo del Agua",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 50.0,
-    "y": 33.1,
-    "location": "En la pared de la sala con las plataformas que se deslizan en diagonal — recupérala con el Gancho Largo."
+    "x": 88.0,
+    "y": 20.0,
+    "location": "En la pared de la sala con las plataformas que se deslizan en diagonal — recupérala con el Gancho Largo.",
+    "floor": "main"
   },
   {
     "id": "sk-072",
@@ -741,9 +743,10 @@
     "zone": "Templo del Agua",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 72.6,
-    "y": 33.1,
-    "location": "En la pared del canal de remolinos — nada con las Botas de Hierro y recupérala con el Gancho Largo."
+    "x": 88.0,
+    "y": 80.0,
+    "location": "En la pared del canal de remolinos — nada con las Botas de Hierro y recupérala con el Gancho Largo.",
+    "floor": "main"
   },
   {
     "id": "sk-073",
@@ -751,9 +754,10 @@
     "zone": "Templo del Agua",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 33.0,
-    "y": 67.1,
-    "location": "En la pared del interior de la torre central — recupérala con el Gancho Largo."
+    "x": 45.0,
+    "y": 25.0,
+    "location": "En la pared del interior de la torre central — recupérala con el Gancho Largo.",
+    "floor": "main"
   },
   {
     "id": "sk-074",
@@ -761,9 +765,10 @@
     "zone": "Templo del Agua",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 67.0,
-    "y": 67.1,
-    "location": "En la pared del canal donde rueda una roca gigante — recupérala con el Gancho Largo."
+    "x": 12.0,
+    "y": 20.0,
+    "location": "En la pared del canal donde rueda una roca gigante — recupérala con el Gancho Largo.",
+    "floor": "main"
   },
   {
     "id": "sk-075",
@@ -771,9 +776,10 @@
     "zone": "Fondo del Pozo",
     "zoneKey": "Bottom of the Well",
     "area": "kakariko",
-    "x": 33.0,
-    "y": 33.0,
-    "location": "Tras la puerta cerrada al oeste del salón central — usa una Llave Pequeña y recupérala con el Bumerán."
+    "x": 20.0,
+    "y": 62.0,
+    "location": "Tras la puerta cerrada al oeste del salón central — usa una Llave Pequeña y recupérala con el Bumerán.",
+    "floor": "main"
   },
   {
     "id": "sk-076",
@@ -781,9 +787,10 @@
     "zone": "Fondo del Pozo",
     "zoneKey": "Bottom of the Well",
     "area": "kakariko",
-    "x": 67.0,
-    "y": 33.0,
-    "location": "Tras la puerta cerrada al este del salón central — usa una Llave Pequeña y recupérala con el Bumerán."
+    "x": 80.0,
+    "y": 62.0,
+    "location": "Tras la puerta cerrada al este del salón central — usa una Llave Pequeña y recupérala con el Bumerán.",
+    "floor": "main"
   },
   {
     "id": "sk-077",
@@ -791,9 +798,10 @@
     "zone": "Fondo del Pozo",
     "zoneKey": "Bottom of the Well",
     "area": "kakariko",
-    "x": 50.0,
-    "y": 67.0,
-    "location": "Tras la puerta cerrada del pasillo este — usa una Llave Pequeña y recupérala con el Bumerán."
+    "x": 62.0,
+    "y": 38.0,
+    "location": "Tras la puerta cerrada del pasillo este — usa una Llave Pequeña y recupérala con el Bumerán.",
+    "floor": "main"
   },
   {
     "id": "sk-078",
