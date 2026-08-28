@@ -4,8 +4,8 @@
     "number": 1,
     "zone": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 71.2,
-    "y": 27.2,
+    "x": 76.0,
+    "y": 22.0,
     "location": "Clinging to the wall of the 3F Compass Room — walk up and strike it once you spot it."
   },
   {
@@ -13,8 +13,8 @@
     "number": 2,
     "zone": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 80.8,
-    "y": 27.2,
+    "x": 84.0,
+    "y": 40.0,
     "location": "On the vines you land on after dropping through the web from 1F down to B1 — knock it down with the Slingshot."
   },
   {
@@ -22,8 +22,8 @@
     "number": 3,
     "zone": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 71.2,
-    "y": 36.8,
+    "x": 76.0,
+    "y": 40.0,
     "location": "Behind the iron bars at the base of the huge cobweb — line up a shot through the bars to reach it."
   },
   {
@@ -31,8 +31,8 @@
     "number": 4,
     "zone": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 80.8,
-    "y": 36.8,
+    "x": 66.0,
+    "y": 40.0,
     "location": "Behind a bombable wall in the room where three Baby Gohma hatch — blow the wall open, then reel it in with the Boomerang."
   },
   {
@@ -40,8 +40,8 @@
     "number": 5,
     "zone": "Kokiri Forest",
     "area": "kokiri",
-    "x": 63.9,
-    "y": 67.9,
+    "x": 58.0,
+    "y": 82.0,
     "location": "Behind the Know-It-All Brothers' house — walk around back to spot it on the wall."
   },
   {
@@ -49,8 +49,8 @@
     "number": 6,
     "zone": "Kokiri Forest",
     "area": "kokiri",
-    "x": 76.1,
-    "y": 67.9,
+    "x": 82.0,
+    "y": 62.0,
     "location": "In the soft soil beside the Kokiri Shop — empty a Bottled Bug into the dirt to flush it out."
   },
   {
@@ -121,8 +121,8 @@
     "number": 14,
     "zone": "Lon Lon Ranch",
     "area": "hyrule-field",
-    "x": 78.1,
-    "y": 77.1,
+    "x": 58.0,
+    "y": 80.0,
     "location": "On the outer wall to the southwest of the ranch house — reel it in with the Boomerang."
   },
   {
@@ -166,8 +166,8 @@
     "number": 19,
     "zone": "Kakariko Village",
     "area": "kakariko",
-    "x": 52.5,
-    "y": 71.8,
+    "x": 68.0,
+    "y": 50.0,
     "location": "On the outer wall of the house nearest the entrance to the Death Mountain Trail."
   },
   {
@@ -184,8 +184,8 @@
     "number": 21,
     "zone": "Lost Woods",
     "area": "kokiri",
-    "x": 32.6,
-    "y": 60.6,
+    "x": 28.0,
+    "y": 74.0,
     "location": "In the soft soil of the southwest clearing, near the Business Scrubs — empty a Bottled Bug into the dirt."
   },
   {
@@ -211,8 +211,8 @@
     "number": 24,
     "zone": "Graveyard",
     "area": "kakariko",
-    "x": 41.5,
-    "y": 27.5,
+    "x": 36.0,
+    "y": 20.0,
     "location": "In the soft soil in the northwest corner of the graveyard — empty a Bottled Bug into the dirt."
   },
   {
@@ -220,8 +220,8 @@
     "number": 25,
     "zone": "Graveyard",
     "area": "kakariko",
-    "x": 53.5,
-    "y": 27.5,
+    "x": 58.0,
+    "y": 33.0,
     "location": "On the wall to the southeast, past the rows of graves — reel it in with the Boomerang."
   },
   {
@@ -311,7 +311,7 @@
     "zone": "Goron City",
     "area": "death-mountain",
     "x": 29.9,
-    "y": 62.5,
+    "y": 54.0,
     "location": "In a wooden crate in the northwest room — bomb the boulders blocking the doorway, then roll into the crate."
   },
   {
@@ -391,8 +391,8 @@
     "number": 44,
     "zone": "Zora's Fountain",
     "area": "zora",
-    "x": 64.9,
-    "y": 15.9,
+    "x": 78.0,
+    "y": 27.0,
     "location": "In the tree on the southeast shore — roll into the trunk."
   },
   {
@@ -400,8 +400,8 @@
     "number": 45,
     "zone": "Zora's Fountain",
     "area": "zora",
-    "x": 75.1,
-    "y": 15.9,
+    "x": 81.0,
+    "y": 22.0,
     "location": "On the wall visible from the floating log — reel it in with the Boomerang."
   },
   {
@@ -436,8 +436,8 @@
     "number": 49,
     "zone": "Lake Hylia",
     "area": "lake-hylia",
-    "x": 68.1,
-    "y": 38.1,
+    "x": 38.0,
+    "y": 43.0,
     "location": "On the back outer wall of the Lakeside Laboratory — reel it in with the Boomerang."
   },
   {
@@ -445,8 +445,8 @@
     "number": 50,
     "zone": "Lake Hylia",
     "area": "lake-hylia",
-    "x": 36.4,
-    "y": 61.9,
+    "x": 34.0,
+    "y": 46.0,
     "location": "In a wooden crate at the bottom of the lab's flooded room — as an adult, dive down in the Iron Boots, roll into the crate, then reel the piece in with the Hookshot."
   },
   {
@@ -472,8 +472,8 @@
     "number": 53,
     "zone": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 44.7,
-    "y": 65.9,
+    "x": 33,
+    "y": 70,
     "location": "Behind the western hole in the central room of 1F — reel it in with the Boomerang."
   },
   {
@@ -481,8 +481,8 @@
     "number": 54,
     "zone": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 37.3,
-    "y": 77.1,
+    "x": 41,
+    "y": 70,
     "location": "Behind the eastern hole in the central room of 1F — reel it in with the Boomerang."
   },
   {
@@ -553,7 +553,7 @@
     "number": 62,
     "zone": "Fire Temple",
     "area": "death-mountain",
-    "x": 24.0,
+    "x": 44.0,
     "y": 18.6,
     "location": "In the room on the east side of 1F — play the Song of Time to shift the block blocking it."
   },
@@ -805,8 +805,8 @@
     "number": 90,
     "zone": "Desert Colossus",
     "area": "gerudo",
-    "x": 45.9,
-    "y": 19.2,
+    "x": 44.0,
+    "y": 32.0,
     "location": "In the palm tree to the south — reel it in with the Longshot."
   },
   {
@@ -814,8 +814,8 @@
     "number": 91,
     "zone": "Desert Colossus",
     "area": "gerudo",
-    "x": 54.1,
-    "y": 19.2,
+    "x": 50.0,
+    "y": 24.0,
     "location": "On the rock mound near the center — reel it in with the Longshot."
   },
   {
@@ -823,8 +823,8 @@
     "number": 92,
     "zone": "Desert Colossus",
     "area": "gerudo",
-    "x": 50.0,
-    "y": 28.8,
+    "x": 40.0,
+    "y": 30.0,
     "location": "In the soft soil by the Spirit Temple entrance — as a child, empty a Bottled Bug into the dirt."
   },
   {
