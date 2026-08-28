@@ -1,0 +1,66 @@
+name: Corrección de contenido
+description: Un dato del juego (skulltula, corazón, canción, mazmorra…) está mal o incompleto
+labels: ["content"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por ayudar a que la guía sea más precisa. Si estás en el
+        sitio publicado, el botón "Reportar un problema" (esquina inferior)
+        pre-rellena varios de estos campos por ti.
+
+  - type: dropdown
+    id: collection
+    attributes:
+      label: Colección afectada
+      options:
+        - Mazmorras (chapters)
+        - Skulltulas doradas
+        - Piezas/Contenedores de Corazón (hearts)
+        - Equipo (equipment)
+        - Jefes (bosses)
+        - Recompensas de la Casa Skulltula (rewards)
+        - Consejos (tips)
+        - Canciones de ocarina (songs)
+        - Secundarias (sidequests)
+        - Consejos de oro (rules)
+        - Otro / no estoy seguro
+    validations:
+      required: true
+
+  - type: input
+    id: entry
+    attributes:
+      label: Entrada específica
+      description: Nombre o id de la entrada si lo sabes (por ejemplo "hp-17" o "Skulltula #42, Kakariko")
+      placeholder: id o nombre de la entrada
+    validations:
+      required: false
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: Qué está mal
+      description: Qué dice la guía actualmente y qué debería decir
+      placeholder: |
+        La guía dice X, pero en el juego (OoT3D) es Y.
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Fuente
+      description: Cómo lo verificaste — un enlace (Zelda Wiki, Zelda Dungeon Wiki, Thonky.com, GameWith) o tu propia partida
+      placeholder: https://zeldawiki.wiki/... o "lo verifiqué jugando en 3DS, versión X"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: locales
+    attributes:
+      label: Locales afectados
+      description: Marca los que apliquen — si aplica a ambos, mejor
+      options:
+        - label: Español (es)
+        - label: Inglés (en)

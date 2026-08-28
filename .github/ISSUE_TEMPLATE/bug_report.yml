@@ -1,0 +1,57 @@
+name: Bug de la app
+description: Algo en el sitio/tracker no funciona como debería (no es un error de contenido del juego)
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Para bugs de la app (tracker, checklists, PWA, etc.), no errores de
+        contenido del juego. Si estás en el sitio publicado, el botón
+        "Reportar un problema" (esquina inferior) captura diagnósticos
+        automáticamente — úsalo si puedes, ahorra pasos.
+
+  - type: input
+    id: title
+    attributes:
+      label: Resumen
+      placeholder: Descripción corta del problema
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducir
+      placeholder: |
+        1. Ir a ...
+        2. Hacer clic en ...
+        3. Ver el error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamiento esperado
+      placeholder: ¿Qué esperabas que pasara?
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Navegador / dispositivo
+      placeholder: "Chrome 128 en Android, Safari en iPhone, etc."
+    validations:
+      required: false
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnósticos (opcional)
+      description: Pega aquí los diagnósticos copiados desde el FeedbackFAB, si los tienes
+      placeholder: |
+        Entorno: ...
+        Errores de consola: ...
+        Peticiones fallidas: ...
+      render: text
