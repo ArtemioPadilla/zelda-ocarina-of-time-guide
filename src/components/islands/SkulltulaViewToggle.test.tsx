@@ -19,8 +19,26 @@ vi.mock('idb-keyval', () => ({
 }));
 
 const items = [
-  { id: 'sk-01', number: 1, zone: 'Kokiri Forest', area: 'kokiri' as const, location: 'Above the shop door', x: 60, y: 70 },
-  { id: 'sk-02', number: 2, zone: 'Hyrule Field', area: 'hyrule-field' as const, location: 'Under the drawbridge', x: 20, y: 80 },
+  {
+    id: 'sk-01',
+    number: 1,
+    zone: 'Kokiri Forest',
+    zoneKey: 'Kokiri Forest',
+    area: 'kokiri' as const,
+    location: 'Above the shop door',
+    x: 60,
+    y: 70,
+  },
+  {
+    id: 'sk-02',
+    number: 2,
+    zone: 'Hyrule Field',
+    zoneKey: 'Hyrule Field',
+    area: 'hyrule-field' as const,
+    location: 'Under the drawbridge',
+    x: 20,
+    y: 80,
+  },
 ];
 
 const areaLabels: Record<SkulltulaArea, string> = {
@@ -54,7 +72,7 @@ describe('SkulltulaViewToggle', () => {
     const { default: SkulltulaViewToggle } = await import('./SkulltulaViewToggle');
     render(<SkulltulaViewToggle {...baseProps} />);
 
-    expect(screen.getByRole('heading', { name: 'Kokiri Forest' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'Kokiri Forest' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'List' })).toHaveAttribute('aria-pressed', 'true');
     expect(screen.getByRole('button', { name: 'Map' })).toHaveAttribute('aria-pressed', 'false');
   });
@@ -68,11 +86,13 @@ describe('SkulltulaViewToggle', () => {
     expect(screen.getByText('Kokiri Forest & Lost Woods')).toBeInTheDocument();
     expect(screen.getByText('Hyrule Field & Castle')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Above the shop door/ })).toBeInTheDocument();
-    // List's zone-grouped heading is gone while Map is showing.
-    expect(screen.queryByRole('heading', { name: 'Kokiri Forest' })).not.toBeInTheDocument();
+    // List's zone-grouped <h2> heading is gone while Map is showing — Map
+    // has its own zone sub-heading, but at a different heading level.
+    expect(screen.queryByRole('heading', { level: 2, name: 'Kokiri Forest' })).not.toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 4, name: /Kokiri Forest/ })).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'List' }));
-    expect(screen.getByRole('heading', { name: 'Kokiri Forest' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'Kokiri Forest' })).toBeInTheDocument();
   });
 
   it('toggling a pin in Map view is reflected in List view — one shared items array and store', async () => {
