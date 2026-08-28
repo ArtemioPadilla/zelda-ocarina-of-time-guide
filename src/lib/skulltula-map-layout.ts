@@ -10,7 +10,8 @@
  * `attribution`/`sourceUrl`) used as the map's base layer, with every pin
  * in that zone hand-recalibrated in `src/content/{es,en}/skulltulas.json`
  * against that image's actual geometry. Most pins are landmark-anchored;
- * a few per zone (mainly Kakariko Village and Zora's River) are
+ * a few per zone (mainly Kakariko Village, Zora's River, and the
+ * compass-approximated portion of several dungeon floors below) are
  * compass-approximated instead, where a described landmark fell outside
  * the photographed frame — no per-pin list of which is which exists
  * beyond that qualitative note, so treat any single pin's precision as
@@ -23,14 +24,26 @@
  * asset other OoT fan guides (Zelda Wiki, Zelda Dungeon Wiki) use for
  * these areas, not an orthographic map.
  *
- * Where no `image` is set, the zone falls back to the original hand-drawn
- * schematic treatment: a single solid rect filling the whole 0-100 canvas
- * (interior/exterior fill only, via `interior`), with pins positioned by
- * hand. This deliberately covers every dungeon interior (OoT's 3D,
- * multi-floor dungeons don't reduce to one flat image any more than the
- * overworld does — doing them justice would mean a per-floor sub-map and
- * floor switcher, a real feature beyond this pass) plus a handful of
- * smaller overworld zones a matching photo wasn't sourced for yet.
+ * `ZONE_MAPS[zoneKey].floors`, where present (all 11 dungeon interiors
+ * with skulltulas), replaces the single `image` with an array of real
+ * per-floor screenshots switched via a floor-tab UI in SkulltulaMap.tsx —
+ * a dungeon with only one real photo available still uses `floors` (with
+ * one entry, no tabs rendered) rather than `image`, so "floored zone" and
+ * "dungeon interior with a skulltula" are exactly the same set. Each
+ * skulltula in a floored zone carries a matching `floor` key in
+ * `skulltulas.json`. Deku Tree, Forest Temple, and Jabu-Jabu's Belly got
+ * genuine multi-floor real-photo galleries from Zelda Wiki; the rest
+ * (Dodongo's Cavern, Fire Temple, Ice Cavern, Water Temple, Bottom of the
+ * Well, Shadow Temple, Spirit Temple, Ganon's Castle) only had one usable
+ * real interior screenshot available, so they use a single-entry `floors`
+ * array with pins compass-approximated around whichever landmarks aren't
+ * literally in that one frame.
+ *
+ * Where neither `image` nor `floors` is set, the zone falls back to the
+ * original hand-drawn schematic treatment: a single solid rect filling
+ * the whole 0-100 canvas (interior/exterior fill only, via `interior`),
+ * with pins positioned by hand. This now covers only a handful of smaller
+ * overworld zones a matching photo wasn't sourced for yet.
  */
 
 export const AREA_ORDER = [
@@ -57,13 +70,29 @@ export interface ZoneMapImage {
   sourceUrl: string;
 }
 
+export interface ZoneMapFloor {
+  /** Stable key matching the `floor` field on that zone's skulltulas.json
+   * entries (e.g. "b1", "1f") — untranslated, same pattern as `zoneKey`. */
+  key: string;
+  /** Short tab label shown in the floor switcher, e.g. "B1", "1F". */
+  label: string;
+  image: ZoneMapImage;
+}
+
 export interface ZoneMapConfig {
   zone: string;
   hub: SkulltulaArea;
   /** Dungeon/interior zones get a slightly different schematic fill (see
-   * SkulltulaMap.tsx) when they have no real `image`. */
+   * SkulltulaMap.tsx) when they have no real `image`/`floors`. */
   interior: boolean;
   image?: ZoneMapImage;
+  /** Present only for the 11 dungeon interiors that got a per-floor real-
+   * image treatment: one real screenshot per floor, switched via a floor
+   * tab UI in SkulltulaMap.tsx, instead of a single zone-wide `image`.
+   * Mutually exclusive with `image` in practice (a floored zone leaves
+   * `image` unset). Each dungeon's skulltulas.json entries carry a matching
+   * `floor` key so the map knows which tab a given pin belongs to. */
+  floors?: ZoneMapFloor[];
 }
 
 const img = (
@@ -73,6 +102,16 @@ const img = (
   attribution: string,
   sourceUrl: string,
 ): ZoneMapImage => ({ src: `/images/skulltulas/${file}`, width, height, attribution, sourceUrl });
+
+const floor = (
+  key: string,
+  label: string,
+  file: string,
+  width: number,
+  height: number,
+  attribution: string,
+  sourceUrl: string,
+): ZoneMapFloor => ({ key, label, image: img(file, width, height, attribution, sourceUrl) });
 
 // Ordered per hub, matching the original AREA_REGIONS authoring order —
 // `ZONES_BY_HUB` (derived below) preserves that order for the Map view.
@@ -90,15 +129,151 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
       'https://zeldawiki.wiki/wiki/File:OoT3D_Kokiri_Forest_Map.png',
     ),
   },
-  { zone: 'Inside the Deku Tree', hub: 'kokiri', interior: true },
-  { zone: 'Lost Woods', hub: 'kokiri', interior: false },
-  { zone: 'Sacred Forest Meadow', hub: 'kokiri', interior: false },
-  { zone: 'Forest Temple', hub: 'kokiri', interior: true },
+  {
+    zone: 'Inside the Deku Tree',
+    hub: 'kokiri',
+    interior: true,
+    floors: [
+      floor(
+        '3f',
+        '3F',
+        'dungeons/deku-tree/3f.webp',
+        1400,
+        788,
+        'Zelda Wiki — OoT3D Inside the Deku Tree, 3F',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Floor_3_(Inside_the_Deku_Tree).png',
+      ),
+      floor(
+        'b1',
+        'B1',
+        'dungeons/deku-tree/b1.webp',
+        1400,
+        788,
+        'Zelda Wiki — OoT3D Inside the Deku Tree, B1',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Basement_1_(Inside_the_Deku_Tree).png',
+      ),
+    ],
+  },
+  {
+    zone: 'Lost Woods',
+    hub: 'kokiri',
+    interior: false,
+    image: img(
+      'lost-woods.webp',
+      1400,
+      788,
+      'Zelda Wiki — OoT3D Lost Woods screenshot',
+      'https://zeldawiki.wiki/wiki/File:OoT3D_Lost_Woods.png',
+    ),
+  },
+  {
+    zone: 'Sacred Forest Meadow',
+    hub: 'kokiri',
+    interior: false,
+    image: img(
+      'sacred-forest-meadow.webp',
+      1400,
+      788,
+      'Zelda Wiki — OoT3D Sacred Forest Meadow screenshot',
+      'https://zeldawiki.wiki/wiki/File:OoT3D_Sacred_Forest_Meadow.png',
+    ),
+  },
+  {
+    zone: 'Forest Temple',
+    hub: 'kokiri',
+    interior: true,
+    floors: [
+      floor(
+        'entrance-courtyard',
+        'East Courtyard',
+        'dungeons/forest-temple/entrance-courtyard.webp',
+        1400,
+        788,
+        'Zelda Wiki — OoT3D Forest Temple, East Courtyard',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_East_Courtyard.png',
+      ),
+      floor(
+        'main-hall',
+        'Main Hall',
+        'dungeons/forest-temple/main-hall.webp',
+        1400,
+        788,
+        'Zelda Wiki — OoT3D Forest Temple, Main Room',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Main_Room.png',
+      ),
+      floor(
+        'west-courtyard',
+        'West Courtyard',
+        'dungeons/forest-temple/west-courtyard.webp',
+        1400,
+        788,
+        'Zelda Wiki — OoT3D Forest Temple, West Courtyard',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_West_Courtyard.png',
+      ),
+      floor(
+        'rotating-hallway',
+        'Rotating Hall',
+        'dungeons/forest-temple/rotating-hallway.webp',
+        1400,
+        840,
+        'Zelda Wiki — OoT3D Forest Temple, twisted/rotating hallway',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Twisted_Hallway.png',
+      ),
+    ],
+  },
   // --- Hyrule Field hub ---
-  { zone: 'Hyrule Castle Market', hub: 'hyrule-field', interior: false },
-  { zone: 'Hyrule Castle', hub: 'hyrule-field', interior: false },
-  { zone: "Ganon's Castle", hub: 'hyrule-field', interior: true },
-  { zone: 'Hyrule Field', hub: 'hyrule-field', interior: false },
+  {
+    zone: 'Hyrule Castle Market',
+    hub: 'hyrule-field',
+    interior: false,
+    image: img(
+      'hyrule-castle-market.webp',
+      1400,
+      840,
+      'Zelda Wiki — OoT3D Market screenshot',
+      'https://zeldawiki.wiki/wiki/File:OoT3D_Market.png',
+    ),
+  },
+  {
+    zone: 'Hyrule Castle',
+    hub: 'hyrule-field',
+    interior: false,
+    image: img(
+      'hyrule-castle.webp',
+      1400,
+      788,
+      'Zelda Wiki — OoT3D Hyrule Castle screenshot',
+      'https://zeldawiki.wiki/wiki/File:OoT3D_Hyrule_Castle.png',
+    ),
+  },
+  {
+    zone: "Ganon's Castle",
+    hub: 'hyrule-field',
+    interior: true,
+    floors: [
+      floor(
+        'main',
+        'Interior',
+        'dungeons/ganons-castle/main.webp',
+        1400,
+        841,
+        "Zelda Wiki — OoT3D Ganon's Castle, entrance hall",
+        "https://zeldawiki.wiki/wiki/File:OoT3D_Ganon's_Tower_Entrance.png",
+      ),
+    ],
+  },
+  {
+    zone: 'Hyrule Field',
+    hub: 'hyrule-field',
+    interior: false,
+    image: img(
+      'hyrule-field.webp',
+      1400,
+      1074,
+      'Zelda Wiki — OoT Hyrule Field screenshot',
+      'https://zeldawiki.wiki/wiki/File:OoT_Hyrule_Field.png',
+    ),
+  },
   {
     zone: 'Lon Lon Ranch',
     hub: 'hyrule-field',
@@ -124,7 +299,22 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
       'https://zeldawiki.wiki/wiki/File:OoT3D_Kakariko_Village_Graveyard.png',
     ),
   },
-  { zone: 'Shadow Temple', hub: 'kakariko', interior: true },
+  {
+    zone: 'Shadow Temple',
+    hub: 'kakariko',
+    interior: true,
+    floors: [
+      floor(
+        'main',
+        'Interior',
+        'dungeons/shadow-temple/main.webp',
+        1400,
+        788,
+        'Zelda Wiki — OoT3D Shadow Temple, rising/falling spike platform',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Shadow_Temple.png',
+      ),
+    ],
+  },
   {
     zone: 'Kakariko Village',
     hub: 'kakariko',
@@ -137,13 +327,91 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
       'https://zeldawiki.wiki/wiki/File:OoT3D_Kakariko_Village.png',
     ),
   },
-  { zone: 'Bottom of the Well', hub: 'kakariko', interior: true },
+  {
+    zone: 'Bottom of the Well',
+    hub: 'kakariko',
+    interior: true,
+    floors: [
+      floor(
+        'main',
+        'Interior',
+        'dungeons/bottom-of-the-well/main.webp',
+        1400,
+        788,
+        'Zelda Wiki — OoT3D Bottom of the Well, central corridor',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Bottom_of_the_Well.png',
+      ),
+    ],
+  },
   // --- Death Mountain hub ---
-  { zone: 'Death Mountain Crater', hub: 'death-mountain', interior: false },
-  { zone: "Dodongo's Cavern", hub: 'death-mountain', interior: true },
-  { zone: 'Fire Temple', hub: 'death-mountain', interior: true },
-  { zone: 'Goron City', hub: 'death-mountain', interior: true },
-  { zone: 'Death Mountain Trail', hub: 'death-mountain', interior: false },
+  {
+    zone: 'Death Mountain Crater',
+    hub: 'death-mountain',
+    interior: false,
+    image: img(
+      'death-mountain-crater.webp',
+      1400,
+      788,
+      'Zelda Wiki — OoT3D Death Mountain Crater screenshot',
+      'https://zeldawiki.wiki/wiki/File:OoT3D_Death_Mountain_Crater.png',
+    ),
+  },
+  {
+    zone: "Dodongo's Cavern",
+    hub: 'death-mountain',
+    interior: true,
+    floors: [
+      floor(
+        '1f',
+        '1F',
+        'dungeons/dodongos-cavern/1f.webp',
+        1400,
+        788,
+        "Zelda Wiki — OoT3D Dodongo's Cavern entrance hall",
+        "https://zeldawiki.wiki/wiki/File:OoT3D_Dodongo's_Cavern.png",
+      ),
+    ],
+  },
+  {
+    zone: 'Fire Temple',
+    hub: 'death-mountain',
+    interior: true,
+    floors: [
+      floor(
+        'main',
+        'Interior',
+        'dungeons/fire-temple/1f.webp',
+        1120,
+        840,
+        'Zelda Wiki — OoT Fire Temple entrance hall',
+        'https://zeldawiki.wiki/wiki/File:FireTemple.jpg',
+      ),
+    ],
+  },
+  {
+    zone: 'Goron City',
+    hub: 'death-mountain',
+    interior: true,
+    image: img(
+      'goron-city.webp',
+      1400,
+      875,
+      'Zelda Wiki — OoT Goron City rotunda screenshot',
+      'https://zeldawiki.wiki/wiki/File:OoT_Goron_City.png',
+    ),
+  },
+  {
+    zone: 'Death Mountain Trail',
+    hub: 'death-mountain',
+    interior: false,
+    image: img(
+      'death-mountain-trail.webp',
+      1400,
+      920,
+      'Zelda Wiki — OoT3D Death Mountain Trail screenshot',
+      'https://zeldawiki.wiki/wiki/File:OoT3D_Death_Mountain_Trail.png',
+    ),
+  },
   // --- Zora hub ---
   {
     zone: "Zora's Fountain",
@@ -157,10 +425,75 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
       "https://zeldawiki.wiki/wiki/File:OoT3D_Zora's_Fountain.png",
     ),
   },
-  { zone: 'Ice Cavern', hub: 'zora', interior: true },
-  { zone: "Zora's Domain", hub: 'zora', interior: false },
-  { zone: 'Water Temple', hub: 'zora', interior: true },
-  { zone: "Inside Jabu-Jabu's Belly", hub: 'zora', interior: true },
+  {
+    zone: 'Ice Cavern',
+    hub: 'zora',
+    interior: true,
+    floors: [
+      floor(
+        'main',
+        'Interior',
+        'dungeons/ice-cavern/main.webp',
+        1120,
+        672,
+        'Zelda Wiki — OoT3D Ice Cavern, movable ice block room',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Ice_Cavern.png',
+      ),
+    ],
+  },
+  {
+    zone: "Zora's Domain",
+    hub: 'zora',
+    interior: false,
+    image: img(
+      'zoras-domain.webp',
+      1400,
+      1050,
+      "Zelda Wiki — OoT frozen Zora's Domain screenshot",
+      "https://zeldawiki.wiki/wiki/File:OoT_Frozen_Zora's_Domain.png",
+    ),
+  },
+  {
+    zone: 'Water Temple',
+    hub: 'zora',
+    interior: true,
+    floors: [
+      floor(
+        'main',
+        'Interior',
+        'dungeons/water-temple/main.webp',
+        1400,
+        713,
+        'Zelda Wiki — OoT3D Water Temple, central pillar building',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Water_Temple.png',
+      ),
+    ],
+  },
+  {
+    zone: "Inside Jabu-Jabu's Belly",
+    hub: 'zora',
+    interior: true,
+    floors: [
+      floor(
+        '1f',
+        '1F',
+        'dungeons/jabu-jabu/1f.webp',
+        1400,
+        788,
+        "Zelda Wiki — OoT3D Inside Jabu-Jabu's Belly, 1F",
+        "https://zeldawiki.wiki/wiki/File:OoT3D_Floor_1_(Inside_Jabu-Jabu's_Belly).png",
+      ),
+      floor(
+        'b1',
+        'B1',
+        'dungeons/jabu-jabu/b1.webp',
+        1400,
+        788,
+        "Zelda Wiki — OoT3D Inside Jabu-Jabu's Belly, B1",
+        "https://zeldawiki.wiki/wiki/File:OoT3D_Basement_1_(Inside_Jabu-Jabu's_Belly).png",
+      ),
+    ],
+  },
   {
     zone: "Zora's River",
     hub: 'zora',
@@ -187,10 +520,58 @@ export const ZONE_MAPS: ZoneMapConfig[] = [
     ),
   },
   // --- Gerudo hub ---
-  { zone: "Gerudo's Fortress", hub: 'gerudo', interior: false },
-  { zone: 'Desert Colossus', hub: 'gerudo', interior: false },
-  { zone: 'Haunted Wasteland', hub: 'gerudo', interior: false },
-  { zone: 'Spirit Temple', hub: 'gerudo', interior: true },
+  {
+    zone: "Gerudo's Fortress",
+    hub: 'gerudo',
+    interior: false,
+    image: img(
+      'gerudos-fortress.webp',
+      1400,
+      770,
+      "Zelda Wiki — OoT Gerudo's Fortress courtyard screenshot",
+      "https://zeldawiki.wiki/wiki/File:OoT_Gerudo's_Fortress.png",
+    ),
+  },
+  {
+    zone: 'Desert Colossus',
+    hub: 'gerudo',
+    interior: false,
+    image: img(
+      'desert-colossus.webp',
+      1400,
+      714,
+      'Zelda Wiki — OoT Desert Colossus screenshot',
+      'https://zeldawiki.wiki/wiki/File:OoT_Desert_Colossus.png',
+    ),
+  },
+  {
+    zone: 'Haunted Wasteland',
+    hub: 'gerudo',
+    interior: false,
+    image: img(
+      'haunted-wasteland.webp',
+      642,
+      481,
+      "Zelda Wiki — OoT 'inside the stone monument in the Haunted Wasteland' screenshot",
+      'https://zeldawiki.wiki/wiki/File:Stone_Monument_InsideOoT.png',
+    ),
+  },
+  {
+    zone: 'Spirit Temple',
+    hub: 'gerudo',
+    interior: true,
+    floors: [
+      floor(
+        'main',
+        'Interior',
+        'dungeons/spirit-temple/main.webp',
+        1400,
+        788,
+        'Zelda Wiki — OoT3D Spirit Temple, main entrance hall',
+        'https://zeldawiki.wiki/wiki/File:OoT3D_Spirit_Temple.png',
+      ),
+    ],
+  },
   {
     zone: 'Gerudo Valley',
     hub: 'gerudo',

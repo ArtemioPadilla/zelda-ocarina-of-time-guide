@@ -14,6 +14,7 @@ interface MapSkulltula {
   note?: string;
   x: number;
   y: number;
+  floor?: string;
 }
 
 interface Props {
@@ -28,7 +29,13 @@ interface Props {
  * view (SkulltulaChecklist), grouped into the 7 top-level hubs for
  * wayfinding — each hub then renders one map card per fine-grained zone
  * within it (`ZONES_BY_HUB`), not one combined hub-wide map. */
-export default function SkulltulaMapView({ items, progressLabel, areaLabels, doneLabel, pendingLabel }: Props) {
+export default function SkulltulaMapView({
+  items,
+  progressLabel,
+  areaLabels,
+  doneLabel,
+  pendingLabel,
+}: Props) {
   const checked = useStore(skulltulasStore.$checked);
   const done = items.filter((i) => checked.has(i.id)).length;
 
@@ -59,7 +66,12 @@ export default function SkulltulaMapView({ items, progressLabel, areaLabels, don
                       {zoneDone}/{zoneItems.length}
                     </span>
                   </h4>
-                  <SkulltulaMap zoneKey={zoneKey} items={zoneItems} doneLabel={doneLabel} pendingLabel={pendingLabel} />
+                  <SkulltulaMap
+                    zoneKey={zoneKey}
+                    items={zoneItems}
+                    doneLabel={doneLabel}
+                    pendingLabel={pendingLabel}
+                  />
                 </div>
               );
             })}

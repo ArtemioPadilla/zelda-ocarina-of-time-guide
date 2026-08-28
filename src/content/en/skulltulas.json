@@ -5,9 +5,10 @@
     "zone": "Inside the Deku Tree",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 50.0,
-    "y": 14.3,
-    "location": "Clinging to the wall of the 3F Compass Room — walk up and strike it once you spot it."
+    "x": 30,
+    "y": 42,
+    "location": "Clinging to the wall of the 3F Compass Room — walk up and strike it once you spot it.",
+    "floor": "3f"
   },
   {
     "id": "sk-002",
@@ -15,9 +16,10 @@
     "zone": "Inside the Deku Tree",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 78.6,
-    "y": 78.6,
-    "location": "On the vines you land on after dropping through the web from 1F down to B1 — knock it down with the Slingshot."
+    "x": 45,
+    "y": 80,
+    "location": "On the vines you land on after dropping through the web from 1F down to B1 — knock it down with the Slingshot.",
+    "floor": "b1"
   },
   {
     "id": "sk-003",
@@ -25,9 +27,10 @@
     "zone": "Inside the Deku Tree",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 50.0,
-    "y": 78.6,
-    "location": "Behind the iron bars at the base of the huge cobweb — line up a shot through the bars to reach it."
+    "x": 24,
+    "y": 48,
+    "location": "Behind the iron bars at the base of the huge cobweb — line up a shot through the bars to reach it.",
+    "floor": "b1"
   },
   {
     "id": "sk-004",
@@ -35,9 +38,10 @@
     "zone": "Inside the Deku Tree",
     "zoneKey": "Inside the Deku Tree",
     "area": "kokiri",
-    "x": 14.3,
-    "y": 78.6,
-    "location": "Behind a bombable wall in the room where three Baby Gohma hatch — blow the wall open, then reel it in with the Boomerang."
+    "x": 75,
+    "y": 30,
+    "location": "Behind a bombable wall in the room where three Baby Gohma hatch — blow the wall open, then reel it in with the Boomerang.",
+    "floor": "b1"
   },
   {
     "id": "sk-005",
@@ -75,8 +79,8 @@
     "zone": "Hyrule Castle Market",
     "zoneKey": "Hyrule Castle Market",
     "area": "hyrule-field",
-    "x": 50.0,
-    "y": 50.0,
+    "x": 25,
+    "y": 55,
     "location": "Inside a wooden crate in the guardhouse near the drawbridge — roll into it to break it open."
   },
   {
@@ -85,8 +89,8 @@
     "zone": "Hyrule Castle",
     "zoneKey": "Hyrule Castle",
     "area": "hyrule-field",
-    "x": 32.9,
-    "y": 50.0,
+    "x": 88,
+    "y": 75,
     "location": "In the tree ringed by three small boulders along the path up to the castle — roll straight into the trunk."
   },
   {
@@ -95,8 +99,8 @@
     "zone": "Hyrule Castle",
     "zoneKey": "Hyrule Castle",
     "area": "hyrule-field",
-    "x": 67.1,
-    "y": 50.0,
+    "x": 95,
+    "y": 70,
     "location": "Behind a hidden wall by the tree at the bend in the moat's water channel — play the Song of Storms to expose it, bomb the wall, then reel it in with the Boomerang."
   },
   {
@@ -205,8 +209,8 @@
     "zone": "Lost Woods",
     "zoneKey": "Lost Woods",
     "area": "kokiri",
-    "x": 15.4,
-    "y": 75.0,
+    "x": 20,
+    "y": 70,
     "location": "In the soft soil of the southwest clearing, near the Business Scrubs — empty a Bottled Bug into the dirt."
   },
   {
@@ -215,8 +219,8 @@
     "zone": "Lost Woods",
     "zoneKey": "Lost Woods",
     "area": "kokiri",
-    "x": 66.9,
-    "y": 33.1,
+    "x": 50,
+    "y": 75,
     "location": "In the soft soil of the central clearing — empty a Bottled Bug into the dirt."
   },
   {
@@ -225,8 +229,8 @@
     "zone": "Lost Woods",
     "zoneKey": "Lost Woods",
     "area": "kokiri",
-    "x": 50.0,
-    "y": 66.9,
+    "x": 65,
+    "y": 25,
     "location": "On a high ledge deep in the woods — plant a Magic Bean there as a child, then fly up on the sprouted stalk as an adult."
   },
   {
@@ -255,8 +259,8 @@
     "zone": "Death Mountain Trail",
     "zoneKey": "Death Mountain Trail",
     "area": "death-mountain",
-    "x": 33.0,
-    "y": 32.9,
+    "x": 20,
+    "y": 60,
     "location": "In the soft soil right at the entrance to Dodongo's Cavern — empty a Bottled Bug into the dirt."
   },
   {
@@ -265,8 +269,8 @@
     "zone": "Death Mountain Trail",
     "zoneKey": "Death Mountain Trail",
     "area": "death-mountain",
-    "x": 67.0,
-    "y": 32.9,
+    "x": 45,
+    "y": 45,
     "location": "Behind a bombable wall further up the trail — blow it open, then reel it in with the Boomerang."
   },
   {
@@ -275,8 +279,8 @@
     "zone": "Death Mountain Trail",
     "zoneKey": "Death Mountain Trail",
     "area": "death-mountain",
-    "x": 33.0,
-    "y": 67.1,
+    "x": 65,
+    "y": 30,
     "location": "Behind the large boulder near the Bomb Flowers — as an adult, smash it with the Megaton Hammer."
   },
   {
@@ -285,8 +289,8 @@
     "zone": "Death Mountain Trail",
     "zoneKey": "Death Mountain Trail",
     "area": "death-mountain",
-    "x": 67.0,
-    "y": 67.1,
+    "x": 85,
+    "y": 15,
     "location": "Behind another large boulder partway up toward the summit — as an adult, smash it with the Megaton Hammer."
   },
   {
@@ -295,9 +299,10 @@
     "zone": "Dodongo's Cavern",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 27.2,
-    "y": 32.9,
-    "location": "In the room full of Bomb Flowers — knock it down with the Slingshot."
+    "x": 15,
+    "y": 55,
+    "location": "In the room full of Bomb Flowers — knock it down with the Slingshot.",
+    "floor": "1f"
   },
   {
     "id": "sk-031",
@@ -305,9 +310,10 @@
     "zone": "Dodongo's Cavern",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 50.0,
-    "y": 32.9,
-    "location": "Behind a bombable wall in the eastern corridor of 1F — blow it open to reach it."
+    "x": 85,
+    "y": 45,
+    "location": "Behind a bombable wall in the eastern corridor of 1F — blow it open to reach it.",
+    "floor": "1f"
   },
   {
     "id": "sk-032",
@@ -315,9 +321,10 @@
     "zone": "Dodongo's Cavern",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 72.8,
-    "y": 32.9,
-    "location": "Behind a bombable wall to the north on 1F — blow it open to reach it."
+    "x": 50,
+    "y": 12,
+    "location": "Behind a bombable wall to the north on 1F — blow it open to reach it.",
+    "floor": "1f"
   },
   {
     "id": "sk-033",
@@ -325,9 +332,10 @@
     "zone": "Dodongo's Cavern",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 32.8,
-    "y": 67.1,
-    "location": "Above the stairs in the Bomb Flower room — climb to the upper floor and reel it in with the Boomerang."
+    "x": 15,
+    "y": 35,
+    "location": "Above the stairs in the Bomb Flower room — climb to the upper floor and reel it in with the Boomerang.",
+    "floor": "1f"
   },
   {
     "id": "sk-034",
@@ -335,9 +343,10 @@
     "zone": "Dodongo's Cavern",
     "zoneKey": "Dodongo's Cavern",
     "area": "death-mountain",
-    "x": 67.2,
-    "y": 67.1,
-    "location": "In the eastern corridor of 1F — as an adult, play the Scarecrow's Song to summon Pierre, then reach it with the Hookshot."
+    "x": 90,
+    "y": 62,
+    "location": "In the eastern corridor of 1F — as an adult, play the Scarecrow's Song to summon Pierre, then reach it with the Hookshot.",
+    "floor": "1f"
   },
   {
     "id": "sk-035",
@@ -345,8 +354,8 @@
     "zone": "Goron City",
     "zoneKey": "Goron City",
     "area": "death-mountain",
-    "x": 33.0,
-    "y": 25.7,
+    "x": 15,
+    "y": 45,
     "location": "In a wooden crate in the northwest room — bomb the boulders blocking the doorway, then roll into the crate."
   },
   {
@@ -355,8 +364,8 @@
     "zone": "Goron City",
     "zoneKey": "Goron City",
     "area": "death-mountain",
-    "x": 67.0,
-    "y": 50.0,
+    "x": 48,
+    "y": 48,
     "location": "On the rope-suspended platform overhead — as an adult, pull it down with the Hookshot."
   },
   {
@@ -365,8 +374,8 @@
     "zone": "Death Mountain Crater",
     "zoneKey": "Death Mountain Crater",
     "area": "death-mountain",
-    "x": 33.0,
-    "y": 50.0,
+    "x": 15,
+    "y": 25,
     "location": "In a wooden crate just past the entrance — roll into it to break it open."
   },
   {
@@ -375,8 +384,8 @@
     "zone": "Death Mountain Crater",
     "zoneKey": "Death Mountain Crater",
     "area": "death-mountain",
-    "x": 67.0,
-    "y": 50.0,
+    "x": 53,
+    "y": 45,
     "location": "In the soft soil near the warp point — warp in with Bolero of Fire, then empty a Bottled Bug into the dirt."
   },
   {
@@ -425,8 +434,8 @@
     "zone": "Zora's Domain",
     "zoneKey": "Zora's Domain",
     "area": "zora",
-    "x": 50.0,
-    "y": 50.0,
+    "x": 45,
+    "y": 35,
     "location": "On the wall beside the frozen waterfall — as an adult, reel it in with the Hookshot."
   },
   {
@@ -515,9 +524,10 @@
     "zone": "Inside Jabu-Jabu's Belly",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 33.2,
-    "y": 33.0,
-    "location": "On the wall in the corridor just before the boss room."
+    "x": 15,
+    "y": 30,
+    "location": "On the wall in the corridor just before the boss room.",
+    "floor": "b1"
   },
   {
     "id": "sk-053",
@@ -525,9 +535,10 @@
     "zone": "Inside Jabu-Jabu's Belly",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 13.6,
-    "y": 45.5,
-    "location": "Behind the western hole in the central room of 1F — reel it in with the Boomerang."
+    "x": 35,
+    "y": 65,
+    "location": "Behind the western hole in the central room of 1F — reel it in with the Boomerang.",
+    "floor": "1f"
   },
   {
     "id": "sk-054",
@@ -535,9 +546,10 @@
     "zone": "Inside Jabu-Jabu's Belly",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 50.0,
-    "y": 45.5,
-    "location": "Behind the eastern hole in the central room of 1F — reel it in with the Boomerang."
+    "x": 68,
+    "y": 58,
+    "location": "Behind the eastern hole in the central room of 1F — reel it in with the Boomerang.",
+    "floor": "1f"
   },
   {
     "id": "sk-055",
@@ -545,9 +557,10 @@
     "zone": "Inside Jabu-Jabu's Belly",
     "zoneKey": "Inside Jabu-Jabu's Belly",
     "area": "zora",
-    "x": 66.8,
-    "y": 67.0,
-    "location": "On the vines in the eastern room of B1 — raise the water level or reel it in with the Boomerang."
+    "x": 85,
+    "y": 45,
+    "location": "On the vines in the eastern room of B1 — raise the water level or reel it in with the Boomerang.",
+    "floor": "b1"
   },
   {
     "id": "sk-056",
@@ -555,8 +568,8 @@
     "zone": "Sacred Forest Meadow",
     "zoneKey": "Sacred Forest Meadow",
     "area": "kokiri",
-    "x": 50.0,
-    "y": 50.0,
+    "x": 80,
+    "y": 35,
     "location": "On the high wall to the east of the maze — as an adult, you have to be standing on top of it to reach it."
   },
   {
@@ -565,9 +578,10 @@
     "zone": "Forest Temple",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 27.5,
-    "y": 32.9,
-    "location": "On the vines to the east in the first room — as an adult."
+    "x": 54,
+    "y": 30,
+    "location": "On the vines to the east in the first room — as an adult.",
+    "floor": "entrance-courtyard"
   },
   {
     "id": "sk-058",
@@ -575,9 +589,10 @@
     "zone": "Forest Temple",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 50.0,
-    "y": 32.9,
-    "location": "On the wall of the central hall on 1F."
+    "x": 16,
+    "y": 46,
+    "location": "On the wall of the central hall on 1F.",
+    "floor": "main-hall"
   },
   {
     "id": "sk-059",
@@ -585,9 +600,10 @@
     "zone": "Forest Temple",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 72.5,
-    "y": 32.9,
-    "location": "On the wall of the northeast room on 1F."
+    "x": 83,
+    "y": 28,
+    "location": "On the wall of the northeast room on 1F.",
+    "floor": "main-hall"
   },
   {
     "id": "sk-060",
@@ -595,9 +611,10 @@
     "zone": "Forest Temple",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 32.9,
-    "y": 67.1,
-    "location": "On the wall of the northwest room on 1F."
+    "x": 80,
+    "y": 45,
+    "location": "On the wall of the northwest room on 1F.",
+    "floor": "west-courtyard"
   },
   {
     "id": "sk-061",
@@ -605,9 +622,10 @@
     "zone": "Forest Temple",
     "zoneKey": "Forest Temple",
     "area": "kokiri",
-    "x": 67.1,
-    "y": 67.1,
-    "location": "On the wall of the rotating room just before the boss door."
+    "x": 25,
+    "y": 38,
+    "location": "On the wall of the rotating room just before the boss door.",
+    "floor": "rotating-hallway"
   },
   {
     "id": "sk-062",
@@ -615,9 +633,10 @@
     "zone": "Fire Temple",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 87.9,
-    "y": 33.1,
-    "location": "In the room on the east side of 1F — play the Song of Time to shift the block blocking it."
+    "x": 15,
+    "y": 75,
+    "location": "In the room on the east side of 1F — play the Song of Time to shift the block blocking it.",
+    "floor": "main"
   },
   {
     "id": "sk-063",
@@ -625,9 +644,10 @@
     "zone": "Fire Temple",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 50.0,
-    "y": 33.1,
-    "location": "In the room where a giant boulder rolls — bomb the cracked wall to get in."
+    "x": 85,
+    "y": 75,
+    "location": "In the room where a giant boulder rolls — bomb the cracked wall to get in.",
+    "floor": "main"
   },
   {
     "id": "sk-064",
@@ -635,9 +655,10 @@
     "zone": "Fire Temple",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 72.7,
-    "y": 33.1,
-    "location": "On the fence reached by riding the rising platform — play the Scarecrow's Song to summon Pierre, then reel it in with the Hookshot."
+    "x": 15,
+    "y": 20,
+    "location": "On the fence reached by riding the rising platform — play the Scarecrow's Song to summon Pierre, then reel it in with the Hookshot.",
+    "floor": "main"
   },
   {
     "id": "sk-065",
@@ -645,9 +666,10 @@
     "zone": "Fire Temple",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 33.0,
-    "y": 66.9,
-    "location": "On the wall of the room with the large hole on 5F — reel it in with the Hookshot."
+    "x": 85,
+    "y": 20,
+    "location": "On the wall of the room with the large hole on 5F — reel it in with the Hookshot.",
+    "floor": "main"
   },
   {
     "id": "sk-066",
@@ -655,9 +677,10 @@
     "zone": "Fire Temple",
     "zoneKey": "Fire Temple",
     "area": "death-mountain",
-    "x": 67.0,
-    "y": 66.9,
-    "location": "Behind the door beside the stairs at the temple entrance."
+    "x": 35,
+    "y": 55,
+    "location": "Behind the door beside the stairs at the temple entrance.",
+    "floor": "main"
   },
   {
     "id": "sk-067",
@@ -665,9 +688,10 @@
     "zone": "Ice Cavern",
     "zoneKey": "Ice Cavern",
     "area": "zora",
-    "x": 33.2,
-    "y": 32.9,
-    "location": "On the wall of the room with the spinning blade traps — reel it in with the Hookshot."
+    "x": 15,
+    "y": 25,
+    "location": "On the wall of the room with the spinning blade traps — reel it in with the Hookshot.",
+    "floor": "main"
   },
   {
     "id": "sk-068",
@@ -675,9 +699,10 @@
     "zone": "Ice Cavern",
     "zoneKey": "Ice Cavern",
     "area": "zora",
-    "x": 66.8,
-    "y": 32.9,
-    "location": "On the wall of the room with the movable ice blocks — reel it in with the Hookshot."
+    "x": 45,
+    "y": 45,
+    "location": "On the wall of the room with the movable ice blocks — reel it in with the Hookshot.",
+    "floor": "main"
   },
   {
     "id": "sk-069",
@@ -685,9 +710,10 @@
     "zone": "Ice Cavern",
     "zoneKey": "Ice Cavern",
     "area": "zora",
-    "x": 50.0,
-    "y": 67.1,
-    "location": "On the wall of the Compass Room — reel it in with the Hookshot."
+    "x": 85,
+    "y": 70,
+    "location": "On the wall of the Compass Room — reel it in with the Hookshot.",
+    "floor": "main"
   },
   {
     "id": "sk-070",
@@ -695,9 +721,10 @@
     "zone": "Water Temple",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 27.4,
-    "y": 33.1,
-    "location": "At the end of the corridor to the south on the lowest floor — bomb the wall, then hit the switch with a spin attack."
+    "x": 12,
+    "y": 80,
+    "location": "At the end of the corridor to the south on the lowest floor — bomb the wall, then hit the switch with a spin attack.",
+    "floor": "main"
   },
   {
     "id": "sk-071",
@@ -705,9 +732,10 @@
     "zone": "Water Temple",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 50.0,
-    "y": 33.1,
-    "location": "On the wall of the room with the diagonally sliding platforms — reel it in with the Longshot."
+    "x": 88,
+    "y": 20,
+    "location": "On the wall of the room with the diagonally sliding platforms — reel it in with the Longshot.",
+    "floor": "main"
   },
   {
     "id": "sk-072",
@@ -715,9 +743,10 @@
     "zone": "Water Temple",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 72.6,
-    "y": 33.1,
-    "location": "On the wall of the whirlpool channel — swim it in the Iron Boots, then reel it in with the Longshot."
+    "x": 88,
+    "y": 80,
+    "location": "On the wall of the whirlpool channel — swim it in the Iron Boots, then reel it in with the Longshot.",
+    "floor": "main"
   },
   {
     "id": "sk-073",
@@ -725,9 +754,10 @@
     "zone": "Water Temple",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 33.0,
-    "y": 67.1,
-    "location": "On the wall inside the central pillar building — reel it in with the Longshot."
+    "x": 45,
+    "y": 25,
+    "location": "On the wall inside the central pillar building — reel it in with the Longshot.",
+    "floor": "main"
   },
   {
     "id": "sk-074",
@@ -735,9 +765,10 @@
     "zone": "Water Temple",
     "zoneKey": "Water Temple",
     "area": "zora",
-    "x": 67.0,
-    "y": 67.1,
-    "location": "On the wall of the water channel where a giant boulder rolls — reel it in with the Longshot."
+    "x": 12,
+    "y": 20,
+    "location": "On the wall of the water channel where a giant boulder rolls — reel it in with the Longshot.",
+    "floor": "main"
   },
   {
     "id": "sk-075",
@@ -745,9 +776,10 @@
     "zone": "Bottom of the Well",
     "zoneKey": "Bottom of the Well",
     "area": "kakariko",
-    "x": 33.0,
-    "y": 33.0,
-    "location": "Behind the locked door west of the central hall — use a Small Key, then reel it in with the Boomerang."
+    "x": 20,
+    "y": 62,
+    "location": "Behind the locked door west of the central hall — use a Small Key, then reel it in with the Boomerang.",
+    "floor": "main"
   },
   {
     "id": "sk-076",
@@ -755,9 +787,10 @@
     "zone": "Bottom of the Well",
     "zoneKey": "Bottom of the Well",
     "area": "kakariko",
-    "x": 67.0,
-    "y": 33.0,
-    "location": "Behind the locked door east of the central hall — use a Small Key, then reel it in with the Boomerang."
+    "x": 80,
+    "y": 62,
+    "location": "Behind the locked door east of the central hall — use a Small Key, then reel it in with the Boomerang.",
+    "floor": "main"
   },
   {
     "id": "sk-077",
@@ -765,9 +798,10 @@
     "zone": "Bottom of the Well",
     "zoneKey": "Bottom of the Well",
     "area": "kakariko",
-    "x": 50.0,
-    "y": 67.0,
-    "location": "Behind the locked door in the eastern corridor — use a Small Key, then reel it in with the Boomerang."
+    "x": 62,
+    "y": 38,
+    "location": "Behind the locked door in the eastern corridor — use a Small Key, then reel it in with the Boomerang.",
+    "floor": "main"
   },
   {
     "id": "sk-078",
@@ -775,9 +809,10 @@
     "zone": "Shadow Temple",
     "zoneKey": "Shadow Temple",
     "area": "kakariko",
-    "x": 27.4,
-    "y": 33.0,
-    "location": "In the cell of the room with the spikes that rise and fall."
+    "x": 25,
+    "y": 40,
+    "location": "In the cell of the room with the spikes that rise and fall.",
+    "floor": "main"
   },
   {
     "id": "sk-079",
@@ -785,9 +820,10 @@
     "zone": "Shadow Temple",
     "zoneKey": "Shadow Temple",
     "area": "kakariko",
-    "x": 50.0,
-    "y": 33.0,
-    "location": "On the wall behind the giant skull pot."
+    "x": 55,
+    "y": 30,
+    "location": "On the wall behind the giant skull pot.",
+    "floor": "main"
   },
   {
     "id": "sk-080",
@@ -795,9 +831,10 @@
     "zone": "Shadow Temple",
     "zoneKey": "Shadow Temple",
     "area": "kakariko",
-    "x": 72.6,
-    "y": 33.0,
-    "location": "Past the room with the invisible spinning blades — clear the enemies to move on."
+    "x": 40,
+    "y": 55,
+    "location": "Past the room with the invisible spinning blades — clear the enemies to move on.",
+    "floor": "main"
   },
   {
     "id": "sk-081",
@@ -805,9 +842,10 @@
     "zone": "Shadow Temple",
     "zoneKey": "Shadow Temple",
     "area": "kakariko",
-    "x": 33.0,
-    "y": 67.0,
-    "location": "On the wall of the room where the ferry boat is docked — play the Scarecrow's Song, then swing over with the Longshot."
+    "x": 75,
+    "y": 25,
+    "location": "On the wall of the room where the ferry boat is docked — play the Scarecrow's Song, then swing over with the Longshot.",
+    "floor": "main"
   },
   {
     "id": "sk-082",
@@ -815,9 +853,10 @@
     "zone": "Shadow Temple",
     "zoneKey": "Shadow Temple",
     "area": "kakariko",
-    "x": 67.0,
-    "y": 67.0,
-    "location": "On the wall of the room with three huge spinning skull pots."
+    "x": 15,
+    "y": 20,
+    "location": "On the wall of the room with three huge spinning skull pots.",
+    "floor": "main"
   },
   {
     "id": "sk-083",
@@ -865,8 +904,8 @@
     "zone": "Gerudo's Fortress",
     "zoneKey": "Gerudo's Fortress",
     "area": "gerudo",
-    "x": 33.0,
-    "y": 50.0,
+    "x": 87,
+    "y": 48,
     "location": "On the wall atop the fortress roof — reel it in with the Hookshot."
   },
   {
@@ -875,8 +914,8 @@
     "zone": "Gerudo's Fortress",
     "zoneKey": "Gerudo's Fortress",
     "area": "gerudo",
-    "x": 67.0,
-    "y": 50.0,
+    "x": 95,
+    "y": 15,
     "location": "On the farthest target in the archery range — reel it in with the Hookshot."
   },
   {
@@ -885,8 +924,8 @@
     "zone": "Haunted Wasteland",
     "zoneKey": "Haunted Wasteland",
     "area": "gerudo",
-    "x": 50.0,
-    "y": 50.0,
+    "x": 20,
+    "y": 45,
     "location": "On the wall inside the stone building near the Desert Colossus side of the wasteland."
   },
   {
@@ -895,8 +934,8 @@
     "zone": "Desert Colossus",
     "zoneKey": "Desert Colossus",
     "area": "gerudo",
-    "x": 25.0,
-    "y": 78.6,
+    "x": 9,
+    "y": 55,
     "location": "In the palm tree to the south — reel it in with the Longshot."
   },
   {
@@ -905,8 +944,8 @@
     "zone": "Desert Colossus",
     "zoneKey": "Desert Colossus",
     "area": "gerudo",
-    "x": 50.0,
-    "y": 50.0,
+    "x": 40,
+    "y": 48,
     "location": "On the rock mound near the center — reel it in with the Longshot."
   },
   {
@@ -915,8 +954,8 @@
     "zone": "Desert Colossus",
     "zoneKey": "Desert Colossus",
     "area": "gerudo",
-    "x": 8.3,
-    "y": 71.4,
+    "x": 45,
+    "y": 30,
     "location": "In the soft soil by the Spirit Temple entrance — as a child, empty a Bottled Bug into the dirt."
   },
   {
@@ -925,9 +964,10 @@
     "zone": "Spirit Temple",
     "zoneKey": "Spirit Temple",
     "area": "gerudo",
-    "x": 27.4,
-    "y": 33.0,
-    "location": "In the room with the iron fence — reel it in with the Boomerang."
+    "x": 50,
+    "y": 25,
+    "location": "In the room with the iron fence — reel it in with the Boomerang.",
+    "floor": "main"
   },
   {
     "id": "sk-094",
@@ -935,9 +975,10 @@
     "zone": "Spirit Temple",
     "zoneKey": "Spirit Temple",
     "area": "gerudo",
-    "x": 50.0,
-    "y": 33.0,
-    "location": "In the vertical shaft leading to the room where a Bombchu blasts open the wall — reel it in with the Boomerang."
+    "x": 75,
+    "y": 60,
+    "location": "In the vertical shaft leading to the room where a Bombchu blasts open the wall — reel it in with the Boomerang.",
+    "floor": "main"
   },
   {
     "id": "sk-095",
@@ -945,9 +986,10 @@
     "zone": "Spirit Temple",
     "zoneKey": "Spirit Temple",
     "area": "gerudo",
-    "x": 72.6,
-    "y": 33.0,
-    "location": "In the corridor just before the Iron Knuckle's room — reel it in with the Boomerang."
+    "x": 85,
+    "y": 35,
+    "location": "In the corridor just before the Iron Knuckle's room — reel it in with the Boomerang.",
+    "floor": "main"
   },
   {
     "id": "sk-096",
@@ -955,9 +997,10 @@
     "zone": "Spirit Temple",
     "zoneKey": "Spirit Temple",
     "area": "gerudo",
-    "x": 33.0,
-    "y": 67.0,
-    "location": "Behind the block in the rolling-boulder room — as an adult, play the Song of Time to reveal it."
+    "x": 35,
+    "y": 70,
+    "location": "Behind the block in the rolling-boulder room — as an adult, play the Song of Time to reveal it.",
+    "floor": "main"
   },
   {
     "id": "sk-097",
@@ -965,9 +1008,10 @@
     "zone": "Spirit Temple",
     "zoneKey": "Spirit Temple",
     "area": "gerudo",
-    "x": 67.0,
-    "y": 67.0,
-    "location": "On the wall beside the large statue — as an adult, reel it in with the Longshot."
+    "x": 15,
+    "y": 50,
+    "location": "On the wall beside the large statue — as an adult, reel it in with the Longshot.",
+    "floor": "main"
   },
   {
     "id": "sk-098",
@@ -975,9 +1019,10 @@
     "zone": "Ganon's Castle",
     "zoneKey": "Ganon's Castle",
     "area": "hyrule-field",
-    "x": 50.0,
-    "y": 50.0,
-    "location": "Behind the broken gate to the east of the entrance hall."
+    "x": 70,
+    "y": 55,
+    "location": "Behind the broken gate to the east of the entrance hall.",
+    "floor": "main"
   },
   {
     "id": "sk-099",
@@ -985,8 +1030,8 @@
     "zone": "Hyrule Field",
     "zoneKey": "Hyrule Field",
     "area": "hyrule-field",
-    "x": 33.1,
-    "y": 50.0,
+    "x": 83,
+    "y": 35,
     "location": "Under the ring of stones out past the turnoff to Gerudo Valley — bomb the stone circle to reveal it."
   },
   {
@@ -995,8 +1040,8 @@
     "zone": "Hyrule Field",
     "zoneKey": "Hyrule Field",
     "area": "hyrule-field",
-    "x": 66.9,
-    "y": 50.0,
+    "x": 15,
+    "y": 37,
     "location": "Inside the lone tree east of the entrance to Hyrule Castle Town — bomb the trunk to knock it loose."
   }
 ]

@@ -12,7 +12,17 @@ import { AREA_ORDER, ZONE_MAP_BY_KEY, type SkulltulaArea } from '@/lib/skulltula
 // the guide's copy asserts (e.g. "100 skulltulas").
 
 const CONTENT_DIR = join(dirname(fileURLToPath(import.meta.url)));
-const JSON_ENTITIES = ['rules', 'songs', 'equipment', 'skulltulas', 'hearts', 'rewards', 'bosses', 'tips', 'sidequests'];
+const JSON_ENTITIES = [
+  'rules',
+  'songs',
+  'equipment',
+  'skulltulas',
+  'hearts',
+  'rewards',
+  'bosses',
+  'tips',
+  'sidequests',
+];
 
 function loadJson<T extends { id: string }>(locale: 'es' | 'en', name: string): T[] {
   return JSON.parse(readFileSync(join(CONTENT_DIR, locale, `${name}.json`), 'utf8')) as T[];
@@ -21,7 +31,9 @@ function loadJson<T extends { id: string }>(locale: 'es' | 'en', name: string): 
 function chapterFiles(locale: 'es' | 'en'): string[] {
   const dir = join(CONTENT_DIR, locale, 'chapters');
   if (!existsSync(dir)) return [];
-  return readdirSync(dir).filter((f) => f.endsWith('.md')).sort();
+  return readdirSync(dir)
+    .filter((f) => f.endsWith('.md'))
+    .sort();
 }
 
 describe('content: es/en parity', () => {
@@ -46,24 +58,31 @@ describe('content: es/en parity', () => {
     expect(en).toEqual(es);
   });
 
-  it.each(['es', 'en'] as const)('%s: every chapter has valid act/order/pills frontmatter', (locale) => {
-    const files = chapterFiles(locale);
-    const dir = join(CONTENT_DIR, locale, 'chapters');
-    const orders = new Set<number>();
-    for (const file of files) {
-      const raw = readFileSync(join(dir, file), 'utf8');
-      const match = raw.match(/^---\n([\s\S]*?)\n---/);
-      expect(match, `${file} must start with a frontmatter block`).toBeTruthy();
-      const fm = yaml.load(match![1]) as { act: string; order: number; pills: { type: string; label: string }[] };
-      expect(['child', 'adult', 'end']).toContain(fm.act);
-      orders.add(fm.order);
-      for (const pill of fm.pills) {
-        expect(['dungeon', 'boss', 'song', 'info']).toContain(pill.type);
-        expect(typeof pill.label).toBe('string');
+  it.each(['es', 'en'] as const)(
+    '%s: every chapter has valid act/order/pills frontmatter',
+    (locale) => {
+      const files = chapterFiles(locale);
+      const dir = join(CONTENT_DIR, locale, 'chapters');
+      const orders = new Set<number>();
+      for (const file of files) {
+        const raw = readFileSync(join(dir, file), 'utf8');
+        const match = raw.match(/^---\n([\s\S]*?)\n---/);
+        expect(match, `${file} must start with a frontmatter block`).toBeTruthy();
+        const fm = yaml.load(match![1]) as {
+          act: string;
+          order: number;
+          pills: { type: string; label: string }[];
+        };
+        expect(['child', 'adult', 'end']).toContain(fm.act);
+        orders.add(fm.order);
+        for (const pill of fm.pills) {
+          expect(['dungeon', 'boss', 'song', 'info']).toContain(pill.type);
+          expect(typeof pill.label).toBe('string');
+        }
       }
-    }
-    expect(orders.size).toBe(files.length);
-  });
+      expect(orders.size).toBe(files.length);
+    },
+  );
 });
 
 interface SkulltulaShape {
@@ -74,6 +93,7 @@ interface SkulltulaShape {
   area: SkulltulaArea;
   x: number;
   y: number;
+  floor?: string;
 }
 
 describe('content: skulltulas', () => {
@@ -84,18 +104,21 @@ describe('content: skulltulas', () => {
     expect(numbers).toEqual(Array.from({ length: 100 }, (_, i) => i + 1));
   });
 
-  it.each(['es', 'en'] as const)('%s: every entry has a valid map area and an in-range x/y', (locale) => {
-    const skulltulas = loadJson<SkulltulaShape>(locale, 'skulltulas');
-    for (const s of skulltulas) {
-      expect(AREA_ORDER, `${s.id} has an unknown area ${s.area}`).toContain(s.area);
-      expect(s.x, `${s.id}.x`).toBeGreaterThanOrEqual(0);
-      expect(s.x, `${s.id}.x`).toBeLessThanOrEqual(100);
-      expect(s.y, `${s.id}.y`).toBeGreaterThanOrEqual(0);
-      expect(s.y, `${s.id}.y`).toBeLessThanOrEqual(100);
-    }
-  });
+  it.each(['es', 'en'] as const)(
+    '%s: every entry has a valid map area and an in-range x/y',
+    (locale) => {
+      const skulltulas = loadJson<SkulltulaShape>(locale, 'skulltulas');
+      for (const s of skulltulas) {
+        expect(AREA_ORDER, `${s.id} has an unknown area ${s.area}`).toContain(s.area);
+        expect(s.x, `${s.id}.x`).toBeGreaterThanOrEqual(0);
+        expect(s.x, `${s.id}.x`).toBeLessThanOrEqual(100);
+        expect(s.y, `${s.id}.y`).toBeGreaterThanOrEqual(0);
+        expect(s.y, `${s.id}.y`).toBeLessThanOrEqual(100);
+      }
+    },
+  );
 
-  it('every entry\'s zoneKey (es and en alike — it is a stable, untranslated identifier, same pattern as `area`) has a matching zone map', () => {
+  it("every entry's zoneKey (es and en alike — it is a stable, untranslated identifier, same pattern as `area`) has a matching zone map", () => {
     // ZONE_MAP_BY_KEY's keys are authored in English (skulltula-map-layout.ts
     // is locale-agnostic map data, not translated UI copy) — `zoneKey` is
     // deliberately untranslated in both locale files, unlike the localized
@@ -104,8 +127,14 @@ describe('content: skulltulas', () => {
     for (const locale of ['es', 'en'] as const) {
       const skulltulas = loadJson<SkulltulaShape>(locale, 'skulltulas');
       for (const s of skulltulas) {
-        expect(ZONE_MAP_BY_KEY[s.zoneKey], `${locale} ${s.id}: no zone map for zoneKey ${s.zoneKey}`).toBeTruthy();
-        expect(ZONE_MAP_BY_KEY[s.zoneKey].hub, `${s.id}: zoneKey ${s.zoneKey}'s hub doesn't match its area`).toBe(s.area);
+        expect(
+          ZONE_MAP_BY_KEY[s.zoneKey],
+          `${locale} ${s.id}: no zone map for zoneKey ${s.zoneKey}`,
+        ).toBeTruthy();
+        expect(
+          ZONE_MAP_BY_KEY[s.zoneKey].hub,
+          `${s.id}: zoneKey ${s.zoneKey}'s hub doesn't match its area`,
+        ).toBe(s.area);
       }
     }
   });
@@ -115,22 +144,31 @@ describe('content: skulltulas', () => {
     const usedKeys = new Set(skulltulas.map((s) => s.zoneKey));
     for (const s of skulltulas) expect(ZONE_MAP_BY_KEY[s.zoneKey], s.zoneKey).toBeTruthy();
     for (const zoneKey of Object.keys(ZONE_MAP_BY_KEY)) {
-      expect(usedKeys.has(zoneKey), `zone map "${zoneKey}" is never referenced by any skulltula`).toBe(true);
+      expect(
+        usedKeys.has(zoneKey),
+        `zone map "${zoneKey}" is never referenced by any skulltula`,
+      ).toBe(true);
     }
   });
 
-  it('no two skulltulas in the same zone render pins closer than a safe minimum distance apart — regression guard for the sk-053/sk-054-style pin-collision bugs this map has had before', () => {
+  it('no two skulltulas in the same zone (and, for floored dungeons, the same floor) render pins closer than a safe minimum distance apart — regression guard for the sk-053/sk-054-style pin-collision bugs this map has had before', () => {
     // Each zone is its own independent 0-100 canvas now (see
-    // skulltula-map-layout.ts), so "same zone" is exactly "same zoneKey".
+    // skulltula-map-layout.ts), so "same zone" is exactly "same zoneKey" —
+    // except the 11 floored dungeon interiors, where each *floor* is its
+    // own independent canvas: a pin on "1f" and a pin on "b1" can share the
+    // same x/y without colliding, since they render on different floor
+    // tabs and are never visible at the same time. Bucketing by
+    // `${zoneKey}::${floor ?? ''}` captures both cases with one key.
     const MIN_DISTANCE = 3; // percent, on a 0-100 canvas
     const skulltulas = loadJson<SkulltulaShape>('en', 'skulltulas');
-    const byZone = new Map<string, SkulltulaShape[]>();
+    const byZoneFloor = new Map<string, SkulltulaShape[]>();
     for (const s of skulltulas) {
-      const list = byZone.get(s.zoneKey) ?? [];
+      const key = `${s.zoneKey}::${s.floor ?? ''}`;
+      const list = byZoneFloor.get(key) ?? [];
       list.push(s);
-      byZone.set(s.zoneKey, list);
+      byZoneFloor.set(key, list);
     }
-    for (const [zoneKey, items] of byZone) {
+    for (const [key, items] of byZoneFloor) {
       for (let i = 0; i < items.length; i++) {
         for (let j = i + 1; j < items.length; j++) {
           const a = items[i];
@@ -138,9 +176,31 @@ describe('content: skulltulas', () => {
           const distance = Math.hypot(a.x - b.x, a.y - b.y);
           expect(
             distance,
-            `${zoneKey}: ${a.id} (${a.x},${a.y}) and ${b.id} (${b.x},${b.y}) are only ${distance.toFixed(2)} apart`,
+            `${key}: ${a.id} (${a.x},${a.y}) and ${b.id} (${b.x},${b.y}) are only ${distance.toFixed(2)} apart`,
           ).toBeGreaterThanOrEqual(MIN_DISTANCE);
         }
+      }
+    }
+  });
+
+  it('every skulltula in a floored dungeon zone has a `floor` set, and no skulltula outside a floored zone does', () => {
+    const skulltulas = loadJson<SkulltulaShape>('en', 'skulltulas');
+    for (const s of skulltulas) {
+      const floors = ZONE_MAP_BY_KEY[s.zoneKey]?.floors;
+      if (floors && floors.length > 0) {
+        expect(
+          s.floor,
+          `${s.id} is in floored zone ${s.zoneKey} but has no floor set`,
+        ).toBeTruthy();
+        expect(
+          floors.some((f) => f.key === s.floor),
+          `${s.id}: floor "${s.floor}" is not one of ${s.zoneKey}'s configured floors`,
+        ).toBe(true);
+      } else {
+        expect(
+          s.floor,
+          `${s.id} is in non-floored zone ${s.zoneKey} but has a floor set`,
+        ).toBeFalsy();
       }
     }
   });
@@ -154,7 +214,10 @@ describe('content: hearts', () => {
   });
 
   it('every heart piece has an area and a method', () => {
-    const hearts = loadJson<{ id: string; kind: string; area?: string; method?: string }>('es', 'hearts');
+    const hearts = loadJson<{ id: string; kind: string; area?: string; method?: string }>(
+      'es',
+      'hearts',
+    );
     for (const h of hearts.filter((h) => h.kind === 'piece')) {
       expect(h.area).toBeTruthy();
       expect(h.method).toBeTruthy();
@@ -176,18 +239,26 @@ describe('content: equipment', () => {
     for (const e of equipment) expect(VALID_CATEGORIES.has(e.category)).toBe(true);
   });
 
-  it.each(['es', 'en'] as const)('%s: every optional stat is a positive number with a label and unit', (locale) => {
-    type EquipmentShape = { id: string; stat?: { label: string; value: number; unit: string } };
-    const equipment = loadJson<EquipmentShape>(locale, 'equipment');
-    for (const e of equipment.filter((e) => e.stat)) {
-      expect(e.stat!.value, e.id).toBeGreaterThan(0);
-      expect(e.stat!.label, e.id).toBeTruthy();
-      expect(e.stat!.unit, e.id).toBeTruthy();
-    }
-  });
+  it.each(['es', 'en'] as const)(
+    '%s: every optional stat is a positive number with a label and unit',
+    (locale) => {
+      type EquipmentShape = { id: string; stat?: { label: string; value: number; unit: string } };
+      const equipment = loadJson<EquipmentShape>(locale, 'equipment');
+      for (const e of equipment.filter((e) => e.stat)) {
+        expect(e.stat!.value, e.id).toBeGreaterThan(0);
+        expect(e.stat!.label, e.id).toBeTruthy();
+        expect(e.stat!.unit, e.id).toBeTruthy();
+      }
+    },
+  );
 
   it('the Hookshot -> Longshot reach chain is a real doubling (not a flat/fabricated number)', () => {
-    type EquipmentShape = { id: string; upgradeOf?: string; name: string; stat?: { value: number } };
+    type EquipmentShape = {
+      id: string;
+      upgradeOf?: string;
+      name: string;
+      stat?: { value: number };
+    };
     const equipment = loadJson<EquipmentShape>('es', 'equipment');
     const byName = new Map(equipment.map((e) => [e.name, e]));
     const longshot = equipment.find((e) => e.id === 'eq-longshot')!;
@@ -213,7 +284,9 @@ describe('content: rewards', () => {
 describe('content: sidequests', () => {
   it('the Biggoron’s Sword trading route has 12 sequential steps', () => {
     const sidequests = loadJson<{ id: string; kind: string; step?: number }>('es', 'sidequests');
-    const route = sidequests.filter((s) => s.kind === 'route').sort((a, b) => (a.step ?? 0) - (b.step ?? 0));
+    const route = sidequests
+      .filter((s) => s.kind === 'route')
+      .sort((a, b) => (a.step ?? 0) - (b.step ?? 0));
     expect(route).toHaveLength(12);
     expect(route.map((r) => r.step)).toEqual(Array.from({ length: 12 }, (_, i) => i + 1));
   });
