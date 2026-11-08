@@ -1,0 +1,142 @@
+---
+/** The Guide page (faq, survival, mechanics) and the Extras page (modes,
+ * DLC, unlocks, endings, secrets): copy cards grouped by section. FAQ cards
+ * fold to their question; a card's `see` links what to read next. */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import GameText from './GameText.astro';
+import { gamePage } from './game-page';
+import { gameEntries } from '@/lib/game-content';
+import { gameEntityPath, GAME_ENTITY_PAGES, type GameEntityPage } from '@/lib/game-entity-pages';
+import { GUIDE_CARD_SECTIONS, EXTRAS_CARD_SECTIONS } from '@/lib/nav';
+import type { GameId } from '@/lib/games';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  game: GameId;
+  page: 'guide' | 'extras';
+}
+const { locale, game, page } = Astro.props;
+const { t, title, h } = await gamePage(game, locale);
+const cards = await gameEntries('cards', game, locale);
+
+// `see` targets: a card (on whichever page shows it) or an entity page.
+const guideSet = new Set<string>(GUIDE_CARD_SECTIONS);
+const cardPage = (section: string) =>
+  section === 'rules' || section === 'lore' ? '/' : guideSet.has(section) ? '/guide/' : '/extras/';
+const targets = new Map<string, { label: string; href: string }>();
+for (const c of cards)
+  targets.set(c.data.slug, {
+    label: c.data.title,
+    href:
+      cardPage(c.data.section) === `/${page}/`
+        ? `#${c.data.slug}`
+        : h(`${cardPage(c.data.section)}#${c.data.slug}`),
+  });
+for (const kind of GAME_ENTITY_PAGES)
+  for (const e of await gameEntries(kind, game, locale)) {
+    const d = e.data as { slug: string; name: string };
+    targets.set(`${kind}/${d.slug}`, {
+      label: d.name,
+      href: h(gameEntityPath(kind as GameEntityPage, d.slug)),
+    });
+  }
+const seeOf = (see?: string) =>
+  (see ?? '')
+    .split(',')
+    .map((k) => k.trim())
+    .filter(Boolean)
+    .map((k) => targets.get(k))
+    .filter((x): x is { label: string; href: string } => !!x);
+const sectionIds = page === 'guide' ? GUIDE_CARD_SECTIONS : EXTRAS_CARD_SECTIONS;
+const sections = sectionIds
+  .map((id) => ({ id, cards: cards.filter((c) => c.data.section === id) }))
+  .filter((s) => s.cards.length > 0);
+const heading = page === 'guide' ? t('nav.guide') : t('nav.extras');
+---
+
+<BaseLayout title={title(heading)} lang={locale}>
+  <main id="main" class="mx-auto max-w-4xl px-5 py-7 md:py-14">
+    <SectionHead level="h1" title={heading} tight />
+    <p class="mb-8 text-sm text-muted-foreground">
+      {page === 'guide' ? t('game.guideNote') : t('game.extrasNote')}
+    </p>
+    {
+      sections.length > 1 && (
+        <nav class="mb-8 flex flex-wrap gap-2">
+          {sections.map((s) => (
+            <a
+              href={`#section-${s.id}`}
+              class="rounded-full border border-border px-3 py-1 font-mono text-xs text-muted-foreground hover:border-primary/60 hover:text-primary"
+            >
+              {t(`game.section.${s.id}`)}
+            </a>
+          ))}
+        </nav>
+      )
+    }
+    {
+      sections.map((s) => (
+        <section id={`section-${s.id}`} class="mb-12">
+          <SectionHead title={t(`game.section.${s.id}`)} />
+          <div class="grid gap-4">
+            {s.cards.map((c) => {
+              const see = seeOf(c.data.see);
+              const body = (
+                <>
+                  <div class="text-sm text-muted-foreground">
+                    <GameText text={c.data.body} game={game} locale={locale} />
+                  </div>
+                  {see.length > 0 && (
+                    <p class="mt-3 text-xs text-muted-foreground">
+                      <span class="font-mono uppercase tracking-wide">{t('game.seeAlso')}:</span>{' '}
+                      {see.map((x, i) => (
+                        <>
+                          {i > 0 && ' · '}
+                          <a href={x.href} class="ent-link">
+                            {x.label}
+                          </a>
+                        </>
+                      ))}
+                    </p>
+                  )}
+                </>
+              );
+              return s.id === 'faq' ? (
+                <details id={c.data.slug} class="faq panel p-4">
+                  <summary class="cursor-pointer font-display text-base font-semibold text-foreground">
+                    {c.data.title}
+                  </summary>
+                  <div class="mt-2">{body}</div>
+                </details>
+              ) : (
+                <article id={c.data.slug} class="panel p-4">
+                  <h3 class="mb-1.5 font-display text-base font-semibold text-foreground">
+                    {c.data.title}
+                  </h3>
+                  {body}
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      ))
+    }
+  </main>
+</BaseLayout>
+
+<script>
+  // A link to a folded FAQ answer (search, "see also") opens it.
+  const openTarget = () => {
+    const el = location.hash
+      ? document.getElementById(decodeURIComponent(location.hash.slice(1)))
+      : null;
+    if (el instanceof HTMLDetailsElement) {
+      el.open = true;
+      el.scrollIntoView();
+    }
+  };
+  openTarget();
+  window.addEventListener('hashchange', openTarget);
+</script>

@@ -1,0 +1,81 @@
+---
+/**
+ * UpdatePrompt — tells the reader a new version of the guide is ready.
+ *
+ * The service worker auto-updates (registerType 'autoUpdate': skipWaiting +
+ * clientsClaim), but the page already on screen came from the old cache, so
+ * the new content only shows on the next navigation. When a new worker takes
+ * over a page that already had one, this offers a reload. It also asks the
+ * browser to look for a new version every hour and whenever the app comes
+ * back to the foreground (an installed guide can stay open for a whole
+ * play session without navigating).
+ */
+import { useTranslations } from '@/i18n/utils';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div
+  id="update-prompt"
+  hidden
+  role="status"
+  class="fixed inset-x-4 top-4 z-50 mx-auto flex max-w-md items-center justify-between gap-3 rounded-lg border border-primary/50 bg-card p-3 shadow-lg"
+>
+  <p class="text-sm text-foreground">{t('update.title')}</p>
+  <div class="flex shrink-0 gap-2">
+    <button
+      type="button"
+      data-update-later
+      class="rounded-md px-2 py-1.5 font-mono text-xs text-muted-foreground hover:text-foreground"
+    >
+      {t('update.later')}
+    </button>
+    <button
+      type="button"
+      data-update-go
+      class="rounded-md bg-primary px-3 py-1.5 font-mono text-xs font-semibold text-primary-foreground"
+    >
+      {t('update.button')}
+    </button>
+  </div>
+</div>
+
+<script>
+  const HOUR = 60 * 60 * 1000;
+  const MIN_GAP = 10 * 60 * 1000;
+
+  if ('serviceWorker' in navigator) {
+    const box = document.getElementById('update-prompt');
+    // A first install also fires `controllerchange` (clientsClaim): only a
+    // page that was already controlled is looking at an old version.
+    const hadController = !!navigator.serviceWorker.controller;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (hadController && box) box.hidden = false;
+    });
+    box?.querySelector('[data-update-go]')?.addEventListener('click', () => location.reload());
+    box?.querySelector('[data-update-later]')?.addEventListener('click', () => {
+      if (box) box.hidden = true;
+    });
+
+    let last = Date.now();
+    const check = () => {
+      if (Date.now() - last < MIN_GAP) return;
+      last = Date.now();
+      navigator.serviceWorker
+        .getRegistration()
+        .then((r) => r?.update())
+        .catch(() => {
+          /* offline or no worker yet: try again later */
+        });
+    };
+    setInterval(check, HOUR);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') check();
+    });
+  }
+</script>

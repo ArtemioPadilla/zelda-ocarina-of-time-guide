@@ -1,0 +1,99 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import GameText from './GameText.astro';
+import GameThumb from './GameThumb.astro';
+import { gamePage } from './game-page';
+import { gameImage } from '@/lib/game-images';
+import { gameEntries } from '@/lib/game-content';
+import { gameEntityPath } from '@/lib/game-entity-pages';
+import type { GameId } from '@/lib/games';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  game: GameId;
+}
+const { locale, game } = Astro.props;
+const { t, h, title, chapterLabel } = await gamePage(game, locale);
+const bosses = await gameEntries('bosses', game, locale);
+const chaptersOf = (s: string) =>
+  s
+    .split(/[,;]/)
+    .map((x) => x.trim())
+    .filter(Boolean)
+    .map(chapterLabel)
+    .join(' · ');
+---
+
+<BaseLayout title={title(t('nav.bosses'))} lang={locale}>
+  <main id="main" class="mx-auto max-w-4xl px-5 py-7 md:py-14">
+    <SectionHead level="h1" title={t('nav.bosses')} tight />
+    <p class="mb-8 text-sm text-muted-foreground">{t('game.bossesNote')}</p>
+    <div class="grid gap-5">
+      {
+        bosses.map((b) => (
+          <article id={b.data.slug} class="panel p-5" style="--panel-accent: var(--destructive)">
+            <div class="flex items-start gap-3">
+              <GameThumb image={gameImage(game, 'bosses', b.data.slug)} tile={false} />
+              <div class="min-w-0 flex-1">
+                <h2 class="font-display text-lg font-semibold text-foreground">
+                  <a href={h(gameEntityPath('bosses', b.data.slug))} class="hover:text-primary">
+                    {b.data.name}
+                  </a>
+                </h2>
+                <p class="mt-0.5 font-mono text-xs text-muted-foreground">
+                  {chaptersOf(b.data.chapters)}
+                  {b.data.arena && ` · ${b.data.arena}`}
+                </p>
+              </div>
+            </div>
+            {b.data.weak && (
+              <p class="mt-2 text-sm">
+                <span class="font-mono text-[10px] uppercase text-primary">{t('game.weak')} </span>
+                <GameText
+                  text={b.data.weak}
+                  game={game}
+                  locale={locale}
+                  skip={[`bosses/${b.data.slug}`]}
+                  inline
+                />
+              </p>
+            )}
+            {b.data.strategy && (
+              <div class="mt-2 text-sm text-muted-foreground">
+                <GameText
+                  text={b.data.strategy}
+                  game={game}
+                  locale={locale}
+                  skip={[`bosses/${b.data.slug}`]}
+                />
+              </div>
+            )}
+            {b.data.steps.length > 0 && (
+              <ol class="mt-3 list-decimal space-y-1.5 pl-5 text-sm text-foreground">
+                {b.data.steps.map((s: string) => (
+                  <li>
+                    <GameText
+                      text={s}
+                      game={game}
+                      locale={locale}
+                      skip={[`bosses/${b.data.slug}`]}
+                      inline
+                    />
+                  </li>
+                ))}
+              </ol>
+            )}
+            {b.data.reward && (
+              <p class="mt-3 text-xs text-muted-foreground">
+                {t('game.reward')}:{' '}
+                <GameText text={b.data.reward} game={game} locale={locale} inline />
+              </p>
+            )}
+          </article>
+        ))
+      }
+    </div>
+  </main>
+</BaseLayout>

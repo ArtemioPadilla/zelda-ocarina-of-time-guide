@@ -10,17 +10,19 @@
     "build": "astro build",
     "preview": "astro preview",
     "check:astro": "astro check",
-    "check": "npm-run-all --parallel check:astro type-check test --serial build",
+    "check": "npm-run-all --parallel check:astro type-check test format:check --serial build",
     "type-check": "tsc --noEmit",
     "test": "vitest run",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "images:games": "node scripts/import-game-images.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/react": "^5.0.6",
     "@fontsource-variable/fraunces": "^5.2.7",
-    "@fontsource-variable/literata": "^5.2.6",
     "@fontsource-variable/jetbrains-mono": "^5.2.6",
+    "@fontsource-variable/literata": "^5.2.6",
     "@nanostores/react": "^1.1.0",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^5.18.2",
@@ -33,6 +35,9 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@fontsource/fraunces": "^5.2.5",
+    "@fontsource/jetbrains-mono": "^5.2.5",
+    "@fontsource/literata": "^5.2.5",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
@@ -41,11 +46,13 @@
     "@types/react": "^19.2.16",
     "@types/react-dom": "^19.2.3",
     "@vite-pwa/astro": "^1.2.0",
+    "jiti": "^2.7.0",
     "js-yaml": "^5.4.0",
     "jsdom": "^29.1.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
+    "satori": "^0.12.2",
     "typescript": "^5.6.0",
     "vitest": "^4.1.8"
   },

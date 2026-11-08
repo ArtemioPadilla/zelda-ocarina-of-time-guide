@@ -17,13 +17,18 @@ if (typeof window !== 'undefined' && !window.matchMedia) {
 }
 
 // Polyfill `scrollIntoView` for jsdom — jsdom doesn't implement layout, so
-// this never exists on Element.prototype.
+// this never exists on Element.prototype. Needed by chat-style auto-scroll
+// effects (e.g. ChatThread) that call it on every render.
 if (typeof Element !== 'undefined' && !Element.prototype.scrollIntoView) {
   Element.prototype.scrollIntoView = () => {};
 }
 
-// Polyfill `ResizeObserver` for jsdom — jsdom has no layout engine and never
-// implements it.
+// Polyfill `ResizeObserver` for jsdom (ROADMAP Epic 18's "still open" gap).
+// jsdom has no layout engine and never implements ResizeObserver — anything
+// that observes an element for size changes (e.g. @zag-js/splitter's
+// `trackRootResize` effect) throws `ResizeObserver is not a constructor`
+// without this. A no-op observer is sufficient: components that need real
+// dimensions in tests should stub `getBoundingClientRect` explicitly.
 if (typeof window !== 'undefined' && typeof window.ResizeObserver === 'undefined') {
   class ResizeObserverPolyfill {
     observe(): void {}

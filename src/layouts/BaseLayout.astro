@@ -1,21 +1,118 @@
 ---
 import '../styles/global.css';
 import FeedbackFAB from '../components/common/FeedbackFAB.astro';
+import InstallPrompt from '../components/common/InstallPrompt.astro';
+import UpdatePrompt from '../components/common/UpdatePrompt.astro';
 import SiteHeader from '../components/common/SiteHeader.astro';
 import { withBase } from '../lib/href';
-import { swapLocaleHref, useTranslations } from '@/i18n/utils';
+import { gameHref, swapLocaleHref, useTranslations } from '@/i18n/utils';
+import { currentRoutePath, isRouteActive } from '@/lib/route';
+import { gameOfRoute } from '@/lib/games';
+import { ENGINE_SECTIONS, type NavLink } from '@/lib/nav';
+import { gameChapters, gameEntries, gameSections, chapterSlug } from '@/lib/game-content';
+import BottomTabBar, { type Tab } from '@/components/islands/BottomTabBar';
+import GameChapterStrip from '@/components/islands/GameChapterStrip';
 import type { Locale } from '@/i18n/ui';
-interface Props { title?: string; description?: string; lang?: Locale; }
-const { title = 'OoT Guía', description = '', lang = 'es' } = Astro.props;
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: Locale;
+  /** The page's picture (an entity's art, base included): drawn on its share card. */
+  image?: string;
+}
+const { lang = 'es', image } = Astro.props;
 const otherLang: Locale = lang === 'es' ? 'en' : 'es';
 const t = useTranslations(lang);
+const title = Astro.props.title ?? t('site.name');
+const description = Astro.props.description || t('site.description');
 const skipLinkLabel = t('a11y.skipToContent');
 // Every route in this site is a directory (no file extensions), so the
 // canonical form always ends in '/' — Astro.url.pathname omits it for the
 // root of each locale, which produced a hreflang pair where only one side
 // had the trailing slash.
 const ensureSlash = (p: string) => (p.endsWith('/') ? p : `${p}/`);
+
+// Single-game site: every page belongs to oot, served at the root. The
+// nav is the game's sections (only those with content), plus the
+// current-chapter strip and the mobile tab bar.
+const routePath = currentRoutePath(Astro.url.pathname);
+const gameId = gameOfRoute(routePath);
+const active = (path: string) =>
+  path === '/' ? routePath === '/' : isRouteActive(routePath, path);
+
+const h = (path: string) => gameHref(lang, gameId, path);
+
+// Share card (Open Graph): one picture per page, shared by both locales,
+// drawn after the build by scripts/og-images.ts from the x-og-* metas below.
+const canonical = new URL(ensureSlash(Astro.url.pathname), Astro.site).href;
+const ogKey = routePath === '/' ? 'index' : routePath.replace(/^\/|\/$/g, '');
+const ogImage = new URL(withBase(`/og/${ogKey}.jpg`), Astro.site).href;
+const ogSection = ENGINE_SECTIONS.find((s) => s.path !== '/' && routePath.startsWith(s.path));
+const ogKicker = ogSection ? t(ogSection.key) : 'Nintendo Switch 2 · 2026';
+const has = await gameSections(gameId);
+const sections = ENGINE_SECTIONS.filter((s) => s.needs === null || has.has(s.needs));
+const nav: NavLink[] = sections.map((s) => ({
+  href: h(s.path),
+  label: t(s.key),
+  active: active(s.path),
+}));
+const searchHref = h('/search-index.json');
+let strip: Record<string, unknown> | null = null;
+if (has.has('chapters')) {
+  const [chapters, collectibles, files] = await Promise.all([
+    gameChapters(gameId, lang),
+    gameEntries('collectibles', gameId, lang),
+    gameEntries('files', gameId, lang),
+  ]);
+  const trackers = [
+    collectibles.length && {
+      storeKey: `${gameId}-collectibles-done`,
+      total: collectibles.length,
+      label: t('nav.collectibles'),
+      short: t('strip.collectiblesShort'),
+    },
+    files.length && {
+      storeKey: `${gameId}-files-done`,
+      total: files.length,
+      label: t('nav.files'),
+      short: t('strip.filesShort'),
+    },
+  ].filter(Boolean);
+  strip = {
+    game: gameId,
+    chapters: chapters.map((c) => ({
+      id: chapterSlug(c),
+      number: c.data.number,
+      title: c.data.title,
+    })),
+    chaptersHref: h('/chapters/'),
+    pickHref: h('/#current-chapter'),
+    trackers,
+  };
+}
+const tabbed = ['/', '/chapters/', '/collectibles/', '/arsenal/'];
+const more = sections.filter((s) => !tabbed.includes(s.path));
+const tab = (path: string, label: string, icon: Tab['icon']): Tab | null =>
+  sections.some((s) => s.path === path)
+    ? { href: h(path), label, icon, active: active(path) }
+    : null;
+const tabs: Tab[] = [
+  tab('/', t('nav.home'), 'home'),
+  tab('/chapters/', t('nav.tabChapter'), 'chapter'),
+  tab('/collectibles/', t('nav.collectibles'), 'treasures'),
+  tab('/arsenal/', t('nav.arsenal'), 'arsenal'),
+  more.length
+    ? {
+        href: h(more[0].path),
+        label: t('nav.tabMore'),
+        icon: 'more' as const,
+        active: more.some((s) => active(s.path)),
+        menu: more.map((s) => ({ href: h(s.path), label: t(s.key) })),
+      }
+    : null,
+].filter((x): x is Tab => x !== null);
 ---
+
 <!doctype html>
 <html lang={lang}>
   <head>
@@ -23,32 +120,124 @@ const ensureSlash = (p: string) => (p.endsWith('/') ? p : `${p}/`);
       (function () {
         try {
           const s = localStorage.getItem('theme');
-          const d = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (s === 'dark' || (s === null && d)) document.documentElement.classList.add('dark');
+          const l = window.matchMedia('(prefers-color-scheme: light)').matches;
+          // Dark-first: dark unless the reader picked light (or has never
+          // picked and the system asks for light).
+          if (s === 'dark' || (s === null && !l)) document.documentElement.classList.add('dark');
         } catch (_) {}
       })();
+    </script>
+    <script is:inline>
+      // global.css opts into native cross-document View Transitions
+      // (`@view-transition { navigation: auto }`). When the browser decides
+      // to skip one (tab hidden, back/forward navigation, the new document
+      // not rendering within its timeout), it rejects the `ready`/`finished`
+      // promises of the ViewTransition it exposes on `pagereveal`/`pageswap`
+      // with an AbortError "Transition was skipped". Nothing here awaits
+      // those promises, so the rejection surfaces as an unhandledrejection —
+      // harmless, but FeedbackFAB's telemetry counted it as a real error and
+      // lit the red badge on every skipped fade. Attaching no-op catches here
+      // (this script runs before either event can fire) keeps it silent.
+      // See https://github.com/w3c/csswg-drafts/issues/13726.
+      ['pagereveal', 'pageswap'].forEach(function (name) {
+        window.addEventListener(name, function (ev) {
+          var vt = ev.viewTransition;
+          if (!vt) return;
+          ['ready', 'finished', 'updateCallbackDone'].forEach(function (key) {
+            var pr = vt[key];
+            if (pr && typeof pr.catch === 'function') pr.catch(function () {});
+          });
+        });
+      });
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <title>{title}</title>
-    <link rel="alternate" hreflang={lang} href={new URL(ensureSlash(Astro.url.pathname), Astro.site).href} />
-    <link rel="alternate" hreflang={otherLang} href={new URL(ensureSlash(swapLocaleHref(otherLang, Astro.url.pathname)), Astro.site).href} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={t('site.name')} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:locale" content={lang === 'es' ? 'es_MX' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="x-og-key" content={ogKey} />
+    <meta name="x-og-kicker" content={ogKicker} />
+    {image && <meta name="x-og-art" content={image} />}
+    <link
+      rel="alternate"
+      hreflang={lang}
+      href={new URL(ensureSlash(Astro.url.pathname), Astro.site).href}
+    />
+    <link
+      rel="alternate"
+      hreflang={otherLang}
+      href={new URL(ensureSlash(swapLocaleHref(otherLang, Astro.url.pathname)), Astro.site).href}
+    />
     <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
     <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
     <link rel="manifest" href={withBase('/manifest.webmanifest')} />
     <meta name="theme-color" content="#0d2b22" />
   </head>
-  <body class="relative min-h-screen bg-background text-foreground antialiased">
-    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:rounded-md focus:bg-primary focus:px-3 focus:py-2 focus:text-sm focus:font-medium focus:text-primary-foreground">
+  <body
+    class:list={[
+      'relative min-h-screen bg-background text-foreground antialiased md:pb-0',
+      tabs.length > 0 && 'pb-[calc(60px+env(safe-area-inset-bottom))]',
+    ]}
+  >
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:rounded-md focus:bg-primary focus:px-3 focus:py-2 focus:text-sm focus:font-medium focus:text-primary-foreground"
+    >
       {skipLinkLabel}
     </a>
-    <SiteHeader locale={lang} />
+    <SiteHeader locale={lang} nav={nav} searchHref={searchHref} />
+    {
+      strip && (
+        <div class="sticky top-0 z-30 border-b border-border/70 bg-background/90 backdrop-blur-md md:top-[89px]">
+          <GameChapterStrip
+            client:load
+            {...(strip as any)}
+            pickLabel={t('strip.pick')}
+            ariaLabel={t('strip.label')}
+          />
+        </div>
+      )
+    }
     <slot />
     <footer class="mx-auto max-w-6xl px-5 py-8">
-      <p class="border-t border-border pt-6 font-mono text-[11px] text-muted-foreground">{t('footer.sources')}</p>
+      <p class="border-t border-border pt-6 font-mono text-[11px] text-muted-foreground">
+        {t('footer.notice')}
+      </p>
+      <p class="mt-2 font-mono text-[11px] text-muted-foreground">{t('footer.sources')}</p>
+      <p class="mt-2 font-mono text-[11px]">
+        <a href="#" data-install-open class="text-primary underline-offset-2 hover:underline">
+          {t('install.open')}
+        </a>
+      </p>
     </footer>
+    {
+      tabs.length > 0 && (
+        <div class="fixed inset-x-0 bottom-0 z-40 pb-[env(safe-area-inset-bottom)] md:hidden">
+          <BottomTabBar
+            client:load
+            tabs={tabs}
+            game={gameId}
+            chaptersHref={h('/chapters/')}
+            ariaLabel={t('strip.tabsLabel')}
+            moreLabel={t('nav.moreLabel')}
+          />
+        </div>
+      )
+    }
     <FeedbackFAB lang={lang} />
+    <InstallPrompt lang={lang} />
+    <UpdatePrompt lang={lang} />
     <script is:inline src={withBase('/registerSW.js')} defer></script>
   </body>
 </html>

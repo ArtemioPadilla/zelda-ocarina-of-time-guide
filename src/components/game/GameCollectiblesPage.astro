@@ -1,0 +1,166 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import ErrorBoundary from '@/components/islands/ErrorBoundary';
+import GroupedChecklist, { type Group } from '@/components/islands/GroupedChecklist';
+import { gamePage } from './game-page';
+import { gameEntries, gameCollectibleTypes } from '@/lib/game-content';
+import { collectibleTypeOf, localizedTypeName } from '@/lib/game-collectible-types';
+import { gameEntityPath } from '@/lib/game-entity-pages';
+import { gameImage } from '@/lib/game-images';
+import type { GameId } from '@/lib/games';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  game: GameId;
+}
+const { locale, game } = Astro.props;
+const { t, h, title, chapterLabel, chapterOrder } = await gamePage(game, locale);
+const [meta, rows, types] = await Promise.all([
+  gameEntries('meta', game, locale),
+  gameEntries('collectibles', game, locale),
+  gameCollectibleTypes(game),
+]);
+const kinds = meta.filter((m) => m.data.kind === 'collectible');
+// Each pickup's type page ("Mr. Everywhere #12" → /collectibles/mr-everywhere/).
+const typeOf = collectibleTypeOf(types);
+const plainRows = rows.map((r) => ({ id: r.data.slug, type: r.data.type, name: r.data.name }));
+const typeHref = (slug: string) => h(gameEntityPath('collectibles', slug));
+
+// One section per collectible type; inside it one group per chapter, in
+// play order, one checkbox per pickup.
+const sections = kinds.map((k) => {
+  const mine = rows
+    .filter((r) => r.data.type === k.data.slug)
+    .sort((a, b) => chapterOrder(a.data.chapter) - chapterOrder(b.data.chapter));
+  const chaptersInOrder = [...new Set(mine.map((r) => r.data.chapter))];
+  const groups: Group[] = chaptersInOrder.map((c) => ({
+    title: chapterLabel(c),
+    items: mine
+      .filter((r) => r.data.chapter === c)
+      .map((r) => ({
+        id: r.data.slug,
+        title: r.data.name,
+        tag: r.data.missable ? t('game.missable') : undefined,
+        detail: `${r.data.area} · ${r.data.location}${r.data.how ? ` — ${r.data.how}` : ''}`,
+        note:
+          [r.data.missable ? r.data.missableNote : undefined, r.data.note]
+            .filter(Boolean)
+            .join(' · ') || undefined,
+        href: typeHref(typeOf.get(r.data.slug)!),
+        hrefLabel: `${t('entity.sheet')} →`,
+        links: [{ href: h(`/chapters/${c}/`), label: `${t('game.chapterLink')} →` }],
+      })),
+  }));
+  const cards = types
+    .filter((ty) => ty.meta === k.data.slug)
+    .map((ty) => ({
+      href: typeHref(ty.slug),
+      name: localizedTypeName(ty, plainRows),
+      count: ty.ids.length,
+      image: gameImage(game, 'collectibles', ty.slug),
+    }));
+  return { k, count: mine.length, groups, cards };
+});
+const missable = rows.filter((r) => r.data.missable);
+---
+
+<BaseLayout title={title(t('nav.collectibles'))} lang={locale}>
+  <main id="main" class="mx-auto max-w-4xl px-5 py-7 md:py-14">
+    <SectionHead level="h1" title={t('nav.collectibles')} tight />
+    <p class="mb-4 text-sm text-muted-foreground">{t('game.collectiblesNote')}</p>
+    <nav class="mb-8 flex flex-wrap gap-2" aria-label={t('nav.collectibles')}>
+      {
+        sections.map((s) => (
+          <a
+            href={`#type-${s.k.data.slug}`}
+            class="rounded-full border border-border px-3 py-1 font-mono text-xs text-muted-foreground hover:border-primary/60 hover:text-primary"
+          >
+            {s.k.data.label} · {s.count}
+          </a>
+        ))
+      }
+    </nav>
+
+    {
+      missable.length > 0 && (
+        <section class="panel mb-10 p-4" style="--panel-accent: var(--destructive)">
+          <h2 class="mb-2 font-display text-sm font-semibold text-foreground">
+            {t('game.missableTitle')}
+          </h2>
+          <ul class="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+            {missable.map((m) => (
+              <li>
+                <a href={`${typeHref(typeOf.get(m.data.slug)!)}#${m.data.slug}`} class="ent-link">
+                  {m.data.name}
+                </a>
+                {m.data.missableNote && ` — ${m.data.missableNote}`}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      sections.map((s) => (
+        <section id={`type-${s.k.data.slug}`} class="mb-12">
+          <SectionHead
+            title={s.k.data.label}
+            note={s.k.data.total ? `${s.count}/${s.k.data.total}` : String(s.count)}
+          />
+          {s.k.data.reward && (
+            <p class="mb-2 text-sm text-foreground">
+              {t('game.reward')}: {s.k.data.reward}
+            </p>
+          )}
+          {s.k.data.note && <p class="mb-4 text-sm text-muted-foreground">{s.k.data.note}</p>}
+          <ul
+            class="mb-5 flex flex-wrap gap-2"
+            aria-label={`${s.k.data.label}: ${t('entity.sheet')}`}
+          >
+            {s.cards.map((c) => (
+              <li>
+                <a
+                  href={c.href}
+                  class="panel flex items-center gap-2 px-2.5 py-1.5 text-xs text-foreground hover:border-primary/60 hover:text-primary"
+                >
+                  {c.image && (
+                    <span class="case-slot h-8 w-9 shrink-0 p-0.5">
+                      <img
+                        src={c.image.src}
+                        width={c.image.width}
+                        height={c.image.height}
+                        alt=""
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </span>
+                  )}
+                  <span>{c.name}</span>
+                  {c.count > 1 && (
+                    <span class="font-mono text-[10px] text-muted-foreground">×{c.count}</span>
+                  )}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <ErrorBoundary
+            client:load
+            name="CollectiblesChecklist"
+            messageLabel={t('a11y.errorBoundaryMessage')}
+            reportLabel={t('a11y.errorBoundaryReport')}
+          >
+            <GroupedChecklist
+              client:load
+              store={`${game}-collectibles-done`}
+              groups={s.groups}
+              progressLabel={s.k.data.label}
+            />
+          </ErrorBoundary>
+        </section>
+      ))
+    }
+  </main>
+</BaseLayout>

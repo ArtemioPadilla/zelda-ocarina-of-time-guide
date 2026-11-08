@@ -1,0 +1,114 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import { gamePage, GAME_PILL_STYLE } from './game-page';
+import { gameEntries, chapterSlug } from '@/lib/game-content';
+import type { GameId } from '@/lib/games';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  game: GameId;
+}
+const { locale, game } = Astro.props;
+const { t, h, title, chapters } = await gamePage(game, locale);
+const meta = await gameEntries('meta', game, locale);
+const parts = meta.filter((m) => m.data.kind === 'part');
+// Chapters grouped by part in the parts' order; a chapter naming a part
+// the meta file lacks still shows, under its raw id.
+const partIds = [
+  ...parts.map((p) => p.data.slug),
+  ...new Set(chapters.map((c) => c.data.part).filter((p) => !parts.some((x) => x.data.slug === p))),
+];
+const groups = partIds
+  .map((id) => ({
+    id,
+    part: parts.find((p) => p.data.slug === id),
+    chapters: chapters.filter((c) => c.data.part === id),
+  }))
+  .filter((gr) => gr.chapters.length > 0);
+// A long part (the side jobs, the gigs) lists one line per job, without
+// pills, so the page stays scannable.
+const COMPACT_FROM = 15;
+---
+
+<BaseLayout title={title(t('chapters.title'))} lang={locale}>
+  <main id="main" class="mx-auto max-w-4xl px-5 py-7 md:py-14">
+    <SectionHead level="h1" title={t('chapters.title')} tight />
+    <p class="mb-8 text-sm text-muted-foreground">{t('game.chaptersNote')}</p>
+    {
+      groups.length > 1 && (
+        <nav class="mb-8 flex flex-wrap gap-2">
+          {groups.map((gr) => (
+            <a
+              href={`#part-${gr.id}`}
+              class="rounded-full border border-border px-3 py-1 font-mono text-xs text-muted-foreground hover:border-primary/60 hover:text-primary"
+            >
+              {gr.part?.data.label ?? gr.id}
+              <span class="ml-1 opacity-60">{gr.chapters.length}</span>
+            </a>
+          ))}
+        </nav>
+      )
+    }
+    {
+      groups.map((gr) => (
+        <section id={`part-${gr.id}`} class="mb-10">
+          <SectionHead title={gr.part?.data.label ?? gr.id} note={gr.part?.data.note} />
+          {gr.chapters.length >= COMPACT_FROM ? (
+            <ol class="divide-y divide-border rounded-lg border border-border">
+              {gr.chapters.map((c) => (
+                <li>
+                  <a
+                    href={h(`/chapters/${chapterSlug(c)}/`)}
+                    class="block px-4 py-2.5 hover:bg-accent/40"
+                  >
+                    <span class="font-mono text-xs text-primary">{c.data.number}</span>
+                    <span class="ml-2 font-display font-semibold text-foreground">
+                      {c.data.title}
+                    </span>
+                    {c.data.summary && (
+                      <span class="mt-0.5 block text-xs text-muted-foreground">
+                        {c.data.summary}
+                      </span>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          ) : (
+            <ol class="grid gap-3">
+              {gr.chapters.map((c) => (
+                <li>
+                  <a
+                    href={h(`/chapters/${chapterSlug(c)}/`)}
+                    class="panel block p-4 hover:border-primary/60"
+                  >
+                    <span class="font-mono text-xs text-primary">{c.data.number}</span>
+                    <span class="ml-2 font-display font-semibold text-foreground">
+                      {c.data.title}
+                    </span>
+                    {c.data.summary && (
+                      <span class="mt-1 block text-sm text-muted-foreground">{c.data.summary}</span>
+                    )}
+                    {c.data.pills.length > 0 && (
+                      <span class="mt-2 flex flex-wrap gap-1.5">
+                        {c.data.pills.map((p: { type: string; label: string }) => (
+                          <span
+                            class={`rounded-full border px-2 py-0.5 font-mono text-[10px] ${GAME_PILL_STYLE[p.type]}`}
+                          >
+                            {p.label}
+                          </span>
+                        ))}
+                      </span>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          )}
+        </section>
+      ))
+    }
+  </main>
+</BaseLayout>

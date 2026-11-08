@@ -1,0 +1,85 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import GameText from './GameText.astro';
+import GameThumb from './GameThumb.astro';
+import { gamePage } from './game-page';
+import { gameImage } from '@/lib/game-images';
+import { gameEntries } from '@/lib/game-content';
+import { gameEntityPath } from '@/lib/game-entity-pages';
+import type { GameId } from '@/lib/games';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  game: GameId;
+}
+const { locale, game } = Astro.props;
+const { t, h, title } = await gamePage(game, locale);
+const enemies = await gameEntries('enemies', game, locale);
+const groups = [...new Set(enemies.map((e) => e.data.group))];
+---
+
+<BaseLayout title={title(t('nav.enemies'))} lang={locale}>
+  <main id="main" class="mx-auto max-w-5xl px-5 py-7 md:py-14">
+    <SectionHead level="h1" title={t('nav.enemies')} tight />
+    <p class="mb-8 text-sm text-muted-foreground">{t('game.enemiesNote')}</p>
+    {
+      groups.map((gr) => (
+        <section class="mb-10">
+          <SectionHead title={gr} />
+          <div class="grid gap-4 md:grid-cols-2">
+            {enemies
+              .filter((e) => e.data.group === gr)
+              .map((e) => (
+                <article id={e.data.slug} class="panel p-4 text-sm">
+                  <div class="flex items-start gap-3">
+                    <GameThumb image={gameImage(game, 'enemies', e.data.slug)} tile={false} />
+                    <div class="min-w-0 flex-1">
+                      <h3 class="font-display font-semibold text-foreground">
+                        <a
+                          href={h(gameEntityPath('enemies', e.data.slug))}
+                          class="hover:text-primary"
+                        >
+                          {e.data.name}
+                        </a>
+                      </h3>
+                      <p class="mt-0.5 font-mono text-[11px] text-muted-foreground">
+                        {e.data.chapters}
+                      </p>
+                    </div>
+                  </div>
+                  <p class="mt-2">
+                    <span class="font-mono text-[10px] uppercase text-primary">
+                      {t('game.weak')}{' '}
+                    </span>
+                    <GameText
+                      text={e.data.weak}
+                      game={game}
+                      locale={locale}
+                      skip={[`enemies/${e.data.slug}`]}
+                      inline
+                    />
+                  </p>
+                  <div class="mt-1 text-muted-foreground">
+                    <GameText
+                      text={e.data.tactic}
+                      game={game}
+                      locale={locale}
+                      skip={[`enemies/${e.data.slug}`]}
+                    />
+                  </div>
+                  {e.data.drops && (
+                    <p class="mt-1 text-xs text-muted-foreground">
+                      {t('enemies.drops')}:{' '}
+                      <GameText text={e.data.drops} game={game} locale={locale} inline />
+                    </p>
+                  )}
+                </article>
+              ))}
+          </div>
+        </section>
+      ))
+    }
+  </main>
+</BaseLayout>

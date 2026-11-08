@@ -1,0 +1,12 @@
+---
+import GameCollectibleTypePage from '@/components/game/GameCollectibleTypePage.astro';
+import { collectibleTypeStaticPaths } from '@/lib/game-content';
+import { GAME_ID } from '@/lib/games';
+
+export async function getStaticPaths() {
+  return collectibleTypeStaticPaths();
+}
+const { type } = Astro.params;
+---
+
+<GameCollectibleTypePage locale="en" game={GAME_ID} slug={type!} />

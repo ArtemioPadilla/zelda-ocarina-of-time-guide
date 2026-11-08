@@ -2,11 +2,28 @@ import { atom, onMount } from 'nanostores';
 import { get, set } from 'idb-keyval';
 
 /**
- * Generic persisted checklist store (which ids are "done"). Used for the
- * Skulltula and Heart trackers — offline-first, per-device only, no
- * backend. Follows the same onMount-hydrate / listen-to-persist pattern as
+ * Generic persisted checklist store (which ids are "done"). Used by every
+ * checklist (collectibles, shards, achievements) — offline-first,
+ * per-device only, no backend. Follows the same onMount-hydrate / listen-to-persist pattern as
  * `src/stores/theme.ts`.
  */
+export type ChecklistStore = ReturnType<typeof createChecklistStore>;
+
+const registry = new Map<string, ChecklistStore>();
+
+/** One store per IndexedDB key, shared by every island that asks for it —
+ * two islands on a page toggling the same list must see each other. Keys
+ * are `<game>-<list>-done` (`oot-collectibles-done`). Never rename a
+ * key: a saved run must survive. */
+export function checklistStore(idbKey: string): ChecklistStore {
+  let s = registry.get(idbKey);
+  if (!s) {
+    s = createChecklistStore(idbKey);
+    registry.set(idbKey, s);
+  }
+  return s;
+}
+
 function createChecklistStore(idbKey: string) {
   const $checked = atom<Set<string>>(new Set());
   // Set the instant a toggle happens, even before IDB hydration resolves.
@@ -51,36 +68,48 @@ function createChecklistStore(idbKey: string) {
   return { $checked, toggle, reset };
 }
 
-export const skulltulasStore = createChecklistStore('oot-skulltulas-done');
-export const heartsStore = createChecklistStore('oot-hearts-done');
+/** Currently-playing chapter of one game (`<game>-current-chapter`). */
+function createCurrentChapterStore(key: string) {
+  const $current = atom<string | null>(null);
+  let dirty = false;
 
-/** Currently-playing dungeon/chapter, for the home-page progress summary. */
-export const $currentChapter = atom<string | null>(null);
-const CURRENT_CHAPTER_KEY = 'oot-current-chapter';
-let currentChapterDirty = false;
+  if (typeof document !== 'undefined') {
+    onMount($current, () => {
+      let cancelled = false;
+      get(key)
+        .then((stored) => {
+          if (!cancelled && !dirty && typeof stored === 'string') $current.set(stored);
+        })
+        .catch(() => {});
+      return () => {
+        cancelled = true;
+      };
+    });
+  }
 
-if (typeof document !== 'undefined') {
-  onMount($currentChapter, () => {
-    let cancelled = false;
-    get(CURRENT_CHAPTER_KEY)
-      .then((stored) => {
-        if (!cancelled && !currentChapterDirty && typeof stored === 'string') $currentChapter.set(stored);
-      })
-      .catch(() => {});
-    return () => {
-      cancelled = true;
-    };
-  });
+  function set_(id: string): void {
+    dirty = true;
+    $current.set(id);
+    set(key, id).catch(() => {});
+  }
+
+  function reset(): void {
+    dirty = true;
+    $current.set(null);
+    set(key, null).catch(() => {});
+  }
+
+  return { $current, set: set_, reset };
 }
 
-export function setCurrentChapter(id: string): void {
-  currentChapterDirty = true;
-  $currentChapter.set(id);
-  set(CURRENT_CHAPTER_KEY, id).catch(() => {});
-}
+export type CurrentChapterStore = ReturnType<typeof createCurrentChapterStore>;
+const currentRegistry = new Map<string, CurrentChapterStore>();
 
-export function resetCurrentChapter(): void {
-  currentChapterDirty = true;
-  $currentChapter.set(null);
-  set(CURRENT_CHAPTER_KEY, null).catch(() => {});
+export function currentChapterStore(game: string): CurrentChapterStore {
+  let s = currentRegistry.get(game);
+  if (!s) {
+    s = createCurrentChapterStore(`${game}-current-chapter`);
+    currentRegistry.set(game, s);
+  }
+  return s;
 }

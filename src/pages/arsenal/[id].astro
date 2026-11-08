@@ -1,0 +1,12 @@
+---
+import GameEntityPage from '@/components/game/GameEntityPage.astro';
+import { gameEntityStaticPaths } from '@/lib/game-content';
+import { GAME_ID } from '@/lib/games';
+
+export async function getStaticPaths() {
+  return gameEntityStaticPaths('weapons');
+}
+const { id } = Astro.params;
+---
+
+<GameEntityPage locale="es" game={GAME_ID} kind="weapons" slug={id!} />

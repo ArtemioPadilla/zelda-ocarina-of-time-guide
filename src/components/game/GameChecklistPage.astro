@@ -1,0 +1,80 @@
+---
+/** Files or achievements: one checkbox per row, grouped (files by chapter,
+ * achievements by tier), persisted per game. */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import ErrorBoundary from '@/components/islands/ErrorBoundary';
+import GroupedChecklist, { type Group } from '@/components/islands/GroupedChecklist';
+import { gamePage } from './game-page';
+import { gameEntries } from '@/lib/game-content';
+import type { GameId } from '@/lib/games';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  game: GameId;
+  kind: 'files' | 'achievements';
+}
+const { locale, game, kind } = Astro.props;
+const { t, h, title, chapterLabel, chapterOrder } = await gamePage(game, locale);
+
+let groups: Group[];
+if (kind === 'files') {
+  const files = (await gameEntries('files', game, locale)).sort(
+    (a, b) =>
+      chapterOrder(a.data.chapter) - chapterOrder(b.data.chapter) || a.data.order - b.data.order,
+  );
+  groups = [...new Set(files.map((f) => f.data.chapter))].map((c) => ({
+    title: chapterLabel(c),
+    items: files
+      .filter((f) => f.data.chapter === c)
+      .map((f) => ({
+        id: f.data.slug,
+        title: f.data.name,
+        tag: f.data.original,
+        detail: f.data.where,
+        note: f.data.gist,
+        href: h(`/chapters/${c}/`),
+        hrefLabel: `${t('game.chapterLink')} →`,
+      })),
+  }));
+} else {
+  const rows = await gameEntries('achievements', game, locale);
+  const tiers = [...new Set(rows.map((a) => a.data.tier ?? ''))];
+  groups = tiers.map((tier) => ({
+    title: tier || t('nav.achievements'),
+    items: rows
+      .filter((a) => (a.data.tier ?? '') === tier)
+      .map((a) => ({
+        id: a.data.slug,
+        title: a.data.name,
+        tag: a.data.missable ? t('game.missable') : undefined,
+        detail: a.data.how,
+        note: a.data.tip,
+      })),
+  }));
+}
+const heading = kind === 'files' ? t('nav.files') : t('nav.achievements');
+---
+
+<BaseLayout title={title(heading)} lang={locale}>
+  <main id="main" class="mx-auto max-w-4xl px-5 py-7 md:py-14">
+    <SectionHead level="h1" title={heading} tight />
+    <p class="mb-6 text-sm text-muted-foreground">
+      {kind === 'files' ? t('game.filesNote') : t('game.achievementsNote')}
+    </p>
+    <ErrorBoundary
+      client:load
+      name={kind === 'files' ? 'FilesChecklist' : 'AchievementsChecklist'}
+      messageLabel={t('a11y.errorBoundaryMessage')}
+      reportLabel={t('a11y.errorBoundaryReport')}
+    >
+      <GroupedChecklist
+        client:load
+        store={`${game}-${kind}-done`}
+        groups={groups}
+        progressLabel={kind === 'files' ? t('files.progress') : t('achievements.progress')}
+      />
+    </ErrorBoundary>
+  </main>
+</BaseLayout>

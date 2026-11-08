@@ -1,4 +1,6 @@
 ---
-import BossesPage from '@/components/pages/BossesPage.astro';
+import GameBossesPage from '@/components/game/GameBossesPage.astro';
+import { GAME_ID } from '@/lib/games';
 ---
-<BossesPage locale="es" />
+
+<GameBossesPage locale="es" game={GAME_ID} />

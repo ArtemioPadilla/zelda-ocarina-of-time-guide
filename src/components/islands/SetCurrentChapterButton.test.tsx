@@ -25,25 +25,49 @@ describe('SetCurrentChapterButton', () => {
 
   it('shows the "mark as current" label when not the current chapter', async () => {
     const { default: SetCurrentChapterButton } = await import('./SetCurrentChapterButton');
-    render(<SetCurrentChapterButton chapterId="c1" label="Mark as current" currentLabel="Current" />);
+    render(
+      <SetCurrentChapterButton
+        game="oot"
+        chapterId="the-rescue"
+        label="Mark as current"
+        currentLabel="Current"
+      />,
+    );
     expect(screen.getByRole('button', { name: 'Mark as current' })).toBeInTheDocument();
   });
 
   it('clicking sets the chapter as current, flipping label and aria-disabled', async () => {
     const user = userEvent.setup();
     const { default: SetCurrentChapterButton } = await import('./SetCurrentChapterButton');
-    render(<SetCurrentChapterButton chapterId="c1" label="Mark as current" currentLabel="Current" />);
+    render(
+      <SetCurrentChapterButton
+        game="oot"
+        chapterId="the-rescue"
+        label="Mark as current"
+        currentLabel="Current"
+      />,
+    );
 
     const btn = screen.getByRole('button', { name: 'Mark as current' });
     await user.click(btn);
 
-    expect(screen.getByRole('button', { name: 'Current' })).toHaveAttribute('aria-disabled', 'true');
+    expect(screen.getByRole('button', { name: 'Current' })).toHaveAttribute(
+      'aria-disabled',
+      'true',
+    );
   });
 
   it('stays focusable (not the disabled attribute) once current, per aria-disabled contract', async () => {
     const user = userEvent.setup();
     const { default: SetCurrentChapterButton } = await import('./SetCurrentChapterButton');
-    render(<SetCurrentChapterButton chapterId="c1" label="Mark as current" currentLabel="Current" />);
+    render(
+      <SetCurrentChapterButton
+        game="oot"
+        chapterId="the-rescue"
+        label="Mark as current"
+        currentLabel="Current"
+      />,
+    );
 
     await user.click(screen.getByRole('button', { name: 'Mark as current' }));
     const btn = screen.getByRole('button', { name: 'Current' });

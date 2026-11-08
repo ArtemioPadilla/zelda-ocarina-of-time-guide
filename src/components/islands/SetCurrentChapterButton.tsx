@@ -1,21 +1,24 @@
-import { useStore } from '@nanostores/react';
-import { $currentChapter, setCurrentChapter } from '@/stores/checklist';
+import { currentChapterStore } from '@/stores/checklist';
+import { useHydratedStore } from '@/lib/use-hydrated-store';
 
 interface Props {
   chapterId: string;
   label: string;
   currentLabel: string;
+  /** Whose current chapter this sets. */
+  game: string;
 }
 
-export default function SetCurrentChapterButton({ chapterId, label, currentLabel }: Props) {
-  const current = useStore($currentChapter);
+export default function SetCurrentChapterButton({ chapterId, label, currentLabel, game }: Props) {
+  const store = currentChapterStore(game);
+  const current = useHydratedStore(store.$current, null);
   const isCurrent = current === chapterId;
 
   return (
     <button
       type="button"
       onClick={() => {
-        if (!isCurrent) setCurrentChapter(chapterId);
+        if (!isCurrent) store.set(chapterId);
       }}
       // aria-disabled (not the `disabled` attribute): "current chapter" is
       // persistent state, not a momentarily-inert control, and `disabled`

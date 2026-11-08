@@ -1,0 +1,304 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import ErrorBoundary from '@/components/islands/ErrorBoundary';
+import SetCurrentChapterButton from '@/components/islands/SetCurrentChapterButton';
+import GroupedChecklist, { type Group } from '@/components/islands/GroupedChecklist';
+import ChapterPhotos from '@/components/common/ChapterPhotos.astro';
+import GameMapFigure from './GameMapFigure.astro';
+import { gamePage, GAME_PILL_STYLE } from './game-page';
+import {
+  gameEntries,
+  chapterSlug,
+  gameCollectibleTypes,
+  mapChapterIds,
+  type EngineChapter,
+} from '@/lib/game-content';
+import { collectibleTypeOf } from '@/lib/game-collectible-types';
+import { gameEntityPath } from '@/lib/game-entity-pages';
+import { gameChapterImages, gameImage } from '@/lib/game-images';
+import type { GameId } from '@/lib/games';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  game: GameId;
+  entry: EngineChapter;
+}
+const { locale, game, entry } = Astro.props;
+const { g, t, h, title, chapters, chapterLabel } = await gamePage(game, locale);
+const slug = chapterSlug(entry);
+const { Content } = await render(entry);
+
+const i = chapters.findIndex((c) => c.id === entry.id);
+const prev = i > 0 ? chapters[i - 1] : null;
+const next = i >= 0 && i < chapters.length - 1 ? chapters[i + 1] : null;
+
+// What this chapter holds, checkable in place: the same stores as the
+// Collectibles and Files pages, so a tick here is a tick there.
+const [meta, collectibles, files, bosses, types, maps] = await Promise.all([
+  gameEntries('meta', game, locale),
+  gameEntries('collectibles', game, locale),
+  gameEntries('files', game, locale),
+  gameEntries('bosses', game, locale),
+  gameCollectibleTypes(game),
+  gameEntries('maps', game, locale),
+]);
+const typeOf = collectibleTypeOf(types);
+// Screenshots (front matter `photos`, files in public/img/games/<game>/chapters/):
+// the gallery below the text, and the first one as the title's cover band.
+const photoFiles = gameChapterImages(game, slug);
+const cover = entry.data.photos
+  .map((p: { id: string }) => photoFiles.get(p.id))
+  .find((img: unknown) => img !== undefined);
+// In-game maps of the areas this chapter visits (only the ones with a picture).
+const mapsHere = maps.filter(
+  (m) => mapChapterIds(m.data.chapters).includes(slug) && gameImage(game, 'maps', m.data.slug),
+);
+const kinds = meta.filter((m) => m.data.kind === 'collectible');
+const here = collectibles.filter((c) => c.data.chapter === slug);
+const collectibleGroups: Group[] = kinds
+  .map((k) => ({
+    title: k.data.label,
+    items: here
+      .filter((c) => c.data.type === k.data.slug)
+      .map((c) => ({
+        id: c.data.slug,
+        title: c.data.name,
+        tag: c.data.missable ? t('game.missable') : undefined,
+        detail: `${c.data.area} · ${c.data.location}`,
+        note: c.data.missable ? c.data.missableNote : c.data.how,
+        href: `${h(gameEntityPath('collectibles', typeOf.get(c.data.slug)!))}#${c.data.slug}`,
+        hrefLabel: `${t('entity.sheet')} →`,
+      })),
+  }))
+  .filter((gr) => gr.items.length > 0);
+const fileGroup: Group[] = files
+  .filter((f) => f.data.chapter === slug)
+  .reduce<Group[]>(
+    (acc, f) => {
+      acc[0].items.push({
+        id: f.data.slug,
+        title: f.data.name,
+        tag: f.data.original,
+        detail: f.data.where,
+      });
+      return acc;
+    },
+    [{ title: t('nav.files'), items: [] }],
+  )
+  .filter((gr) => gr.items.length > 0);
+const bossesHere = bosses.filter((b) =>
+  b.data.chapters
+    .split(/[,;·]/)
+    .map((s: string) => s.trim())
+    .includes(slug),
+);
+---
+
+<BaseLayout
+  title={title(`${entry.data.number} · ${entry.data.title}`)}
+  description={entry.data.summary}
+  lang={locale}
+>
+  <main id="main" class="mx-auto max-w-3xl px-5 py-7 md:py-14">
+    <a
+      href={h('/chapters/')}
+      class="mb-6 inline-block font-mono text-xs text-muted-foreground hover:text-primary"
+    >
+      {t('chapter.back')}
+    </a>
+
+    {
+      cover ? (
+        <header
+          class="photo-cover mb-5 flex min-h-44 items-end sm:min-h-56"
+          style={`background-image: url(${cover.src}); --panel-accent: ${g.accent}`}
+        >
+          <div class="p-4 sm:p-5">
+            <p class="font-mono text-xs text-primary">{entry.data.number}</p>
+            <h1 class="font-display text-2xl font-bold text-foreground sm:text-3xl">
+              {entry.data.title}
+            </h1>
+            {entry.data.summary && (
+              <p class="mt-1 text-sm text-muted-foreground">{entry.data.summary}</p>
+            )}
+          </div>
+        </header>
+      ) : (
+        <header class="mb-5 border-l-4 pl-4" style={`border-color: ${g.accent}`}>
+          <p class="font-mono text-xs text-primary">{entry.data.number}</p>
+          <h1 class="font-display text-2xl font-bold text-foreground sm:text-3xl">
+            {entry.data.title}
+          </h1>
+          {entry.data.summary && (
+            <p class="mt-1 text-sm text-muted-foreground">{entry.data.summary}</p>
+          )}
+        </header>
+      )
+    }
+
+    <div class="mb-6 flex flex-wrap items-center gap-2">
+      {
+        entry.data.pills.map((p: { type: string; label: string }) => (
+          <span
+            class={`rounded-full border px-2.5 py-0.5 font-mono text-[11px] ${GAME_PILL_STYLE[p.type]}`}
+          >
+            {p.label}
+          </span>
+        ))
+      }
+      <span class="ml-auto">
+        <ErrorBoundary
+          client:load
+          name="SetCurrentChapterButton"
+          messageLabel={t('a11y.errorBoundaryMessage')}
+          reportLabel={t('a11y.errorBoundaryReport')}
+        >
+          <SetCurrentChapterButton
+            client:load
+            game={game}
+            chapterId={slug}
+            label={t('chapter.markCurrent')}
+            currentLabel={t('chapter.isCurrent')}
+          />
+        </ErrorBoundary>
+      </span>
+    </div>
+
+    <article class="prose-guide max-w-none">
+      <Content />
+    </article>
+
+    <ChapterPhotos
+      chapterId={slug}
+      photos={entry.data.photos}
+      title={t('chapter.photos')}
+      files={photoFiles}
+    />
+
+    {
+      mapsHere.length > 0 && (
+        <section class="mt-10">
+          <SectionHead title={t('game.mapsHere')} />
+          <div class="grid gap-4">
+            {mapsHere.map((m) => (
+              <GameMapFigure
+                locale={locale}
+                map={m.data}
+                compact
+                chapters={mapChapterIds(m.data.chapters)
+                  .filter((id) => id !== slug)
+                  .map((id) => ({ id, label: chapterLabel(id) }))}
+              />
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      bossesHere.length > 0 && (
+        <section class="mt-10">
+          <SectionHead title={t('nav.bosses')} />
+          <ul class="grid gap-2 sm:grid-cols-2">
+            {bossesHere.map((b) => (
+              <li>
+                <a
+                  href={h(gameEntityPath('bosses', b.data.slug))}
+                  class="panel block p-3 text-sm hover:border-primary/60"
+                >
+                  <span class="font-display font-semibold text-foreground">{b.data.name}</span>
+                  {b.data.weak && (
+                    <span class="block text-xs text-muted-foreground">
+                      {t('game.weak')}: {b.data.weak}
+                    </span>
+                  )}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      (collectibleGroups.length > 0 || fileGroup.length > 0) && (
+        <section class="mt-10">
+          <SectionHead title={t('game.inChapterTitle')} />
+          <p class="mb-4 text-sm text-muted-foreground">{t('game.inChapterNote')}</p>
+          {collectibleGroups.length > 0 && (
+            <ErrorBoundary
+              client:load
+              name="ChapterCollectibles"
+              messageLabel={t('a11y.errorBoundaryMessage')}
+              reportLabel={t('a11y.errorBoundaryReport')}
+            >
+              <GroupedChecklist
+                client:load
+                store={`${game}-collectibles-done`}
+                groups={collectibleGroups}
+                progressLabel={t('nav.collectibles')}
+                hideProgress
+              />
+            </ErrorBoundary>
+          )}
+          {fileGroup.length > 0 && (
+            <ErrorBoundary
+              client:load
+              name="ChapterFiles"
+              messageLabel={t('a11y.errorBoundaryMessage')}
+              reportLabel={t('a11y.errorBoundaryReport')}
+            >
+              <GroupedChecklist
+                client:load
+                store={`${game}-files-done`}
+                groups={fileGroup}
+                progressLabel={t('nav.files')}
+                hideProgress
+              />
+            </ErrorBoundary>
+          )}
+        </section>
+      )
+    }
+
+    <nav
+      aria-label={t('chapter.prevNextLabel')}
+      class="mt-10 flex items-center gap-3 border-t border-border pt-6"
+    >
+      {
+        prev ? (
+          <a href={h(`/chapters/${chapterSlug(prev)}/`)} class="panel min-w-0 flex-1 p-3 text-sm">
+            <span class="block font-mono text-[10px] uppercase tracking-wide text-muted-foreground">
+              {t('chapter.prev')}
+            </span>
+            <span class="block truncate text-foreground">
+              {prev.data.number} · {prev.data.title}
+            </span>
+          </a>
+        ) : (
+          <span class="flex-1" />
+        )
+      }
+      {
+        next ? (
+          <a
+            href={h(`/chapters/${chapterSlug(next)}/`)}
+            class="panel min-w-0 flex-1 p-3 text-right text-sm"
+          >
+            <span class="block font-mono text-[10px] uppercase tracking-wide text-muted-foreground">
+              {t('chapter.next')}
+            </span>
+            <span class="block truncate text-foreground">
+              {next.data.number} · {next.data.title}
+            </span>
+          </a>
+        ) : (
+          <span class="flex-1" />
+        )
+      }
+    </nav>
+  </main>
+</BaseLayout>

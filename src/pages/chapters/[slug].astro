@@ -1,12 +1,13 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
-import ChapterDetailPage from '@/components/pages/ChapterDetailPage.astro';
+import GameChapterPage from '@/components/game/GameChapterPage.astro';
+import { gameChapters, chapterSlug } from '@/lib/game-content';
+import { GAME_ID } from '@/lib/games';
 
 export async function getStaticPaths() {
-  const chapters = await getCollection('chapters_es');
-  return chapters.map((entry: CollectionEntry<'chapters_es'>) => ({ params: { slug: entry.id }, props: { entry } }));
+  const chapters = await gameChapters(GAME_ID, 'es');
+  return chapters.map((entry) => ({ params: { slug: chapterSlug(entry) }, props: { entry } }));
 }
-
 const { entry } = Astro.props;
 ---
-<ChapterDetailPage locale="es" entry={entry} />
+
+<GameChapterPage locale="es" game={GAME_ID} entry={entry} />

@@ -1,0 +1,183 @@
+---
+/**
+ * One collectible type of an engine game ("Mr. Everywhere", "Crystal
+ * Fragment"): what it is, what it is worth, and every piece as a checkbox —
+ * the same store and the same ids as the Collectibles page and the chapter
+ * lists, so a tick here is a tick there.
+ */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import ErrorBoundary from '@/components/islands/ErrorBoundary';
+import GroupedChecklist, { type Group } from '@/components/islands/GroupedChecklist';
+import GameThumb from './GameThumb.astro';
+import { gamePage } from './game-page';
+import { gameEntries, gameCollectibleTypes } from '@/lib/game-content';
+import { localizedTypeName, valueSpan } from '@/lib/game-collectible-types';
+import { gameImage } from '@/lib/game-images';
+import type { GameId } from '@/lib/games';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  game: GameId;
+  slug: string;
+}
+const { locale, game, slug } = Astro.props;
+const { t, h, title, chapterLabel, chapterOrder } = await gamePage(game, locale);
+const [types, meta, rows] = await Promise.all([
+  gameCollectibleTypes(game),
+  gameEntries('meta', game, locale),
+  gameEntries('collectibles', game, locale),
+]);
+const type = types.find((x) => x.slug === slug)!;
+const kind = meta.find((m) => m.data.slug === type.meta)!;
+const siblings = types.filter((x) => x.meta === type.meta);
+const ids = new Set(type.ids);
+const mine = rows.filter((r) => ids.has(r.data.slug));
+const name = localizedTypeName(
+  type,
+  rows.map((r) => ({ id: r.data.slug, type: r.data.type, name: r.data.name })),
+);
+const image = gameImage(game, 'collectibles', slug);
+const numberLocale = locale === 'es' ? 'de-DE' : 'en-US';
+const num = (n: number) => n.toLocaleString(numberLocale);
+
+const span = valueSpan(mine.map((r) => r.data.value));
+const varies = span !== undefined && span.min !== span.max;
+const facts: { label: string; text: string }[] = [
+  { label: t('entity.kind'), text: kind.data.label },
+];
+if (span)
+  facts.push({
+    label: t('entity.value'),
+    text: varies ? `${num(span.min)}–${num(span.max)}` : num(span.min),
+  });
+facts.push({ label: t('entity.count'), text: String(mine.length) });
+if (span && mine.length > 1) facts.push({ label: t('game.totalValue'), text: num(span.sum) });
+
+// Chapters in play order, each a group of checkboxes.
+const inOrder = [...mine].sort(
+  (a, b) => chapterOrder(a.data.chapter) - chapterOrder(b.data.chapter),
+);
+const chapters = [...new Set(inOrder.map((r) => r.data.chapter))];
+const groups: Group[] = chapters.map((c) => ({
+  title: chapterLabel(c),
+  items: inOrder
+    .filter((r) => r.data.chapter === c)
+    .map((r) => ({
+      id: r.data.slug,
+      title: r.data.name,
+      tag:
+        [
+          r.data.missable ? t('game.missable') : undefined,
+          varies && r.data.value !== undefined ? num(r.data.value) : undefined,
+        ]
+          .filter(Boolean)
+          .join(' · ') || undefined,
+      detail: `${r.data.area} · ${r.data.location}${r.data.how ? ` — ${r.data.how}` : ''}`,
+      note:
+        [r.data.missable ? r.data.missableNote : undefined, r.data.note]
+          .filter(Boolean)
+          .join(' · ') || undefined,
+      href: h(`/chapters/${c}/`),
+      hrefLabel: `${t('game.chapterLink')} →`,
+    })),
+}));
+// The whole meta type's reward belongs here when this is its only group.
+const alone = siblings.length === 1;
+---
+
+<BaseLayout title={title(name)} lang={locale}>
+  <main id="main" class="mx-auto max-w-3xl px-5 py-7 md:py-14">
+    <a
+      href={h(`/collectibles/#type-${type.meta}`)}
+      class="mb-6 inline-block font-mono text-xs text-muted-foreground hover:text-primary"
+    >
+      ← {t('nav.collectibles')}
+    </a>
+
+    <header class="flex flex-wrap items-start gap-5">
+      <GameThumb image={image} size="lg" />
+      <div class="min-w-0 flex-1">
+        {
+          kind.data.label !== name && (
+            <p class="font-mono text-[11px] uppercase tracking-wide text-muted-foreground">
+              {kind.data.label}
+            </p>
+          )
+        }
+        <h1 class="font-display text-2xl font-bold break-words text-foreground sm:text-3xl">
+          {name}
+        </h1>
+        {
+          chapters.length > 0 && (
+            <p class="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-xs text-muted-foreground">
+              <span class="font-mono uppercase tracking-wide">{t('entity.appearsIn')}:</span>
+              {chapters.map((c) => (
+                <a
+                  href={h(`/chapters/${c}/`)}
+                  class="rounded-full border border-border px-2 py-0.5 font-mono text-[11px] text-foreground hover:border-primary hover:text-primary"
+                >
+                  {chapterLabel(c)}
+                </a>
+              ))}
+            </p>
+          )
+        }
+      </div>
+    </header>
+
+    <dl class="panel mt-6 grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 p-4 text-sm">
+      {
+        facts.map((f) => (
+          <>
+            <dt class="font-mono text-[10px] uppercase tracking-wide text-muted-foreground">
+              {f.label}
+            </dt>
+            <dd class="m-0 text-foreground">{f.text}</dd>
+          </>
+        ))
+      }
+    </dl>
+
+    {
+      alone && kind.data.reward && (
+        <p class="mt-4 text-sm text-foreground">
+          <span class="mr-1 font-mono text-[10px] uppercase tracking-wide text-primary">
+            {t('game.reward')}:
+          </span>
+          {kind.data.reward}
+        </p>
+      )
+    }
+    {alone && kind.data.note && <p class="mt-2 text-sm text-muted-foreground">{kind.data.note}</p>}
+    {
+      !alone && (
+        <p class="mt-4 text-sm text-muted-foreground">
+          {t('game.partOf')}{' '}
+          <a href={h(`/collectibles/#type-${type.meta}`)} class="ent-link">
+            {kind.data.label}
+          </a>
+          {kind.data.reward && ` — ${t('game.reward')}: ${kind.data.reward}`}
+        </p>
+      )
+    }
+
+    <section class="mt-10">
+      <SectionHead title={t('entity.instances')} />
+      <ErrorBoundary
+        client:load
+        name="CollectibleTypeChecklist"
+        messageLabel={t('a11y.errorBoundaryMessage')}
+        reportLabel={t('a11y.errorBoundaryReport')}
+      >
+        <GroupedChecklist
+          client:load
+          store={`${game}-collectibles-done`}
+          groups={groups}
+          progressLabel={name}
+        />
+      </ErrorBoundary>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,52 @@
+---
+/**
+ * The chapter's screenshots (`gameChapterImages`,
+ * public/img/games/<game>/chapters/<chapter>-<n>.webp), captioned from the
+ * chapter's front matter and shown in play order. Nothing renders for a
+ * chapter without any, so text never depends on a picture existing.
+ */
+import type { EntityImage } from '@/lib/game-images';
+
+interface Props {
+  chapterId: string;
+  photos: { id: string; caption: string }[];
+  title: string;
+  /** Photo id → image. */
+  files: Map<string, EntityImage>;
+}
+const { photos, title, files } = Astro.props;
+
+const shots = photos
+  .map((p) => ({ ...p, img: files.get(p.id) }))
+  .filter((p): p is typeof p & { img: EntityImage } => p.img !== undefined);
+---
+
+{
+  shots.length > 0 ? (
+    <section class="mt-8" aria-label={title}>
+      <h3 class="mb-2 font-display text-sm font-semibold tracking-wide text-muted-foreground">
+        {title}
+      </h3>
+      <ul class="grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2">
+        {shots.map((s) => (
+          <li class="m-0">
+            <figure class="m-0">
+              <img
+                src={s.img.src}
+                width={s.img.width}
+                height={s.img.height}
+                alt={s.caption}
+                loading="lazy"
+                decoding="async"
+                class="photo-shot w-full"
+              />
+              <figcaption class="mt-1 text-xs leading-snug text-muted-foreground">
+                {s.caption}
+              </figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ) : null
+}

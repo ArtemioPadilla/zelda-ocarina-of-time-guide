@@ -25,53 +25,62 @@ describe('checklist store', () => {
   });
 
   it('toggle adds an id when absent and removes it when present', async () => {
-    const { skulltulasStore } = await import('./checklist');
-    expect(skulltulasStore.$checked.get().size).toBe(0);
+    const { checklistStore } = await import('./checklist');
+    const s = checklistStore('oot-collectibles-done');
+    expect(s.$checked.get().size).toBe(0);
 
-    skulltulasStore.toggle('sk-01');
-    expect(skulltulasStore.$checked.get().has('sk-01')).toBe(true);
+    s.toggle('tarot-01');
+    expect(s.$checked.get().has('tarot-01')).toBe(true);
 
-    skulltulasStore.toggle('sk-01');
-    expect(skulltulasStore.$checked.get().has('sk-01')).toBe(false);
+    s.toggle('tarot-01');
+    expect(s.$checked.get().has('tarot-01')).toBe(false);
   });
 
   it('toggle persists the current set to idb-keyval under its own key', async () => {
     const { get } = await import('idb-keyval');
-    const { heartsStore } = await import('./checklist');
+    const { checklistStore } = await import('./checklist');
+    const s = checklistStore('oot-files-done');
 
-    heartsStore.toggle('heart-lost-woods-1');
-    heartsStore.toggle('heart-castle-town-dog');
+    s.toggle('shard-a');
+    s.toggle('shard-b');
 
-    const persisted = (await get('oot-hearts-done')) as string[];
-    expect(new Set(persisted)).toEqual(new Set(['heart-lost-woods-1', 'heart-castle-town-dog']));
-  });
-
-  it('skulltulas and hearts stores persist independently', async () => {
-    const { skulltulasStore, heartsStore } = await import('./checklist');
-
-    skulltulasStore.toggle('sk-01');
-    expect(heartsStore.$checked.get().size).toBe(0);
-    expect(skulltulasStore.$checked.get().size).toBe(1);
+    const persisted = (await get('oot-files-done')) as string[];
+    expect(new Set(persisted)).toEqual(new Set(['shard-a', 'shard-b']));
   });
 
   it('reset clears the checked set and the persisted value', async () => {
     const { get } = await import('idb-keyval');
-    const { skulltulasStore } = await import('./checklist');
+    const { checklistStore } = await import('./checklist');
+    const s = checklistStore('oot-achievements-done');
 
-    skulltulasStore.toggle('sk-01');
-    skulltulasStore.toggle('sk-02');
-    skulltulasStore.reset();
+    s.toggle('a');
+    s.toggle('b');
+    s.reset();
 
-    expect(skulltulasStore.$checked.get().size).toBe(0);
-    expect(await get('oot-skulltulas-done')).toEqual([]);
+    expect(s.$checked.get().size).toBe(0);
+    expect(await get('oot-achievements-done')).toEqual([]);
   });
 
-  it('setCurrentChapter updates the store and persists the chapter id', async () => {
+  it('hands out one store per IndexedDB key, shared by everyone who asks', async () => {
     const { get } = await import('idb-keyval');
-    const { $currentChapter, setCurrentChapter } = await import('./checklist');
+    const { checklistStore } = await import('./checklist');
+    const a = checklistStore('oot-collectibles-done');
+    expect(checklistStore('oot-collectibles-done')).toBe(a);
+    a.toggle('tarot-01');
+    expect(checklistStore('oot-files-done').$checked.get().size).toBe(0);
+    expect(await get('oot-collectibles-done')).toEqual(['tarot-01']);
+  });
 
-    setCurrentChapter('c1');
-    expect($currentChapter.get()).toBe('c1');
-    expect(await get('oot-current-chapter')).toBe('c1');
+  it('keeps the current chapter under <game>-current-chapter', async () => {
+    const { get } = await import('idb-keyval');
+    const { currentChapterStore } = await import('./checklist');
+    const s = currentChapterStore('oot');
+    expect(s.$current.get()).toBeNull();
+    s.set('the-rescue');
+    expect(s.$current.get()).toBe('the-rescue');
+    expect(currentChapterStore('oot')).toBe(s);
+    expect(await get('oot-current-chapter')).toBe('the-rescue');
+    s.reset();
+    expect(s.$current.get()).toBeNull();
   });
 });

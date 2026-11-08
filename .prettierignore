@@ -2,4 +2,15 @@ dist/
 node_modules/
 package-lock.json
 .astro/
+tests/__screenshots__/
+playwright-report/
+test-results/
 public/
+# Content tables are kept one entry per line on purpose (a row per weapon,
+# boss, collectible…): easier to scan and diff than Prettier's exploded form.
+public/feedback.js
+src/content/games/*/*/*.json
+src/content/games/*/aliases.json
+# Raw research notes written by the research workflows (tables of sources);
+# they are records, not code — never reformat them.
+docs/research/

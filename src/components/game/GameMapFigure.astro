@@ -1,0 +1,99 @@
+---
+/**
+ * One in-game map (maps.json row): the picture, large, opening full size in
+ * a new tab; its area, caption, the chapters that go through it and where
+ * the picture comes from. Text-only when the file is not there yet.
+ */
+import { gameImage } from '@/lib/game-images';
+import { useTranslations, gameHref } from '@/i18n/utils';
+import type { EngineEntry } from '@/lib/game-content';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  map: EngineEntry<'maps'>['data'];
+  /** Chapter id → "Ch. 3 · Main House" (the chapters the map covers). */
+  chapters?: { id: string; label: string }[];
+  /** Smaller heading when embedded in a chapter page. */
+  compact?: boolean;
+}
+const { locale, map, chapters = [], compact = false } = Astro.props;
+const t = useTranslations(locale);
+const image = gameImage(map.game, 'maps', map.slug);
+const sourceHost = (() => {
+  try {
+    return map.source ? new URL(map.source).hostname.replace(/^www\./, '') : undefined;
+  } catch {
+    return undefined;
+  }
+})();
+---
+
+<figure id={`map-${map.slug}`} class="panel m-0 p-3 sm:p-4">
+  {
+    image ? (
+      <a href={image.src} target="_blank" rel="noopener" class="block" title={t('game.mapOpen')}>
+        <img
+          src={image.src}
+          width={image.width}
+          height={image.height}
+          alt={`${map.title} — ${map.area}`}
+          loading="lazy"
+          decoding="async"
+          class="photo-shot h-auto w-full"
+        />
+      </a>
+    ) : (
+      <p class="rounded-md border border-dashed border-border p-4 text-center text-xs text-muted-foreground">
+        {t('game.mapNoImage')}
+      </p>
+    )
+  }
+  <figcaption class="mt-3">
+    <p class={`font-display font-semibold text-foreground ${compact ? 'text-sm' : 'text-base'}`}>
+      {map.title}
+      <span class="ml-2 font-mono text-[11px] font-normal text-muted-foreground">{map.area}</span>
+    </p>
+    {map.caption && <p class="mt-1 text-sm text-muted-foreground">{map.caption}</p>}
+    {
+      chapters.length > 0 && (
+        <p class="mt-2 flex flex-wrap gap-1.5">
+          {chapters.map((c) => (
+            <a
+              href={gameHref(locale, map.game, `/chapters/${c.id}/`)}
+              class="rounded-full border border-border px-2 py-0.5 font-mono text-[11px] text-foreground hover:border-primary hover:text-primary"
+            >
+              {c.label}
+            </a>
+          ))}
+        </p>
+      )
+    }
+    <p class="mt-2 flex flex-wrap gap-x-3 font-mono text-[11px]">
+      {
+        image && (
+          <a
+            href={image.src}
+            target="_blank"
+            rel="noopener"
+            class="text-primary underline decoration-dotted"
+          >
+            {t('game.mapOpen')} ↗
+          </a>
+        )
+      }
+      {
+        map.source && (
+          <a
+            href={map.source}
+            target="_blank"
+            rel="noopener"
+            class="text-muted-foreground underline decoration-dotted"
+          >
+            {t('game.mapSource')}: {sourceHost ?? map.source}
+          </a>
+        )
+      }
+    </p>
+  </figcaption>
+</figure>

@@ -1,24 +1,27 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-/* Self-hosted (not Google Fonts CDN) so the service worker precaches the
- * woff2 files like any other static asset — the guide must keep its brand
- * typography offline. Variable-weight builds cover every font-weight the
- * site uses from one file per family/style, so there's no per-weight byte
- * cost to worry about.
+/* Self-hosted (not Google Fonts) so the service worker precaches the woff2
+ * files like any other static asset — the guide must keep its typography
+ * offline. Variable builds cover every weight from one file per family.
  *
  * Fraunces (display) — a soft, characterful serif with "wonky" optical
- * flair; reads as a storybook/legend title rather than a carved-stone
- * heading, matching this game's fairy-tale tone (vs. the RE4 sibling
- * guide's severe Cinzel). Literata (body) — a warm book serif built for
- * long reading. JetBrains Mono (labels/pills/stat data) — a clean modern
- * mono, replacing the RE4 guide's typewriter mono with something closer to
- * a Sheikah/UI readout. */
-@import "@fontsource-variable/fraunces/full.css";
-@import "@fontsource-variable/literata/standard.css";
-@import "@fontsource-variable/jetbrains-mono/wght.css";
+ * flair; reads as a storybook/legend title, matching the game's fairy-tale
+ * tone. Literata (body) — a warm book serif built for long reading.
+ * JetBrains Mono (labels/pills/stat data) — a clean modern mono, closer to
+ * a Sheikah readout than a typewriter. */
+@import '@fontsource-variable/fraunces/full.css';
+@import '@fontsource-variable/literata/standard.css';
+@import '@fontsource-variable/jetbrains-mono/wght.css';
 
-/* CSS-only animation utilities — zero JS runtime cost. */
+/* CSS-only animation utilities — zero JS runtime cost. Activates on element
+ * mount via CSS keyframes. See https://rombo.co/tailwind/ for the full API. */
 @plugin "tailwindcss-motion";
+
+/* Search results and in-page links land on `#id` anchors: keep the target
+   clear of the sticky header + chapter strip. */
+[id] {
+  scroll-margin-top: 7.5rem;
+}
 
 /* Native cross-document View Transitions — no-op in older browsers. */
 @view-transition {
@@ -32,10 +35,17 @@
   }
 }
 
-/* Dark applies under `.dark` — but NOT inside a `.light` island. */
+/* Dark applies under `.dark` — but NOT inside a `.light` island (a `.light`
+   container re-declares the light tokens below AND opts its subtree out of
+   `dark:` utilities). */
 @variant dark (&:where(.dark, .dark *):not(:where(.light, .light *)));
 
 @layer base {
+  /* Two skins, one set of token names. Every themed token is declared once
+     with the native `light-dark(<light>, <dark>)` function; which argument
+     wins follows `color-scheme`, set by `:root`/`.light` (light) and `.dark`
+     (dark). The site is dark-first: the zero-flash script in BaseLayout adds
+     `.dark` to <html> unless the reader (or the system) picked light. */
   :root,
   .light {
     color-scheme: light;
@@ -49,52 +59,60 @@
     /* Palette: Kokiri Forest by day, Temple of Time by night — every
        neutral carries a green-teal hue (~145-165) instead of true gray, so
        the whole site reads as one enchanted-forest material. Primary is
-       Kokiri/Ocarina emerald (the tunic, the Deku Tree, the ocarina's clay);
-       gold (--pill-song) nods to the Triforce and the ocarina's ports;
-       sapphire (--pill-dungeon) nods to the Zora/Water Temple motif.
-       Contrast verified computationally (OKLab → linear sRGB → WCAG ratio),
-       not eyeballed — every pair below clears 4.5:1 in both themes. */
+       Kokiri/ocarina emerald (the tunic, the Deku Tree); gold (--pill-song,
+       --pill-med) nods to the Triforce; Zora sapphire (--accent-cyan,
+       --pill-dungeon, --pill-shop) to the Zora/Water Temple motif.
+       Contrast verified computationally (OKLab → linear sRGB → WCAG ratio)
+       in the original OoT guide — every text pair clears 4.5:1 in both
+       themes. */
     --background: light-dark(oklch(0.96 0.02 145), oklch(0.15 0.03 165));
     --foreground: light-dark(oklch(0.22 0.03 160), oklch(0.92 0.02 120));
     --card: light-dark(oklch(0.99 0.012 140), oklch(0.195 0.026 165));
     --card-foreground: light-dark(oklch(0.22 0.03 160), oklch(0.92 0.02 120));
-    --popover: light-dark(oklch(0.99 0.012 140), oklch(0.195 0.026 165));
+    --popover: light-dark(oklch(0.99 0.012 140), oklch(0.21 0.026 165));
     --popover-foreground: light-dark(oklch(0.22 0.03 160), oklch(0.92 0.02 120));
-    /* Brand: Kokiri/ocarina emerald. Verified 5.99:1 (light) / 9.33:1 (dark)
-       as plain text on --background. */
+    /* Brand: Kokiri/ocarina emerald. 5.99:1 (light) / 9.33:1 (dark) as
+       plain text on --background. */
     --primary: light-dark(oklch(0.46 0.13 150), oklch(0.75 0.15 150));
     --primary-foreground: light-dark(oklch(0.99 0 0), oklch(0.18 0.03 150));
     --secondary: light-dark(oklch(0.92 0.02 145), oklch(0.26 0.02 160));
     --secondary-foreground: light-dark(oklch(0.22 0.03 160), oklch(0.92 0.02 120));
     --muted: light-dark(oklch(0.92 0.02 145), oklch(0.22 0.02 160));
     --muted-foreground: light-dark(oklch(0.46 0.03 150), oklch(0.66 0.03 140));
+    /* Hover surface (shadcn semantics): a Triforce-gold wash. */
     --accent: light-dark(oklch(0.9 0.045 95), oklch(0.28 0.05 92));
     --accent-foreground: light-dark(oklch(0.3 0.08 85), oklch(0.92 0.06 95));
-    /* Goron ruby / Ganon red. Verified 5.98:1 (light) / 5.76:1 (dark). */
+    /* The engine's second accent, here Zora sapphire (name kept so the
+       engine's components need no change). */
+    --accent-cyan: light-dark(oklch(0.42 0.14 235), oklch(0.72 0.13 230));
+    /* Triforce gold, for marks and glows (not body text in light). */
+    --gold: light-dark(oklch(0.62 0.14 80), oklch(0.8 0.15 85));
+    /* Goron ruby / Ganon red. 5.98:1 (light) / 5.76:1 (dark). */
     --destructive: light-dark(oklch(0.5 0.2 25), oklch(0.66 0.19 25));
     --destructive-foreground: light-dark(oklch(0.985 0 0), oklch(0.145 0.02 25));
     --border: light-dark(oklch(0.85 0.025 145), oklch(0.32 0.03 160));
     --input: light-dark(oklch(0.85 0.025 145), oklch(0.34 0.03 160));
     --ring: light-dark(oklch(0.55 0.13 150), oklch(0.75 0.15 150));
-    /* Chapter-pill semantic colors. Verified 7.04:1 (light) / 8.11:1 (dark)
-       for --pill-dungeon and 7.04:1 (light) / 9.68:1 (dark) for --pill-song,
-       both as ~10-11px uppercase text on --background. */
+    /* Pill colours (small uppercase text: ≥4.5:1). Sapphire 7.04:1 /
+       8.11:1, gold 7.04:1 / 9.68:1 on --background. */
     --pill-dungeon: light-dark(oklch(0.42 0.14 235), oklch(0.72 0.13 230));
     --pill-song: light-dark(oklch(0.44 0.15 80), oklch(0.78 0.15 85));
+    --pill-shop: var(--pill-dungeon);
+    --pill-med: var(--pill-song);
     --chart-1: light-dark(oklch(0.46 0.13 150), oklch(0.75 0.15 150));
     --chart-2: light-dark(oklch(0.42 0.14 235), oklch(0.72 0.13 230));
     --chart-3: light-dark(oklch(0.5 0.16 300), oklch(0.7 0.16 300));
     --chart-4: light-dark(oklch(0.44 0.15 80), oklch(0.78 0.15 85));
     --chart-5: light-dark(oklch(0.5 0.2 25), oklch(0.66 0.19 25));
     --radius: 0.625rem;
-    --sidebar: light-dark(oklch(0.985 0 0), oklch(0.205 0 0));
-    --sidebar-foreground: light-dark(oklch(0.145 0 0), oklch(0.985 0 0));
-    --sidebar-primary: light-dark(oklch(0.205 0 0), oklch(0.488 0.243 264.376));
-    --sidebar-primary-foreground: light-dark(oklch(0.985 0 0), oklch(0.985 0 0));
-    --sidebar-accent: light-dark(oklch(0.97 0 0), oklch(0.269 0 0));
-    --sidebar-accent-foreground: light-dark(oklch(0.205 0 0), oklch(0.985 0 0));
-    --sidebar-border: light-dark(oklch(0.922 0 0), oklch(1 0 0 / 10%));
-    --sidebar-ring: light-dark(oklch(0.708 0 0), oklch(0.556 0 0));
+    --sidebar: light-dark(oklch(0.99 0.012 140), oklch(0.195 0.026 165));
+    --sidebar-foreground: light-dark(oklch(0.22 0.03 160), oklch(0.92 0.02 120));
+    --sidebar-primary: light-dark(oklch(0.46 0.13 150), oklch(0.75 0.15 150));
+    --sidebar-primary-foreground: light-dark(oklch(0.99 0 0), oklch(0.18 0.03 150));
+    --sidebar-accent: light-dark(oklch(0.92 0.02 145), oklch(0.26 0.02 160));
+    --sidebar-accent-foreground: light-dark(oklch(0.22 0.03 160), oklch(0.92 0.02 120));
+    --sidebar-border: light-dark(oklch(0.85 0.025 145), oklch(0.32 0.03 160));
+    --sidebar-ring: light-dark(oklch(0.55 0.13 150), oklch(0.75 0.15 150));
   }
 }
 
@@ -113,8 +131,12 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-gold: var(--gold);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-pill-shop: var(--pill-shop);
+  --color-pill-med: var(--pill-med);
   --color-pill-dungeon: var(--pill-dungeon);
   --color-pill-song: var(--pill-song);
   --color-border: var(--border);
@@ -142,7 +164,7 @@
 @theme {
   /* Type system — Fraunces (storybook display serif) for headings, Literata
      (warm reading serif) for body copy, JetBrains Mono (clean UI mono) for
-     labels/pills/nav. */
+     labels/pills. Self-hosted (@fontsource). */
   --font-sans: 'Literata Variable', Georgia, 'Times New Roman', serif;
   --font-display: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
   --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', monospace;
@@ -152,17 +174,28 @@
   body {
     position: relative;
     font-family: var(--font-sans);
-    font-size: 17px;
+    font-size: 16.5px;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     background-color: var(--background);
   }
-  /* Atmosphere: a soft emerald canopy-glow top-center + a cooler sapphire
-     glow top-right, evoking dappled forest light and the Water Temple —
-     dark mode only, so light/parchment mode stays clean. */
+  /* Atmosphere: a soft emerald canopy-glow top-centre (both skins), plus a
+     cooler sapphire glow top-right at night — dappled forest light and the
+     Water Temple. Toggled by html.dark (src/stores/theme.ts). */
+  body {
+    background-image: radial-gradient(
+      ellipse 1200px 600px at 50% -120px,
+      color-mix(in oklch, var(--primary) 9%, transparent),
+      transparent 60%
+    );
+  }
   .dark body {
     background-image:
-      radial-gradient(ellipse 1200px 600px at 50% -100px, color-mix(in oklch, var(--primary) 16%, transparent), transparent 60%),
+      radial-gradient(
+        ellipse 1200px 600px at 50% -100px,
+        color-mix(in oklch, var(--primary) 16%, transparent),
+        transparent 60%
+      ),
       radial-gradient(ellipse 900px 500px at 90% 15%, oklch(0.6 0.13 230 / 10%), transparent 55%);
     background-attachment: fixed;
   }
@@ -187,43 +220,255 @@
 @layer utilities {
   /* Emerald canopy-glow used as hero atmosphere (home page header). */
   .glow-brand {
-    background:
-      radial-gradient(60% 50% at 50% 0%, color-mix(in oklch, var(--primary) 22%, transparent), transparent 70%);
+    background: radial-gradient(
+      60% 50% at 50% 0%,
+      color-mix(in oklch, var(--primary) 22%, transparent),
+      transparent 70%
+    );
   }
-  /* The one card treatment, used everywhere (tip cards, equipment rows,
-     dungeon links, boss cards, checklists) — a faint corner vignette + inset
-     top highlight read as a carved stone tile catching torchlight. */
+  /* The panel — this site's one card treatment, used everywhere (rule
+     cards, equipment rows, chapter links, boss cards, checklists): a faint
+     corner vignette + inset top highlight, read as a carved stone tile
+     catching torchlight. */
   .panel {
     position: relative;
     background: var(--card);
-    background-image: radial-gradient(140% 100% at 100% 0%, color-mix(in oklch, var(--primary) 6%, transparent), transparent 60%);
+    background-image: radial-gradient(
+      140% 100% at 100% 0%,
+      color-mix(in oklch, var(--primary) 6%, transparent),
+      transparent 60%
+    );
     border: 1px solid var(--border);
-    /* Optional colored left accent — set `style="--panel-accent: var(--primary)"`
-       (or any color) on the element; defaults to the regular border color. */
-    border-left: 3px solid var(--panel-accent, var(--border));
     border-radius: var(--radius-lg);
     box-shadow:
       inset 0 1px 0 color-mix(in oklch, white 4%, transparent),
       0 1px 2px color-mix(in oklch, black 20%, transparent);
-    transition: border-color 0.15s ease, transform 0.15s ease;
+    transition:
+      border-color 0.15s ease,
+      transform 0.15s ease;
   }
-  a.panel:hover, .panel[data-interactive]:hover {
+  /* Optional coloured accent (rule cards, part-grouped chapter rows) — set
+     `style="--panel-accent: var(--primary)"` on the element. Drawn as an
+     inset bar so the card keeps one outline in both skins. */
+  .panel[style*='--panel-accent']::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 10px;
+    bottom: 10px;
+    width: 3px;
+    border-radius: 2px;
+    background: var(--panel-accent);
+    pointer-events: none;
+  }
+  a.panel:hover,
+  .panel[data-interactive]:hover {
     border-color: color-mix(in oklch, var(--primary) 55%, var(--border));
   }
-  /* The ledger — a faint dotted-grid texture behind data tables
-     (equipment/songs), read as an old cartographer's grid paper. */
+  /* Section-head rule: a short gold lead + hairline. */
+  .sec-rule {
+    position: relative;
+    padding-bottom: 0.9rem;
+  }
+  .sec-rule::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      var(--gold) 0 40px,
+      transparent 40px 46px,
+      color-mix(in oklch, var(--primary) 45%, var(--border)) 46px,
+      transparent
+    );
+  }
+  /* Top nav: small-caps serif tabs with an underline for the current section. */
+  .nav-tab {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.1rem;
+    margin-right: 1.1rem;
+    white-space: nowrap;
+    color: var(--muted-foreground);
+    border-bottom: 2px solid transparent;
+    transition:
+      color 0.15s ease,
+      border-color 0.15s ease;
+  }
+  .nav-tab:hover {
+    color: var(--primary);
+  }
+  .nav-tab[aria-current='page'] {
+    color: var(--primary);
+    border-bottom-color: var(--gold);
+  }
+  /* Photographs and item captures get a hairline frame. */
+  .panel img,
+  .ledger img,
+  figure img {
+    border: 1px solid color-mix(in oklch, var(--border) 80%, transparent);
+  }
+  .dark .panel img,
+  .dark .ledger img,
+  .dark figure img {
+    border-color: color-mix(in oklch, var(--gold) 25%, transparent);
+    box-shadow: 0 6px 18px rgb(0 0 0 / 45%);
+  }
+  .dark [role='progressbar'] > div {
+    box-shadow: 0 0 12px color-mix(in oklch, var(--primary) 45%, transparent);
+  }
+  /* Full-bleed photo headers (home hero, chapter cover): the picture sits
+     behind a gradient into the page background. */
+  .photo-header {
+    position: relative;
+    background-color: var(--card);
+    background-size: cover;
+    background-position: center;
+  }
+  .photo-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklch, var(--background) 35%, transparent),
+      color-mix(in oklch, var(--background) 72%, transparent) 55%,
+      var(--background) 100%
+    );
+  }
+  .dark .photo-header::before {
+    background: linear-gradient(
+      180deg,
+      oklch(0 0 0 / 20%),
+      oklch(0 0 0 / 50%) 55%,
+      var(--background) 100%
+    );
+  }
+  .photo-header > * {
+    position: relative;
+  }
+  .photo-cover {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    background: var(--card) center / cover no-repeat;
+  }
+  .photo-cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 20%,
+      color-mix(in oklch, var(--background) 92%, transparent)
+    );
+  }
+  .dark .photo-cover::before {
+    background: linear-gradient(180deg, oklch(0 0 0 / 10%) 10%, oklch(0 0 0 / 82%));
+  }
+  .photo-cover > * {
+    position: relative;
+  }
+  /* Chapter screenshots: a framed print on the page, same in both skins. */
+  .photo-shot {
+    display: block;
+    height: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    background: var(--card);
+  }
+  /* Item slots styled after the pause-menu subscreen: a deep teal well
+     with a gold hairline, the same in both skins. Used by the thumbnails
+     and the collectible tiles. */
+  .case-slot {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid oklch(0.8 0.15 85 / 45%);
+    background:
+      radial-gradient(circle at 50% 40%, oklch(0.3 0.05 165), oklch(0.17 0.03 165) 75%),
+      oklch(0.17 0.03 165);
+    box-shadow:
+      inset 0 0 0 1px oklch(0.8 0.15 85 / 10%),
+      inset 0 0 20px rgb(0 0 0 / 40%);
+    transition:
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+  .case-slot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    filter: drop-shadow(0 0 8px oklch(0.8 0.15 85 / 25%));
+    transition:
+      opacity 0.15s ease,
+      filter 0.15s ease;
+  }
+  .panel:hover .case-slot,
+  label:hover .case-slot {
+    border-color: oklch(0.8 0.15 85);
+    box-shadow:
+      inset 0 0 0 1px oklch(0.8 0.15 85 / 25%),
+      0 0 16px oklch(0.8 0.15 85 / 30%);
+  }
+  .case-slot[data-checked='true'] img {
+    opacity: 0.4;
+    filter: grayscale(1);
+  }
+  .case-slot[data-checked='true']::after {
+    content: '✓';
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: oklch(0.8 0.15 85);
+    text-shadow: 0 0 14px oklch(0.8 0.15 85 / 70%);
+    pointer-events: none;
+  }
+  /* Item name plate. */
+  .case-name {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+  /* The ledger — a faint dotted-grid texture behind data tables, read as an
+     old cartographer's grid paper. */
   .ledger {
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     overflow: hidden;
     background-color: var(--card);
     background-image:
-      repeating-linear-gradient(0deg, color-mix(in oklch, var(--foreground) 3%, transparent) 0 1px, transparent 1px 34px),
-      repeating-linear-gradient(90deg, color-mix(in oklch, var(--foreground) 3%, transparent) 0 1px, transparent 1px 34px);
+      repeating-linear-gradient(
+        0deg,
+        color-mix(in oklch, var(--foreground) 3%, transparent) 0 1px,
+        transparent 1px 34px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        color-mix(in oklch, var(--foreground) 3%, transparent) 0 1px,
+        transparent 1px 34px
+      );
   }
 }
 
-/* Base UI Toast stacking (unused today, kept for parity with future FAB work). */
+/* Base UI Toast stacking (kept for parity with future FAB work). */
 @layer components {
   .bui-toast {
     position: absolute;
@@ -232,8 +477,7 @@
     left: auto;
     width: 100%;
     z-index: calc(1000 - var(--toast-index));
-    transform:
-      translateX(var(--toast-swipe-movement-x))
+    transform: translateX(var(--toast-swipe-movement-x))
       translateY(calc(var(--toast-swipe-movement-y) + var(--toast-index) * -18px))
       scale(calc(1 - 0.04 * var(--toast-index)));
     transition:
@@ -241,8 +485,7 @@
       opacity 0.3s ease;
   }
   .bui-toast[data-expanded] {
-    transform:
-      translateX(var(--toast-swipe-movement-x))
+    transform: translateX(var(--toast-swipe-movement-x))
       translateY(calc(var(--toast-offset-y) * -1 + var(--toast-swipe-movement-y)));
   }
   .bui-toast[data-starting-style],
@@ -256,11 +499,12 @@
   }
 }
 
-/* Navi's spark — a small CSS-only pulsing fairy-light used next to the brand
-   name (nav + hero) and at the head of every section. A soft radial-gradient
-   orb + an independent inner sparkle, in Navi's iconic cyan-green-white
-   glow rather than RE4's flame — this is the site's signature glyph. */
+/* Navi's spark — a small CSS-only pulsing fairy-light, the site's
+   signature glyph: at the head of every section (`.glyph`, the engine's
+   name for it) and anywhere `.spark` is used. The brand mark next to the
+   site name is the Triforce of public/favicon.svg. */
 @layer utilities {
+  .glyph,
   .spark {
     display: inline-block;
     width: 11px;
@@ -268,15 +512,23 @@
     position: relative;
     flex: none;
   }
+  .glyph::before,
   .spark::before {
     content: '';
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: radial-gradient(circle at 38% 34%, #ffffff 0%, #eaffb0 22%, #7cffcb 52%, #1f9e7c 100%);
+    background: radial-gradient(
+      circle at 38% 34%,
+      #ffffff 0%,
+      #eaffb0 22%,
+      #7cffcb 52%,
+      #1f9e7c 100%
+    );
     box-shadow: 0 0 7px 2px color-mix(in oklch, var(--primary) 60%, transparent);
     animation: ootg-pulse 2.4s ease-in-out infinite;
   }
+  .glyph::after,
   .spark::after {
     content: '';
     position: absolute;
@@ -289,42 +541,81 @@
     opacity: 0.95;
     animation: ootg-pulse 2.4s ease-in-out infinite reverse;
   }
+  .brand-mark {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    flex: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d2b22'/%3E%3Cg fill='%23e8b93a'%3E%3Cpolygon points='32,10 41,26 23,26'/%3E%3Cpolygon points='14,42 23,26 32,42'/%3E%3Cpolygon points='32,42 41,26 50,42'/%3E%3C/g%3E%3C/svg%3E")
+      center / contain no-repeat;
+  }
 }
 @keyframes ootg-pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(0.78); opacity: 0.7; }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.78);
+    opacity: 0.7;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .spark::before, .spark::after { animation: none; }
+  .glyph::before,
+  .glyph::after,
+  .spark::before,
+  .spark::after {
+    animation: none;
+  }
 }
 
 /* Staggered hero entrance — CSS-only, respects reduced-motion. */
 @keyframes ootg-rise {
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes ootg-float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(2deg); }
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
 }
 @keyframes ootg-spin-slow {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 .rise {
   animation: ootg-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-.float-slow { animation: ootg-float 7s ease-in-out infinite; }
-.spin-slow { animation: ootg-spin-slow 40s linear infinite; }
+.float-slow {
+  animation: ootg-float 7s ease-in-out infinite;
+}
+.spin-slow {
+  animation: ootg-spin-slow 40s linear infinite;
+}
 @media (prefers-reduced-motion: reduce) {
-  .rise, .float-slow, .spin-slow { animation: none; }
+  .rise,
+  .float-slow,
+  .spin-slow {
+    animation: none;
+  }
 }
 
-/* Chapter walkthrough markdown (rendered via <Content />). No typography
-   plugin in this lean scaffold — hand-rolled to match the design tokens.
-   h2 mirrors a small-caps rune-label with a leading rule; blockquote is a
-   "Navi note" margin callout — used for both ⚠️ warnings and 💡 tips, the
-   emoji already carries the tone so the box itself stays one consistent
-   emerald-on-parchment note rather than a jumpy red/green/blue system. */
+/* Walkthrough markdown (rendered via <Content />). No typography plugin —
+   hand-rolled to match the design tokens. h2 mirrors a small-caps
+   rune-label with a leading rule; blockquote is a "Navi note" margin
+   callout for warnings, tips and call-outs (the emoji carries the tone). */
 .prose-guide {
   color: var(--foreground);
   font-size: 0.9375rem;
@@ -346,16 +637,63 @@
   content: '';
   width: 14px;
   height: 1px;
-  background: color-mix(in oklch, var(--primary) 50%, transparent);
+  background: color-mix(in oklch, var(--gold) 70%, transparent);
 }
-.prose-guide h2:first-child { margin-top: 0; }
-.prose-guide p { margin-bottom: 0.9rem; }
-.prose-guide p:last-child { margin-bottom: 0; }
-.prose-guide strong { color: var(--foreground); font-weight: 700; }
-.prose-guide em { color: var(--muted-foreground); }
-.prose-guide ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 0.9rem; }
-.prose-guide li { margin-bottom: 0.4rem; }
-.prose-guide li::marker { color: var(--primary); }
+.prose-guide h2:first-child {
+  margin-top: 0;
+}
+.prose-guide h3 {
+  margin: 1.4rem 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+.prose-guide h2 + h3 {
+  margin-top: 0.6rem;
+}
+.prose-guide p {
+  margin-bottom: 0.9rem;
+}
+.prose-guide p:last-child {
+  margin-bottom: 0;
+}
+/* Auto-links to an entity's card (items, enemies, bosses…): kept quiet —
+   the text reads as text, the dotted underline says "there is more". */
+.ent-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: color-mix(in oklch, var(--primary) 55%, transparent);
+  text-underline-offset: 0.15em;
+}
+.ent-link:hover {
+  color: var(--primary);
+  text-decoration-color: var(--primary);
+}
+.prose-guide strong {
+  color: var(--foreground);
+  font-weight: 700;
+}
+.prose-guide em {
+  color: var(--muted-foreground);
+}
+.prose-guide ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 0.9rem;
+}
+.prose-guide ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 0.9rem;
+}
+.prose-guide li {
+  margin-bottom: 0.4rem;
+}
+.prose-guide li::marker {
+  color: var(--primary);
+}
 .prose-guide blockquote {
   margin: 1rem 0;
   padding: 0.75rem 1.1rem;
@@ -365,4 +703,6 @@
   color: var(--foreground);
   font-size: 0.875rem;
 }
-.prose-guide blockquote p:last-child { margin-bottom: 0; }
+.prose-guide blockquote p:last-child {
+  margin-bottom: 0;
+}

@@ -6,7 +6,9 @@
  */
 import type { Locale } from '@/i18n/ui';
 
-interface Props { locale?: Locale }
+interface Props {
+  locale?: Locale;
+}
 const { locale = 'es' } = Astro.props;
 const label = locale === 'es' ? 'Tema oscuro' : 'Dark theme';
 ---
@@ -59,12 +61,18 @@ const label = locale === 'es' ? 'Tema oscuro' : 'Dark theme';
 <script>
   // The classList and localStorage side-effects now live in the store
   // (src/stores/theme.ts). This script only wires the button to the store.
+  //
+  // Plain page-load site (no Astro ClientRouter/View Transitions — every
+  // navigation is a full document load), so this runs once per page and
+  // needs no astro:before-swap/after-swap re-init dance.
   import { $theme, toggleTheme } from '@/stores/theme';
 
   const btn = document.getElementById('theme-toggle');
   if (btn) {
     // aria-pressed reflects current state (dark = "on"); the label stays
-    // fixed rather than describing the next action.
+    // fixed ("Dark theme") rather than describing the next action — mixing
+    // both a state attribute and an action-describing label sends screen
+    // readers a contradictory signal ("Switch to light theme, pressed").
     const sync = (t: 'light' | 'dark') => {
       btn.setAttribute('aria-pressed', String(t === 'dark'));
     };

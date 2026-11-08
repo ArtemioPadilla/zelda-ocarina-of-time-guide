@@ -1,0 +1,247 @@
+---
+/** One weapon, piece of gear, boss, enemy, item or character of an engine game. */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import GameText from './GameText.astro';
+import GameThumb from './GameThumb.astro';
+import { gameImage } from '@/lib/game-images';
+import { gamePage } from './game-page';
+import { gameEntries } from '@/lib/game-content';
+import { gameListPath, type GameEntityPage as Kind } from '@/lib/game-entity-pages';
+import type { GameId } from '@/lib/games';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  game: GameId;
+  kind: Kind;
+  slug: string;
+}
+const { locale, game, kind, slug } = Astro.props;
+const { t, h, title, chapterLabel, chapterBySlug } = await gamePage(game, locale);
+const image = gameImage(game, kind, slug);
+// Objects sit in an inventory slot; people and creatures get a plain crop.
+const tile = kind === 'weapons' || kind === 'gear' || kind === 'items';
+const rows = await gameEntries(kind, game, locale);
+const row = rows.find((r) => r.data.slug === slug)!;
+const d = row.data as Record<string, unknown> & { name: string; slug: string };
+const skip = [`${kind}/${slug}`];
+const numberLocale = locale === 'es' ? 'de-DE' : 'en-US';
+// Share-card text: the row's first descriptive field.
+const shareText = ['role', 'kind', 'effect', 'note', 'verdict', 'where']
+  .map((k) => d[k])
+  .find((v): v is string => typeof v === 'string' && v.length > 0);
+
+// Facts shown as a definition list; long copy as paragraphs; per-kind extras below.
+type Fact = { label: string; text: string; href?: string };
+const facts: Fact[] = [];
+const texts: { label?: string; text: string }[] = [];
+const chapterFacts = (s: string) =>
+  s
+    .split(/[,;]/)
+    .map((x) => x.trim())
+    .filter((x) => chapterBySlug.has(x))
+    .map((x) => ({
+      label: t('entity.chapter'),
+      text: chapterLabel(x),
+      href: h(`/chapters/${x}/`),
+    }));
+const listKey: Record<Kind, Parameters<typeof t>[0]> = {
+  weapons: 'nav.arsenal',
+  gear: 'nav.arsenal',
+  bosses: 'nav.bosses',
+  enemies: 'nav.enemies',
+  items: 'nav.items',
+  characters: 'nav.characters',
+};
+let steps: string[] = [];
+let stats: { label: string; value: string }[] = [];
+let levels: { label: string; rows: { v: string; p?: number }[] }[] = [];
+
+if (kind === 'weapons') {
+  facts.push({ label: t('arsenal.col.chapter'), text: d.category as string });
+  if (d.price) facts.push({ label: t('arsenal.price'), text: d.price as string });
+  if (d.chapter) facts.push(...chapterFacts(d.chapter as string));
+  texts.push({ label: t('game.obtain'), text: d.obtain as string });
+  if (d.verdict) texts.push({ label: t('arsenal.verdict'), text: d.verdict as string });
+  if (d.exclusive) texts.push({ label: t('arsenal.exclusive'), text: d.exclusive as string });
+  if (d.notes) texts.push({ text: d.notes as string });
+  stats = d.stats as typeof stats;
+  levels = d.levels as typeof levels;
+} else if (kind === 'gear') {
+  facts.push({ label: t('entity.kind'), text: d.kind as string });
+  if (d.chapter) facts.push(...chapterFacts(d.chapter as string));
+  if (d.price) facts.push({ label: t('arsenal.price'), text: d.price as string });
+  texts.push({ label: t('entity.where'), text: d.where as string });
+  texts.push({ label: t('items.col.effect'), text: d.effect as string });
+  if (d.verdict) texts.push({ label: t('arsenal.verdict'), text: d.verdict as string });
+} else if (kind === 'bosses') {
+  facts.push(...chapterFacts(d.chapters as string));
+  if (d.arena) facts.push({ label: t('game.arena'), text: d.arena as string });
+  if (d.weak) texts.push({ label: t('game.weak'), text: d.weak as string });
+  if (d.strategy) texts.push({ text: d.strategy as string });
+  steps = d.steps as string[];
+  if (d.reward) texts.push({ label: t('game.reward'), text: d.reward as string });
+  if (d.note) texts.push({ text: d.note as string });
+} else if (kind === 'enemies') {
+  facts.push({ label: t('entity.kind'), text: d.group as string });
+  facts.push({ label: t('entity.chapters'), text: d.chapters as string });
+  texts.push({ label: t('game.weak'), text: d.weak as string });
+  texts.push({ label: t('game.tactic'), text: d.tactic as string });
+  if (d.drops) texts.push({ label: t('enemies.drops'), text: d.drops as string });
+  if (d.note) texts.push({ text: d.note as string });
+} else if (kind === 'items') {
+  facts.push({
+    label: t('entity.kind'),
+    text: t(`game.itemType.${d.type as string}` as Parameters<typeof t>[0]),
+  });
+  if (d.chapter) facts.push(...chapterFacts(d.chapter as string));
+  if (d.value !== undefined)
+    facts.push({
+      label: t('entity.value'),
+      text: (d.value as number).toLocaleString(numberLocale),
+    });
+  if (d.where) texts.push({ label: t('entity.where'), text: d.where as string });
+  texts.push({
+    label: d.type === 'key' ? t('items.col.use') : t('items.col.effect'),
+    text: d.use as string,
+  });
+  if (d.recipe) texts.push({ label: t('game.recipe'), text: d.recipe as string });
+  if (d.note) texts.push({ text: d.note as string });
+} else {
+  facts.push({ label: t('entity.role'), text: d.role as string });
+  facts.push({ label: t('game.appears'), text: d.appears as string });
+  texts.push({ text: d.note as string });
+}
+---
+
+<BaseLayout title={title(d.name)} lang={locale} image={image?.src} description={shareText}>
+  <main id="main" class="mx-auto max-w-3xl px-5 py-7 md:py-14">
+    <a
+      href={h(kind === 'gear' ? `${gameListPath(kind)}#gear` : gameListPath(kind))}
+      class="mb-6 inline-block font-mono text-xs text-muted-foreground hover:text-primary"
+    >
+      ← {t(listKey[kind])}
+    </a>
+    <header class="flex flex-wrap items-start gap-5">
+      <GameThumb image={image} tile={tile} size="lg" />
+      <div class="min-w-0 flex-1">
+        {
+          kind === 'gear' && (
+            <p class="font-mono text-[11px] uppercase tracking-wide text-muted-foreground">
+              {t('game.gearTitle')}
+            </p>
+          )
+        }
+        <h1 class="font-display text-2xl font-bold break-words text-foreground sm:text-3xl">
+          {d.name}
+        </h1>
+        {
+          typeof d.original === 'string' && d.original !== d.name && (
+            <p class="mt-1 font-mono text-xs text-muted-foreground" lang="en">
+              {d.original}
+            </p>
+          )
+        }
+      </div>
+    </header>
+
+    {
+      facts.length > 0 && (
+        <dl class="mt-4 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 text-sm">
+          {facts.map((f) => (
+            <>
+              <dt class="font-mono text-xs uppercase text-muted-foreground">{f.label}</dt>
+              <dd class="text-foreground">
+                {f.href ? (
+                  <a href={f.href} class="ent-link">
+                    {f.text}
+                  </a>
+                ) : (
+                  f.text
+                )}
+              </dd>
+            </>
+          ))}
+        </dl>
+      )
+    }
+
+    {
+      stats.length > 0 && (
+        <dl class="panel mt-6 grid grid-cols-2 gap-x-4 gap-y-1.5 p-4 text-sm">
+          {stats.map((s) => (
+            <>
+              <dt class="text-muted-foreground">{s.label}</dt>
+              <dd class="font-mono text-foreground">{s.value}</dd>
+            </>
+          ))}
+        </dl>
+      )
+    }
+
+    <div class="mt-6 grid gap-4 text-sm">
+      {
+        texts.map((x) => (
+          <section>
+            {x.label && (
+              <h2 class="mb-1 font-mono text-[11px] uppercase tracking-wide text-primary">
+                {x.label}
+              </h2>
+            )}
+            <div class="text-foreground">
+              <GameText text={x.text} game={game} locale={locale} skip={skip} />
+            </div>
+          </section>
+        ))
+      }
+    </div>
+
+    {
+      steps.length > 0 && (
+        <section class="mt-6">
+          <h2 class="mb-2 font-mono text-[11px] uppercase tracking-wide text-primary">
+            {t('game.steps')}
+          </h2>
+          <ol class="list-decimal space-y-2 pl-5 text-sm text-foreground">
+            {steps.map((s) => (
+              <li>
+                <GameText text={s} game={game} locale={locale} skip={skip} inline />
+              </li>
+            ))}
+          </ol>
+        </section>
+      )
+    }
+
+    {
+      levels.length > 0 && (
+        <section class="mt-6">
+          <h2 class="mb-2 font-mono text-[11px] uppercase tracking-wide text-primary">
+            {t('arsenal.levelsTitle')}
+          </h2>
+          <div class="overflow-x-auto">
+            <table class="text-left font-mono text-xs">
+              <tbody>
+                {levels.map((l) => (
+                  <tr class="border-t border-border">
+                    <th class="py-1.5 pr-3 font-normal text-muted-foreground">{l.label}</th>
+                    {l.rows.map((r) => (
+                      <td class="py-1.5 pr-3 text-foreground">
+                        {r.v}
+                        {r.p ? (
+                          <span class="block text-muted-foreground">
+                            {r.p.toLocaleString(numberLocale)}
+                          </span>
+                        ) : null}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )
+    }
+  </main>
+</BaseLayout>
