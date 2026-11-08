@@ -18,7 +18,11 @@ const { locale, game } = Astro.props;
 const { t, h, title, chapterLabel } = await gamePage(game, locale);
 const items = await gameEntries('items', game, locale);
 const TYPES = [
+  'song',
+  'quest',
   'key',
+  'mask',
+  'trade',
   'quickhack',
   'healing',
   'crafting',

@@ -196,7 +196,13 @@ const gameEnemyShape = {
 const gameItemShape = {
   name: z.string(),
   original: z.string().optional(),
+  // OoT: songs, masks, the trading sequences and the Spiritual Stones and
+  // Medallions (`quest`) have their own sections on the Items page.
   type: z.enum([
+    'song',
+    'quest',
+    'mask',
+    'trade',
     'key',
     'healing',
     'crafting',

@@ -1,0 +1,52 @@
+[
+  {
+    "collection": "bosses",
+    "id": "gohma",
+    "file": "OoTNS2 Gohma Model.png"
+  },
+  {
+    "collection": "bosses",
+    "id": "king-dodongo",
+    "file": "OoTNS2 King Dodongo Model.png"
+  },
+  {
+    "collection": "bosses",
+    "id": "barinade",
+    "file": "OoT3D Barinade Model.png"
+  },
+  {
+    "collection": "bosses",
+    "id": "phantom-ganon",
+    "file": "OoTNS2 Phantom Ganon Model.png"
+  },
+  {
+    "collection": "bosses",
+    "id": "volvagia",
+    "file": "OoTNS2 Volvagia Model.png"
+  },
+  {
+    "collection": "bosses",
+    "id": "morpha",
+    "file": "OoTNS2 Morpha Model.png"
+  },
+  {
+    "collection": "bosses",
+    "id": "bongo-bongo",
+    "file": "OoTNS2 Bongo Bongo Model.png"
+  },
+  {
+    "collection": "bosses",
+    "id": "twinrova",
+    "file": "OoT3D Twinrova Model.png"
+  },
+  {
+    "collection": "bosses",
+    "id": "ganondorf",
+    "file": "OoTNS2 Ganondorf Render.png"
+  },
+  {
+    "collection": "bosses",
+    "id": "ganon",
+    "file": "OoT3D Ganon Model.png"
+  }
+]

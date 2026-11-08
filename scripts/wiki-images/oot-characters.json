@@ -1,0 +1,142 @@
+[
+  {
+    "collection": "characters",
+    "id": "link",
+    "file": "OoTNS2 Child Link Render.png"
+  },
+  {
+    "collection": "characters",
+    "id": "navi",
+    "file": "OoTNS2 Navi Render.png"
+  },
+  {
+    "collection": "characters",
+    "id": "zelda",
+    "file": "OoTNS2 Princess Zelda Render.png"
+  },
+  {
+    "collection": "characters",
+    "id": "ganondorf",
+    "file": "OoTNS2 Ganondorf Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "saria",
+    "file": "OoTNS2 Saria Render.png"
+  },
+  {
+    "collection": "characters",
+    "id": "mido",
+    "file": "OoTNS2 Mido Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "kaepora-gaebora",
+    "file": "OoTNS2 Kaepora Gaebora Render.png"
+  },
+  {
+    "collection": "characters",
+    "id": "malon",
+    "file": "OoTNS2 Malon Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "talon",
+    "file": "OoT3D Talon Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "ingo",
+    "file": "OoT3D Ingo Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "epona",
+    "file": "OoTNS2 Epona Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "impa",
+    "file": "OoTNS2 Impa Render.png"
+  },
+  {
+    "collection": "characters",
+    "id": "darunia",
+    "file": "OoTNS2 Darunia Render.png"
+  },
+  {
+    "collection": "characters",
+    "id": "ruto",
+    "file": "OoTNS2 Princess Ruto Render.png"
+  },
+  {
+    "collection": "characters",
+    "id": "king-zora",
+    "file": "OoT3D King Zora Render.png"
+  },
+  {
+    "collection": "characters",
+    "id": "nabooru",
+    "file": "OoT3D Nabooru Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "rauru",
+    "file": "OoT3D Rauru Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "sheik",
+    "file": "OoTNS2 Sheik Render.png"
+  },
+  {
+    "collection": "characters",
+    "id": "koume-kotake",
+    "file": "OoTNS2 Kotake Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "biggoron",
+    "file": "OoT Biggoron Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "medigoron",
+    "file": "OoT3D Medigoron Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "great-fairies",
+    "file": "OoTNS2 Great Fairy Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "business-scrub",
+    "file": "OoT3D Business Scrub Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "happy-mask-salesman",
+    "file": "OoT3D Happy Mask Salesman Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "dampe",
+    "file": "OoT Dampé Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "poe-collector",
+    "file": "OoT3D Poe Collector Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "skull-kid",
+    "file": "OoT3D Skull Kid Model.png"
+  },
+  {
+    "collection": "characters",
+    "id": "composer-brothers",
+    "file": "OoT3D Sharp the Elder Model.png"
+  }
+]

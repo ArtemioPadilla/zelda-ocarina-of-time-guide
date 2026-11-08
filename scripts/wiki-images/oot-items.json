@@ -1,0 +1,267 @@
+[
+  {
+    "collection": "items",
+    "id": "kokiri-emerald",
+    "file": "OoTNS2 Kokiri Emerald Model.png"
+  },
+  {
+    "collection": "items",
+    "id": "goron-ruby",
+    "file": "OoTNS2 Goron Ruby Model.png"
+  },
+  {
+    "collection": "items",
+    "id": "zora-sapphire",
+    "file": "OoTNS2 Zora Sapphire Model.png"
+  },
+  {
+    "collection": "items",
+    "id": "light-medallion",
+    "file": "OoT3D Light Medallion Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "forest-medallion",
+    "file": "OoT3D Forest Medallion Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "fire-medallion",
+    "file": "OoT3D Fire Medallion Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "water-medallion",
+    "file": "OoT3D Water Medallion Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "shadow-medallion",
+    "file": "OoT3D Shadow Medallion Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "spirit-medallion",
+    "file": "OoT3D Spirit Medallion Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "fairy-ocarina",
+    "file": "OoTNS2 Fairy Ocarina Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "ocarina-of-time",
+    "file": "OoTNS2 Ocarina of Time Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "bottle",
+    "file": "OoTNS2 Empty Bottle Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "rutos-letter",
+    "file": "OoTNS2 Bottled Letter Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "gerudo-pass",
+    "file": "OoTNS2 Gerudo Pass Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "echo-gem",
+    "file": "OoTNS2 Echo Gem Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "keaton-mask",
+    "file": "OoTNS2 Keaton Mask Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "skull-mask",
+    "file": "OoTNS2 Skull Mask Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "spooky-mask",
+    "file": "OoTNS2 Spooky Mask Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "bunny-hood",
+    "file": "OoTNS2 Bunny Hood Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "mask-of-truth",
+    "file": "OoTNS2 Mask of Truth Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "goron-mask",
+    "file": "OoTNS2 Goron Mask Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "zora-mask",
+    "file": "OoTNS2 Zora Mask Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "gerudo-mask",
+    "file": "OoTNS2 Gerudo Mask Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "weird-egg",
+    "file": "OoTNS2 Weird Egg Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "wake-up-cucco",
+    "file": "OoTNS2 Wake-Up Cucco Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "zeldas-letter",
+    "file": "OoTNS2 Zelda's Letter Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "pocket-egg",
+    "file": "OoTNS2 Pocket Egg Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "pocket-cucco",
+    "file": "OoTNS2 Pocket Cucco Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "cojiro",
+    "file": "OoTNS2 Cojiro Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "odd-mushroom",
+    "file": "OoTNS2 Odd Mushroom Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "odd-poultice",
+    "file": "OoTNS2 Odd Poultice Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "poachers-saw",
+    "file": "OoTNS2 Poacher's Saw Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "broken-goron-sword",
+    "file": "OoTNS2 Broken Goron Sword Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "prescription",
+    "file": "OoTNS2 Prescription Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "eyeball-frog",
+    "file": "OoTNS2 Eyeball Frog Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "specialty-eye-drops",
+    "file": "OoTNS2 Specialty Eye Drops Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "biggoron-receipt",
+    "file": "OoTNS2 Biggoron Receipt Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "dins-fire",
+    "file": "OoTNS2 Din's Fire Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "farores-wind",
+    "file": "OoTNS2 Farore's Wind Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "nayrus-love",
+    "file": "OoTNS2 Nayru's Love Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "red-potion",
+    "file": "OoTNS2 Red Potion Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "green-potion",
+    "file": "OoTNS2 Green Potion Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "blue-potion",
+    "file": "OoTNS2 Blue Potion Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "lon-lon-milk",
+    "file": "OoTNS2 Lon Lon Milk Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "fairy",
+    "file": "OoTNS2 Fairy Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "magic-beans",
+    "file": "OoTNS2 Magic Beans Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "business-scrub-seed",
+    "file": "OoTNS2 Business Scrub Seed Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "blue-fire",
+    "file": "OoTNS2 Blue Fire Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "bugs",
+    "file": "OoTNS2 Bug Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "fish",
+    "file": "OoTNS2 Fish Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "deku-seeds",
+    "file": "OoTNS2 Deku Seed Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "arrows",
+    "file": "OoTNS2 Arrow Icon.png"
+  },
+  {
+    "collection": "items",
+    "id": "gold-rupee",
+    "file": "OoTNS2 Gold Rupee Icon.png"
+  }
+]

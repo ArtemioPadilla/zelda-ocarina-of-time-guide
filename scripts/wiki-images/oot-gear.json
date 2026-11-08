@@ -1,0 +1,117 @@
+[
+  {
+    "collection": "gear",
+    "id": "kokiri-tunic",
+    "file": "OoTNS2 Kokiri Tunic Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "heros-clothes",
+    "file": "OoTNS2 Hero's Clothes Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "goron-tunic",
+    "file": "OoTNS2 Goron Tunic Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "zora-tunic",
+    "file": "OoTNS2 Zora Tunic Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "iron-boots",
+    "file": "OoTNS2 Iron Boots Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "hover-boots",
+    "file": "OoTNS2 Hover Boots Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "goron-bracelet",
+    "file": "OoTNS2 Goron Bracelet Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "silver-gauntlets",
+    "file": "OoTNS2 Silver Gauntlets Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "golden-gauntlets",
+    "file": "OoTNS2 Golden Gauntlets Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "silver-scale",
+    "file": "OoTNS2 Silver Scale Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "golden-scale",
+    "file": "OoTNS2 Golden Scale Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "lenses-of-truth",
+    "file": "OoTNS2 Lenses of Truth Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "kokiri-wallet",
+    "file": "OoTNS2 Kokiri Wallet Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "adults-wallet",
+    "file": "OoTNS2 Adult's Wallet Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "giants-wallet",
+    "file": "OoTNS2 Giant's Wallet Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "quiver",
+    "file": "OoTNS2 Quiver Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "bomb-bag",
+    "file": "OoTNS2 Bomb Bag Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "deku-seed-bag",
+    "file": "OoTNS2 Deku-Seed Bag Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "deku-stick-bag",
+    "file": "OoTNS2 Deku-Stick Bag Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "deku-nut-bag",
+    "file": "OoTNS2 Deku-Nut Bag Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "gift-of-doubled-magic",
+    "file": "OoTNS2 Gift of Doubled Magic Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "gift-of-halved-damage",
+    "file": "OoTNS2 Gift of Halved Damage Icon.png"
+  },
+  {
+    "collection": "gear",
+    "id": "gift-of-improved-spin",
+    "file": "OoTNS2 Gift of Improved Spin Icon.png"
+  }
+]

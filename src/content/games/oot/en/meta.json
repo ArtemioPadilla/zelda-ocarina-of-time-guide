@@ -2,7 +2,8 @@
   {"id": "child", "kind": "part", "label": "Child", "note": "Young Link: Kokiri Forest, the three Spiritual Stones and the Master Sword."},
   {"id": "adult", "kind": "part", "label": "Adult", "note": "Seven years later: the five temples and the Sages."},
   {"id": "end", "kind": "part", "label": "Ending", "note": "Ganon’s Castle and the ending."},
-  {"id": "skulltula", "kind": "collectible", "label": "Gold Skulltulas", "total": 100, "reward": "At the House of Skulltula in Kakariko: 10 = Adult’s Wallet · 20 = Stone of Agony · 30 = Giant’s Wallet · 40 = Bombchus · 50 = Piece of Heart · 100 = infinite Rupees.", "note": "Locations from the 3DS version, pending confirmation for the remake. Many only come out at night; use each zone’s map."},
+  {"id": "side", "kind": "part", "label": "Side quests", "note": "Optional quests: trading chains, masks, Great Fairies, minigames and rewards."},
+  {"id": "skulltula", "kind": "collectible", "label": "Gold Skulltulas", "total": 100, "reward": "At the House of Skulltula in Kakariko Village: 10 = Adult's Wallet (500 Rupees) · 20 = Echo Gem (replaces the Stone of Agony) · 30 = Giant's Wallet (1,000 Rupees) · 40 = 20 Bombchus · 50 = Piece of Heart · 100 = Gold Rupee.", "note": "Still 100 in the remake. Map positions come from the earlier game and some moved: those in Kakariko Village, Zora Fountain, the market, Zora's River and the Forest and Water Temples are marked unconfirmed. Many only appear at night."},
   {"id": "heart-piece", "kind": "collectible", "label": "Pieces of Heart", "total": 36, "reward": "Every four pieces add up to a heart container.", "note": "List from the 3DS version, pending confirmation for the remake."},
   {"id": "heart-container", "kind": "collectible", "label": "Heart Containers", "total": 8, "note": "One per dungeon boss."}
 ]

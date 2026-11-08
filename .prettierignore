@@ -16,3 +16,4 @@ src/content/games/*/aliases.json
 docs/research/
 # The 3DS guide's content, kept verbatim as a migration source only.
 docs/reference-3ds/
+src/data/game-images.json

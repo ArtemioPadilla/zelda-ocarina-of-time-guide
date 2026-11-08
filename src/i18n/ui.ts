@@ -57,7 +57,7 @@ export const ui = {
     'game.weak': 'Punto débil',
     'game.enemiesNote': 'Cada enemigo común: dónde sale, dónde golpearlo y cómo manejarlo.',
     'game.itemsNote':
-      'Objetos clave (dónde están y para qué sirven), botellas, magia y el resto de lo que se recoge.',
+      'Canciones (con sus botones), piedras y medallones, objetos clave, máscaras, intercambios, botellas y magia: dónde está cada uno y para qué sirve.',
     'game.filesNote':
       'Notas y textos del juego, por etapa y con su ubicación. Márcalos al leerlos.',
     'game.achievementsNote': 'Cada logro con su condición exacta y un consejo.',
@@ -70,6 +70,10 @@ export const ui = {
     'game.tactic': 'Táctica',
     'game.appears': 'Aparece',
     'game.steps': 'Paso a paso',
+    'game.itemType.song': 'Canciones',
+    'game.itemType.quest': 'Piedras Espirituales y Medallones',
+    'game.itemType.mask': 'Máscaras',
+    'game.itemType.trade': 'Secuencias de intercambio',
     'game.itemType.key': 'Objetos clave',
     'game.itemType.healing': 'Curación',
     'game.itemType.crafting': 'Materiales',
@@ -259,7 +263,7 @@ export const ui = {
     'game.enemiesNote':
       'Every common enemy: where it appears, where to hit it and how to handle it.',
     'game.itemsNote':
-      'Key items (where they are and what they are for), bottles, magic and everything else you pick up.',
+      'Songs (with their buttons), stones and medallions, key items, masks, trading items, bottles and magic: where each one is and what it is for.',
     'game.filesNote':
       'The game’s notes and texts, by step, with where each one is. Tick them as you read them.',
     'game.achievementsNote': 'Every achievement with its exact condition and a tip.',
@@ -272,6 +276,10 @@ export const ui = {
     'game.tactic': 'Tactic',
     'game.appears': 'Appears',
     'game.steps': 'Step by step',
+    'game.itemType.song': 'Songs',
+    'game.itemType.quest': 'Spiritual Stones and Medallions',
+    'game.itemType.mask': 'Masks',
+    'game.itemType.trade': 'Trading sequences',
     'game.itemType.key': 'Key items',
     'game.itemType.healing': 'Healing',
     'game.itemType.crafting': 'Materials',
