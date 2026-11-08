@@ -5,15 +5,15 @@ import ProgressBar from './ProgressBar';
 
 describe('ProgressBar', () => {
   it('exposes progressbar semantics with the given bounds', () => {
-    render(<ProgressBar done={3} total={10} label="Skulltulas" />);
-    const bar = screen.getByRole('progressbar', { name: 'Skulltulas' });
+    render(<ProgressBar done={3} total={10} label="Collectibles" />);
+    const bar = screen.getByRole('progressbar', { name: 'Collectibles' });
     expect(bar).toHaveAttribute('aria-valuenow', '3');
     expect(bar).toHaveAttribute('aria-valuemin', '0');
     expect(bar).toHaveAttribute('aria-valuemax', '10');
   });
 
   it('shows the done/total count as text', () => {
-    render(<ProgressBar done={3} total={10} label="Skulltulas" />);
+    render(<ProgressBar done={3} total={10} label="Collectibles" />);
     expect(screen.getByText('3 / 10')).toBeInTheDocument();
   });
 

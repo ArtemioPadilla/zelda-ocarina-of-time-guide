@@ -1,0 +1,81 @@
+---
+/**
+ * The "Offline" section: download the guide's runtime-cached pictures ahead
+ * of time — see src/lib/offline-images.ts and the OfflineImages island.
+ * Renders nothing while the guide has no such pictures.
+ */
+import SectionHead from '@/components/common/SectionHead.astro';
+import ErrorBoundary from '@/components/islands/ErrorBoundary';
+import OfflineImages, { type OfflineRow } from '@/components/islands/OfflineImages';
+import { useTranslations } from '@/i18n/utils';
+import { withBase } from '@/lib/href';
+import { GAMES, type GameId } from '@/lib/games';
+import { offlineImages } from '@/lib/offline-images';
+import { RUNTIME_IMAGE_CACHE } from '@/lib/runtime-cache';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  /** One game's panel; omitted, every game (plus an "all" row). */
+  game?: GameId;
+  class?: string;
+}
+const { locale, game, class: className = '' } = Astro.props;
+const t = useTranslations(locale);
+const all = offlineImages();
+const rows: OfflineRow[] = GAMES.filter((g) => (game ? g.id === game : true))
+  .map((g) => ({
+    id: g.id,
+    label: g.title[locale],
+    count: all[g.id].paths.length,
+    bytes: all[g.id].bytes,
+  }))
+  .filter((r) => r.count > 0);
+if (!game && rows.length > 1)
+  rows.unshift({
+    id: 'all',
+    label: t('offline.all'),
+    count: rows.reduce((a, r) => a + r.count, 0),
+    bytes: rows.reduce((a, r) => a + r.bytes, 0),
+  });
+const labels = {
+  images: t('offline.images'),
+  saved: t('offline.saved'),
+  download: t('offline.download'),
+  resume: t('offline.resume'),
+  delete: t('offline.delete'),
+  cancel: t('offline.cancel'),
+  downloading: t('offline.downloading'),
+  failed: t('offline.failed'),
+  storage: t('offline.storage'),
+  of: t('offline.of'),
+  unsupported: t('offline.unsupported'),
+  persistDenied: t('offline.persistDenied'),
+};
+---
+
+{
+  rows.length > 0 && (
+    <section id="offline" class={className}>
+      <SectionHead title={t('offline.title')} />
+      <p class="mb-4 text-sm text-muted-foreground">
+        {game ? t('offline.gameNote') : t('offline.note')}
+      </p>
+      <ErrorBoundary
+        client:load
+        name="OfflineImages"
+        messageLabel={t('a11y.errorBoundaryMessage')}
+        reportLabel={t('a11y.errorBoundaryReport')}
+      >
+        <OfflineImages
+          client:load
+          endpoint={withBase('/offline-images.json')}
+          cacheName={RUNTIME_IMAGE_CACHE}
+          rows={rows}
+          labels={labels}
+          locale={locale}
+        />
+      </ErrorBoundary>
+    </section>
+  )
+}

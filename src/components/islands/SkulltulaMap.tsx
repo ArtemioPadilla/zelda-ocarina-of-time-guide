@@ -1,25 +1,33 @@
 import { useState } from 'react';
-import { useStore } from '@nanostores/react';
-import { skulltulasStore } from '@/stores/checklist';
+import { checklistStore } from '@/stores/checklist';
+import { useHydratedStore, NO_CHECKED } from '@/lib/use-hydrated-store';
 import { ZONE_MAP_BY_KEY } from '@/lib/skulltula-map-layout';
 import { withBase } from '@/lib/href';
 
-interface MapSkulltula {
+/** One pin: a collectible row with map fields (content.config.ts). */
+export interface MapPin {
   id: string;
   number: number;
+  /** Localized zone name (the row's `area`), for the zone heading. */
+  zone: string;
+  /** Untranslated zone key: which `ZONE_MAP_BY_KEY` canvas the pin is on. */
   zoneKey: string;
+  /** Map hub the zone is listed under (`AREA_ORDER`). */
+  hub: string;
   location: string;
   note?: string;
   x: number;
   y: number;
-  /** Which floor tab this pin belongs to, for the 11 floored dungeon
+  /** Which floor tab this pin belongs to, for the floored dungeon
    * interiors (see `ZONE_MAP_BY_KEY[zoneKey].floors`). Unused elsewhere. */
   floor?: string;
 }
 
 interface Props {
+  /** IndexedDB key of the checklist (`oot-collectibles-done`). */
+  store: string;
   zoneKey: string;
-  items: MapSkulltula[];
+  items: Pick<MapPin, 'id' | 'number' | 'zoneKey' | 'location' | 'note' | 'x' | 'y' | 'floor'>[];
   doneLabel: string;
   pendingLabel: string;
 }
@@ -28,18 +36,17 @@ interface Props {
  * One zone's map: a real sourced photo of that zone (see
  * `ZONE_MAP_BY_KEY[zoneKey].image` — a Zelda Wiki OoT/OoT3D screenshot,
  * attributed below the map), a per-floor set of real photos with a floor
- * switcher (`ZONE_MAP_BY_KEY[zoneKey].floors` — the 11 dungeon interiors),
- * or, where no photo was sourced yet, the original hand-drawn single-region
- * schematic fallback — with a real `<button>` pin per skulltula absolutely
- * positioned at its `x`/`y`% within that zone's (or, for a floored zone,
- * that floor's) own canvas. Pins read AND write `skulltulasStore.$checked`
- * directly — the exact same nanostores/idb-keyval store `ChecklistItem`'s
- * checkboxes use in the List view, so toggling a pin here is reflected
- * immediately in the list (and vice versa), with no second source of
- * truth.
+ * switcher (`ZONE_MAP_BY_KEY[zoneKey].floors` — the dungeon interiors),
+ * or, where no photo was sourced, a plain schematic fallback — with a real
+ * `<button>` pin per piece absolutely positioned at its `x`/`y`% within
+ * that zone's (or floor's) own canvas. Pins read AND write the same
+ * checklist store (`checklistStore(store)`) the list checkboxes use, so
+ * toggling a pin here is a tick in the list, on the Collectibles page and
+ * on the chapter pages, with no second source of truth.
  */
-export default function SkulltulaMap({ zoneKey, items, doneLabel, pendingLabel }: Props) {
-  const checked = useStore(skulltulasStore.$checked);
+export default function SkulltulaMap({ store, zoneKey, items, doneLabel, pendingLabel }: Props) {
+  const s = checklistStore(store);
+  const checked = useHydratedStore(s.$checked, NO_CHECKED);
   const config = ZONE_MAP_BY_KEY[zoneKey];
   const floors = config?.floors;
   const [selectedFloor, setSelectedFloor] = useState(floors?.[0]?.key);
@@ -48,7 +55,7 @@ export default function SkulltulaMap({ zoneKey, items, doneLabel, pendingLabel }
   const interior = config?.interior ?? false;
   const aspect = image ? `${image.width} / ${image.height}` : '16 / 10';
   // A floored zone only shows the pins that belong to the selected floor —
-  // every skulltula in a floored zone carries a matching `floor` field.
+  // every piece in a floored zone carries a matching `floor` field.
   const visibleItems = floors
     ? items.filter((item) => item.floor === (currentFloor?.key ?? selectedFloor))
     : items;
@@ -84,7 +91,10 @@ export default function SkulltulaMap({ zoneKey, items, doneLabel, pendingLabel }
           <img
             src={withBase(image.src)}
             alt={`${zoneKey}${currentFloor ? ` — ${currentFloor.label}` : ''}`}
+            width={image.width}
+            height={image.height}
             loading="lazy"
+            decoding="async"
             className="absolute inset-0 h-full w-full object-cover"
           />
         ) : (
@@ -123,11 +133,11 @@ export default function SkulltulaMap({ zoneKey, items, doneLabel, pendingLabel }
               aria-pressed={isChecked}
               aria-label={`${baseLabel} — ${isChecked ? doneLabel : pendingLabel}`}
               title={item.location}
-              onClick={() => skulltulasStore.toggle(item.id)}
+              onClick={() => s.toggle(item.id)}
               className={`absolute flex h-6 w-6 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border font-mono text-[10px] font-semibold shadow-sm transition-transform hover:z-10 hover:scale-125 focus-visible:z-10 focus-visible:scale-125 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring ${
                 isChecked
-                  ? 'border-border bg-muted text-muted-foreground opacity-70'
-                  : 'border-primary/70 bg-primary text-primary-foreground'
+                  ? 'border-border bg-muted text-muted-foreground opacity-75'
+                  : 'border-gold bg-primary text-primary-foreground'
               }`}
               style={{ left: `${item.x}%`, top: `${item.y}%` }}
             >

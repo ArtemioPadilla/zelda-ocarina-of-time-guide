@@ -1,0 +1,39 @@
+---
+/** The game's in-game maps (maps.json), one large figure each. */
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import GameMapFigure from './GameMapFigure.astro';
+import { gamePage } from './game-page';
+import { gameEntries, mapChapterIds } from '@/lib/game-content';
+import type { GameId } from '@/lib/games';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  game: GameId;
+}
+const { locale, game } = Astro.props;
+const { t, title, chapterLabel } = await gamePage(game, locale);
+const maps = await gameEntries('maps', game, locale);
+---
+
+<BaseLayout title={title(t('nav.maps'))} lang={locale}>
+  <main id="main" class="mx-auto max-w-5xl px-5 py-7 md:py-14">
+    <SectionHead level="h1" title={t('nav.maps')} tight />
+    <p class="mb-8 text-sm text-muted-foreground">{t('game.mapsNote')}</p>
+    <div class="grid gap-6">
+      {
+        maps.map((m) => (
+          <GameMapFigure
+            locale={locale}
+            map={m.data}
+            chapters={mapChapterIds(m.data.chapters).map((id) => ({
+              id,
+              label: chapterLabel(id),
+            }))}
+          />
+        ))
+      }
+    </div>
+  </main>
+</BaseLayout>

@@ -1,23 +1,16 @@
 import { useState } from 'react';
-import SkulltulaChecklist from './SkulltulaChecklist';
+import GroupedChecklist, { type Group } from './GroupedChecklist';
 import SkulltulaMapView from './SkulltulaMapView';
+import type { MapPin } from './SkulltulaMap';
 import type { SkulltulaArea } from '@/lib/skulltula-map-layout';
 
-interface Item {
-  id: string;
-  number: number;
-  zone: string;
-  zoneKey: string;
-  area: SkulltulaArea;
-  location: string;
-  note?: string;
-  x: number;
-  y: number;
-  floor?: string;
-}
-
 interface Props {
-  items: Item[];
+  /** IndexedDB key of the checklist (`oot-collectibles-done`). */
+  store: string;
+  /** List view: the engine's grouped checklist rows. */
+  groups: Group[];
+  /** Map view: the same pieces as pins (same ids). */
+  pins: MapPin[];
   progressLabel: string;
   viewToggleLabel: string;
   listLabel: string;
@@ -28,15 +21,17 @@ interface Props {
 }
 
 /**
- * List/Map toggle for the Skulltulas page. Purely local UI state (not
- * persisted) — both views read the same `items` prop and the same
- * `skulltulasStore`, so switching views never changes or duplicates
- * progress. List stays the default and is always available; Map is an
- * additional, equally-functional way to toggle the same items, never a
- * replacement for it.
+ * List/Map toggle for a collectible type whose pieces carry map pins (the
+ * Gold Skulltulas). The view choice is local UI state (not persisted);
+ * both views write the same checklist store with the same ids, so
+ * switching views never changes or duplicates progress. List is the
+ * default and always available; Map is an additional, equally functional
+ * way to tick the same pieces, never a replacement for it.
  */
 export default function SkulltulaViewToggle({
-  items,
+  store,
+  groups,
+  pins,
   progressLabel,
   viewToggleLabel,
   listLabel,
@@ -46,45 +41,38 @@ export default function SkulltulaViewToggle({
   pendingLabel,
 }: Props) {
   const [view, setView] = useState<'list' | 'map'>('list');
+  const button = (v: 'list' | 'map', label: string) => (
+    <button
+      type="button"
+      aria-pressed={view === v}
+      onClick={() => setView(v)}
+      className={`rounded-md px-3 py-1.5 transition-colors ${
+        view === v
+          ? 'bg-primary text-primary-foreground'
+          : 'text-muted-foreground hover:text-foreground'
+      }`}
+    >
+      {label}
+    </button>
+  );
 
   return (
     <div>
       <div
         role="group"
         aria-label={viewToggleLabel}
-        className="mb-4 inline-flex rounded-lg border border-border p-0.5 font-mono text-xs"
+        className="mb-4 inline-flex rounded-lg border border-border bg-card p-0.5 font-mono text-xs"
       >
-        <button
-          type="button"
-          aria-pressed={view === 'list'}
-          onClick={() => setView('list')}
-          className={`rounded-md px-3 py-1.5 transition-colors ${
-            view === 'list'
-              ? 'bg-primary text-primary-foreground'
-              : 'text-muted-foreground hover:text-foreground'
-          }`}
-        >
-          {listLabel}
-        </button>
-        <button
-          type="button"
-          aria-pressed={view === 'map'}
-          onClick={() => setView('map')}
-          className={`rounded-md px-3 py-1.5 transition-colors ${
-            view === 'map'
-              ? 'bg-primary text-primary-foreground'
-              : 'text-muted-foreground hover:text-foreground'
-          }`}
-        >
-          {mapLabel}
-        </button>
+        {button('list', listLabel)}
+        {button('map', mapLabel)}
       </div>
 
       {view === 'list' ? (
-        <SkulltulaChecklist items={items} progressLabel={progressLabel} />
+        <GroupedChecklist store={store} groups={groups} progressLabel={progressLabel} />
       ) : (
         <SkulltulaMapView
-          items={items}
+          store={store}
+          items={pins}
           progressLabel={progressLabel}
           areaLabels={areaLabels}
           doneLabel={doneLabel}

@@ -1,0 +1,55 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import GameText from './GameText.astro';
+import GameThumb from './GameThumb.astro';
+import { gamePage } from './game-page';
+import { gameImage } from '@/lib/game-images';
+import { gameEntries } from '@/lib/game-content';
+import { gameEntityPath } from '@/lib/game-entity-pages';
+import type { GameId } from '@/lib/games';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  game: GameId;
+}
+const { locale, game } = Astro.props;
+const { t, h, title } = await gamePage(game, locale);
+const characters = await gameEntries('characters', game, locale);
+---
+
+<BaseLayout title={title(t('nav.characters'))} lang={locale}>
+  <main id="main" class="mx-auto max-w-4xl px-5 py-7 md:py-14">
+    <SectionHead level="h1" title={t('nav.characters')} tight />
+    <p class="mb-8 text-sm text-muted-foreground">{t('game.charactersNote')}</p>
+    <div class="grid gap-4 sm:grid-cols-2">
+      {
+        characters.map((c) => (
+          <article id={c.data.slug} class="panel p-4 text-sm">
+            <div class="flex items-start gap-3">
+              <GameThumb image={gameImage(game, 'characters', c.data.slug)} tile={false} />
+              <div class="min-w-0 flex-1">
+                <h2 class="font-display text-base font-semibold text-foreground">
+                  <a href={h(gameEntityPath('characters', c.data.slug))} class="hover:text-primary">
+                    {c.data.name}
+                  </a>
+                </h2>
+                <p class="font-mono text-[11px] text-primary">{c.data.role}</p>
+                <p class="mt-0.5 font-mono text-[11px] text-muted-foreground">{c.data.appears}</p>
+              </div>
+            </div>
+            <div class="mt-2 text-muted-foreground">
+              <GameText
+                text={c.data.note}
+                game={game}
+                locale={locale}
+                skip={[`characters/${c.data.slug}`]}
+              />
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </main>
+</BaseLayout>

@@ -1,4 +1,6 @@
 ---
-import HomePage from '@/components/pages/HomePage.astro';
+import GameHomePage from '@/components/game/GameHomePage.astro';
+import { GAME_ID } from '@/lib/games';
 ---
-<HomePage locale="es" />
+
+<GameHomePage locale="es" game={GAME_ID} />

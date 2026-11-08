@@ -1,4 +1,6 @@
 ---
-import ChaptersPage from '@/components/pages/ChaptersPage.astro';
+import GameChaptersPage from '@/components/game/GameChaptersPage.astro';
+import { GAME_ID } from '@/lib/games';
 ---
-<ChaptersPage locale="en" />
+
+<GameChaptersPage locale="en" game={GAME_ID} />

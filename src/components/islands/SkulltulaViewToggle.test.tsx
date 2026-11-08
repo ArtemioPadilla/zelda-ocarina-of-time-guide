@@ -18,13 +18,15 @@ vi.mock('idb-keyval', () => ({
   }),
 }));
 
-const items = [
+const STORE = 'oot-collectibles-done';
+
+const pins = [
   {
     id: 'sk-01',
     number: 1,
     zone: 'Kokiri Forest',
     zoneKey: 'Kokiri Forest',
-    area: 'kokiri' as const,
+    hub: 'kokiri',
     location: 'Above the shop door',
     x: 60,
     y: 70,
@@ -34,10 +36,21 @@ const items = [
     number: 2,
     zone: 'Hyrule Field',
     zoneKey: 'Hyrule Field',
-    area: 'hyrule-field' as const,
+    hub: 'hyrule-field',
     location: 'Under the drawbridge',
     x: 20,
     y: 80,
+  },
+];
+
+const groups = [
+  {
+    title: 'Kokiri Forest',
+    items: [{ id: 'sk-01', title: 'Gold Skulltula #1', detail: 'Above the shop door' }],
+  },
+  {
+    title: 'Hyrule Field',
+    items: [{ id: 'sk-02', title: 'Gold Skulltula #2', detail: 'Under the drawbridge' }],
   },
 ];
 
@@ -52,9 +65,11 @@ const areaLabels: Record<SkulltulaArea, string> = {
 };
 
 const baseProps = {
-  items,
-  progressLabel: 'Skulltulas',
-  viewToggleLabel: 'Skulltula list view',
+  store: STORE,
+  groups,
+  pins,
+  progressLabel: 'Gold Skulltula',
+  viewToggleLabel: 'List or map',
   listLabel: 'List',
   mapLabel: 'Map',
   areaLabels,
@@ -72,12 +87,12 @@ describe('SkulltulaViewToggle', () => {
     const { default: SkulltulaViewToggle } = await import('./SkulltulaViewToggle');
     render(<SkulltulaViewToggle {...baseProps} />);
 
-    expect(screen.getByRole('heading', { level: 2, name: 'Kokiri Forest' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: /Kokiri Forest/ })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'List' })).toHaveAttribute('aria-pressed', 'true');
     expect(screen.getByRole('button', { name: 'Map' })).toHaveAttribute('aria-pressed', 'false');
   });
 
-  it('switching to Map view renders the same items grouped by area, and back to List keeps it available', async () => {
+  it('switching to Map renders the same pieces grouped by hub, and back to List keeps it available', async () => {
     const user = userEvent.setup();
     const { default: SkulltulaViewToggle } = await import('./SkulltulaViewToggle');
     render(<SkulltulaViewToggle {...baseProps} />);
@@ -86,25 +101,31 @@ describe('SkulltulaViewToggle', () => {
     expect(screen.getByText('Kokiri Forest & Lost Woods')).toBeInTheDocument();
     expect(screen.getByText('Hyrule Field & Castle')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Above the shop door/ })).toBeInTheDocument();
-    // List's zone-grouped <h2> heading is gone while Map is showing — Map
-    // has its own zone sub-heading, but at a different heading level.
-    expect(screen.queryByRole('heading', { level: 2, name: 'Kokiri Forest' })).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole('heading', { level: 2, name: /Kokiri Forest/ }),
+    ).not.toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 4, name: /Kokiri Forest/ })).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'List' }));
-    expect(screen.getByRole('heading', { level: 2, name: 'Kokiri Forest' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: /Kokiri Forest/ })).toBeInTheDocument();
   });
 
-  it('toggling a pin in Map view is reflected in List view — one shared items array and store', async () => {
+  it('a pin ticked on the map is ticked in the list — one store, same ids', async () => {
     const user = userEvent.setup();
     const { default: SkulltulaViewToggle } = await import('./SkulltulaViewToggle');
+    const { checklistStore } = await import('@/stores/checklist');
     render(<SkulltulaViewToggle {...baseProps} />);
 
     await user.click(screen.getByRole('button', { name: 'Map' }));
     await user.click(screen.getByRole('button', { name: /Above the shop door/ }));
+    expect(checklistStore(STORE).$checked.get().has('sk-01')).toBe(true);
+    expect(memory.get(STORE)).toEqual(['sk-01']);
 
     await user.click(screen.getByRole('button', { name: 'List' }));
-    const checkbox = screen.getByRole('checkbox', { name: /Above the shop door/ });
-    expect(checkbox).toBeChecked();
+    expect(screen.getByRole('checkbox', { name: /Gold Skulltula #1/ })).toBeChecked();
+    expect(screen.getByRole('progressbar', { name: 'Gold Skulltula' })).toHaveAttribute(
+      'aria-valuenow',
+      '1',
+    );
   });
 });

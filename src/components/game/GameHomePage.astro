@@ -1,0 +1,172 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import ErrorBoundary from '@/components/islands/ErrorBoundary';
+import GameProgress from '@/components/islands/GameProgress';
+import OfflinePanel from '@/components/common/OfflinePanel.astro';
+import { gameCover } from '@/lib/game-images';
+import GameText from './GameText.astro';
+import { gamePage } from './game-page';
+import { gameEntries, chapterSlug, gameSections } from '@/lib/game-content';
+import { ENGINE_SECTIONS } from '@/lib/nav';
+import type { GameId } from '@/lib/games';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  game: GameId;
+}
+const { locale, game } = Astro.props;
+const { g, t, h, title, chapters } = await gamePage(game, locale);
+const ready = chapters.length > 0;
+
+const [cards, collectibles, files, achievements, has] = await Promise.all([
+  gameEntries('cards', game, locale),
+  gameEntries('collectibles', game, locale),
+  gameEntries('files', game, locale),
+  gameEntries('achievements', game, locale),
+  gameSections(game),
+]);
+const rules = cards.filter((c) => c.data.section === 'rules');
+const lore = cards.filter((c) => c.data.section === 'lore');
+const trackers = [
+  collectibles.length && {
+    storeKey: `${game}-collectibles-done`,
+    total: collectibles.length,
+    label: t('nav.collectibles'),
+  },
+  files.length && { storeKey: `${game}-files-done`, total: files.length, label: t('nav.files') },
+  achievements.length && {
+    storeKey: `${game}-achievements-done`,
+    total: achievements.length,
+    label: t('nav.achievements'),
+  },
+].filter((x): x is { storeKey: string; total: number; label: string } => Boolean(x));
+const sections = ENGINE_SECTIONS.filter((s) => s.needs !== null && has.has(s.needs));
+// The game's cover art behind the title, washed into the page.
+const cover = gameCover(game);
+---
+
+<BaseLayout title={title(g.title[locale])} description={g.tagline[locale]} lang={locale}>
+  <header
+    class={`overflow-hidden border-b border-border ${cover ? 'photo-header' : ''}`}
+    style={`--panel-accent: ${g.accent}${cover ? `; background-image: url(${cover.src})` : ''}`}
+  >
+    <div
+      class="mx-auto flex min-h-[220px] max-w-6xl flex-col justify-end px-5 pb-8 pt-10 sm:min-h-[300px]"
+    >
+      <p
+        class="rise mb-3 font-mono text-xs tracking-wide text-muted-foreground"
+        style="animation-delay: 0ms"
+      >
+        <span class="mr-2 inline-block h-2.5 w-2.5 align-middle" style={`background: ${g.accent}`}
+        ></span>
+        {t('game.covers')}: {g.covers[locale]}
+      </p>
+      <h1
+        class="rise font-display text-4xl font-bold uppercase tracking-wide text-foreground sm:text-6xl"
+        style="animation-delay: 60ms"
+      >
+        {g.title[locale]}
+      </h1>
+      <p class="rise mt-3 max-w-2xl text-lg text-muted-foreground" style="animation-delay: 120ms">
+        {g.tagline[locale]}
+      </p>
+      {
+        ready && (
+          <div class="rise mt-5 flex flex-wrap gap-2" style="animation-delay: 180ms">
+            {sections.map((s) => (
+              <a
+                href={h(s.path)}
+                class="rounded-full border border-border/80 bg-card/70 px-3 py-1.5 font-mono text-xs text-muted-foreground hover:border-primary/60 hover:text-primary"
+              >
+                {t(s.key)}
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </header>
+
+  {
+    !ready ? (
+      <main id="main" class="mx-auto max-w-3xl px-5 py-14">
+        <SectionHead level="h2" title={t('game.soon')} />
+        <p class="text-muted-foreground">{t('game.soonLead')}</p>
+      </main>
+    ) : (
+      <main
+        id="main"
+        class="mx-auto max-w-6xl px-5 pb-24 pt-8 lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start lg:gap-10"
+      >
+        <aside class="mb-10 lg:sticky lg:top-[120px] lg:order-last lg:mb-0">
+          <section class="panel p-5 sm:p-6">
+            <h2 class="mb-4 flex items-center gap-2.5 font-display text-lg font-semibold text-foreground">
+              <span class="glyph" aria-hidden="true" />
+              {t('home.progressTitle')}
+            </h2>
+            <ErrorBoundary
+              client:load
+              name="GameProgress"
+              messageLabel={t('a11y.errorBoundaryMessage')}
+              reportLabel={t('a11y.errorBoundaryReport')}
+            >
+              <GameProgress
+                client:load
+                game={game}
+                trackers={trackers}
+                chapters={chapters.map((c) => ({
+                  id: chapterSlug(c),
+                  number: c.data.number,
+                  title: c.data.title,
+                }))}
+                chapterLabel={t('home.currentChapter')}
+                resetLabel={t('home.resetProgress')}
+                resetConfirmMessage={t('game.resetConfirm')}
+              />
+            </ErrorBoundary>
+          </section>
+        </aside>
+
+        <div>
+          {rules.length > 0 && (
+            <section>
+              <SectionHead title={t('home.rulesTitle')} note={t('game.rulesNote')} />
+              <div class="grid gap-4 sm:grid-cols-2">
+                {rules.map((r) => (
+                  <div id={r.data.slug} class="panel p-4" style="--panel-accent: var(--primary)">
+                    <h3 class="mb-1.5 font-display text-sm font-semibold text-foreground">
+                      {r.data.title}
+                    </h3>
+                    <div class="text-sm text-muted-foreground">
+                      <GameText text={r.data.body} game={game} locale={locale} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+          {lore.length > 0 && (
+            <section class="mt-12">
+              <SectionHead title={t('game.loreTitle')} note={t('game.loreNote')} />
+              <div class="grid gap-4">
+                {lore.map((r) => (
+                  <div id={r.data.slug} class="panel p-4">
+                    <h3 class="mb-1.5 font-display text-sm font-semibold text-foreground">
+                      {r.data.title}
+                    </h3>
+                    <div class="text-sm text-muted-foreground">
+                      <GameText text={r.data.body} game={game} locale={locale} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+          <OfflinePanel locale={locale} game={game} class="mt-12" />
+        </div>
+      </main>
+    )
+  }
+</BaseLayout>

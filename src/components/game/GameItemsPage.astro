@@ -1,0 +1,128 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import GameText from './GameText.astro';
+import GameThumb from './GameThumb.astro';
+import { gamePage } from './game-page';
+import { gameImage } from '@/lib/game-images';
+import { gameEntries } from '@/lib/game-content';
+import { gameEntityPath } from '@/lib/game-entity-pages';
+import type { GameId } from '@/lib/games';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  game: GameId;
+}
+const { locale, game } = Astro.props;
+const { t, h, title, chapterLabel } = await gamePage(game, locale);
+const items = await gameEntries('items', game, locale);
+const TYPES = [
+  'song',
+  'quest',
+  'key',
+  'mask',
+  'trade',
+  'quickhack',
+  'healing',
+  'crafting',
+  'special',
+  'vehicle',
+  'treasure',
+  'ammo',
+] as const;
+const numberLocale = locale === 'es' ? 'de-DE' : 'en-US';
+---
+
+<BaseLayout title={title(t('nav.items'))} lang={locale}>
+  <main id="main" class="mx-auto max-w-5xl px-5 py-7 md:py-14">
+    <SectionHead level="h1" title={t('nav.items')} tight />
+    <p class="mb-8 text-sm text-muted-foreground">{t('game.itemsNote')}</p>
+    {
+      TYPES.map((type) => {
+        const rows = items.filter((i) => i.data.type === type);
+        if (rows.length === 0) return null;
+        return (
+          <section id={`type-${type}`} class="mb-10">
+            <SectionHead title={t(`game.itemType.${type}`)} note={String(rows.length)} />
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-sm">
+                <thead class="font-mono text-[11px] uppercase text-muted-foreground">
+                  <tr>
+                    <th class="py-2 pr-3">{t('items.col.item')}</th>
+                    <th class="py-2 pr-3">{t('items.col.where')}</th>
+                    <th class="py-2 pr-3">
+                      {type === 'key' ? t('items.col.use') : t('items.col.effect')}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((i) => (
+                    <tr id={i.data.slug} class="border-t border-border align-top">
+                      <td class="py-2 pr-3">
+                        <span class="flex items-start gap-2">
+                          <GameThumb image={gameImage(game, 'items', i.data.slug)} />
+                          <span class="min-w-0">
+                            <a
+                              href={h(gameEntityPath('items', i.data.slug))}
+                              class="font-medium text-foreground hover:text-primary"
+                            >
+                              {i.data.name}
+                            </a>
+                            {i.data.value !== undefined && (
+                              <span class="block font-mono text-[11px] text-primary">
+                                {i.data.value.toLocaleString(numberLocale)}
+                              </span>
+                            )}
+                          </span>
+                        </span>
+                      </td>
+                      <td class="py-2 pr-3 text-muted-foreground">
+                        {i.data.chapter && (
+                          <a
+                            href={h(`/chapters/${i.data.chapter}/`)}
+                            class="block font-mono text-[11px] text-primary"
+                          >
+                            {chapterLabel(i.data.chapter)}
+                          </a>
+                        )}
+                        {i.data.where && (
+                          <GameText
+                            text={i.data.where}
+                            game={game}
+                            locale={locale}
+                            skip={[`items/${i.data.slug}`]}
+                            inline
+                          />
+                        )}
+                      </td>
+                      <td class="py-2 pr-3">
+                        <GameText
+                          text={i.data.use}
+                          game={game}
+                          locale={locale}
+                          skip={[`items/${i.data.slug}`]}
+                          inline
+                        />
+                        {i.data.recipe && (
+                          <span class="mt-1 block font-mono text-xs text-primary">
+                            {t('game.recipe')}: {i.data.recipe}
+                          </span>
+                        )}
+                        {i.data.note && (
+                          <span class="mt-1 block text-xs text-muted-foreground">
+                            {i.data.note}
+                          </span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        );
+      })
+    }
+  </main>
+</BaseLayout>

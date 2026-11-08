@@ -1,0 +1,47 @@
+---
+/**
+ * An engine game's thumbnail (game-images.ts), or nothing when the entry
+ * has no picture — every page reads fine text-only. Objects (weapons, gear,
+ * items, collectibles) sit in an inventory slot; people and
+ * creatures are a plain framed crop.
+ */
+import type { EntityImage } from '@/lib/game-images';
+
+interface Props {
+  image?: EntityImage;
+  /** Inventory slot (objects) or plain crop (bosses, enemies, characters). */
+  tile?: boolean;
+  /** `sm` for list rows, `lg` for the entity page header. */
+  size?: 'sm' | 'lg';
+  alt?: string;
+}
+const { image, tile = true, size = 'sm', alt = '' } = Astro.props;
+const box = size === 'lg' ? 'h-32 w-40' : 'h-14 w-16';
+---
+
+{
+  image ? (
+    tile ? (
+      <span class={`case-slot ${box} shrink-0 ${size === 'lg' ? 'p-2' : 'p-1'}`}>
+        <img
+          src={image.src}
+          width={image.width}
+          height={image.height}
+          alt={alt}
+          loading={size === 'lg' ? 'eager' : 'lazy'}
+          decoding="async"
+        />
+      </span>
+    ) : (
+      <img
+        src={image.src}
+        width={image.width}
+        height={image.height}
+        alt={alt}
+        loading={size === 'lg' ? 'eager' : 'lazy'}
+        decoding="async"
+        class={`${size === 'lg' ? 'h-32 w-auto max-w-40' : 'h-14 w-14'} shrink-0 rounded-md object-cover`}
+      />
+    )
+  ) : null
+}

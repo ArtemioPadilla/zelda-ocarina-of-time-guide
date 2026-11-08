@@ -1,0 +1,95 @@
+---
+/**
+ * Engine copy: blank-line paragraphs, "- " bullet lines, **bold**, and
+ * every entity name linked to its page in this game (game-entity-links.ts).
+ * `inline` renders a single run of text with no <p> wrapper.
+ */
+import { linkify } from '@/lib/entity-links';
+import { gameEntityDictionary } from '@/lib/game-entity-dictionary';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  text: string;
+  game: string;
+  locale: Locale;
+  skip?: string[];
+  inline?: boolean;
+}
+const { text, game, locale, skip = [], inline = false } = Astro.props;
+const dict = gameEntityDictionary(game, locale);
+const skipSet = new Set(skip);
+
+type Run = { text: string; bold: boolean; href?: string };
+function runs(line: string): Run[] {
+  const out: Run[] = [];
+  line.split('**').forEach((part, i) => {
+    for (const s of linkify(part, dict, skipSet))
+      out.push({ text: s.text, bold: i % 2 === 1, href: s.href });
+  });
+  return out;
+}
+
+type Block = { kind: 'p'; runs: Run[] } | { kind: 'ul'; items: Run[][] };
+const blocks: Block[] = [];
+for (const para of text.split(/\n\s*\n/)) {
+  const lines = para
+    .split('\n')
+    .map((l) => l.trim())
+    .filter(Boolean);
+  if (lines.length && lines.every((l) => l.startsWith('- '))) {
+    blocks.push({ kind: 'ul', items: lines.map((l) => runs(l.slice(2))) });
+  } else if (lines.length) {
+    blocks.push({ kind: 'p', runs: runs(lines.join(' ')) });
+  }
+}
+---
+
+{
+  inline
+    ? runs(text).map((r) =>
+        r.href ? (
+          <a href={r.href} class:list={['ent-link', r.bold && 'font-semibold']}>
+            {r.text}
+          </a>
+        ) : r.bold ? (
+          <strong>{r.text}</strong>
+        ) : (
+          r.text
+        ),
+      )
+    : blocks.map((b) =>
+        b.kind === 'p' ? (
+          <p class="mb-2 last:mb-0">
+            {b.runs.map((r) =>
+              r.href ? (
+                <a href={r.href} class:list={['ent-link', r.bold && 'font-semibold']}>
+                  {r.text}
+                </a>
+              ) : r.bold ? (
+                <strong class="text-foreground">{r.text}</strong>
+              ) : (
+                r.text
+              ),
+            )}
+          </p>
+        ) : (
+          <ul class="mb-2 list-disc space-y-1 pl-5 last:mb-0">
+            {b.items.map((item) => (
+              <li>
+                {item.map((r) =>
+                  r.href ? (
+                    <a href={r.href} class:list={['ent-link', r.bold && 'font-semibold']}>
+                      {r.text}
+                    </a>
+                  ) : r.bold ? (
+                    <strong class="text-foreground">{r.text}</strong>
+                  ) : (
+                    r.text
+                  ),
+                )}
+              </li>
+            ))}
+          </ul>
+        ),
+      )
+}

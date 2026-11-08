@@ -1,14 +1,19 @@
 /**
- * Single source of truth for the Skulltula interactive map's per-zone
+ * Single source of truth for the Gold Skulltula interactive map's per-zone
  * canvases. The map renders one card per `zoneKey` (the 31 fine-grained
- * zones from `content.config.ts`'s `skulltulasSchema`), grouped under the
- * 7 top-level hubs (`AREA_ORDER`) purely for List/Map navigation — each
- * zone gets its own independent 0-100 x 0-100 coordinate space.
+ * zones a `collectibles.json` Skulltula row names in its `zoneKey` field,
+ * see `content.config.ts`), grouped under the 7 top-level hubs
+ * (`AREA_ORDER`, a row's `hub`) purely for List/Map navigation — each zone
+ * gets its own independent 0-100 x 0-100 coordinate space.
+ *
+ * Ported from the 3DS guide. The photos are OoT/OoT3D screenshots; the
+ * pins were calibrated against them for the 3DS layout and are pending a
+ * check against the Nintendo Switch 2 remake.
  *
  * `ZONE_MAPS[zoneKey].image`, where present, is a real sourced photo of
  * that zone (an OoT/OoT3D screenshot from Zelda Wiki — see each entry's
  * `attribution`/`sourceUrl`) used as the map's base layer, with every pin
- * in that zone hand-recalibrated in `src/content/{es,en}/skulltulas.json`
+ * in that zone hand-recalibrated in `src/content/games/oot/{es,en}/collectibles.json`
  * against that image's actual geometry. Most pins are landmark-anchored;
  * a few per zone (mainly Kakariko Village, Zora's River, and the
  * compass-approximated portion of several dungeon floors below) are
@@ -31,7 +36,7 @@
  * one entry, no tabs rendered) rather than `image`, so "floored zone" and
  * "dungeon interior with a skulltula" are exactly the same set. Each
  * skulltula in a floored zone carries a matching `floor` key in
- * `skulltulas.json`. Deku Tree, Forest Temple, and Jabu-Jabu's Belly got
+ * `collectibles.json`. Deku Tree, Forest Temple, and Jabu-Jabu's Belly got
  * genuine multi-floor real-photo galleries from Zelda Wiki; the rest
  * (Dodongo's Cavern, Fire Temple, Ice Cavern, Water Temple, Bottom of the
  * Well, Shadow Temple, Spirit Temple, Ganon's Castle) only had one usable
@@ -71,7 +76,7 @@ export interface ZoneMapImage {
 }
 
 export interface ZoneMapFloor {
-  /** Stable key matching the `floor` field on that zone's skulltulas.json
+  /** Stable key matching the `floor` field on that zone's collectibles.json
    * entries (e.g. "b1", "1f") — untranslated, same pattern as `zoneKey`. */
   key: string;
   /** Short tab label shown in the floor switcher, e.g. "B1", "1F". */
@@ -90,7 +95,7 @@ export interface ZoneMapConfig {
    * image treatment: one real screenshot per floor, switched via a floor
    * tab UI in SkulltulaMap.tsx, instead of a single zone-wide `image`.
    * Mutually exclusive with `image` in practice (a floored zone leaves
-   * `image` unset). Each dungeon's skulltulas.json entries carry a matching
+   * `image` unset). Each dungeon's collectibles.json rows carry a matching
    * `floor` key so the map knows which tab a given pin belongs to. */
   floors?: ZoneMapFloor[];
 }

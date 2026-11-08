@@ -6,16 +6,11 @@
     "strict": true,
     "skipLibCheck": true,
     "jsx": "react-jsx",
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "src/**/*",
-    "vitest.config.ts",
-    "vitest.setup.ts"
-  ]
+  "include": ["src/**/*", "vitest.config.ts", "vitest.setup.ts"]
 }

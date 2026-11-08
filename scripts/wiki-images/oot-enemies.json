@@ -1,0 +1,212 @@
+[
+  {
+    "collection": "enemies",
+    "id": "big-octo",
+    "file": "OoT3D Big Octo Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "lizalfos",
+    "file": "OoTNS2 Lizalfos Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "dinolfos",
+    "file": "OoTNS2 Dinolfos Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "stalfos",
+    "file": "OoTNS2 Stalfos Render.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "poe-sisters",
+    "file": "OoTNS2 Meg Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "great-moblin",
+    "file": "OoT3D Club Moblin Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "flare-dancer",
+    "file": "OoT3D Flare Dancer Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "dark-link",
+    "file": "OoTNS2 Dark Link Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "dead-hand",
+    "file": "OoT3D Dead Hand Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "white-wolfos",
+    "file": "OoT3D White Wolfos Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "iron-knuckle",
+    "file": "OoTNS2 Iron Knuckle Model 2.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "deku-baba",
+    "file": "OoTNS2 Deku Baba Render.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "deku-scrub",
+    "file": "OoTNS2 Deku Scrub Render.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "skulltula",
+    "file": "OoTNS2 Skulltula Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "gold-skulltula",
+    "file": "OoTNS2 Gold Skulltula Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "skullwalltula",
+    "file": "OoTNS2 Skullwalltula Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "keese",
+    "file": "OoT3D Keese Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "octorok",
+    "file": "OoT3D Octorok Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "tektite",
+    "file": "OoTNS2 Red Tektite Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "peahat",
+    "file": "OoT3D Peahat Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "stalchild",
+    "file": "OoTNS2 Stalchild Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "wolfos",
+    "file": "OoTNS2 Wolfos Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "guay",
+    "file": "OoT3D Guay Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "moblin",
+    "file": "OoT3D Moblin Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "dodongo",
+    "file": "OoT3D Dodongo Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "beamos",
+    "file": "OoTNS2 Beamos Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "armos",
+    "file": "OoT3D Armos Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "bubble",
+    "file": "OoT3D Blue Bubble Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "like-like",
+    "file": "OoTNS2 Like Like Model.jpg"
+  },
+  {
+    "collection": "enemies",
+    "id": "gerudo-thief",
+    "file": "OoT3D Gerudo Thief Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "leever",
+    "file": "OoTNS2 Leever Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "anubis",
+    "file": "OoT3D Anubis Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "bari",
+    "file": "OoT3D Bari Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "shabom",
+    "file": "OoT3D Shabom Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "tailpasaran",
+    "file": "OoT3D Tailpasaran Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "stinger",
+    "file": "OoT3D Stinger Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "shell-blade",
+    "file": "OoTNS2 Shell Blade Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "redead",
+    "file": "OoT3D ReDead Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "gibdo",
+    "file": "OoT3D Gibdo Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "poe",
+    "file": "OoT3D Poe Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "big-poe",
+    "file": "OoTNS2 Big Poe Model.png"
+  },
+  {
+    "collection": "enemies",
+    "id": "wallmaster",
+    "file": "OoT3D Wallmaster Model.png"
+  }
+]

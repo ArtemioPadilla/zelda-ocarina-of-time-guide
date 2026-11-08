@@ -10,7 +10,7 @@
  * `import.meta.env.BASE_URL` is `/` in dev and at root deploys, and
  * `/<repo>/` (with trailing slash) when `base` is set for the Pages build.
  *
- *   withBase('/gallery/')   → '/gallery/'                        (dev / root)
+ *   withBase('/gallery/')   → '/gallery/'                     (dev / root)
  *                           → '/zelda-ocarina-of-time-guide/gallery/' (Pages)
  *   withBase('/favicon.svg')→ same idea for public assets
  */

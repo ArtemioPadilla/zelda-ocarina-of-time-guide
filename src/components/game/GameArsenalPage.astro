@@ -1,0 +1,275 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHead from '@/components/common/SectionHead.astro';
+import GameText from './GameText.astro';
+import GameThumb from './GameThumb.astro';
+import { gamePage } from './game-page';
+import { gameImage } from '@/lib/game-images';
+import { gameEntries } from '@/lib/game-content';
+import { gameEntityPath } from '@/lib/game-entity-pages';
+import type { GameId } from '@/lib/games';
+import type { Locale } from '@/i18n/ui';
+
+interface Props {
+  locale: Locale;
+  game: GameId;
+}
+const { locale, game } = Astro.props;
+const { t, h, title, chapterLabel } = await gamePage(game, locale);
+const [weapons, gear, shop, ammo] = await Promise.all([
+  gameEntries('weapons', game, locale),
+  gameEntries('gear', game, locale),
+  gameEntries('shop', game, locale),
+  gameEntries('items', game, locale).then((items) => items.filter((i) => i.data.type === 'ammo')),
+]);
+const categories = [...new Set(weapons.map((w) => w.data.category))];
+const numberLocale = locale === 'es' ? 'de-DE' : 'en-US';
+---
+
+<BaseLayout title={title(t('nav.arsenal'))} lang={locale}>
+  <main id="main" class="mx-auto max-w-5xl px-5 py-7 md:py-14">
+    <SectionHead level="h1" title={t('nav.arsenal')} tight />
+    <p class="mb-8 text-sm text-muted-foreground">{t('game.arsenalNote')}</p>
+
+    {
+      shop.length > 0 && (
+        <section id="shop" class="mb-12">
+          <SectionHead title={t('game.shopTitle')} note={t('game.shopNote')} />
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm">
+              <thead class="font-mono text-[11px] uppercase text-muted-foreground">
+                <tr>
+                  <th class="py-2 pr-3">{t('arsenal.col.when')}</th>
+                  <th class="py-2 pr-3">{t('arsenal.col.buy')}</th>
+                  <th class="py-2 pr-3">{t('arsenal.col.sellIt')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {shop.map((s) => (
+                  <tr id={`shop-${s.data.slug}`} class="border-t border-border align-top">
+                    <td class="py-2 pr-3 font-mono text-xs text-primary">
+                      {chapterLabel(s.data.chapter)}
+                    </td>
+                    <td class="py-2 pr-3">
+                      <GameText text={s.data.buy} game={game} locale={locale} inline />
+                      {s.data.cost !== undefined && (
+                        <span class="ml-1 font-mono text-xs text-muted-foreground">
+                          ({s.data.cost.toLocaleString(numberLocale)})
+                        </span>
+                      )}
+                      {s.data.avoid && (
+                        <span class="mt-1 block text-xs text-destructive">
+                          ✕ <GameText text={s.data.avoid} game={game} locale={locale} inline />
+                        </span>
+                      )}
+                    </td>
+                    <td class="py-2 pr-3 text-muted-foreground">
+                      {s.data.sell && (
+                        <GameText text={s.data.sell} game={game} locale={locale} inline />
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )
+    }
+
+    {
+      categories.map((cat) => (
+        <section class="mb-12">
+          <SectionHead title={cat} />
+          <div class="grid gap-4 md:grid-cols-2">
+            {weapons
+              .filter((w) => w.data.category === cat)
+              .map((w) => (
+                <article
+                  id={w.data.slug}
+                  class="panel p-4"
+                  style={w.data.recommended ? '--panel-accent: var(--primary)' : ''}
+                >
+                  <div class="flex items-start gap-3">
+                    <GameThumb image={gameImage(game, 'weapons', w.data.slug)} />
+                    <div class="min-w-0 flex-1">
+                      <h3 class="font-display text-base font-semibold text-foreground">
+                        <a
+                          href={h(gameEntityPath('weapons', w.data.slug))}
+                          class="hover:text-primary"
+                        >
+                          {w.data.name}
+                        </a>
+                        {w.data.recommended && (
+                          <span class="ml-2 font-mono text-[10px] text-primary">★</span>
+                        )}
+                      </h3>
+                      <p class="mt-1 text-xs text-muted-foreground">
+                        <GameText
+                          text={w.data.obtain}
+                          game={game}
+                          locale={locale}
+                          skip={[`weapons/${w.data.slug}`]}
+                          inline
+                        />
+                        {w.data.price && (
+                          <span class="ml-1 font-mono text-primary">· {w.data.price}</span>
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                  {w.data.stats.length > 0 && (
+                    <dl class="mt-3 grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+                      {w.data.stats.map((s: { label: string; value: string }) => (
+                        <>
+                          <dt class="text-muted-foreground">{s.label}</dt>
+                          <dd class="font-mono text-foreground">{s.value}</dd>
+                        </>
+                      ))}
+                    </dl>
+                  )}
+                  {w.data.verdict && (
+                    <p class="mt-3 text-sm text-foreground">
+                      <span class="font-mono text-[10px] uppercase text-primary">
+                        {t('arsenal.verdict')}{' '}
+                      </span>
+                      <GameText
+                        text={w.data.verdict}
+                        game={game}
+                        locale={locale}
+                        skip={[`weapons/${w.data.slug}`]}
+                        inline
+                      />
+                    </p>
+                  )}
+                  {w.data.levels.length > 0 && (
+                    <details class="mt-3 text-xs">
+                      <summary class="cursor-pointer font-mono text-muted-foreground">
+                        {t('arsenal.levelsTitle')}
+                      </summary>
+                      <div class="mt-2 grid gap-2">
+                        {w.data.levels.map(
+                          (l: { label: string; rows: { v: string; p?: number }[] }) => (
+                            <div>
+                              <p class="font-mono text-[10px] uppercase text-muted-foreground">
+                                {l.label}
+                              </p>
+                              <p class="font-mono text-foreground">
+                                {l.rows.map((r: { v: string; p?: number }, i: number) => (
+                                  <span>
+                                    {i > 0 && ' → '}
+                                    {r.v}
+                                    {r.p ? (
+                                      <span class="text-muted-foreground">
+                                        {' '}
+                                        ({r.p.toLocaleString(numberLocale)})
+                                      </span>
+                                    ) : null}
+                                  </span>
+                                ))}
+                              </p>
+                            </div>
+                          ),
+                        )}
+                      </div>
+                    </details>
+                  )}
+                </article>
+              ))}
+          </div>
+        </section>
+      ))
+    }
+
+    {
+      gear.length > 0 && (
+        <section id="gear" class="mb-12">
+          <SectionHead title={t('game.gearTitle')} note={t('game.gearNote')} />
+          <div class="grid gap-3 md:grid-cols-2">
+            {gear.map((g) => (
+              <article id={`gear-${g.data.slug}`} class="panel flex items-start gap-3 p-4 text-sm">
+                <GameThumb image={gameImage(game, 'gear', g.data.slug)} />
+                <div class="min-w-0 flex-1">
+                  <h3 class="font-display font-semibold text-foreground">
+                    <a href={h(gameEntityPath('gear', g.data.slug))} class="hover:text-primary">
+                      {g.data.name}
+                    </a>
+                    <span class="ml-2 font-mono text-[10px] text-muted-foreground">
+                      {g.data.kind}
+                    </span>
+                  </h3>
+                  <p class="mt-1 text-foreground">
+                    <GameText
+                      text={g.data.effect}
+                      game={game}
+                      locale={locale}
+                      skip={[`gear/${g.data.slug}`]}
+                      inline
+                    />
+                  </p>
+                  <p class="mt-1 text-xs text-muted-foreground">
+                    <GameText
+                      text={g.data.where}
+                      game={game}
+                      locale={locale}
+                      skip={[`gear/${g.data.slug}`]}
+                      inline
+                    />
+                    {g.data.price && (
+                      <span class="ml-1 font-mono text-primary">· {g.data.price}</span>
+                    )}
+                  </p>
+                  {g.data.verdict && (
+                    <p class="mt-2 text-xs text-foreground">
+                      <GameText
+                        text={g.data.verdict}
+                        game={game}
+                        locale={locale}
+                        skip={[`gear/${g.data.slug}`]}
+                        inline
+                      />
+                    </p>
+                  )}
+                  <a
+                    href={h(gameEntityPath('gear', g.data.slug))}
+                    class="mt-2 inline-block font-mono text-[11px] text-primary underline decoration-dotted"
+                  >
+                    {t('entity.sheet')} →
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      ammo.length > 0 && (
+        <section id="ammo">
+          <SectionHead title={t('arsenal.ammoTitle')} />
+          <ul class="grid gap-2 md:grid-cols-2">
+            {ammo.map((a) => (
+              <li class="panel p-3 text-sm">
+                <a
+                  href={h(gameEntityPath('items', a.data.slug))}
+                  class="font-semibold text-foreground hover:text-primary"
+                >
+                  {a.data.name}
+                </a>
+                <span class="block text-xs text-muted-foreground">
+                  <GameText text={a.data.use} game={game} locale={locale} inline />
+                </span>
+                {a.data.recipe && (
+                  <span class="block font-mono text-xs text-primary">
+                    {t('game.recipe')}: {a.data.recipe}
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </main>
+</BaseLayout>

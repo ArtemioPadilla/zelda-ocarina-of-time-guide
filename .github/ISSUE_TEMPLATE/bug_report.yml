@@ -1,6 +1,6 @@
 name: Bug de la app
 description: Algo en el sitio/tracker no funciona como debería (no es un error de contenido del juego)
-labels: ["bug"]
+labels: ['bug']
 body:
   - type: markdown
     attributes:
@@ -41,7 +41,7 @@ body:
     id: environment
     attributes:
       label: Navegador / dispositivo
-      placeholder: "Chrome 128 en Android, Safari en iPhone, etc."
+      placeholder: 'Chrome 128 en Android, Safari en iPhone, etc.'
     validations:
       required: false
 

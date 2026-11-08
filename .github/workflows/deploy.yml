@@ -15,6 +15,10 @@ jobs:
       - run: npm run build
         env:
           ASTRO_BASE: ${{ secrets.ASTRO_BASE || '/zelda-ocarina-of-time-guide' }}
+          # FeedbackFAB stamps these into every issue report's diagnostics
+          # block; without them production reports read "buildSha: dev".
+          PUBLIC_BUILD_SHA: ${{ github.sha }}
+          PUBLIC_VERSION: ${{ github.ref_name }}
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with: { path: ./dist }
   deploy:

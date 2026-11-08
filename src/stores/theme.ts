@@ -8,14 +8,14 @@ export type Theme = 'light' | 'dark';
  * is the post-hydration source of truth that any island can read or write.
  *
  * Lifecycle:
- *   1. Page loads → inline script reads localStorage.theme (or system pref) and
- *      adds .dark to <html> before paint.
+ *   1. Page loads → inline script reads localStorage.theme (dark-first: dark
+ *      unless the reader or the system picked light) and adds .dark to <html> before paint.
  *   2. Islands hydrate → onMount initializes $theme from the actual <html>
  *      class state (which the inline script already set).
  *   3. Subsequent reads/writes go through this store; it keeps <html> class
  *      and localStorage in sync automatically.
  */
-export const $theme = atom<Theme>('light');
+export const $theme = atom<Theme>('dark');
 
 if (typeof document !== 'undefined') {
   onMount($theme, () => {

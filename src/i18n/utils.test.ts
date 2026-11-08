@@ -29,11 +29,11 @@ describe('localizedHref', () => {
 
 describe('swapLocaleHref', () => {
   it('adds /en when swapping from es to en', () => {
-    expect(swapLocaleHref('en', '/chapters/c1/')).toBe('/en/chapters/c1/');
+    expect(swapLocaleHref('en', '/chapters/1-1/')).toBe('/en/chapters/1-1/');
   });
 
   it('strips /en when swapping from en to es', () => {
-    expect(swapLocaleHref('es', '/en/chapters/c1/')).toBe('/chapters/c1/');
+    expect(swapLocaleHref('es', '/en/chapters/1-1/')).toBe('/chapters/1-1/');
   });
 
   it('maps /en (no trailing slash) back to the es root', () => {

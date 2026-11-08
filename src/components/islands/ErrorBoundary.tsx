@@ -45,10 +45,7 @@ interface ErrorBoundaryState {
  *     <IssuesListInner />
  *   </ErrorBoundary>
  */
-export default class ErrorBoundary extends React.Component<
-  ErrorBoundaryProps,
-  ErrorBoundaryState
-> {
+export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
   state: ErrorBoundaryState = { error: null, reportUrl: null };
 
   static getDerivedStateFromError(error: Error): Partial<ErrorBoundaryState> {
@@ -63,9 +60,7 @@ export default class ErrorBoundary extends React.Component<
     // We derive a "component path" from the boundary name and the first line of
     // the React component stack (which React 19 produces in development).
     const stackFirstLine = info.componentStack?.split('\n')[1]?.trim() ?? '';
-    const componentPath = [this.props.name, stackFirstLine]
-      .filter(Boolean)
-      .join(' › ');
+    const componentPath = [this.props.name, stackFirstLine].filter(Boolean).join(' › ');
 
     const url = buildIssueUrl({
       title: `[bug] ${error.name}: ${error.message}`,

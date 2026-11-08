@@ -2,8 +2,10 @@ name: CI
 
 on:
   push:
+    # claude/… agent branches plus Conventional-Commit-style branches.
     branches:
       - main
+      - 'claude/**'
       - 'feat/**'
       - 'fix/**'
       - 'docs/**'

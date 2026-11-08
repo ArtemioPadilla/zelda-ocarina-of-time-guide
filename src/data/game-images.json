@@ -1,0 +1,1058 @@
+{
+  "oot/bosses/barinade": {
+    "w": 170,
+    "h": 320,
+    "file": "OoT3D Barinade Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Barinade_Model.png"
+  },
+  "oot/bosses/bongo-bongo": {
+    "w": 320,
+    "h": 180,
+    "file": "OoTNS2 Bongo Bongo Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Bongo_Bongo_Model.png"
+  },
+  "oot/bosses/ganon": {
+    "w": 320,
+    "h": 258,
+    "file": "OoT3D Ganon Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Ganon_Model.png"
+  },
+  "oot/bosses/ganondorf": {
+    "w": 182,
+    "h": 320,
+    "file": "OoTNS2 Ganondorf Render.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Ganondorf_Render.png"
+  },
+  "oot/bosses/gohma": {
+    "w": 320,
+    "h": 262,
+    "file": "OoTNS2 Gohma Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Gohma_Model.png"
+  },
+  "oot/bosses/king-dodongo": {
+    "w": 320,
+    "h": 192,
+    "file": "OoTNS2 King Dodongo Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_King_Dodongo_Model.png"
+  },
+  "oot/bosses/morpha": {
+    "w": 320,
+    "h": 297,
+    "file": "OoTNS2 Morpha Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Morpha_Model.png"
+  },
+  "oot/bosses/phantom-ganon": {
+    "w": 320,
+    "h": 291,
+    "file": "OoTNS2 Phantom Ganon Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Phantom_Ganon_Model.png"
+  },
+  "oot/bosses/twinrova": {
+    "w": 320,
+    "h": 320,
+    "file": "OoT3D Twinrova Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Twinrova_Model.png"
+  },
+  "oot/bosses/volvagia": {
+    "w": 320,
+    "h": 214,
+    "file": "OoTNS2 Volvagia Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Volvagia_Model.png"
+  },
+  "oot/characters/biggoron": {
+    "w": 320,
+    "h": 231,
+    "file": "OoT Biggoron Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT_Biggoron_Model.png"
+  },
+  "oot/characters/business-scrub": {
+    "w": 225,
+    "h": 320,
+    "file": "OoT3D Business Scrub Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Business_Scrub_Model.png"
+  },
+  "oot/characters/composer-brothers": {
+    "w": 170,
+    "h": 120,
+    "file": "OoT3D Sharp the Elder Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Sharp_the_Elder_Model.png"
+  },
+  "oot/characters/dampe": {
+    "w": 184,
+    "h": 282,
+    "file": "OoT Dampé Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT_Damp%C3%A9_Model.png"
+  },
+  "oot/characters/darunia": {
+    "w": 234,
+    "h": 320,
+    "file": "OoTNS2 Darunia Render.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Darunia_Render.png"
+  },
+  "oot/characters/epona": {
+    "w": 320,
+    "h": 268,
+    "file": "OoTNS2 Epona Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Epona_Model.png"
+  },
+  "oot/characters/ganondorf": {
+    "w": 320,
+    "h": 192,
+    "file": "OoTNS2 Ganondorf Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Ganondorf_Model.png"
+  },
+  "oot/characters/great-fairies": {
+    "w": 320,
+    "h": 180,
+    "file": "OoTNS2 Great Fairy Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Great_Fairy_Model.png"
+  },
+  "oot/characters/happy-mask-salesman": {
+    "w": 154,
+    "h": 320,
+    "file": "OoT3D Happy Mask Salesman Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Happy_Mask_Salesman_Model.png"
+  },
+  "oot/characters/impa": {
+    "w": 97,
+    "h": 320,
+    "file": "OoTNS2 Impa Render.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Impa_Render.png"
+  },
+  "oot/characters/ingo": {
+    "w": 133,
+    "h": 320,
+    "file": "OoT3D Ingo Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Ingo_Model.png"
+  },
+  "oot/characters/kaepora-gaebora": {
+    "w": 297,
+    "h": 320,
+    "file": "OoTNS2 Kaepora Gaebora Render.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Kaepora_Gaebora_Render.png"
+  },
+  "oot/characters/king-zora": {
+    "w": 228,
+    "h": 320,
+    "file": "OoT3D King Zora Render.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_King_Zora_Render.png"
+  },
+  "oot/characters/koume-kotake": {
+    "w": 240,
+    "h": 320,
+    "file": "OoTNS2 Kotake Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Kotake_Model.png"
+  },
+  "oot/characters/link": {
+    "w": 130,
+    "h": 320,
+    "file": "OoTNS2 Child Link Render.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Child_Link_Render.png"
+  },
+  "oot/characters/malon": {
+    "w": 143,
+    "h": 320,
+    "file": "OoTNS2 Malon Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Malon_Model.png"
+  },
+  "oot/characters/medigoron": {
+    "w": 320,
+    "h": 298,
+    "file": "OoT3D Medigoron Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Medigoron_Model.png"
+  },
+  "oot/characters/mido": {
+    "w": 186,
+    "h": 320,
+    "file": "OoTNS2 Mido Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Mido_Model.png"
+  },
+  "oot/characters/nabooru": {
+    "w": 123,
+    "h": 320,
+    "file": "OoT3D Nabooru Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Nabooru_Model.png"
+  },
+  "oot/characters/navi": {
+    "w": 183,
+    "h": 261,
+    "file": "OoTNS2 Navi Render.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Navi_Render.png"
+  },
+  "oot/characters/poe-collector": {
+    "w": 171,
+    "h": 271,
+    "file": "OoT3D Poe Collector Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Poe_Collector_Model.png"
+  },
+  "oot/characters/rauru": {
+    "w": 247,
+    "h": 320,
+    "file": "OoT3D Rauru Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Rauru_Model.png"
+  },
+  "oot/characters/ruto": {
+    "w": 199,
+    "h": 320,
+    "file": "OoTNS2 Princess Ruto Render.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Princess_Ruto_Render.png"
+  },
+  "oot/characters/saria": {
+    "w": 97,
+    "h": 320,
+    "file": "OoTNS2 Saria Render.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Saria_Render.png"
+  },
+  "oot/characters/sheik": {
+    "w": 183,
+    "h": 320,
+    "file": "OoTNS2 Sheik Render.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Sheik_Render.png"
+  },
+  "oot/characters/skull-kid": {
+    "w": 151,
+    "h": 320,
+    "file": "OoT3D Skull Kid Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Skull_Kid_Model.png"
+  },
+  "oot/characters/talon": {
+    "w": 203,
+    "h": 320,
+    "file": "OoT3D Talon Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Talon_Model.png"
+  },
+  "oot/characters/zelda": {
+    "w": 196,
+    "h": 320,
+    "file": "OoTNS2 Princess Zelda Render.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Princess_Zelda_Render.png"
+  },
+  "oot/enemies/anubis": {
+    "w": 130,
+    "h": 320,
+    "file": "OoT3D Anubis Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Anubis_Model.png"
+  },
+  "oot/enemies/armos": {
+    "w": 190,
+    "h": 320,
+    "file": "OoT3D Armos Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Armos_Model.png"
+  },
+  "oot/enemies/bari": {
+    "w": 265,
+    "h": 320,
+    "file": "OoT3D Bari Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Bari_Model.png"
+  },
+  "oot/enemies/beamos": {
+    "w": 178,
+    "h": 320,
+    "file": "OoTNS2 Beamos Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Beamos_Model.png"
+  },
+  "oot/enemies/big-octo": {
+    "w": 320,
+    "h": 236,
+    "file": "OoT3D Big Octo Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Big_Octo_Model.png"
+  },
+  "oot/enemies/big-poe": {
+    "w": 317,
+    "h": 302,
+    "file": "OoTNS2 Big Poe Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Big_Poe_Model.png"
+  },
+  "oot/enemies/bubble": {
+    "w": 227,
+    "h": 320,
+    "file": "OoT3D Blue Bubble Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Blue_Bubble_Model.png"
+  },
+  "oot/enemies/dark-link": {
+    "w": 279,
+    "h": 320,
+    "file": "OoTNS2 Dark Link Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Dark_Link_Model.png"
+  },
+  "oot/enemies/dead-hand": {
+    "w": 320,
+    "h": 319,
+    "file": "OoT3D Dead Hand Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Dead_Hand_Model.png"
+  },
+  "oot/enemies/deku-baba": {
+    "w": 194,
+    "h": 320,
+    "file": "OoTNS2 Deku Baba Render.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Deku_Baba_Render.png"
+  },
+  "oot/enemies/deku-scrub": {
+    "w": 208,
+    "h": 320,
+    "file": "OoTNS2 Deku Scrub Render.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Deku_Scrub_Render.png"
+  },
+  "oot/enemies/dinolfos": {
+    "w": 193,
+    "h": 320,
+    "file": "OoTNS2 Dinolfos Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Dinolfos_Model.png"
+  },
+  "oot/enemies/dodongo": {
+    "w": 320,
+    "h": 262,
+    "file": "OoT3D Dodongo Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Dodongo_Model.png"
+  },
+  "oot/enemies/flare-dancer": {
+    "w": 277,
+    "h": 320,
+    "file": "OoT3D Flare Dancer Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Flare_Dancer_Model.png"
+  },
+  "oot/enemies/gerudo-thief": {
+    "w": 205,
+    "h": 320,
+    "file": "OoT3D Gerudo Thief Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Gerudo_Thief_Model.png"
+  },
+  "oot/enemies/gibdo": {
+    "w": 126,
+    "h": 320,
+    "file": "OoT3D Gibdo Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Gibdo_Model.png"
+  },
+  "oot/enemies/gold-skulltula": {
+    "w": 119,
+    "h": 148,
+    "file": "OoTNS2 Gold Skulltula Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Gold_Skulltula_Model.png"
+  },
+  "oot/enemies/great-moblin": {
+    "w": 249,
+    "h": 320,
+    "file": "OoT3D Club Moblin Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Club_Moblin_Model.png"
+  },
+  "oot/enemies/guay": {
+    "w": 320,
+    "h": 191,
+    "file": "OoT3D Guay Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Guay_Model.png"
+  },
+  "oot/enemies/iron-knuckle": {
+    "w": 260,
+    "h": 320,
+    "file": "OoTNS2 Iron Knuckle Model 2.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Iron_Knuckle_Model_2.png"
+  },
+  "oot/enemies/keese": {
+    "w": 320,
+    "h": 95,
+    "file": "OoT3D Keese Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Keese_Model.png"
+  },
+  "oot/enemies/leever": {
+    "w": 320,
+    "h": 293,
+    "file": "OoTNS2 Leever Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Leever_Model.png"
+  },
+  "oot/enemies/like-like": {
+    "w": 262,
+    "h": 320,
+    "file": "OoTNS2 Like Like Model.jpg",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Like_Like_Model.jpg"
+  },
+  "oot/enemies/lizalfos": {
+    "w": 231,
+    "h": 320,
+    "file": "OoTNS2 Lizalfos Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Lizalfos_Model.png"
+  },
+  "oot/enemies/moblin": {
+    "w": 187,
+    "h": 320,
+    "file": "OoT3D Moblin Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Moblin_Model.png"
+  },
+  "oot/enemies/octorok": {
+    "w": 277,
+    "h": 320,
+    "file": "OoT3D Octorok Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Octorok_Model.png"
+  },
+  "oot/enemies/peahat": {
+    "w": 320,
+    "h": 106,
+    "file": "OoT3D Peahat Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Peahat_Model.png"
+  },
+  "oot/enemies/poe": {
+    "w": 320,
+    "h": 217,
+    "file": "OoT3D Poe Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Poe_Model.png"
+  },
+  "oot/enemies/poe-sisters": {
+    "w": 320,
+    "h": 262,
+    "file": "OoTNS2 Meg Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Meg_Model.png"
+  },
+  "oot/enemies/redead": {
+    "w": 122,
+    "h": 320,
+    "file": "OoT3D ReDead Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_ReDead_Model.png"
+  },
+  "oot/enemies/shabom": {
+    "w": 312,
+    "h": 320,
+    "file": "OoT3D Shabom Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Shabom_Model.png"
+  },
+  "oot/enemies/shell-blade": {
+    "w": 212,
+    "h": 320,
+    "file": "OoTNS2 Shell Blade Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Shell_Blade_Model.png"
+  },
+  "oot/enemies/skulltula": {
+    "w": 319,
+    "h": 320,
+    "file": "OoTNS2 Skulltula Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Skulltula_Model.png"
+  },
+  "oot/enemies/skullwalltula": {
+    "w": 320,
+    "h": 262,
+    "file": "OoTNS2 Skullwalltula Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Skullwalltula_Model.png"
+  },
+  "oot/enemies/stalchild": {
+    "w": 320,
+    "h": 223,
+    "file": "OoTNS2 Stalchild Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Stalchild_Model.png"
+  },
+  "oot/enemies/stalfos": {
+    "w": 222,
+    "h": 320,
+    "file": "OoTNS2 Stalfos Render.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Stalfos_Render.png"
+  },
+  "oot/enemies/stinger": {
+    "w": 320,
+    "h": 222,
+    "file": "OoT3D Stinger Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Stinger_Model.png"
+  },
+  "oot/enemies/tailpasaran": {
+    "w": 269,
+    "h": 320,
+    "file": "OoT3D Tailpasaran Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Tailpasaran_Model.png"
+  },
+  "oot/enemies/tektite": {
+    "w": 320,
+    "h": 153,
+    "file": "OoTNS2 Red Tektite Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Red_Tektite_Model.png"
+  },
+  "oot/enemies/wallmaster": {
+    "w": 275,
+    "h": 320,
+    "file": "OoT3D Wallmaster Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Wallmaster_Model.png"
+  },
+  "oot/enemies/white-wolfos": {
+    "w": 320,
+    "h": 237,
+    "file": "OoT3D White Wolfos Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_White_Wolfos_Model.png"
+  },
+  "oot/enemies/wolfos": {
+    "w": 320,
+    "h": 247,
+    "file": "OoTNS2 Wolfos Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Wolfos_Model.png"
+  },
+  "oot/gear/adults-wallet": {
+    "w": 206,
+    "h": 307,
+    "file": "OoTNS2 Adult's Wallet Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Adult%27s_Wallet_Icon.png"
+  },
+  "oot/gear/bomb-bag": {
+    "w": 177,
+    "h": 268,
+    "file": "OoTNS2 Bomb Bag Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Bomb_Bag_Icon.png"
+  },
+  "oot/gear/deku-nut-bag": {
+    "w": 182,
+    "h": 263,
+    "file": "OoTNS2 Deku-Nut Bag Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Deku-Nut_Bag_Icon.png"
+  },
+  "oot/gear/deku-seed-bag": {
+    "w": 277,
+    "h": 258,
+    "file": "OoTNS2 Deku-Seed Bag Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Deku-Seed_Bag_Icon.png"
+  },
+  "oot/gear/deku-stick-bag": {
+    "w": 261,
+    "h": 304,
+    "file": "OoTNS2 Deku-Stick Bag Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Deku-Stick_Bag_Icon.png"
+  },
+  "oot/gear/giants-wallet": {
+    "w": 234,
+    "h": 314,
+    "file": "OoTNS2 Giant's Wallet Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Giant%27s_Wallet_Icon.png"
+  },
+  "oot/gear/gift-of-doubled-magic": {
+    "w": 252,
+    "h": 254,
+    "file": "OoTNS2 Gift of Doubled Magic Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Gift_of_Doubled_Magic_Icon.png"
+  },
+  "oot/gear/gift-of-halved-damage": {
+    "w": 260,
+    "h": 259,
+    "file": "OoTNS2 Gift of Halved Damage Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Gift_of_Halved_Damage_Icon.png"
+  },
+  "oot/gear/gift-of-improved-spin": {
+    "w": 253,
+    "h": 254,
+    "file": "OoTNS2 Gift of Improved Spin Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Gift_of_Improved_Spin_Icon.png"
+  },
+  "oot/gear/golden-gauntlets": {
+    "w": 229,
+    "h": 300,
+    "file": "OoTNS2 Golden Gauntlets Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Golden_Gauntlets_Icon.png"
+  },
+  "oot/gear/golden-scale": {
+    "w": 270,
+    "h": 275,
+    "file": "OoTNS2 Golden Scale Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Golden_Scale_Icon.png"
+  },
+  "oot/gear/goron-bracelet": {
+    "w": 272,
+    "h": 241,
+    "file": "OoTNS2 Goron Bracelet Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Goron_Bracelet_Icon.png"
+  },
+  "oot/gear/goron-tunic": {
+    "w": 289,
+    "h": 320,
+    "file": "OoTNS2 Goron Tunic Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Goron_Tunic_Icon.png"
+  },
+  "oot/gear/heros-clothes": {
+    "w": 289,
+    "h": 320,
+    "file": "OoTNS2 Hero's Clothes Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Hero%27s_Clothes_Icon.png"
+  },
+  "oot/gear/hover-boots": {
+    "w": 276,
+    "h": 264,
+    "file": "OoTNS2 Hover Boots Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Hover_Boots_Icon.png"
+  },
+  "oot/gear/iron-boots": {
+    "w": 253,
+    "h": 263,
+    "file": "OoTNS2 Iron Boots Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Iron_Boots_Icon.png"
+  },
+  "oot/gear/kokiri-tunic": {
+    "w": 286,
+    "h": 320,
+    "file": "OoTNS2 Kokiri Tunic Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Kokiri_Tunic_Icon.png"
+  },
+  "oot/gear/kokiri-wallet": {
+    "w": 198,
+    "h": 295,
+    "file": "OoTNS2 Kokiri Wallet Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Kokiri_Wallet_Icon.png"
+  },
+  "oot/gear/lenses-of-truth": {
+    "w": 189,
+    "h": 113,
+    "file": "OoTNS2 Lenses of Truth Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Lenses_of_Truth_Icon.png"
+  },
+  "oot/gear/quiver": {
+    "w": 280,
+    "h": 320,
+    "file": "OoTNS2 Quiver Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Quiver_Icon.png"
+  },
+  "oot/gear/silver-gauntlets": {
+    "w": 231,
+    "h": 300,
+    "file": "OoTNS2 Silver Gauntlets Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Silver_Gauntlets_Icon.png"
+  },
+  "oot/gear/silver-scale": {
+    "w": 270,
+    "h": 274,
+    "file": "OoTNS2 Silver Scale Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Silver_Scale_Icon.png"
+  },
+  "oot/gear/zora-tunic": {
+    "w": 281,
+    "h": 319,
+    "file": "OoTNS2 Zora Tunic Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Zora_Tunic_Icon.png"
+  },
+  "oot/items/arrows": {
+    "w": 274,
+    "h": 273,
+    "file": "OoTNS2 Arrow Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Arrow_Icon.png"
+  },
+  "oot/items/biggoron-receipt": {
+    "w": 288,
+    "h": 249,
+    "file": "OoTNS2 Biggoron Receipt Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Biggoron_Receipt_Icon.png"
+  },
+  "oot/items/blue-fire": {
+    "w": 221,
+    "h": 317,
+    "file": "OoTNS2 Blue Fire Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Blue_Fire_Icon.png"
+  },
+  "oot/items/blue-potion": {
+    "w": 221,
+    "h": 317,
+    "file": "OoTNS2 Blue Potion Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Blue_Potion_Icon.png"
+  },
+  "oot/items/bottle": {
+    "w": 221,
+    "h": 317,
+    "file": "OoTNS2 Empty Bottle Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Empty_Bottle_Icon.png"
+  },
+  "oot/items/broken-goron-sword": {
+    "w": 225,
+    "h": 296,
+    "file": "OoTNS2 Broken Goron Sword Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Broken_Goron_Sword_Icon.png"
+  },
+  "oot/items/bugs": {
+    "w": 221,
+    "h": 317,
+    "file": "OoTNS2 Bug Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Bug_Icon.png"
+  },
+  "oot/items/bunny-hood": {
+    "w": 196,
+    "h": 272,
+    "file": "OoTNS2 Bunny Hood Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Bunny_Hood_Icon.png"
+  },
+  "oot/items/business-scrub-seed": {
+    "w": 236,
+    "h": 315,
+    "file": "OoTNS2 Business Scrub Seed Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Business_Scrub_Seed_Icon.png"
+  },
+  "oot/items/cojiro": {
+    "w": 234,
+    "h": 314,
+    "file": "OoTNS2 Cojiro Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Cojiro_Icon.png"
+  },
+  "oot/items/deku-seeds": {
+    "w": 320,
+    "h": 258,
+    "file": "OoTNS2 Deku Seed Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Deku_Seed_Icon.png"
+  },
+  "oot/items/dins-fire": {
+    "w": 226,
+    "h": 320,
+    "file": "OoTNS2 Din's Fire Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Din%27s_Fire_Icon.png"
+  },
+  "oot/items/echo-gem": {
+    "w": 314,
+    "h": 310,
+    "file": "OoTNS2 Echo Gem Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Echo_Gem_Icon.png"
+  },
+  "oot/items/eyeball-frog": {
+    "w": 285,
+    "h": 250,
+    "file": "OoTNS2 Eyeball Frog Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Eyeball_Frog_Icon.png"
+  },
+  "oot/items/fairy": {
+    "w": 221,
+    "h": 317,
+    "file": "OoTNS2 Fairy Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Fairy_Icon.png"
+  },
+  "oot/items/fairy-ocarina": {
+    "w": 311,
+    "h": 213,
+    "file": "OoTNS2 Fairy Ocarina Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Fairy_Ocarina_Icon.png"
+  },
+  "oot/items/farores-wind": {
+    "w": 250,
+    "h": 320,
+    "file": "OoTNS2 Farore's Wind Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Farore%27s_Wind_Icon.png"
+  },
+  "oot/items/fire-medallion": {
+    "w": 40,
+    "h": 40,
+    "file": "OoT3D Fire Medallion Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Fire_Medallion_Icon.png"
+  },
+  "oot/items/fish": {
+    "w": 290,
+    "h": 287,
+    "file": "OoTNS2 Fish Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Fish_Icon.png"
+  },
+  "oot/items/forest-medallion": {
+    "w": 40,
+    "h": 40,
+    "file": "OoT3D Forest Medallion Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Forest_Medallion_Icon.png"
+  },
+  "oot/items/gerudo-mask": {
+    "w": 166,
+    "h": 167,
+    "file": "OoTNS2 Gerudo Mask Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Gerudo_Mask_Icon.png"
+  },
+  "oot/items/gerudo-pass": {
+    "w": 133,
+    "h": 307,
+    "file": "OoTNS2 Gerudo Pass Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Gerudo_Pass_Icon.png"
+  },
+  "oot/items/gold-rupee": {
+    "w": 142,
+    "h": 260,
+    "file": "OoTNS2 Gold Rupee Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Gold_Rupee_Icon.png"
+  },
+  "oot/items/goron-mask": {
+    "w": 191,
+    "h": 177,
+    "file": "OoTNS2 Goron Mask Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Goron_Mask_Icon.png"
+  },
+  "oot/items/goron-ruby": {
+    "w": 256,
+    "h": 207,
+    "file": "OoTNS2 Goron Ruby Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Goron_Ruby_Model.png"
+  },
+  "oot/items/green-potion": {
+    "w": 221,
+    "h": 317,
+    "file": "OoTNS2 Green Potion Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Green_Potion_Icon.png"
+  },
+  "oot/items/keaton-mask": {
+    "w": 171,
+    "h": 234,
+    "file": "OoTNS2 Keaton Mask Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Keaton_Mask_Icon.png"
+  },
+  "oot/items/kokiri-emerald": {
+    "w": 274,
+    "h": 190,
+    "file": "OoTNS2 Kokiri Emerald Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Kokiri_Emerald_Model.png"
+  },
+  "oot/items/light-medallion": {
+    "w": 40,
+    "h": 40,
+    "file": "OoT3D Light Medallion Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Light_Medallion_Icon.png"
+  },
+  "oot/items/lon-lon-milk": {
+    "w": 222,
+    "h": 317,
+    "file": "OoTNS2 Lon Lon Milk Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Lon_Lon_Milk_Icon.png"
+  },
+  "oot/items/magic-beans": {
+    "w": 306,
+    "h": 279,
+    "file": "OoTNS2 Magic Beans Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Magic_Beans_Icon.png"
+  },
+  "oot/items/mask-of-truth": {
+    "w": 161,
+    "h": 171,
+    "file": "OoTNS2 Mask of Truth Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Mask_of_Truth_Icon.png"
+  },
+  "oot/items/nayrus-love": {
+    "w": 260,
+    "h": 320,
+    "file": "OoTNS2 Nayru's Love Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Nayru%27s_Love_Icon.png"
+  },
+  "oot/items/ocarina-of-time": {
+    "w": 312,
+    "h": 199,
+    "file": "OoTNS2 Ocarina of Time Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Ocarina_of_Time_Icon.png"
+  },
+  "oot/items/odd-mushroom": {
+    "w": 242,
+    "h": 298,
+    "file": "OoTNS2 Odd Mushroom Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Odd_Mushroom_Icon.png"
+  },
+  "oot/items/odd-poultice": {
+    "w": 320,
+    "h": 219,
+    "file": "OoTNS2 Odd Poultice Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Odd_Poultice_Icon.png"
+  },
+  "oot/items/poachers-saw": {
+    "w": 302,
+    "h": 320,
+    "file": "OoTNS2 Poacher's Saw Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Poacher%27s_Saw_Icon.png"
+  },
+  "oot/items/pocket-cucco": {
+    "w": 235,
+    "h": 314,
+    "file": "OoTNS2 Pocket Cucco Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Pocket_Cucco_Icon.png"
+  },
+  "oot/items/pocket-egg": {
+    "w": 293,
+    "h": 287,
+    "file": "OoTNS2 Pocket Egg Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Pocket_Egg_Icon.png"
+  },
+  "oot/items/prescription": {
+    "w": 310,
+    "h": 296,
+    "file": "OoTNS2 Prescription Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Prescription_Icon.png"
+  },
+  "oot/items/red-potion": {
+    "w": 221,
+    "h": 317,
+    "file": "OoTNS2 Red Potion Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Red_Potion_Icon.png"
+  },
+  "oot/items/rutos-letter": {
+    "w": 221,
+    "h": 317,
+    "file": "OoTNS2 Bottled Letter Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Bottled_Letter_Icon.png"
+  },
+  "oot/items/shadow-medallion": {
+    "w": 40,
+    "h": 40,
+    "file": "OoT3D Shadow Medallion Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Shadow_Medallion_Icon.png"
+  },
+  "oot/items/skull-mask": {
+    "w": 265,
+    "h": 154,
+    "file": "OoTNS2 Skull Mask Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Skull_Mask_Icon.png"
+  },
+  "oot/items/specialty-eye-drops": {
+    "w": 267,
+    "h": 320,
+    "file": "OoTNS2 Specialty Eye Drops Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Specialty_Eye_Drops_Icon.png"
+  },
+  "oot/items/spirit-medallion": {
+    "w": 40,
+    "h": 40,
+    "file": "OoT3D Spirit Medallion Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Spirit_Medallion_Icon.png"
+  },
+  "oot/items/spooky-mask": {
+    "w": 142,
+    "h": 167,
+    "file": "OoTNS2 Spooky Mask Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Spooky_Mask_Icon.png"
+  },
+  "oot/items/wake-up-cucco": {
+    "w": 234,
+    "h": 314,
+    "file": "OoTNS2 Wake-Up Cucco Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Wake-Up_Cucco_Icon.png"
+  },
+  "oot/items/water-medallion": {
+    "w": 40,
+    "h": 40,
+    "file": "OoT3D Water Medallion Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Water_Medallion_Icon.png"
+  },
+  "oot/items/weird-egg": {
+    "w": 293,
+    "h": 287,
+    "file": "OoTNS2 Weird Egg Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Weird_Egg_Icon.png"
+  },
+  "oot/items/zeldas-letter": {
+    "w": 304,
+    "h": 267,
+    "file": "OoTNS2 Zelda's Letter Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Zelda%27s_Letter_Icon.png"
+  },
+  "oot/items/zora-mask": {
+    "w": 270,
+    "h": 160,
+    "file": "OoTNS2 Zora Mask Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Zora_Mask_Icon.png"
+  },
+  "oot/items/zora-sapphire": {
+    "w": 261,
+    "h": 225,
+    "file": "OoTNS2 Zora Sapphire Model.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Zora_Sapphire_Model.png"
+  },
+  "oot/weapons/biggoron-sword": {
+    "w": 123,
+    "h": 320,
+    "file": "OoTNS2 Biggoron Sword Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Biggoron_Sword_Icon.png"
+  },
+  "oot/weapons/bombchus": {
+    "w": 320,
+    "h": 235,
+    "file": "OoTNS2 Bombchu Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Bombchu_Icon.png"
+  },
+  "oot/weapons/bombs": {
+    "w": 247,
+    "h": 264,
+    "file": "OoTNS2 Bomb Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Bomb_Icon.png"
+  },
+  "oot/weapons/boomerang": {
+    "w": 155,
+    "h": 314,
+    "file": "OoTNS2 Boomerang Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Boomerang_Icon.png"
+  },
+  "oot/weapons/deku-nut": {
+    "w": 277,
+    "h": 238,
+    "file": "OoTNS2 Deku Nut Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Deku_Nut_Icon.png"
+  },
+  "oot/weapons/deku-shield": {
+    "w": 248,
+    "h": 269,
+    "file": "OoTNS2 Deku Shield Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Deku_Shield_Icon.png"
+  },
+  "oot/weapons/deku-stick": {
+    "w": 169,
+    "h": 320,
+    "file": "OoTNS2 Deku Stick Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Deku_Stick_Icon.png"
+  },
+  "oot/weapons/fairy-bow": {
+    "w": 316,
+    "h": 320,
+    "file": "OoTNS2 Fairy Bow Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Fairy_Bow_Icon.png"
+  },
+  "oot/weapons/fairy-slingshot": {
+    "w": 266,
+    "h": 320,
+    "file": "OoTNS2 Fairy Slingshot Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Fairy_Slingshot_Icon.png"
+  },
+  "oot/weapons/fire-arrows": {
+    "w": 267,
+    "h": 276,
+    "file": "OoTNS2 Fire Arrow Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Fire_Arrow_Icon.png"
+  },
+  "oot/weapons/giants-knife": {
+    "w": 123,
+    "h": 320,
+    "file": "OoTNS2 Giant's Knife Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Giant%27s_Knife_Icon.png"
+  },
+  "oot/weapons/hookshot": {
+    "w": 285,
+    "h": 284,
+    "file": "OoTNS2 Hookshot Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Hookshot_Icon.png"
+  },
+  "oot/weapons/hylian-shield": {
+    "w": 260,
+    "h": 320,
+    "file": "OoTNS2 Hylian Shield Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Hylian_Shield_Icon.png"
+  },
+  "oot/weapons/ice-arrows": {
+    "w": 272,
+    "h": 277,
+    "file": "OoTNS2 Ice Arrow Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Ice_Arrow_Icon.png"
+  },
+  "oot/weapons/kokiri-sword": {
+    "w": 132,
+    "h": 320,
+    "file": "OoTNS2 Kokiri Sword Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Kokiri_Sword_Icon.png"
+  },
+  "oot/weapons/light-arrows": {
+    "w": 285,
+    "h": 283,
+    "file": "OoTNS2 Light Arrow Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Light_Arrow_Icon.png"
+  },
+  "oot/weapons/longshot": {
+    "w": 319,
+    "h": 320,
+    "file": "OoTNS2 Longshot Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Longshot_Icon.png"
+  },
+  "oot/weapons/master-sword": {
+    "w": 123,
+    "h": 320,
+    "file": "OoTNS2 Master Sword Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Master_Sword_Icon.png"
+  },
+  "oot/weapons/megaton-hammer": {
+    "w": 229,
+    "h": 320,
+    "file": "OoTNS2 Megaton Hammer Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Megaton_Hammer_Icon.png"
+  },
+  "oot/weapons/mirror-shield": {
+    "w": 237,
+    "h": 319,
+    "file": "OoTNS2 Mirror Shield Icon.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Mirror_Shield_Icon.png"
+  }
+}

@@ -14,6 +14,15 @@ export function localizedHref(locale: Locale, path: string): string {
 }
 
 /**
+ * Link inside the guide. Single-game site: the game has no URL segment, so
+ * `gameHref('en', 'oot', '/arsenal/')` → `/en/arsenal/` (base included).
+ * `game` stays in the signature so engine components read unchanged.
+ */
+export function gameHref(locale: Locale, _game: string, path: string): string {
+  return localizedHref(locale, path.startsWith('/') ? path : `/${path}`);
+}
+
+/**
  * Given the current URL pathname (already base-stripped or not — pass
  * `Astro.url.pathname` directly), returns the equivalent path in `locale`.
  * Route segments are always English regardless of locale (see SiteHeader),
@@ -23,6 +32,10 @@ export function swapLocaleHref(targetLocale: Locale, pathname: string): string {
   const base = withBase('/').slice(0, -1); // '' at root deploys, '/repo' under a subpath
   let routePath = pathname;
   if (base && routePath.startsWith(base)) routePath = routePath.slice(base.length);
-  const unprefixed = routePath.startsWith('/en/') ? routePath.slice(3) : routePath === '/en' ? '/' : routePath;
+  const unprefixed = routePath.startsWith('/en/')
+    ? routePath.slice(3)
+    : routePath === '/en'
+      ? '/'
+      : routePath;
   return localizedHref(targetLocale, unprefixed || '/');
 }

@@ -1,0 +1,102 @@
+[
+  {
+    "collection": "weapons",
+    "id": "kokiri-sword",
+    "file": "OoTNS2 Kokiri Sword Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "master-sword",
+    "file": "OoTNS2 Master Sword Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "giants-knife",
+    "file": "OoTNS2 Giant's Knife Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "biggoron-sword",
+    "file": "OoTNS2 Biggoron Sword Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "deku-shield",
+    "file": "OoTNS2 Deku Shield Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "hylian-shield",
+    "file": "OoTNS2 Hylian Shield Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "mirror-shield",
+    "file": "OoTNS2 Mirror Shield Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "deku-stick",
+    "file": "OoTNS2 Deku Stick Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "deku-nut",
+    "file": "OoTNS2 Deku Nut Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "fairy-slingshot",
+    "file": "OoTNS2 Fairy Slingshot Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "boomerang",
+    "file": "OoTNS2 Boomerang Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "fairy-bow",
+    "file": "OoTNS2 Fairy Bow Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "hookshot",
+    "file": "OoTNS2 Hookshot Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "longshot",
+    "file": "OoTNS2 Longshot Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "megaton-hammer",
+    "file": "OoTNS2 Megaton Hammer Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "bombs",
+    "file": "OoTNS2 Bomb Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "bombchus",
+    "file": "OoTNS2 Bombchu Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "fire-arrows",
+    "file": "OoTNS2 Fire Arrow Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "ice-arrows",
+    "file": "OoTNS2 Ice Arrow Icon.png"
+  },
+  {
+    "collection": "weapons",
+    "id": "light-arrows",
+    "file": "OoTNS2 Light Arrow Icon.png"
+  }
+]
