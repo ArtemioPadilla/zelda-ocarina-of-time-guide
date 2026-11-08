@@ -49,14 +49,14 @@ describe('BottomTabBar', () => {
 
   it('the chapter tab jumps straight to the current chapter once one is set', async () => {
     const { currentChapterStore } = await import('@/stores/checklist');
-    currentChapterStore('oot').set('the-rescue');
+    currentChapterStore('oot').set('deku-tree');
     const { default: BottomTabBar } = await import('./BottomTabBar');
     render(
       <BottomTabBar tabs={tabs} game="oot" chaptersHref="/chapters/" ariaLabel="Quick access" />,
     );
     expect(screen.getByRole('link', { name: 'Chapter' })).toHaveAttribute(
       'href',
-      '/chapters/the-rescue/',
+      '/chapters/deku-tree/',
     );
   });
 

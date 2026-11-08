@@ -28,7 +28,7 @@ describe('SetCurrentChapterButton', () => {
     render(
       <SetCurrentChapterButton
         game="oot"
-        chapterId="the-rescue"
+        chapterId="deku-tree"
         label="Mark as current"
         currentLabel="Current"
       />,
@@ -42,7 +42,7 @@ describe('SetCurrentChapterButton', () => {
     render(
       <SetCurrentChapterButton
         game="oot"
-        chapterId="the-rescue"
+        chapterId="deku-tree"
         label="Mark as current"
         currentLabel="Current"
       />,
@@ -63,7 +63,7 @@ describe('SetCurrentChapterButton', () => {
     render(
       <SetCurrentChapterButton
         game="oot"
-        chapterId="the-rescue"
+        chapterId="deku-tree"
         label="Mark as current"
         currentLabel="Current"
       />,

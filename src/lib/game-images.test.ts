@@ -103,11 +103,11 @@ describe('game images', () => {
   });
 
   it('the checks catch a key that names nothing', () => {
-    expect(orphanReason('oot/weapons/no-such-gun')).not.toBeNull();
+    expect(orphanReason('oot/weapons/no-such-sword')).not.toBeNull();
     expect(orphanReason('oot/collectibles/no-such-type')).not.toBeNull();
-    expect(orphanReason('oot/chapters/the-rescue-99')).not.toBeNull();
+    expect(orphanReason('oot/chapters/deku-tree-99')).not.toBeNull();
     expect(orphanReason('oot/cover/box')).not.toBeNull();
-    expect(orphanReason('oot/lore/johnny')).not.toBeNull();
+    expect(orphanReason('oot/lore/navi')).not.toBeNull();
     expect(orphanReason('re4/cover/cover')).not.toBeNull();
     expect(orphanReason('oot/cover/cover')).toBeNull();
     const weapon = rowIds('oot', 'es', 'weapons.json')[0];
@@ -115,7 +115,7 @@ describe('game images', () => {
   });
 
   it('resolves nothing for a missing picture', () => {
-    expect(gameImage('oot', 'weapons', 'no-such-gun')).toBeUndefined();
+    expect(gameImage('oot', 'weapons', 'no-such-sword')).toBeUndefined();
     expect(gameChapterImages('oot', 'no-such-chapter').size).toBe(0);
   });
 });

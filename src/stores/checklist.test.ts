@@ -29,11 +29,11 @@ describe('checklist store', () => {
     const s = checklistStore('oot-collectibles-done');
     expect(s.$checked.get().size).toBe(0);
 
-    s.toggle('tarot-01');
-    expect(s.$checked.get().has('tarot-01')).toBe(true);
+    s.toggle('sk-001');
+    expect(s.$checked.get().has('sk-001')).toBe(true);
 
-    s.toggle('tarot-01');
-    expect(s.$checked.get().has('tarot-01')).toBe(false);
+    s.toggle('sk-001');
+    expect(s.$checked.get().has('sk-001')).toBe(false);
   });
 
   it('toggle persists the current set to idb-keyval under its own key', async () => {
@@ -66,9 +66,9 @@ describe('checklist store', () => {
     const { checklistStore } = await import('./checklist');
     const a = checklistStore('oot-collectibles-done');
     expect(checklistStore('oot-collectibles-done')).toBe(a);
-    a.toggle('tarot-01');
+    a.toggle('sk-001');
     expect(checklistStore('oot-files-done').$checked.get().size).toBe(0);
-    expect(await get('oot-collectibles-done')).toEqual(['tarot-01']);
+    expect(await get('oot-collectibles-done')).toEqual(['sk-001']);
   });
 
   it('keeps the current chapter under <game>-current-chapter', async () => {
@@ -76,10 +76,10 @@ describe('checklist store', () => {
     const { currentChapterStore } = await import('./checklist');
     const s = currentChapterStore('oot');
     expect(s.$current.get()).toBeNull();
-    s.set('the-rescue');
-    expect(s.$current.get()).toBe('the-rescue');
+    s.set('deku-tree');
+    expect(s.$current.get()).toBe('deku-tree');
     expect(currentChapterStore('oot')).toBe(s);
-    expect(await get('oot-current-chapter')).toBe('the-rescue');
+    expect(await get('oot-current-chapter')).toBe('deku-tree');
     s.reset();
     expect(s.$current.get()).toBeNull();
   });

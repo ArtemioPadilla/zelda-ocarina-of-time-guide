@@ -14,3 +14,5 @@ src/content/games/*/aliases.json
 # Raw research notes written by the research workflows (tables of sources);
 # they are records, not code — never reformat them.
 docs/research/
+# The 3DS guide's content, kept verbatim as a migration source only.
+docs/reference-3ds/

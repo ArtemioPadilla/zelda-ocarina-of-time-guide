@@ -5,6 +5,7 @@ export const DEFAULT_LOCALE: Locale = 'es';
 export const ui = {
   es: {
     'site.name': 'Guía Zelda: Ocarina of Time',
+    'site.shortName': 'Guía OoT',
     'site.description':
       'Guía de The Legend of Zelda: Ocarina of Time para Nintendo Switch 2 (2026): recorrido por mazmorras, las 100 Skulltulas doradas, Piezas de Corazón, canciones, objetos y jefes. Funciona sin internet.',
     'update.title': 'Hay una versión nueva de la guía.',
@@ -40,8 +41,7 @@ export const ui = {
       'El recorrido completo en orden de juego: zonas, mazmorras, enemigos, cada objeto y coleccionable donde aparece, y los jefes paso a paso.',
     'game.chapterLink': 'Etapa',
     'game.inChapterTitle': 'En esta etapa',
-    'game.inChapterNote':
-      'Márcalos al recogerlos: es el mismo progreso que en Coleccionables.',
+    'game.inChapterNote': 'Márcalos al recogerlos: es el mismo progreso que en Coleccionables.',
     'game.missable': 'perdible',
     'game.missableTitle': 'Perdibles: no te vayas sin ellos',
     'game.collectiblesNote':
@@ -201,11 +201,11 @@ export const ui = {
     'a11y.skipToContent': 'Saltar al contenido',
     'a11y.errorBoundaryMessage': 'Algo falló en esta sección.',
     'a11y.errorBoundaryReport': 'Reportar en GitHub',
-    'footer.notice':
-      'Obra de fans no oficial, no aprobada ni respaldada por Nintendo.',
+    'footer.notice': 'Obra de fans no oficial, no aprobada ni respaldada por Nintendo.',
   },
   en: {
     'site.name': 'Zelda: Ocarina of Time Guide',
+    'site.shortName': 'OoT Guide',
     'site.description':
       'The Legend of Zelda: Ocarina of Time guide for Nintendo Switch 2 (2026): dungeon walkthrough, all 100 Gold Skulltulas, Pieces of Heart, songs, items and bosses. Works offline.',
     'update.title': 'A new version of the guide is ready.',
@@ -248,8 +248,7 @@ export const ui = {
     'game.collectiblesNote':
       'One checkbox per piece, grouped by type and in play order, with the exact spot. What you tick here shows as ticked in each walkthrough step.',
     'game.reward': 'Reward',
-    'game.arsenalNote':
-      'Swords, shields and weapons: where to get each one and what it is for.',
+    'game.arsenalNote': 'Swords, shields and weapons: where to get each one and what it is for.',
     'game.shopTitle': 'What to buy and when',
     'game.shopNote': 'in play order',
     'game.gearTitle': 'Tunics, boots and accessories',
@@ -403,8 +402,7 @@ export const ui = {
     'a11y.skipToContent': 'Skip to content',
     'a11y.errorBoundaryMessage': 'Something went wrong in this section.',
     'a11y.errorBoundaryReport': 'Report on GitHub',
-    'footer.notice':
-      'Unofficial fan work, not approved or endorsed by Nintendo.',
+    'footer.notice': 'Unofficial fan work, not approved or endorsed by Nintendo.',
   },
 } as const;
 

@@ -9,7 +9,7 @@ const index = [
     t: 'El rescate',
     s: 'misión · P2',
     k: 'chapter',
-    h: '/chapters/the-rescue/',
+    h: '/chapters/deku-tree/',
     x: 'The Rescue',
   },
   { t: 'Sandra Dorsett', s: 'personaje', k: 'character', h: '/characters/sandra-dorsett/' },

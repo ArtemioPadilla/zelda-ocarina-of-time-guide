@@ -61,7 +61,7 @@ export default defineConfig({
         id: SCOPE,
         // `id`/`scope`/`start_url` follow BASE.
         name: 'Guía Zelda: Ocarina of Time',
-        short_name: 'CP2077 Guía',
+        short_name: 'OoT Guía',
         description:
           'Guía de The Legend of Zelda: Ocarina of Time para Nintendo Switch 2 (2026): recorrido por mazmorras, las 100 Skulltulas doradas, Piezas de Corazón, canciones, objetos y jefes. Funciona sin internet. Obra de fans no oficial, no aprobada ni respaldada por Nintendo.',
         lang: 'es',

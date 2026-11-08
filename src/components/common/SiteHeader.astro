@@ -28,7 +28,8 @@ const switchHref = swapLocaleHref(otherLocale, Astro.url.pathname);
       class="flex items-center gap-2.5 whitespace-nowrap font-display text-lg font-bold tracking-tight text-foreground"
     >
       <span class="brand-mark" aria-hidden="true"></span>
-      {t('site.name')}
+      <span class="sm:hidden">{t('site.shortName')}</span>
+      <span class="hidden sm:inline">{t('site.name')}</span>
     </a>
     <div class="ml-auto flex items-center gap-2">
       <SearchBox

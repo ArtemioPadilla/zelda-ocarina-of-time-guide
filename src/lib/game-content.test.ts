@@ -29,6 +29,13 @@ const DATA_FIELDS = new Set([
   'recommended',
   'section',
   'see',
+  // Collectible map pins (content.config.ts): same pin in both locales.
+  'number',
+  'zoneKey',
+  'hub',
+  'x',
+  'y',
+  'floor',
 ]);
 
 // Published games only: a draft is still being written (games.ts `status`).
@@ -144,7 +151,8 @@ describe.each(games)('engine game %s', (game) => {
     const collectibles = rows('collectibles.json');
     for (const c of collectibles) {
       expect(kindIds, `${c.id} type`).toContain(c.type);
-      expect(chapterIds, `${c.id} chapter`).toContain(c.chapter);
+      // `chapter` is optional (a pickup available at any time has none).
+      if (c.chapter !== undefined) expect(chapterIds, `${c.id} chapter`).toContain(c.chapter);
     }
     for (const k of kinds) {
       if (typeof k.total !== 'number') continue;

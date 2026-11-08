@@ -36,3 +36,33 @@ export const GAME_PILL_STYLE: Record<string, string> = {
   info: 'text-muted-foreground border-border',
   missable: 'text-destructive border-destructive/40',
 };
+
+/**
+ * Collectible rows in checklist groups: one group per chapter (play order)
+ * for rows that name one, then one per `area` (first appearance) for rows
+ * that can be picked up at any time. `byArea` groups every row by area
+ * (a type with a map lists its pieces zone by zone, like the map).
+ */
+export function collectibleGroups<R extends { data: { chapter?: string; area: string } }>(
+  rows: R[],
+  chapterLabel: (slug: string) => string,
+  chapterOrder: (slug: string) => number,
+  byArea = false,
+): { title: string; chapter?: string; rows: R[] }[] {
+  const groups = new Map<string, { title: string; chapter?: string; rows: R[] }>();
+  for (const r of rows) {
+    const chapter = byArea ? undefined : r.data.chapter;
+    const key = chapter ? `c:${chapter}` : `a:${r.data.area}`;
+    let g = groups.get(key);
+    if (!g) {
+      g = { title: chapter ? chapterLabel(chapter) : r.data.area, chapter, rows: [] };
+      groups.set(key, g);
+    }
+    g.rows.push(r);
+  }
+  const all = [...groups.values()];
+  const inChapters = all
+    .filter((g) => g.chapter)
+    .sort((a, b) => chapterOrder(a.chapter!) - chapterOrder(b.chapter!));
+  return [...inChapters, ...all.filter((g) => !g.chapter)];
+}

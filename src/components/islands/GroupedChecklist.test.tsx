@@ -19,13 +19,13 @@ vi.mock('idb-keyval', () => ({
 
 const groups = [
   {
-    title: 'Prólogo',
+    title: 'Niño',
     items: [
-      { id: 'alert-order', title: 'Orden de alerta', tag: 'Alert Order', detail: 'Watson' },
+      { id: 'kokiri-sword', title: 'Espada Kokiri', tag: 'Kokiri Sword', detail: 'Bosque Kokiri' },
       { id: 'chiefs-note', title: 'Nota del jefe' },
     ],
   },
-  { title: 'Acto 1', items: [{ id: 'two-routes', title: 'Dos rutas' }] },
+  { title: 'Adulto', items: [{ id: 'two-routes', title: 'Dos rutas' }] },
 ];
 
 describe('GroupedChecklist', () => {
@@ -37,8 +37,8 @@ describe('GroupedChecklist', () => {
   it('renders the groups with their own counters and the tag', async () => {
     const { default: GroupedChecklist } = await import('./GroupedChecklist');
     render(<GroupedChecklist store="oot-files-done" groups={groups} progressLabel="Files" />);
-    expect(screen.getByRole('heading', { name: /Prólogo/ })).toHaveTextContent('0/2');
-    expect(screen.getByText('Alert Order')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Niño/ })).toHaveTextContent('0/2');
+    expect(screen.getByText('Kokiri Sword')).toBeInTheDocument();
   });
 
   it('writes to the named store and updates the progress', async () => {

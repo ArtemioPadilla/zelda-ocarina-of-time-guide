@@ -1,6 +1,6 @@
 name: Corrección de contenido
 description: Un dato del juego (skulltula, corazón, canción, mazmorra…) está mal o incompleto
-labels: ["content"]
+labels: ['content']
 body:
   - type: markdown
     attributes:

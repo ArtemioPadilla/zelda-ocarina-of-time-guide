@@ -110,11 +110,13 @@ const gameMetaShape = {
 };
 
 // One row per pickup (the tracker's checkbox): `type` is a meta collectible
-// id, `chapter` a chapter id.
+// id, `chapter` a chapter id when the pickup belongs to one walkthrough step
+// (many OoT collectibles can be picked up at any time: those leave it out
+// and are grouped by `area`, the localized zone name).
 const gameCollectibleShape = {
   type: z.string(),
   name: z.string(),
-  chapter: z.string(),
+  chapter: z.string().optional(),
   area: z.string(),
   location: z.string(),
   how: z.string().optional(),
@@ -122,6 +124,18 @@ const gameCollectibleShape = {
   missableNote: z.string().optional(),
   value: z.number().optional(),
   note: z.string().optional(),
+  // Map pin (the Gold Skulltula map, src/lib/skulltula-map-layout.ts): the
+  // zone's map by its untranslated key ("Inside the Deku Tree"), the hub it
+  // is listed under ("kokiri"), the pin's position in % of that zone's
+  // picture, the floor tab for multi-floor dungeons ("b1") and the piece's
+  // number on the pin. A type whose pieces carry `zoneKey`/`x`/`y` gets the
+  // List/Map toggle on its page.
+  number: z.number().int().positive().optional(),
+  zoneKey: z.string().optional(),
+  hub: z.string().optional(),
+  x: z.number().min(0).max(100).optional(),
+  y: z.number().min(0).max(100).optional(),
+  floor: z.string().optional(),
 };
 
 const levelRow = z.object({ v: z.string(), p: z.number().optional() });
