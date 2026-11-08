@@ -1,0 +1,8 @@
+[
+  {"id": "child", "kind": "part", "label": "Niño", "note": "Link niño: el Bosque Kokiri, las tres Piedras Espirituales y la Espada Maestra."},
+  {"id": "adult", "kind": "part", "label": "Adulto", "note": "Siete años después: los cinco templos y los Sabios."},
+  {"id": "end", "kind": "part", "label": "Final", "note": "El Castillo de Ganon y el final."},
+  {"id": "skulltula", "kind": "collectible", "label": "Skulltulas doradas", "total": 100, "reward": "En la Casa de las Skulltulas de Kakariko: 10 = Billetera de adulto · 20 = Piedra de la Agonía · 30 = Billetera gigante · 40 = Bombchus · 50 = Pieza de Corazón · 100 = rupias infinitas.", "note": "Ubicaciones de la versión 3DS, pendientes de confirmar en el remake. Muchas solo salen de noche; usa el mapa de cada zona."},
+  {"id": "heart-piece", "kind": "collectible", "label": "Piezas de Corazón", "total": 36, "reward": "Cada cuatro piezas suman un contenedor de corazón.", "note": "Lista de la versión 3DS, pendiente de confirmar en el remake."},
+  {"id": "heart-container", "kind": "collectible", "label": "Contenedores de Corazón", "total": 8, "note": "Uno por cada jefe de mazmorra."}
+]

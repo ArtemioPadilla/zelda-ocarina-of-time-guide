@@ -1,93 +1,181 @@
-# OoT Guía — agent context
+# Guía Zelda: Ocarina of Time — agent context
 
-Sibling project to [resident-evil-4-guide](https://github.com/ArtemioPadilla/resident-evil-4-guide),
-built by hand to match its architecture — Astro (static output) + React
-islands + Nano Stores/idb-keyval trackers + Tailwind v4 + `@vite-pwa/astro`,
-full es/en i18n via `src/i18n/ui.ts` — with a distinct visual identity,
-content schema, and dataset for a different game. The Inceptor generator
-(`create-inceptor-app`, https://github.com/ArtemioPadilla/inceptor) that
-originally bootstrapped the RE4 repo was inspected but not re-run here: its
-current template ships a much heavier "full" archetype (MDX, Playwright,
-ESLint, base-ui, pagefind…) than the lean scaffold RE4 actually ended up
-with after its own dependency audit, so this repo was hand-assembled to
-match RE4's *already-trimmed* result directly instead of re-deriving it
-through the generator and re-trimming again.
+An offline-first, bilingual (Spanish default at `/`, English under `/en/`)
+fan companion guide for **The Legend of Zelda: Ocarina of Time — the
+Nintendo Switch 2 remake (2026)**. It is meant to stay open next to the
+game: walkthrough step by step, collectibles with checklists (the 100 Gold
+Skulltulas with an interactive per-zone map, Pieces of Heart, Heart
+Containers), equipment, bosses, songs, items, FAQ.
 
-## Target version & scope
+Deployed to GitHub Pages at <https://artemiop.com/zelda-ocarina-of-time-guide/>
+(`.github/workflows/deploy.yml`, `ASTRO_BASE` defaults to
+`/zelda-ocarina-of-time-guide`; `ci.yml` runs `npm run check` on every
+push/PR). The engine was copied from `cyberpunk-2077-guide` (itself from
+`resident-evil-guide`: Astro 5 + React islands + Nano Stores), single game.
+The previous hand-built 3DS guide lives on in git history and in
+`docs/reference-3ds/`.
 
-This guide targets **Ocarina of Time 3D** (Nintendo 3DS, 2011) as its
-primary reference — the remaster, not the 1998 N64 original — the same way
-the RE4 sibling guide targets the Wii/HD port rather than the 2005 original.
-Where the 3DS version changed something meaningfully (Sheikah Stone hints,
-gyro/touch aiming, the Master Quest option, Boss Challenge mode), this guide
-follows the 3DS behavior; item/song/location names follow the 3DS English
-and Spanish localizations.
+## Target version & status
 
-## Content-collection mapping (RE4 → OoT)
+- Target: the **Switch 2 remake (2026)**. Names, locations and mechanics
+  must hold for the remake; where it changed something from the N64/3DS
+  versions, follow the remake.
+- **Current content is a seed**: `src/content/games/oot/` holds one
+  walkthrough step (`chapters/deku-tree.md`), the collectible types and the
+  100 Skulltulas + 36 Pieces of Heart + 8 Heart Containers, all migrated
+  from the 3DS guide and marked as pending the remake research
+  (`src/content/games/oot/README.md`). The rest (chapters, bosses, items,
+  equipment, cards, characters, maps) comes from the content research.
+- `docs/reference-3ds/{es,en}/` is the old 3DS guide's content (JSON +
+  chapter Markdown), kept verbatim as a **migration source only**: never
+  render it, never import it from `src/`, never treat it as correct for the
+  remake without checking. It is excluded from Prettier.
 
-| RE4 collection | OoT collection | Notes |
-|---|---|---|
-| `chapters` | `chapters` | 12 story/dungeon steps: 5 child-era, 5 adult-era, 2 endgame (`act: child\|adult\|end`) |
-| `medallions` (15, primary checklist) | `skulltulas` (100, primary checklist) | Grouped by the same 31 areas every published Skulltula guide uses |
-| `treasures` (combinable/suelto) | `hearts` (piece/container) | 36 Heart Pieces (secondary checklist) + 8 boss Heart Containers |
-| `weapons` | `equipment` | Swords, shields, tunics/boots, magic & key items, bottles, postgame |
-| `bosses` | `bosses` | 8 dungeon bosses + Ganondorf + Ganon |
-| `gems` (table) | `rewards` (table) | The 6 Skulltula House reward tiers (10/20/30/40/50/100) |
-| `survival` | `tips` | Combat, magic/bottle economy, explosives, missables, navigation, money |
-| `buy-order` | `songs` | The 13 ocarina songs (no merchant economy in OoT) |
-| `postgame` | `sidequests` | `route` = the 12-step Biggoron's Sword trading chain; `unlock` = Cucco game, Horseback Archery, Big Poe hunting, Gerudo Training Ground, Great Fairies, Mask of Truth |
+## Architecture
 
-## Design direction
+**Single game, served at the root.** `src/lib/games.ts` registers one game,
+`oot` (`GAME_ID`), with its titles, tagline, edition (`covers`: «Nintendo
+Switch 2 (remake, 2026)»), accent and `status`. The engine keeps its
+multi-game shape internally — content rows carry a `game`, components take a
+`game` prop — but nothing puts the game in the URL:
 
-Distinct from RE4's amber/leather ledger palette: a Kokiri-forest emerald
-green + Triforce gold + Zora sapphire palette (`src/styles/global.css`,
-`light-dark()` OKLCH tokens, contrast verified computationally — see the
-comments next to each token). Typography swaps Cinzel/Alegreya/Special Elite
-for **Fraunces** (storybook display serif) / **Literata** (warm reading
-serif) / **JetBrains Mono** (clean UI mono). The decorative motif is
-`.spark` — a small pulsing fairy-light glyph (Navi) — replacing RE4's
-`.flame` everywhere the brand mark appears.
+- Routes live directly in `src/pages/` (Spanish) and `src/pages/en/`
+  (English): `/`, `/chapters/`, `/chapters/<id>/`, `/collectibles/`,
+  `/collectibles/<type>/`, `/maps/`, `/arsenal/` (equipment),
+  `/arsenal/<id>/`, `/arsenal/gear/<id>/`, `/bosses/[<id>/]`,
+  `/enemies/[<id>/]`, `/items/[<id>/]`, `/files/`, `/achievements/`,
+  `/guide/`, `/extras/`, `/characters/[<id>/]`, plus `search-index.json`,
+  `offline-images.json` and `llms.txt`. Each page file is a two-liner that
+  renders a `src/components/game/Game*Page.astro` with `game={GAME_ID}`;
+  dynamic ones get their `getStaticPaths` from `src/lib/game-content.ts`.
+- `gameHref(locale, game, path)` (`src/i18n/utils.ts`) returns the root
+  path with locale prefix and deploy base; `pageHref` in
+  `src/lib/entity-links.ts` has the same shape for the remark plugin.
+  Always link through these (or `withBase`/`localizedHref`), never a bare
+  string: the site runs under a sub-path.
+- `BaseLayout.astro` builds the header nav from `ENGINE_SECTIONS`
+  (`src/lib/nav.ts`) filtered by `gameSections()` — a section is linked
+  only when the game has rows for it — plus the current-step strip
+  (`GameChapterStrip`) and the mobile tab bar (`BottomTabBar`). Section
+  pages are always generated; an empty one is just not linked. The footer
+  shows the Nintendo fan-work notice and the sources line on every page.
 
-## Content TODO
+**Content** (Zod-validated, `src/content.config.ts`):
+`src/content/games/oot/<es|en>/` holds `meta.json` (parts = chapter groups:
+`child` «Niño», `adult` «Adulto», `end` «Final»; collectible types with
+totals: `skulltula` 100, `heart-piece` 36, `heart-container` 8),
+`collectibles.json`, and, as they get written, `cards.json` (sections:
+`rules`/`lore` on the home, `faq`/`mechanics`/`survival` on `/guide/`,
+`modes`/`dlc`/`unlocks`/`endings`/`secrets` on `/extras/`), `weapons`,
+`gear`, `bosses`, `enemies`, `items`, `files`, `achievements`, `characters`,
+`shop`, `maps` JSON, plus `chapters/*.md` (one Markdown file per walkthrough
+step; front matter `number`, `title`, `part`, `order`, optional `summary`,
+`pills`, `photos`). A missing file is an empty collection. Every JSON file
+ships in both locales with the same ids, order and data fields;
+`src/lib/game-content.test.ts` pins that parity and the cross-references.
+Copy supports blank-line paragraphs, `- ` bullets and `**bold**`
+(`GameText.astro`). A `draft` status in `games.ts` hides all content
+(`PUBLISH_GAMES=oot` previews it, `CHECK_GAMES=oot` tests it).
 
-Closed in a follow-up pass (see PR history / commit log for the exact
-research sources — Zelda Wiki, Zelda Dungeon Wiki, Thonky.com, GameWith):
+**Collectibles.** One row per pickup (`type` = a meta collectible id).
+`chapter` is **optional**: a pickup tied to one walkthrough step names it
+(it then shows on that chapter page); one that can be picked up any time
+leaves it out and is grouped by `area` (the localized zone name). Type
+pages group pieces by base name (`Gold Skulltula #12` →
+`/collectibles/gold-skulltula/`, see `src/lib/game-collectible-types.ts`;
+the slug comes from the English rows). Optional map fields: `number`,
+`zoneKey` (untranslated zone key), `hub` (map hub id), `x`/`y` (% of the
+zone picture), `floor` (dungeon floor tab).
 
-- **Skulltula location text is now token-precise.** All 100 `skulltulas`
-  entries in both locales were rewritten from the original rotating
-  area-level hints to a unique, hand-sourced description per individual
-  token (cross-referenced against Thonky's and GameWith's per-area Gold
-  Skulltula guides). Zone names/order/counts were left untouched — only
-  `location` text changed.
-- **Gerudo Training Ground** stayed out of the `chapters` collection on
-  purpose (that collection is asserted at exactly 12 entries by
-  `shape.test.ts` and documented as "12 story/dungeon steps" — turning it
-  into a 13th chapter would be a structural change beyond this pass, not a
-  content gap). Instead: the `sidequests` unlock row was corrected (it
-  wrongly named the reward "Light Arrows" — verified via Zelda Wiki/GameWith
-  that Gerudo Training Ground's reward is actually the **Ice Arrows**, Light
-  Arrows come from Zelda outside Ganon's Castle) and expanded with a real
-  room-by-room summary; a new `tips` entry ("Gerudo Training Ground, room by
-  room") adds six sourced per-room hints (silver rupee rooms, the Hover
-  Boots quicksand room, the Lens of Truth passage, the underwater room, the
-  Megaton Hammer totem, key order for the final doors).
-- **Fishing Pond, Poe Collection, and the Cucco-in-house Easter egg** now
-  each have their own `sidequests` unlock row: `sq-golden-scale` (adult
-  20+ lb catch → Golden Scale), `sq-poe-collector` (10 Big Poes sold to the
-  Ghost Shop → bonus Bottle), `sq-super-cucco` (Talon's Super Cucco
-  minigame at Lon Lon Ranch → Bottle of Lon Lon Milk). The existing
-  Fishing-Pond Piece of Heart (`hp-17` in `hearts`) was left as-is — it was
-  already tracked, just not the pond's *other* reward.
+**Gold Skulltula map.** When every piece of a type carries a pin
+(`zoneKey`/`x`/`y`), `GameCollectibleTypePage.astro` renders the
+`SkulltulaViewToggle` island (List/Map) instead of the plain
+`GroupedChecklist`: List is the engine's grouped checklist (by zone), Map is
+`SkulltulaMapView` → one `SkulltulaMap` per zone under the 7 hubs. Both
+write `checklistStore('oot-collectibles-done')` with the row ids, so a pin,
+a list row, the Collectibles page and a chapter page are the same tick.
+Zone canvases, floor tabs and the real zone photos
+(`public/images/skulltulas/**`, Zelda Wiki OoT/OoT3D screenshots, each
+attributed under its map) are configured in `src/lib/skulltula-map-layout.ts`;
+`skulltula-map-layout.test.ts` checks pins vs. zones/floors, collisions,
+photo files and the OoT totals. Pins were calibrated for the 3DS layout
+and need a check against the remake. Hub labels are `map.area.*` in
+`src/i18n/ui.ts`.
 
-Still deliberately out of scope:
+**Auto-links.** `src/lib/game-entity-links.ts` builds a dictionary from the
+content plus `src/content/games/oot/aliases.json` (short forms,
+`page:/path/#hash` targets, `skip` for names never to link such as `Link`,
+`protect` phrases). The remark plugin (`remark-entity-links.ts`) links the
+chapter Markdown; `GameText.astro` links copy in pages. After changing the
+dictionary run `rm -rf .astro node_modules/.astro` before judging a build.
 
-- **Master Quest and Boss Challenge mode** (3DS-exclusive extras) are not
-  covered.
-- **Gerudo Training Ground** still doesn't have its own dedicated page (see
-  above for why, and what was done instead within the existing schema).
+**Checklists and state.** Nano Stores + `idb-keyval`, no backend:
+`checklistStore('<game>-<list>-done')` (`oot-collectibles-done`,
+`oot-files-done`, `oot-achievements-done`) and `currentChapterStore('oot')`
+in `src/stores/checklist.ts`. Never rename a key or a content id once
+shipped (a saved run must survive). Islands share state only through Nano
+Stores (never React Context across islands); `useHydratedStore` avoids
+hydration mismatches.
+
+**Search.** `src/lib/game-search-index.ts` builds `/search-index.json` per
+locale (precached); the `SearchBox` island (⌘K / Ctrl+K) lands on pages or
+`#id` anchors — keep the ids when restyling.
+
+**PWA / offline.** `@vite-pwa/astro` precaches every built page, script,
+style, font and the search index. Pictures (`public/img/games/**` and the
+Skulltula map photos `public/images/skulltulas/**`) are not precached: they
+are runtime-cached (`CacheFirst`, cache `oot-images` in
+`src/lib/runtime-cache.ts`) and the offline panel on the home
+(`OfflinePanel.astro` + `OfflineImages`, `/offline-images.json`) downloads
+them ahead of time. Install prompt key `oot-install-dismissed`; manifest
+screenshots in `public/screenshots/`.
+
+**Share cards.** `scripts/og-images.ts` draws one 1200×630 card per page
+after the build (satori + sharp) in the OoT palette with Fraunces /
+Literata / JetBrains Mono — satori needs `.woff`, so the static
+`@fontsource/*` packages are devDependencies next to the variable ones the
+site uses.
+
+**Images.** `npm run images:games` (`scripts/import-game-images.mjs`)
+fetches files from Zelda Wiki's MediaWiki API listed in
+`scripts/wiki-images/oot*.json` (`{ collection, id, file, crop?, caption? }`),
+writes `public/img/games/oot/<collection>/<id>.webp`, the manifest
+`src/data/game-images.json` (empty for now) and
+`public/img/games/SOURCES.md`. A row without a file renders text-only.
+
+**Image licensing.** Game imagery is Nintendo's, used non-commercially: the
+site stays free (no ads, no paywall), never uses Nintendo/Zelda logos as its
+own branding (the Triforce mark in `public/favicon.svg` and `.brand-mark` is
+a simple original drawing), and shows on every page «Obra de fans no
+oficial, no aprobada ni respaldada por Nintendo.» / "Unofficial fan work,
+not approved or endorsed by Nintendo." (`footer.notice`, also in the
+manifest, the share cards and `llms.txt`). A takedown is honoured by
+deleting the file and its manifest row.
+
+**Theme.** Dark-first (inline script in `BaseLayout`, `src/stores/theme.ts` +
+`ThemeToggle`), with a light skin. Tokens are declared once on `:root` with
+`light-dark()` OKLCH values in `src/styles/global.css`: Kokiri emerald
+`--primary`, Triforce gold `--gold`/`--pill-song`/`--pill-med`, Zora
+sapphire `--accent-cyan`/`--pill-dungeon`/`--pill-shop` (engine token names
+kept), Goron ruby `--destructive`, green-teal neutrals. Fonts self-hosted
+via `@fontsource-variable`: **Fraunces** (display), **Literata** (body),
+**JetBrains Mono** (labels). Section glyph = Navi's pulsing spark
+(`.glyph`/`.spark`).
+
+**UI copy** lives in `src/i18n/ui.ts` (es/en; `UiKey` is typed from the
+Spanish block). Labels: chapters = Recorrido/Etapa · Walkthrough/Step,
+arsenal = Equipo/Equipment, files = Notas/Notes. Item type enum values
+`quickhack`/`vehicle` are legacy engine names relabelled Magia/Monturas.
 
 ## Conventions
 
-Same as RE4: Conventional Commits, `npm run check` must pass before any PR,
-never import `@radix-ui/*` / `framer-motion` / `@tremor/react`, Nano Stores
-for cross-island state (never React Context across islands).
+- Conventional Commits (`feat:`, `fix:`, `docs:`, `chore:`…).
+- Never push to `main` directly: branch (`claude/…`, `feat/…`) + PR.
+- Every PR passes `npm run check` (astro check, `tsc --noEmit`, vitest,
+  `prettier --check`, build).
+- Never import `@radix-ui/*`, `framer-motion` or `@tremor/react`
+  (`.claude/checklists/forbidden-imports.json`).
+- Nano Stores for cross-island state, never React Context across islands.
+- Keep es/en in sync in the same PR.
+- Content tables are one row per line (`src/content/games/*/*/*.json` is
+  Prettier-ignored on purpose).

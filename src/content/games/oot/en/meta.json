@@ -1,0 +1,8 @@
+[
+  {"id": "child", "kind": "part", "label": "Child", "note": "Young Link: Kokiri Forest, the three Spiritual Stones and the Master Sword."},
+  {"id": "adult", "kind": "part", "label": "Adult", "note": "Seven years later: the five temples and the Sages."},
+  {"id": "end", "kind": "part", "label": "Ending", "note": "Ganon’s Castle and the ending."},
+  {"id": "skulltula", "kind": "collectible", "label": "Gold Skulltulas", "total": 100, "reward": "At the House of Skulltula in Kakariko: 10 = Adult’s Wallet · 20 = Stone of Agony · 30 = Giant’s Wallet · 40 = Bombchus · 50 = Piece of Heart · 100 = infinite Rupees.", "note": "Locations from the 3DS version, pending confirmation for the remake. Many only come out at night; use each zone’s map."},
+  {"id": "heart-piece", "kind": "collectible", "label": "Pieces of Heart", "total": 36, "reward": "Every four pieces add up to a heart container.", "note": "List from the 3DS version, pending confirmation for the remake."},
+  {"id": "heart-container", "kind": "collectible", "label": "Heart Containers", "total": 8, "note": "One per dungeon boss."}
+]
