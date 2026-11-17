@@ -1,0 +1,11 @@
+[
+  { "collection": "chapters", "id": "side-masks-1", "file": "OoT3D Market.png" },
+  { "collection": "chapters", "id": "side-masks-2", "file": "OoT3D Kakariko Village.png" },
+  { "collection": "chapters", "id": "side-masks-3", "file": "OoT3D Lost Woods.png" },
+  {
+    "collection": "chapters",
+    "id": "side-masks-4",
+    "file": "OoT3D Kakariko Village Graveyard.png"
+  },
+  { "collection": "chapters", "id": "side-masks-5", "file": "OoT Hyrule Field.png" }
+]

@@ -27,6 +27,11 @@ each map.
 | `oot/bosses/phantom-ganon.webp` | [OoTNS2 Phantom Ganon Model.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Phantom_Ganon_Model.png) |
 | `oot/bosses/twinrova.webp` | [OoT3D Twinrova Model.png](https://zeldawiki.wiki/wiki/File:OoT3D_Twinrova_Model.png) |
 | `oot/bosses/volvagia.webp` | [OoTNS2 Volvagia Model.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Volvagia_Model.png) |
+| `oot/chapters/side-masks-1.webp` | [OoT3D Market.png](https://zeldawiki.wiki/wiki/File:OoT3D_Market.png) |
+| `oot/chapters/side-masks-2.webp` | [OoT3D Kakariko Village.png](https://zeldawiki.wiki/wiki/File:OoT3D_Kakariko_Village.png) |
+| `oot/chapters/side-masks-3.webp` | [OoT3D Lost Woods.png](https://zeldawiki.wiki/wiki/File:OoT3D_Lost_Woods.png) |
+| `oot/chapters/side-masks-4.webp` | [OoT3D Kakariko Village Graveyard.png](https://zeldawiki.wiki/wiki/File:OoT3D_Kakariko_Village_Graveyard.png) |
+| `oot/chapters/side-masks-5.webp` | [OoT Hyrule Field.png](https://zeldawiki.wiki/wiki/File:OoT_Hyrule_Field.png) |
 | `oot/characters/biggoron.webp` | [OoT Biggoron Model.png](https://zeldawiki.wiki/wiki/File:OoT_Biggoron_Model.png) |
 | `oot/characters/business-scrub.webp` | [OoT3D Business Scrub Model.png](https://zeldawiki.wiki/wiki/File:OoT3D_Business_Scrub_Model.png) |
 | `oot/characters/composer-brothers.webp` | [OoT3D Sharp the Elder Model.png](https://zeldawiki.wiki/wiki/File:OoT3D_Sharp_the_Elder_Model.png) |

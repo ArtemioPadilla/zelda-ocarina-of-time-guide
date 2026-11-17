@@ -8,6 +8,17 @@ pills:
   - { type: shop, label: 'Tienda de Máscaras Feliz' }
   - { type: collectible, label: 'Máscara de la Verdad' }
   - { type: info, label: 'Remake: detalles por verificar' }
+photos:
+  - id: side-masks-1
+    caption: 'Mercado de Villa Castillo: la Tienda de Máscaras Feliz está en el noreste de la plaza (imagen de Ocarina of Time 3D)'
+  - id: side-masks-2
+    caption: 'Aldea Kakariko: el guardia de la puerta norte compra la Máscara de Keaton (imagen de Ocarina of Time 3D)'
+  - id: side-masks-3
+    caption: 'Bosque Perdido: el Skull Kid compra la Máscara de calavera (imagen de Ocarina of Time 3D)'
+  - id: side-masks-4
+    caption: 'Cementerio de Kakariko: el niño fan de Dampé compra la Máscara espeluznante de día (imagen de Ocarina of Time 3D)'
+  - id: side-masks-5
+    caption: 'Campo de Hyrule: el Hombre que corre compra la Capucha de conejo (imagen del Ocarina of Time original)'
 ---
 
 > **Orden:** de niño, en cuanto le enseñas la Carta de Zelda al guardia de la puerta norte de la Aldea Kakariko. La última venta puede tener que esperar a que tengas las tres Piedras Espirituales.

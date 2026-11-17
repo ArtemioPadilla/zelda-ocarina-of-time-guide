@@ -8,6 +8,17 @@ pills:
   - { type: shop, label: 'Happy Mask Shop' }
   - { type: collectible, label: 'Mask of Truth' }
   - { type: info, label: 'Remake: details to verify' }
+photos:
+  - id: side-masks-1
+    caption: 'Castle Town Market: the Happy Mask Shop is in the north-east of the square (Ocarina of Time 3D picture)'
+  - id: side-masks-2
+    caption: 'Kakariko Village: the guard at the north gate buys the Keaton Mask (Ocarina of Time 3D picture)'
+  - id: side-masks-3
+    caption: 'Lost Woods: the Skull Kid buys the Skull Mask (Ocarina of Time 3D picture)'
+  - id: side-masks-4
+    caption: 'Kakariko Graveyard: Dampé’s young fan buys the Spooky Mask during the day (Ocarina of Time 3D picture)'
+  - id: side-masks-5
+    caption: 'Hyrule Field: the Running Man buys the Bunny Hood (original Ocarina of Time picture)'
 ---
 
 > **Order:** as a child, as soon as you show Zelda’s Letter to the guard at the north gate of Kakariko Village. The last sale may have to wait until you have all three Spiritual Stones.

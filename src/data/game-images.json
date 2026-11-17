@@ -59,6 +59,36 @@
     "file": "OoTNS2 Volvagia Model.png",
     "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Volvagia_Model.png"
   },
+  "oot/chapters/side-masks-1": {
+    "w": 600,
+    "h": 375,
+    "file": "OoT3D Market.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Market.png"
+  },
+  "oot/chapters/side-masks-2": {
+    "w": 600,
+    "h": 375,
+    "file": "OoT3D Kakariko Village.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Kakariko_Village.png"
+  },
+  "oot/chapters/side-masks-3": {
+    "w": 600,
+    "h": 375,
+    "file": "OoT3D Lost Woods.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Lost_Woods.png"
+  },
+  "oot/chapters/side-masks-4": {
+    "w": 600,
+    "h": 375,
+    "file": "OoT3D Kakariko Village Graveyard.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT3D_Kakariko_Village_Graveyard.png"
+  },
+  "oot/chapters/side-masks-5": {
+    "w": 600,
+    "h": 375,
+    "file": "OoT Hyrule Field.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoT_Hyrule_Field.png"
+  },
   "oot/characters/biggoron": {
     "w": 320,
     "h": 231,
