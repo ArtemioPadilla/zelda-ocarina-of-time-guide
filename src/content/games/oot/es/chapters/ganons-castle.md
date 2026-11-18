@@ -8,7 +8,7 @@ pills:
   - { type: boss, label: 'Ganondorf' }
   - { type: info, label: 'Flechas de Luz y Guanteletes de Oro' }
   - { type: collectible, label: 'Skulltula dorada nº 98' }
-  - { type: save, label: 'Termina el 100 % antes: no hay New Game+' }
+  - { type: save, label: 'Guarda ante la puerta de lo alto de la torre' }
   - { type: info, label: 'Remake: detalles por verificar' }
 ---
 
@@ -22,7 +22,7 @@ En el Templo del Tiempo, Sheik se revela como la **princesa Zelda**. Te cuenta q
 
 ## Antes de cruzar: cierra lo pendiente
 
-El remake **no tiene New Game+, ni Modo Héroe ni Master Quest**, y solo hay una partida manual por usuario de la consola más varios autoguardados. Si quieres el 100 %, hazlo ahora y no sobrescribas tu partida manual con una posterior al final:
+El remake **no tiene New Game+, ni Modo Héroe ni Master Quest**. El punto de no retorno es la **puerta del jefe en lo alto de la torre**: hasta ahí puedes salir del castillo, y tras los créditos el juego te devuelve justo delante de ella, así que nada se pierde. Aun así, es más cómodo cerrar ahora lo que te falte:
 
 - **Las 100 Skulltulas** (la recompensa de 100 es una Rupia de Oro de 200, repetible) y las **36 Piezas de Corazón**. El mapa del remake marca qué falta en cada zona y el Echo Gem parpadea cerca de las Skulltulas.
 - **La cadena de intercambio de Biggoron**, los **Big Poe** (5 te dan una botella y los 10, una Rupia de Oro), las **Grandes Hadas** y las **Flechas de Hielo** del Campo de Entrenamiento Gerudo.
