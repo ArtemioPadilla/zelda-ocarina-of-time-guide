@@ -27,6 +27,11 @@ each map.
 | `oot/bosses/phantom-ganon.webp` | [OoTNS2 Phantom Ganon Model.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Phantom_Ganon_Model.png) |
 | `oot/bosses/twinrova.webp` | [OoT3D Twinrova Model.png](https://zeldawiki.wiki/wiki/File:OoT3D_Twinrova_Model.png) |
 | `oot/bosses/volvagia.webp` | [OoTNS2 Volvagia Model.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Volvagia_Model.png) |
+| `oot/chapters/shadow-temple-1.webp` | [OoTNS2 Kakariko Village Burning.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Kakariko_Village_Burning.png) |
+| `oot/chapters/shadow-temple-2.webp` | [OoTNS2 Kakariko Windmill Interior.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Kakariko_Windmill_Interior.png) |
+| `oot/chapters/shadow-temple-3.webp` | [OoTNS2 Bottom of the Well.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Bottom_of_the_Well.png) |
+| `oot/chapters/shadow-temple-4.webp` | [OoTNS2 Shadow Temple Ship.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Shadow_Temple_Ship.png) |
+| `oot/chapters/side-masks-1.webp` | [OoTNS2 Happy Mask Shop Interior.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Happy_Mask_Shop_Interior.png) |
 | `oot/characters/biggoron.webp` | [OoT Biggoron Model.png](https://zeldawiki.wiki/wiki/File:OoT_Biggoron_Model.png) |
 | `oot/characters/business-scrub.webp` | [OoT3D Business Scrub Model.png](https://zeldawiki.wiki/wiki/File:OoT3D_Business_Scrub_Model.png) |
 | `oot/characters/composer-brothers.webp` | [OoT3D Sharp the Elder Model.png](https://zeldawiki.wiki/wiki/File:OoT3D_Sharp_the_Elder_Model.png) |

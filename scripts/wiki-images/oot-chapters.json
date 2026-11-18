@@ -1,0 +1,15 @@
+[
+  { "collection": "chapters", "id": "side-masks-1", "file": "OoTNS2 Happy Mask Shop Interior.png" },
+  {
+    "collection": "chapters",
+    "id": "shadow-temple-1",
+    "file": "OoTNS2 Kakariko Village Burning.png"
+  },
+  {
+    "collection": "chapters",
+    "id": "shadow-temple-2",
+    "file": "OoTNS2 Kakariko Windmill Interior.png"
+  },
+  { "collection": "chapters", "id": "shadow-temple-3", "file": "OoTNS2 Bottom of the Well.png" },
+  { "collection": "chapters", "id": "shadow-temple-4", "file": "OoTNS2 Shadow Temple Ship.png" }
+]

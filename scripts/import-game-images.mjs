@@ -191,7 +191,7 @@ for (const key of Object.keys(index)) {
 }
 const sorted = Object.fromEntries(Object.entries(index).sort(([a], [b]) => a.localeCompare(b)));
 await mkdir(dirname(manifestPath), { recursive: true });
-await writeFile(manifestPath, JSON.stringify(sorted, null, 1) + '\n');
+await writeFile(manifestPath, JSON.stringify(sorted, null, 2) + '\n');
 
 // Provenance.
 const rows = Object.entries(sorted).map(([k, v]) => `| \`${k}.webp\` | [${v.file}](${v.source}) |`);

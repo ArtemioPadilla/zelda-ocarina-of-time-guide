@@ -12,6 +12,17 @@ pills:
   - { type: collectible, label: 'Piezas de Corazón nº 4, 14 y 26' }
   - { type: collectible, label: 'Contenedor de Corazón nº 7' }
   - { type: info, label: 'Remake: detalles por verificar' }
+photos:
+  - {
+      id: 'shadow-temple-1',
+      caption: 'La Aldea Kakariko en llamas al volver de adulto',
+    }
+  - {
+      id: 'shadow-temple-2',
+      caption: 'Dentro del molino de Kakariko, donde Guru-Guru te enseña la Canción de la Tormenta',
+    }
+  - { id: 'shadow-temple-3', caption: 'El Fondo del Pozo en el remake' }
+  - { id: 'shadow-temple-4', caption: 'La barca del Templo de las Sombras' }
 ---
 
 Al volver a la Aldea Kakariko de adulto la encuentras en llamas: algo invisible escapa del pozo y arrasa la aldea. Sheik lo contiene y te cuenta que Impa fue a sellarlo al Templo de las Sombras (Shadow Temple). Para entrar ahí necesitas ver lo invisible, y eso significa volver a ser niño un rato.
@@ -21,6 +32,12 @@ Al volver a la Aldea Kakariko de adulto la encuentras en llamas: algo invisible 
 ## Nocturno de las Sombras
 
 Tras la escena, Sheik te enseña el **Nocturno de las Sombras** (Y A A L Y A R), que te teletransporta a lo alto del cementerio, frente a la entrada del templo. Todavía no entres: sin los Lentes no puedes avanzar.
+
+## Antes de bajar al pozo
+
+- **Canción de la Tormenta:** te la enseña Guru-Guru en el molino de Kakariko, **de adulto**. Apréndela antes de volver a ser niño.
+- **Medidor de Magia:** los Lentes gastan magia todo el rato que los llevas puestos; sin barra de magia no te sirven de nada. Te lo da una Gran Hada (mira el Medidor de Magia en Equipo).
+- **Bumerán:** de niño, para traer las fichas de las tres Skulltulas del pozo.
 
 ## Fondo del Pozo (de niño)
 
@@ -62,6 +79,16 @@ Caes sobre un tambor gigante que Bongo Bongo golpea con dos manos. Ponte los Len
 3. Cae al tambor: corre y dale todos los espadazos que puedas. Repite.
 
 Los golpes del tambor te hacen rebotar; las Botas de Aire reducen el rebote. No te quedes junto al borde cuando una mano se cierra en puño. Al ganar, pulsa A para recoger el **Contenedor de Corazón nº 7**. Impa despierta como Sabia de las Sombras y te da el **Medallón de las Sombras**.
+
+## Dónde vuelves a usar los Lentes
+
+- **Juego del cofre del tesoro** (Villa Castillo, de niño y de noche): ves qué cofre lleva la llave. Pieza de Corazón nº 4.
+- **Templo de las Sombras** (adulto): obligatorios en casi todas las salas y contra Bongo Bongo.
+- **Desierto Embrujado** (adulto): pasado el edificio de piedra, el Poe guía solo se ve con ellos (etapa «Valle Gerudo, el desierto y el Templo del Espíritu»).
+- **Campo de Entrenamiento Gerudo** (adulto): una celda tiene un techo falso que esconde el paso a un cofre aislado.
+- **Castillo de Ganon** (adulto): plataformas invisibles en la prueba de las Sombras y cosas ocultas en la de la Luz.
+
+Antes de una zona con muchos invisibles, rellena la magia y lleva un hada en un frasco.
 
 ## Después del templo
 

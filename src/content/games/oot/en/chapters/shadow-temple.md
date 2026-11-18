@@ -12,6 +12,17 @@ pills:
   - { type: collectible, label: 'Pieces of Heart #4, #14 and #26' }
   - { type: collectible, label: 'Heart Container #7' }
   - { type: info, label: 'Remake: details to be verified' }
+photos:
+  - {
+      id: 'shadow-temple-1',
+      caption: 'Kakariko Village in flames when you return as an adult',
+    }
+  - {
+      id: 'shadow-temple-2',
+      caption: 'Inside the Kakariko windmill, where Guru-Guru teaches you the Song of Storms',
+    }
+  - { id: 'shadow-temple-3', caption: 'The Bottom of the Well in the remake' }
+  - { id: 'shadow-temple-4', caption: 'The Shadow Temple boat' }
 ---
 
 When you return to Kakariko Village as an adult you find it in flames: something invisible bursts out of the well and tears through the village. Sheik holds it back and tells you Impa went to seal it in the Shadow Temple. To get in there you need to see the unseen, and that means being a child again for a while.
@@ -21,6 +32,12 @@ When you return to Kakariko Village as an adult you find it in flames: something
 ## Nocturne of Shadow
 
 After the scene, Sheik teaches you the **Nocturne of Shadow** (Y A A L Y A R), which warps you to the top of the graveyard, in front of the temple entrance. Do not go in yet: without the Lenses you cannot get far.
+
+## Before you go down the well
+
+- **Song of Storms:** Guru-Guru teaches it in the Kakariko windmill, **as an adult**. Learn it before you turn back into a child.
+- **Magic Meter:** the Lenses drain magic the whole time you wear them; without a magic meter they are useless. A Great Fairy gives it to you (see the Magic Meter under Equipment).
+- **Boomerang:** as a child, to fetch the tokens of the well’s three Skulltulas.
 
 ## Bottom of the Well (as a child)
 
@@ -62,6 +79,16 @@ You drop onto a giant drum that Bongo Bongo beats with two hands. Put on the Len
 3. He drops onto the drum: rush in and land as many slashes as you can. Repeat.
 
 The drumbeats bounce you around; the Hover Boots reduce the bounce. Do not stand by the edge when a hand clenches into a fist. Once he falls, press A to pick up **Heart Container #7**. Impa awakens as the Sage of Shadow and gives you the **Shadow Medallion**.
+
+## Where you use the Lenses again
+
+- **Treasure Chest game** (Castle Town, as a child, at night): you see which chest holds the key. Piece of Heart #4.
+- **Shadow Temple** (adult): needed in almost every room and against Bongo Bongo.
+- **Mirage Desert** (adult): past the stone building, the guiding Poe only shows up with them (step “Gerudo Valley, the desert and the Spirit Temple”).
+- **Gerudo Proving Grounds** (adult): one cell has a fake ceiling hiding the way to an isolated chest.
+- **Ganondorf’s Castle** (adult): invisible platforms in the Shadow trial and hidden things in the Light trial.
+
+Before an area full of invisible things, refill your magic and carry a fairy in a bottle.
 
 ## After the temple
 
