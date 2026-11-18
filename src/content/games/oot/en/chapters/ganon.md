@@ -52,6 +52,7 @@ The Sages seal Ganon in the Sacred Realm. Zelda plays the Ocarina of Time to sen
 
 - **There is no New Game+, Hero Mode or Master Quest** at launch. Dataminers have found Master Quest data that would arrive with downloadable content, but Nintendo has announced nothing.
 - **The Hall of Fallen Foes** lets you rematch Ganondorf, Ganon and every boss against the clock. Clear one of the boss gauntlets and Kaepora Gaebora delivers a trophy to Link’s house in Kokiri Forest.
-- If you want to keep completing things, load your manual save from before crossing the castle bridge. What the game saves after the credits is not documented yet (not yet confirmed for the remake).
+- **Your file after the credits:** choose Continue and you are back at the autosave at the top of the tower, just before Ganondorf’s door. The file shows a Triforce and the Threads of Time tapestry is complete. Warp out with the Prelude of Light and carry on with Skulltulas, Pieces of Heart and quests (according to Game Rant).
+- The Hall of Fallen Foes’ **“Hero of Time”** gauntlet includes Ganondorf and Ganon, so it is the only thing you can complete only after the ending.
 
-> **Don’t leave without:** a manual save from before the ending and, for the fight, the Megaton Hammer or the Biggoron Sword, magic for the Light Arrows and bottles of fairies.
+> **Don’t leave without:** a manual save on the landing in front of the door at the top of the tower and, for the fight, the Megaton Hammer or the Biggoron Sword, magic for the Light Arrows and bottles of fairies.

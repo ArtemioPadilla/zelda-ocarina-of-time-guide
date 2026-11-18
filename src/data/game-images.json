@@ -59,6 +59,36 @@
     "file": "OoTNS2 Volvagia Model.png",
     "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Volvagia_Model.png"
   },
+  "oot/chapters/shadow-temple-1": {
+    "w": 600,
+    "h": 375,
+    "file": "OoTNS2 Kakariko Village Burning.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Kakariko_Village_Burning.png"
+  },
+  "oot/chapters/shadow-temple-2": {
+    "w": 600,
+    "h": 375,
+    "file": "OoTNS2 Kakariko Windmill Interior.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Kakariko_Windmill_Interior.png"
+  },
+  "oot/chapters/shadow-temple-3": {
+    "w": 600,
+    "h": 375,
+    "file": "OoTNS2 Bottom of the Well.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Bottom_of_the_Well.png"
+  },
+  "oot/chapters/shadow-temple-4": {
+    "w": 600,
+    "h": 375,
+    "file": "OoTNS2 Shadow Temple Ship.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Shadow_Temple_Ship.png"
+  },
+  "oot/chapters/side-masks-1": {
+    "w": 600,
+    "h": 375,
+    "file": "OoTNS2 Happy Mask Shop Interior.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Happy_Mask_Shop_Interior.png"
+  },
   "oot/characters/biggoron": {
     "w": 320,
     "h": 231,

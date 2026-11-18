@@ -8,7 +8,7 @@ pills:
   - { type: boss, label: 'Ganondorf' }
   - { type: info, label: 'Light Arrows and Golden Gauntlets' }
   - { type: collectible, label: 'Gold Skulltula #98' }
-  - { type: save, label: 'Finish your 100% first: no New Game+' }
+  - { type: save, label: 'Save before the door at the top of the tower' }
   - { type: info, label: 'Remake: details to be verified' }
 ---
 
@@ -22,7 +22,7 @@ In the Temple of Time, Sheik reveals herself as **Princess Zelda**. She tells yo
 
 ## Before you cross: wrap up what is left
 
-The remake has **no New Game+, no Hero Mode and no Master Quest**, and there is only one manual save per console user plus several autosaves. If you want 100%, do it now and do not overwrite your manual save with one from after the ending:
+The remake has **no New Game+, no Hero Mode and no Master Quest**. The point of no return is the **boss door at the top of the tower**: until then you can leave the castle, and after the credits the game puts you right back in front of it, so nothing is lost. Still, it is easier to wrap up what you are missing now:
 
 - **All 100 Skulltulas** (the 100-token reward is a repeatable 200-Rupee Gold Rupee) and the **36 Pieces of Heart**. The remake’s map marks what is missing in each area, and the Echo Gem blinks near Skulltulas.
 - **The Biggoron trading sequence**, the **Big Poes** (5 get you a bottle and all 10 a Gold Rupee), the **Great Fairies** and the **Ice Arrows** from the Gerudo Proving Grounds.

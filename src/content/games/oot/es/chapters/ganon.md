@@ -52,6 +52,7 @@ Los Sabios sellan a Ganon en el Reino Sagrado. Zelda toca la Ocarina del Tiempo 
 
 - **No hay New Game+, Modo Héroe ni Master Quest** en el lanzamiento. Los dataminers han encontrado datos de Master Quest que llegarían con un contenido descargable, pero Nintendo no ha anunciado nada.
 - **El Hall of Fallen Foes** te deja volver a enfrentarte a Ganondorf, a Ganon y a todos los jefes con cronómetro. Si superas una de las tandas de jefes, Kaepora Gaebora lleva un trofeo a la casa de Link en el Bosque Kokiri.
-- Si quieres seguir completando cosas, carga tu partida manual de antes de cruzar el puente del castillo. Aún no está documentado qué guarda el juego tras los créditos (sin confirmar en el remake).
+- **Tu partida tras los créditos:** elige Continuar y vuelves al autoguardado de lo alto de la torre, justo antes de la puerta de Ganondorf. La partida muestra una Trifuerza y el tapiz de Threads of Time aparece completo. Sal con el Preludio de la Luz y sigue con Skulltulas, piezas de corazón y misiones (según Game Rant).
+- La tanda **«Héroe del Tiempo»** del Hall of Fallen Foes incluye a Ganondorf y Ganon, así que es lo único que solo puedes completar después del final.
 
-> **No te vayas sin:** una partida manual de antes del final y, para la pelea, el Martillo Megatón o la Espada de Biggoron, magia para las Flechas de Luz y botellas con hadas.
+> **No te vayas sin:** una partida manual en el rellano, delante de la puerta de lo alto de la torre y, para la pelea, el Martillo Megatón o la Espada de Biggoron, magia para las Flechas de Luz y botellas con hadas.
