@@ -210,6 +210,8 @@ export async function buildGameSearchIndex(game: GameId, locale: Locale): Promis
       t: c.data.title,
       s: kind('card'),
       k: 'card' as const,
+      // The card's text, so «teletransporte» finds the fast-travel card.
+      x: c.data.body.replace(/\*\*|^- /gm, ''),
       h: href(
         `${c.data.section === 'rules' || c.data.section === 'lore' ? '/' : guideSections.has(c.data.section) ? '/guide/' : '/extras/'}#${c.data.slug}`,
       ),
