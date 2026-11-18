@@ -1,3 +1,5 @@
+import type { MarkdownHeading } from 'astro';
+import { render } from 'astro:content';
 import { gameHref, useTranslations } from '@/i18n/utils';
 import {
   gameChapters,
@@ -93,6 +95,14 @@ export async function buildGameSearchIndex(game: GameId, locale: Locale): Promis
   const sub = (k: SearchKind, chapter?: string) =>
     chapter ? `${kind(k)} · ${chapterName.get(chapter) ?? chapter}` : kind(k);
   const guideSections = new Set<string>(GUIDE_CARD_SECTIONS);
+  // Each step's sections (## headings), so «Fondo del Pozo» or «Dead Hand»
+  // land on the part of the step that covers it, not only on its top.
+  const sections = await Promise.all(
+    chapters.map(async (c) => ({
+      c,
+      headings: ((await render(c)).headings as MarkdownHeading[]).filter((hd) => hd.depth === 2),
+    })),
+  );
 
   return [
     ...ENGINE_SECTIONS.filter((s) => s.needs === null || has.has(s.needs)).map((s) => ({
@@ -108,6 +118,16 @@ export async function buildGameSearchIndex(game: GameId, locale: Locale): Promis
       h: href(`/chapters/${chapterSlug(c)}/`),
       x: c.data.summary,
     })),
+    ...sections.flatMap(({ c, headings }) =>
+      headings.map((hd) => ({
+        t: hd.text,
+        // Only the step number: the step's title here would make every
+        // section match a word of that title.
+        s: `${kind('chapter')} ${c.data.number}`,
+        k: 'chapter' as const,
+        h: `${href(`/chapters/${chapterSlug(c)}/`)}#${hd.slug}`,
+      })),
+    ),
     // One entry per collectible type (its page), then every pickup, landing
     // on its checkbox on that page.
     ...types.map((ty) => ({
@@ -150,13 +170,20 @@ export async function buildGameSearchIndex(game: GameId, locale: Locale): Promis
       s: kind('enemy'),
       k: 'enemy' as const,
       h: href(gameEntityPath('enemies', e.data.slug)),
+      x: e.data.chapters,
     })),
     ...items.map((i) => ({
       t: i.data.name,
-      s: sub(i.data.type === 'key' ? 'keyItem' : 'healing', i.data.chapter),
+      // The item's own kind (song, mask, trade…), not a generic label.
+      s: [
+        t(`game.itemType.${i.data.type}` as Parameters<typeof t>[0]).toLocaleLowerCase(locale),
+        chapterName.get(i.data.chapter ?? ''),
+      ]
+        .filter(Boolean)
+        .join(' · '),
       k: (i.data.type === 'key' ? 'keyItem' : 'healing') as SearchKind,
       h: href(gameEntityPath('items', i.data.slug)),
-      x: i.data.where,
+      x: [i.data.original, i.data.where].filter(Boolean).join(' '),
     })),
     ...files.map((f) => ({
       t: f.data.name,
@@ -177,6 +204,7 @@ export async function buildGameSearchIndex(game: GameId, locale: Locale): Promis
       s: kind('character'),
       k: 'character' as const,
       h: href(gameEntityPath('characters', c.data.slug)),
+      x: [c.data.original, c.data.appears].filter(Boolean).join(' '),
     })),
     ...cards.map((c) => ({
       t: c.data.title,

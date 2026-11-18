@@ -1,4 +1,5 @@
 ---
+import type { MarkdownHeading } from 'astro';
 import { render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SectionHead from '@/components/common/SectionHead.astro';
@@ -29,7 +30,10 @@ interface Props {
 const { locale, game, entry } = Astro.props;
 const { g, t, h, title, chapters, chapterLabel } = await gamePage(game, locale);
 const slug = chapterSlug(entry);
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+// The step's sections (## headings), as a jump list above the text when
+// there are enough of them to need one.
+const toc = (headings as MarkdownHeading[]).filter((hd) => hd.depth === 2);
 
 const i = chapters.findIndex((c) => c.id === entry.id);
 const prev = i > 0 ? chapters[i - 1] : null;
@@ -166,6 +170,31 @@ const bossesHere = bosses.filter((b) =>
         </ErrorBoundary>
       </span>
     </div>
+
+    {
+      toc.length >= 3 && (
+        <nav
+          aria-label={t('chapter.toc')}
+          class="mb-6 rounded-md border border-border bg-card/60 px-4 py-3"
+        >
+          <p class="mb-1.5 font-mono text-[11px] tracking-wide text-muted-foreground uppercase">
+            {t('chapter.toc')}
+          </p>
+          <ol class="m-0 flex list-none flex-wrap gap-x-4 gap-y-1 p-0 text-sm">
+            {toc.map((hd) => (
+              <li class="m-0">
+                <a
+                  href={`#${hd.slug}`}
+                  class="text-foreground underline decoration-primary/40 underline-offset-2 hover:text-primary hover:decoration-primary"
+                >
+                  {hd.text}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )
+    }
 
     <article class="prose-guide max-w-none">
       <Content />
