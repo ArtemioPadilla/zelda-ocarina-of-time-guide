@@ -35,6 +35,7 @@ After the scene, Sheik teaches you the **Nocturne of Shadow** (Y A A L Y A R), w
 
 ## Before you go down the well
 
+- **When:** the well does not wait for Kakariko to burn. You can do it as soon as you know the Song of Storms, for example between the Fire and Water Temples, and reach the Shadow Temple with the Lenses already in your bag.
 - **Song of Storms:** Guru-Guru teaches it in the Kakariko windmill, **as an adult**. Learn it before you turn back into a child.
 - **Magic Meter:** the Lenses drain magic the whole time you wear them; without a magic meter they are useless. A Great Fairy gives it to you (see the Magic Meter under Equipment).
 - **Boomerang:** as a child, to fetch the tokens of the well’s three Skulltulas.

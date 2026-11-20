@@ -27,6 +27,8 @@ In the graveyard, pull back the headstone of Dampé’s grave (A) and go down. H
 
 The race exit drops you inside the Kakariko windmill, on the platform with **Piece of Heart #25**. Below, Guru-Guru, the man with the barrel organ, demands a song: play the Ocarina and you learn the **Song of Storms** (L R X L R X). It is used for **Gold Skulltula #10**, the Zora’s River frogs and draining the village well as a child (chapter 9).
 
+In the remake the Hookshot also hits eye switches (except those behind bars) and pulls you to climbable fences and ladders, not only to wooden targets.
+
 With the Hookshot you can now collect **Gold Skulltula #20** (roof of the house in the south of the village) and **#7** in Kokiri Forest. The graveyard’s **Piece of Heart #23** is on a ledge you reach riding the Magic Bean plant you sowed as a child.
 
 ## Kokiri Forest and the Sacred Grove
@@ -35,7 +37,7 @@ The forest is overrun with monsters. In the Lost Woods, Mido will not let you th
 
 The Sacred Grove is patrolled by spear Moblins: slip past them along the maze’s side passages. At the end the **Great Moblin** blocks the way with his club: stay clear of the shockwaves and look for the gap to get past (strategy not yet confirmed for the remake). **Gold Skulltula #56** is at the top of the maze’s east wall.
 
-At the stump, Sheik teaches you the **Minuet of the Forest** (L X Y A Y A), which warps you here. Hookshot onto the tree branch to reach the entrance.
+At the far end of the meadow, Sheik waits sitting on a tree stump (next to the stairs up to the temple) and teaches you the **Minuet of the Forest** (L X Y A Y A), which warps you here. Hookshot onto the tree branch to reach the entrance.
 
 ## Forest Temple
 
@@ -45,6 +47,9 @@ Nintendo kept the temple’s mechanisms, but it is the dungeon with the most doc
 - **Main hall:** four torches and a lift in the middle. The four Poe sisters (Jo, Beth, Amy and Meg) steal the flames and hide around the temple: you have to defeat them all to go down to the basement. In the remake **Jo is a deep, vivid red**. **Gold Skulltula #58** is on a wall of the hall.
 - **East and west courtyards:** Octoroks, Deku Babas and a well. Get your first small keys here; the well water is drained from a switch on the upper floors. **Gold Skulltulas #59 and #60** are in the north-east and north-west rooms of the lower floor.
 - **Fairy Bow:** after beating a pair of Stalfos in the west wing. Aim with ZR, in third person and, if you like, with motion controls. You use it on eye switches and the Poe paintings.
+
+  > 💡 **See an eye behind bars that you cannot hit?** It is for the Bow: an arrow fits between the bars and the Hookshot does not. Keep exploring the west wing until the two Stalfos, get the Bow and come back. Eyes without bars can also be hit with the Hookshot in the remake.
+
 - **Jo and Beth:** each hides in a painting. Shoot the painting with an arrow while she is visible and defeat the Poe that comes out. Target her with ZL and strike when she closes in.
 - **Amy:** complete her portrait on the floor by pushing blocks. In the remake there is no timer, but not every piece fits: keep trying until they do.
 - **Twisted corridor:** shoot the eye switch to straighten it and push on to the **Boss Key**. Watch out for the falling ceiling in the tiled room and for the Floormasters, which split into three.

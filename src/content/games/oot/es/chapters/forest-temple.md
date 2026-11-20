@@ -27,6 +27,8 @@ En el cementerio, tira de la lápida de la tumba de Dampé (A) y baja. Su fantas
 
 La salida de la carrera te deja en el molino de Kakariko, en la plataforma de la **Pieza de Corazón nº 25**. Abajo, Guru-Guru, el hombre del organillo, te reclama una canción: toca la Ocarina y aprenderás la **Canción de la Tormenta** (L R X L R X). Sirve para la **Skulltula dorada nº 10**, las ranas del Río Zora y para vaciar el pozo de la aldea de niño (capítulo 9).
 
+En el remake el Gancho también activa interruptores de ojo (salvo los que tienen barrotes) y te lleva hasta vallas y escaleras de mano, no solo a los blancos de madera.
+
 Con el Gancho ya puedes recoger la **Skulltula dorada nº 20** (tejado de la casa del sur de la aldea) y la **nº 7** del Bosque Kokiri. La **Pieza de Corazón nº 23** del cementerio está en un saliente al que te sube la planta de Habichuela Mágica que sembraste de niño.
 
 ## Bosque Kokiri y Prado del Bosque Sagrado
@@ -35,7 +37,7 @@ El bosque está lleno de monstruos. En el Bosque Perdido, Mido no te deja pasar 
 
 El Prado del Bosque Sagrado (Sacred Grove) está patrullado por Moblins con lanza: esquívalos por los pasillos laterales del laberinto. Al final te bloquea el **Great Moblin** con su maza: aléjate de las ondas de choque y busca el hueco para pasar (estrategia sin confirmar en el remake). La **Skulltula dorada nº 56** está en lo alto del muro este del laberinto.
 
-En el tocón, Sheik te enseña el **Minueto del Bosque** (L X Y A Y A), que te teletransporta aquí. Engánchate con el Gancho a la rama del árbol para llegar a la entrada.
+Al fondo del prado, Sheik te espera sentado sobre un tocón (el resto de un árbol cortado, junto a la escalera que sube al templo) y te enseña el **Minueto del Bosque** (L X Y A Y A), que te teletransporta aquí. Engánchate con el Gancho a la rama del árbol para llegar a la entrada.
 
 ## Templo del Bosque
 
@@ -45,6 +47,9 @@ Nintendo mantuvo los mecanismos del templo, pero es la mazmorra con más cambios
 - **Salón central:** cuatro antorchas y un ascensor en el centro. Las cuatro Poe hermanas (Jo, Beth, Amy y Meg) se llevan las llamas y se esconden por el templo: tienes que vencerlas a todas para bajar al sótano. En el remake **Jo es de un rojo intenso**. La **Skulltula dorada nº 58** está en una pared del salón.
 - **Patios este y oeste:** octoroks, Deku Babas y un pozo. Consigue aquí las primeras llaves pequeñas; el agua del pozo se vacía desde un interruptor de los pisos de arriba. Las **Skulltulas doradas nº 59 y 60** están en las salas del noreste y noroeste del piso bajo.
 - **Arco de las Hadas:** tras vencer a una pareja de Stalfos en el ala oeste. Apunta con ZR, en tercera persona y, si quieres, con giroscopio. Con él disparas a los interruptores de ojo y a los cuadros de las Poe.
+
+  > 💡 **¿Ves un ojo tras unas rejas y no puedes activarlo?** Es para el Arco: la flecha pasa entre los barrotes y el Gancho no. Sigue explorando el ala oeste hasta los dos Stalfos, consigue el Arco y vuelve. Los ojos sin rejas, en el remake, también se activan con el Gancho.
+
 - **Jo y Beth:** cada una se esconde en un cuadro. Dispárale al cuadro con una flecha mientras está visible y vence a la Poe que sale. Fíjala con ZL y ataca cuando se acerque.
 - **Amy:** completa su retrato en el suelo empujando bloques. En el remake no corre el tiempo, pero no sirven todas las piezas: prueba hasta que encajen.
 - **Pasillo torcido:** dispara al interruptor de ojo para enderezarlo y avanza hasta la **Llave del Jefe**. Cuidado con el techo que cae en la sala de las baldosas y con los Floormaster, que se dividen en tres.
