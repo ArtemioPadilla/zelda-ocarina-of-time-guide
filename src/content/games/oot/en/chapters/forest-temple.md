@@ -27,6 +27,8 @@ In the graveyard, pull back the headstone of Dampé’s grave (A) and go down. H
 
 The race exit drops you inside the Kakariko windmill, on the platform with **Piece of Heart #25**. Below, Guru-Guru, the man with the barrel organ, demands a song: play the Ocarina and you learn the **Song of Storms** (L R X L R X). It is used for **Gold Skulltula #10**, the Zora’s River frogs and draining the village well as a child (chapter 9).
 
+In the remake the Hookshot also hits eye switches (except those behind bars) and pulls you to climbable fences and ladders, not only to wooden targets.
+
 With the Hookshot you can now collect **Gold Skulltula #20** (roof of the house in the south of the village) and **#7** in Kokiri Forest. The graveyard’s **Piece of Heart #23** is on a ledge you reach riding the Magic Bean plant you sowed as a child.
 
 ## Kokiri Forest and the Sacred Grove

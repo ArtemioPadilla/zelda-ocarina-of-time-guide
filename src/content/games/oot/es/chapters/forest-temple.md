@@ -27,6 +27,8 @@ En el cementerio, tira de la lápida de la tumba de Dampé (A) y baja. Su fantas
 
 La salida de la carrera te deja en el molino de Kakariko, en la plataforma de la **Pieza de Corazón nº 25**. Abajo, Guru-Guru, el hombre del organillo, te reclama una canción: toca la Ocarina y aprenderás la **Canción de la Tormenta** (L R X L R X). Sirve para la **Skulltula dorada nº 10**, las ranas del Río Zora y para vaciar el pozo de la aldea de niño (capítulo 9).
 
+En el remake el Gancho también activa interruptores de ojo (salvo los que tienen barrotes) y te lleva hasta vallas y escaleras de mano, no solo a los blancos de madera.
+
 Con el Gancho ya puedes recoger la **Skulltula dorada nº 20** (tejado de la casa del sur de la aldea) y la **nº 7** del Bosque Kokiri. La **Pieza de Corazón nº 23** del cementerio está en un saliente al que te sube la planta de Habichuela Mágica que sembraste de niño.
 
 ## Bosque Kokiri y Prado del Bosque Sagrado
