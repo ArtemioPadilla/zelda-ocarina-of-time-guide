@@ -47,6 +47,9 @@ Nintendo kept the temple’s mechanisms, but it is the dungeon with the most doc
 - **Main hall:** four torches and a lift in the middle. The four Poe sisters (Jo, Beth, Amy and Meg) steal the flames and hide around the temple: you have to defeat them all to go down to the basement. In the remake **Jo is a deep, vivid red**. **Gold Skulltula #58** is on a wall of the hall.
 - **East and west courtyards:** Octoroks, Deku Babas and a well. Get your first small keys here; the well water is drained from a switch on the upper floors. **Gold Skulltulas #59 and #60** are in the north-east and north-west rooms of the lower floor.
 - **Fairy Bow:** after beating a pair of Stalfos in the west wing. Aim with ZR, in third person and, if you like, with motion controls. You use it on eye switches and the Poe paintings.
+
+  > 💡 **See an eye behind bars that you cannot hit?** It is for the Bow: an arrow fits between the bars and the Hookshot does not. Keep exploring the west wing until the two Stalfos, get the Bow and come back. Eyes without bars can also be hit with the Hookshot in the remake.
+
 - **Jo and Beth:** each hides in a painting. Shoot the painting with an arrow while she is visible and defeat the Poe that comes out. Target her with ZL and strike when she closes in.
 - **Amy:** complete her portrait on the floor by pushing blocks. In the remake there is no timer, but not every piece fits: keep trying until they do.
 - **Twisted corridor:** shoot the eye switch to straighten it and push on to the **Boss Key**. Watch out for the falling ceiling in the tiled room and for the Floormasters, which split into three.

@@ -47,6 +47,9 @@ Nintendo mantuvo los mecanismos del templo, pero es la mazmorra con más cambios
 - **Salón central:** cuatro antorchas y un ascensor en el centro. Las cuatro Poe hermanas (Jo, Beth, Amy y Meg) se llevan las llamas y se esconden por el templo: tienes que vencerlas a todas para bajar al sótano. En el remake **Jo es de un rojo intenso**. La **Skulltula dorada nº 58** está en una pared del salón.
 - **Patios este y oeste:** octoroks, Deku Babas y un pozo. Consigue aquí las primeras llaves pequeñas; el agua del pozo se vacía desde un interruptor de los pisos de arriba. Las **Skulltulas doradas nº 59 y 60** están en las salas del noreste y noroeste del piso bajo.
 - **Arco de las Hadas:** tras vencer a una pareja de Stalfos en el ala oeste. Apunta con ZR, en tercera persona y, si quieres, con giroscopio. Con él disparas a los interruptores de ojo y a los cuadros de las Poe.
+
+  > 💡 **¿Ves un ojo tras unas rejas y no puedes activarlo?** Es para el Arco: la flecha pasa entre los barrotes y el Gancho no. Sigue explorando el ala oeste hasta los dos Stalfos, consigue el Arco y vuelve. Los ojos sin rejas, en el remake, también se activan con el Gancho.
+
 - **Jo y Beth:** cada una se esconde en un cuadro. Dispárale al cuadro con una flecha mientras está visible y vence a la Poe que sale. Fíjala con ZL y ataca cuando se acerque.
 - **Amy:** completa su retrato en el suelo empujando bloques. En el remake no corre el tiempo, pero no sirven todas las piezas: prueba hasta que encajen.
 - **Pasillo torcido:** dispara al interruptor de ojo para enderezarlo y avanza hasta la **Llave del Jefe**. Cuidado con el techo que cae en la sala de las baldosas y con los Floormaster, que se dividen en tres.
