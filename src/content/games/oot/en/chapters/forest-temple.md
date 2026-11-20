@@ -37,7 +37,7 @@ The forest is overrun with monsters. In the Lost Woods, Mido will not let you th
 
 The Sacred Grove is patrolled by spear Moblins: slip past them along the maze’s side passages. At the end the **Great Moblin** blocks the way with his club: stay clear of the shockwaves and look for the gap to get past (strategy not yet confirmed for the remake). **Gold Skulltula #56** is at the top of the maze’s east wall.
 
-At the stump, Sheik teaches you the **Minuet of the Forest** (L X Y A Y A), which warps you here. Hookshot onto the tree branch to reach the entrance.
+At the far end of the meadow, Sheik waits sitting on a tree stump (next to the stairs up to the temple) and teaches you the **Minuet of the Forest** (L X Y A Y A), which warps you here. Hookshot onto the tree branch to reach the entrance.
 
 ## Forest Temple
 

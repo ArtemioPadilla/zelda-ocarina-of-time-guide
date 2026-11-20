@@ -37,7 +37,7 @@ El bosque está lleno de monstruos. En el Bosque Perdido, Mido no te deja pasar 
 
 El Prado del Bosque Sagrado (Sacred Grove) está patrullado por Moblins con lanza: esquívalos por los pasillos laterales del laberinto. Al final te bloquea el **Great Moblin** con su maza: aléjate de las ondas de choque y busca el hueco para pasar (estrategia sin confirmar en el remake). La **Skulltula dorada nº 56** está en lo alto del muro este del laberinto.
 
-En el tocón, Sheik te enseña el **Minueto del Bosque** (L X Y A Y A), que te teletransporta aquí. Engánchate con el Gancho a la rama del árbol para llegar a la entrada.
+Al fondo del prado, Sheik te espera sentado sobre un tocón (el resto de un árbol cortado, junto a la escalera que sube al templo) y te enseña el **Minueto del Bosque** (L X Y A Y A), que te teletransporta aquí. Engánchate con el Gancho a la rama del árbol para llegar a la entrada.
 
 ## Templo del Bosque
 
