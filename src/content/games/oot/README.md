@@ -18,5 +18,8 @@ some dungeon layouts were migrated from the **3DS guide**
 is not confirmed for the remake says so («sin confirmar en el remake» / “not
 yet confirmed for the remake”).
 
-Still missing: Notes (`files.json`), achievements (`achievements.json`),
-maps (`maps.json`) and the shop (`shop.json`).
+`maps.json` lists in-game maps of the remake (`scripts/wiki-images/oot-maps.json`);
+so far the zones of the Great Fairy fountains.
+
+Still missing: Notes (`files.json`), achievements (`achievements.json`) and
+the shop (`shop.json`).

@@ -31,6 +31,9 @@ each map.
 | `oot/chapters/shadow-temple-2.webp` | [OoTNS2 Kakariko Windmill Interior.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Kakariko_Windmill_Interior.png) |
 | `oot/chapters/shadow-temple-3.webp` | [OoTNS2 Bottom of the Well.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Bottom_of_the_Well.png) |
 | `oot/chapters/shadow-temple-4.webp` | [OoTNS2 Shadow Temple Ship.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Shadow_Temple_Ship.png) |
+| `oot/chapters/side-great-fairies-1.webp` | [OoTNS2 Great Fairy's Fountain.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Great_Fairy%27s_Fountain.png) |
+| `oot/chapters/side-great-fairies-2.webp` | [OoTNS2 Great Fairy Fountain.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Great_Fairy_Fountain.png) |
+| `oot/chapters/side-great-fairies-3.webp` | [OoTNS2 Ganon's Castle Rainbow Bridge.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Ganon%27s_Castle_Rainbow_Bridge.png) |
 | `oot/chapters/side-masks-1.webp` | [OoTNS2 Happy Mask Shop Interior.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Happy_Mask_Shop_Interior.png) |
 | `oot/characters/biggoron.webp` | [OoT Biggoron Model.png](https://zeldawiki.wiki/wiki/File:OoT_Biggoron_Model.png) |
 | `oot/characters/business-scrub.webp` | [OoT3D Business Scrub Model.png](https://zeldawiki.wiki/wiki/File:OoT3D_Business_Scrub_Model.png) |
@@ -178,6 +181,11 @@ each map.
 | `oot/items/zeldas-letter.webp` | [OoTNS2 Zelda's Letter Icon.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Zelda%27s_Letter_Icon.png) |
 | `oot/items/zora-mask.webp` | [OoTNS2 Zora Mask Icon.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Zora_Mask_Icon.png) |
 | `oot/items/zora-sapphire.webp` | [OoTNS2 Zora Sapphire Model.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Zora_Sapphire_Model.png) |
+| `oot/maps/death-mountain-crater.webp` | [OoTNS2 Death Mountain Crater Adult Era Map.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Death_Mountain_Crater_Adult_Era_Map.png) |
+| `oot/maps/death-mountain-trail.webp` | [OoTNS2 Death Mountain Trail Map.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Death_Mountain_Trail_Map.png) |
+| `oot/maps/desert-colossus.webp` | [OoTNS2 Evil Desert Colossus Map.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Evil_Desert_Colossus_Map.png) |
+| `oot/maps/hyrule-castle.webp` | [OoTNS2 Hyrule Castle Map.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Hyrule_Castle_Map.png) |
+| `oot/maps/zoras-fountain.webp` | [OoTNS2 Zora Fountain Map.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Zora_Fountain_Map.png) |
 | `oot/weapons/biggoron-sword.webp` | [OoTNS2 Biggoron Sword Icon.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Biggoron_Sword_Icon.png) |
 | `oot/weapons/bombchus.webp` | [OoTNS2 Bombchu Icon.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Bombchu_Icon.png) |
 | `oot/weapons/bombs.webp` | [OoTNS2 Bomb Icon.png](https://zeldawiki.wiki/wiki/File:OoTNS2_Bomb_Icon.png) |

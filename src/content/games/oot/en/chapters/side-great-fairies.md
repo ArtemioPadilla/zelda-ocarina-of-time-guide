@@ -8,6 +8,19 @@ pills:
   - { type: collectible, label: 'Magic, spells and upgrades' }
   - { type: shop, label: 'Rupee offerings' }
   - { type: info, label: 'Remake: details to verify' }
+photos:
+  - {
+      id: 'side-great-fairies-1',
+      caption: 'A Great Fairy fountain in the remake',
+    }
+  - {
+      id: 'side-great-fairies-2',
+      caption: 'Another fountain, with its own colour of light',
+    }
+  - {
+      id: 'side-great-fairies-3',
+      caption: 'The Sages’ bridge to Ganon’s Castle: the last fountain is on the left once you cross it',
+    }
 ---
 
 > **Order:** three as a child (with bombs) and three as an adult. Start with the summit of Death Mountain: without the Magic Meter there are no spells and no magic arrows.
