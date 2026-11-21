@@ -16,10 +16,11 @@ El Coliseo de los Monstruos es un lugar nuevo del remake: un salón de sueños d
 
 ## Cómo desbloquearlo
 
-1. Cuando ya puedas cambiar de época, ve de niño a la Aldea Kakariko desde el Campo de Hyrule.
-2. Justo antes de entrar, Kaepora Gaebora te detiene y te explica cómo funciona el salón.
-3. Busca una cama o un petate que brille en verde. El búho te señala el más cercano, en el sur de Kakariko.
-4. Elige dormir y soñar: despiertas en el Coliseo de los Monstruos.
+1. Termina el Templo del Bosque y vuelve a ser niño en el Templo del Tiempo.
+2. Busca una cama o un petate que brille en verde. Hay una en Villa Castillo, y otra en el sur de Kakariko.
+3. Elige dormir y soñar: despiertas en el Coliseo de los Monstruos.
+
+Si entras de niño en la Aldea Kakariko desde el Campo de Hyrule, Kaepora Gaebora te detiene y te explica cómo funciona; no hace falta hablar con él para entrar.
 
 A partir de entonces entras desde cualquier cama o petate con brillo verde, de niño o de adulto. Para salir, habla con Kaepora Gaebora.
 

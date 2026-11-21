@@ -17,7 +17,7 @@ Con la Esmeralda Kokiri, el Rubí Goron y el Zafiro Zora, vuelve a Villa Castill
 
 ## Antes de crecer: lo que solo hace Link niño
 
-Puedes volver a ser niño cuando quieras dejando la espada en su pedestal, así que nada de esto se pierde. Aun así, conviene hacerlo ahora y no tener que ir y volver más tarde:
+> ⚠️ **Al sacar la espada no podrás volver a ser niño hasta terminar el Templo del Bosque.** Después podrás ir y venir cuando quieras, así que nada de esto se pierde, pero conviene hacerlo ahora:
 
 - **Piezas de Corazón nº 19 y 20:** las dos necesitan viajar en el tiempo. La contraseña del Business Scrub de la nº 19 y la pista del cofre de la nº 20 se leen de adulto en Fairy Thoughts, pero la pieza se recoge de niño. Apúntalas para tu primera vuelta a la infancia.
 - **Plantar Habichuelas Mágicas** en cada parcela de tierra blanda. De adulto, esas plantas son plataformas que te llevan a varias Piezas de Corazón (nº 11, 23, 32 y 35) y a la **Skulltula dorada nº 23**.
@@ -50,11 +50,11 @@ Al salir por primera vez, Link y Navi se giran hacia el Castillo de Hyrule y ven
 - La túnica verde de adulto se llama ahora **Hero's Clothes**. La Espada Kokiri y la Resortera son de niño; ahora usas la Espada Maestra, y el inventario separa los objetos de niño, de adulto y los compartidos.
 - Las máscaras se pueden usar también de adulto.
 - El Escudo Deku ya no te sirve: equipa el Escudo Hyliano.
-- **Viajar en el tiempo:** deja la espada en su pedestal para volver a ser niño y sácala de nuevo para crecer. Tras el Templo del Bosque, Sheik te enseña el Preludio de la Luz, que te trae aquí desde cualquier sitio.
+- **Viajar en el tiempo:** tras el Templo del Bosque, deja la espada en su pedestal para volver a ser niño y sácala de nuevo para crecer. Ese mismo momento, Sheik te enseña el Preludio de la Luz, que te trae aquí desde cualquier sitio.
 
 ## El Coliseo de los Monstruos
 
-Esta zona nueva se desbloquea ahora: tras llegar por primera vez a la época adulta, vuelve a la Aldea Kakariko **de niño** y habla con Kaepora Gaebora. Desde entonces, al descansar en cualquier cama o saco de dormir puedes entrar a esta galería onírica para volver a enfrentarte a los jefes y minijefes que ya venciste, con cronómetro y desafíos por tandas que pagan rupias. Los premios no son importantes, pero las estatuas sirven de bestiario.
+Esta zona nueva se abre cuando vuelves a ser niño tras el Templo del Bosque: duerme en una cama que brille en verde (hay una en Villa Castillo). Desde entonces, al descansar en esas camas o sacos de dormir puedes entrar a esta galería onírica para volver a enfrentarte a los jefes y minijefes que ya venciste, con cronómetro y desafíos por tandas que pagan rupias. Los premios no son importantes, pero las estatuas sirven de bestiario.
 
 ## Próximo paso
 

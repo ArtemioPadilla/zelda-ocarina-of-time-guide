@@ -35,7 +35,7 @@ Tras la escena, Sheik te enseña el **Nocturno de las Sombras** (Y A A L Y A R),
 
 ## Antes de bajar al pozo
 
-- **Cuándo:** el pozo no espera a que arda Kakariko. Puedes hacerlo en cuanto sepas la Canción de la Tormenta, por ejemplo entre el Templo del Fuego y el del Agua, y así llegas al Templo de las Sombras con los Lentes ya en la mochila.
+- **Cuándo:** el pozo no espera a que arda Kakariko. Puedes hacerlo en cuanto sepas la Canción de la Tormenta y hayas terminado el Templo del Bosque (antes no puedes volver a ser niño), por ejemplo entre el Templo del Fuego y el del Agua, y así llegas al Templo de las Sombras con los Lentes ya en la mochila.
 - **Canción de la Tormenta:** te la enseña Guru-Guru en el molino de Kakariko, **de adulto**. Apréndela antes de volver a ser niño.
 - **Medidor de Magia:** los Lentes gastan magia todo el rato que los llevas puestos; sin barra de magia no te sirven de nada. Te lo da una Gran Hada (mira el Medidor de Magia en Equipo).
 - **Bumerán:** de niño, para traer las fichas de las tres Skulltulas del pozo.
