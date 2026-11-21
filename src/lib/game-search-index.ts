@@ -170,7 +170,8 @@ export async function buildGameSearchIndex(game: GameId, locale: Locale): Promis
       s: kind('enemy'),
       k: 'enemy' as const,
       h: href(gameEntityPath('enemies', e.data.slug)),
-      x: e.data.chapters,
+      // Where it lives and how it looks, so «reguilete» finds the Peahat.
+      x: `${e.data.chapters} ${e.data.tactic}`,
     })),
     ...items.map((i) => ({
       t: i.data.name,
