@@ -83,6 +83,24 @@
     "file": "OoTNS2 Shadow Temple Ship.png",
     "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Shadow_Temple_Ship.png"
   },
+  "oot/chapters/side-great-fairies-1": {
+    "w": 600,
+    "h": 375,
+    "file": "OoTNS2 Great Fairy's Fountain.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Great_Fairy%27s_Fountain.png"
+  },
+  "oot/chapters/side-great-fairies-2": {
+    "w": 600,
+    "h": 375,
+    "file": "OoTNS2 Great Fairy Fountain.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Great_Fairy_Fountain.png"
+  },
+  "oot/chapters/side-great-fairies-3": {
+    "w": 600,
+    "h": 375,
+    "file": "OoTNS2 Ganon's Castle Rainbow Bridge.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Ganon%27s_Castle_Rainbow_Bridge.png"
+  },
   "oot/chapters/side-masks-1": {
     "w": 600,
     "h": 375,
@@ -964,6 +982,36 @@
     "h": 225,
     "file": "OoTNS2 Zora Sapphire Model.png",
     "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Zora_Sapphire_Model.png"
+  },
+  "oot/maps/death-mountain-crater": {
+    "w": 1600,
+    "h": 1152,
+    "file": "OoTNS2 Death Mountain Crater Adult Era Map.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Death_Mountain_Crater_Adult_Era_Map.png"
+  },
+  "oot/maps/death-mountain-trail": {
+    "w": 1600,
+    "h": 1152,
+    "file": "OoTNS2 Death Mountain Trail Map.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Death_Mountain_Trail_Map.png"
+  },
+  "oot/maps/desert-colossus": {
+    "w": 1600,
+    "h": 1152,
+    "file": "OoTNS2 Evil Desert Colossus Map.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Evil_Desert_Colossus_Map.png"
+  },
+  "oot/maps/hyrule-castle": {
+    "w": 1600,
+    "h": 1152,
+    "file": "OoTNS2 Hyrule Castle Map.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Hyrule_Castle_Map.png"
+  },
+  "oot/maps/zoras-fountain": {
+    "w": 1600,
+    "h": 1152,
+    "file": "OoTNS2 Zora Fountain Map.png",
+    "source": "https://zeldawiki.wiki/wiki/File:OoTNS2_Zora_Fountain_Map.png"
   },
   "oot/weapons/biggoron-sword": {
     "w": 123,

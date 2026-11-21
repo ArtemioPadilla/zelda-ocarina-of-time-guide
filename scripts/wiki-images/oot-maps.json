@@ -1,0 +1,15 @@
+[
+  {
+    "collection": "maps",
+    "id": "death-mountain-trail",
+    "file": "OoTNS2 Death Mountain Trail Map.png"
+  },
+  { "collection": "maps", "id": "hyrule-castle", "file": "OoTNS2 Hyrule Castle Map.png" },
+  { "collection": "maps", "id": "zoras-fountain", "file": "OoTNS2 Zora Fountain Map.png" },
+  {
+    "collection": "maps",
+    "id": "death-mountain-crater",
+    "file": "OoTNS2 Death Mountain Crater Adult Era Map.png"
+  },
+  { "collection": "maps", "id": "desert-colossus", "file": "OoTNS2 Evil Desert Colossus Map.png" }
+]

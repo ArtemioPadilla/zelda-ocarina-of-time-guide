@@ -8,6 +8,19 @@ pills:
   - { type: collectible, label: 'Magia, hechizos y mejoras' }
   - { type: shop, label: 'Ofrendas de rupias' }
   - { type: info, label: 'Remake: detalles por verificar' }
+photos:
+  - {
+      id: 'side-great-fairies-1',
+      caption: 'Una fuente de Gran Hada en el remake',
+    }
+  - {
+      id: 'side-great-fairies-2',
+      caption: 'Otra fuente, con su brillo de color propio',
+    }
+  - {
+      id: 'side-great-fairies-3',
+      caption: 'El puente de los Sabios hacia el Castillo de Ganon: la última fuente está a la izquierda tras cruzarlo',
+    }
 ---
 
 > **Orden:** tres de niño (con bombas) y tres de adulto. Empieza por la cima de la Montaña de la Muerte: sin barra de magia no hay hechizos ni flechas mágicas.
