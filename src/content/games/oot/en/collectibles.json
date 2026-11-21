@@ -102,7 +102,7 @@
   {"id": "hp-01", "type": "heart-piece", "name": "Piece of Heart #1", "area": "Lost Woods", "location": "Play Saria’s Song for the Skull Kid who asks for it", "how": "As a child"},
   {"id": "hp-02", "type": "heart-piece", "name": "Piece of Heart #2", "area": "Lost Woods", "location": "Win the ocarina memory game against two Skull Kids", "how": "As a child"},
   {"id": "hp-03", "type": "heart-piece", "name": "Piece of Heart #3", "area": "Hyrule Castle Town", "location": "The white dog follows you at night to a back-alley door", "how": "As a child", "missable": true, "note": "night only"},
-  {"id": "hp-04", "type": "heart-piece", "name": "Piece of Heart #4", "area": "Hyrule Castle Town", "location": "Win the Treasure Chest Game (the Lenses of Truth help)", "how": "As a child"},
+  {"id": "hp-04", "type": "heart-piece", "name": "Piece of Heart #4", "area": "Hyrule Castle Town", "location": "Win the Treasure Chest Game in the Market (open only at night): in each of the five rooms pick the chest with the key; wearing the Lenses of Truth shows you which one. The chest in the sixth room holds the piece.", "how": "As a child"},
   {"id": "hp-05", "type": "heart-piece", "name": "Piece of Heart #5", "area": "Hyrule Castle Town", "location": "Win at Bombchu Bowling", "how": "As a child"},
   {"id": "hp-06", "type": "heart-piece", "name": "Piece of Heart #6", "area": "Lon Lon Ranch", "location": "Pull a crate in the silo and crawl through the hole behind it", "how": "As a child"},
   {"id": "hp-07", "type": "heart-piece", "name": "Piece of Heart #7", "area": "Kakariko Village", "location": "The owl flies you down from Death Mountain onto a ledge near a caged cow", "how": "As a child"},

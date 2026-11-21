@@ -102,7 +102,7 @@
   {"id": "hp-01", "type": "heart-piece", "name": "Pieza de Corazón #1", "area": "Bosque Perdido", "location": "Tócale la Canción de Saria al Skull Kid que la pide", "how": "De niño"},
   {"id": "hp-02", "type": "heart-piece", "name": "Pieza de Corazón #2", "area": "Bosque Perdido", "location": "Gana el juego de memoria musical contra dos Skull Kids", "how": "De niño"},
   {"id": "hp-03", "type": "heart-piece", "name": "Pieza de Corazón #3", "area": "Villa Castillo", "location": "El perro blanco te sigue de noche hasta una puerta trasera", "how": "De niño", "missable": true, "note": "solo de noche"},
-  {"id": "hp-04", "type": "heart-piece", "name": "Pieza de Corazón #4", "area": "Villa Castillo", "location": "Gana el Juego del Cofre del Tesoro (los Lentes de la Verdad ayudan)", "how": "De niño"},
+  {"id": "hp-04", "type": "heart-piece", "name": "Pieza de Corazón #4", "area": "Villa Castillo", "location": "Gana el Juego del Cofre del Tesoro del Mercado (solo abre de noche): en cada una de las cinco salas elige el cofre con la llave; con los Lentes de la Verdad puestos ves cuál es. El cofre de la sexta sala tiene la pieza.", "how": "De niño"},
   {"id": "hp-05", "type": "heart-piece", "name": "Pieza de Corazón #5", "area": "Villa Castillo", "location": "Gana en la bolera de Bombchus", "how": "De niño"},
   {"id": "hp-06", "type": "heart-piece", "name": "Pieza de Corazón #6", "area": "Rancho Lon Lon", "location": "Empuja una caja en el silo y arrástrate por el hueco de atrás", "how": "De niño"},
   {"id": "hp-07", "type": "heart-piece", "name": "Pieza de Corazón #7", "area": "Aldea Kakariko", "location": "El búho te lanza desde la Montaña de la Muerte hasta un saliente junto a una vaca enjaulada", "how": "De niño"},
