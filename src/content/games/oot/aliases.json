@@ -49,7 +49,7 @@
     {"key": "items/bottle", "names": ["Botellas", "Bottles"]},
     {"key": "page:/items/#type-quest", "names": ["Piedras Espirituales", "Spiritual Stones", "Medallones", "Medallions"]},
     {"key": "page:/collectibles/#type-skulltula", "names": ["Skulltulas doradas", "Gold Skulltulas", "Skulltulas"]},
-    {"key": "page:/chapters/side-hall-of-fallen-foes/", "names": ["Hall of Fallen Foes"]},
+    {"key": "page:/chapters/side-hall-of-fallen-foes/", "names": ["Hall of Fallen Foes", "Coliseo de los Monstruos"]},
     {"key": "page:/chapters/side-skulltula-house/", "names": ["Casa de las Skulltulas", "House of Skulltula"]},
     {"key": "page:/chapters/side-masks/", "names": ["Tienda de Máscaras Feliz", "Happy Mask Shop"]},
     {"key": "enemies/iron-knuckle", "names": ["Iron Knuckles"]},

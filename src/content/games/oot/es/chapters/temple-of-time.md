@@ -52,7 +52,7 @@ Al salir por primera vez, Link y Navi se giran hacia el Castillo de Hyrule y ven
 - El Escudo Deku ya no te sirve: equipa el Escudo Hyliano.
 - **Viajar en el tiempo:** deja la espada en su pedestal para volver a ser niño y sácala de nuevo para crecer. Tras el Templo del Bosque, Sheik te enseña el Preludio de la Luz, que te trae aquí desde cualquier sitio.
 
-## El Hall of Fallen Foes
+## El Coliseo de los Monstruos
 
 Esta zona nueva se desbloquea ahora: tras llegar por primera vez a la época adulta, vuelve a la Aldea Kakariko **de niño** y habla con Kaepora Gaebora. Desde entonces, al descansar en cualquier cama o saco de dormir puedes entrar a esta galería onírica para volver a enfrentarte a los jefes y minijefes que ya venciste, con cronómetro y desafíos por tandas que pagan rupias. Los premios no son importantes, pero las estatuas sirven de bestiario.
 

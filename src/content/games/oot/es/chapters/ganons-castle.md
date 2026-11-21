@@ -26,7 +26,7 @@ El remake **no tiene New Game+, ni Modo Héroe ni Master Quest**. El punto de no
 
 - **Las 100 Skulltulas** (la recompensa de 100 es una Rupia de Oro de 200, repetible) y las **36 Piezas de Corazón**. El mapa del remake marca qué falta en cada zona y el Echo Gem parpadea cerca de las Skulltulas.
 - **La cadena de intercambio de Biggoron**, los **Big Poe** (5 te dan una botella y los 10, una Rupia de Oro), las **Grandes Hadas** y las **Flechas de Hielo** del Campo de Entrenamiento Gerudo.
-- **El Hall of Fallen Foes** para revisar a los jefes vencidos, si te interesa.
+- **El Coliseo de los Monstruos** para revisar a los jefes vencidos, si te interesa.
 
 ## El puente y la Gran Hada exterior
 
