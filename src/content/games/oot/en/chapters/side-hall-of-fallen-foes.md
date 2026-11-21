@@ -12,14 +12,15 @@ pills:
 
 > **Order:** it unlocks once you have been an adult and can turn back into a child, that is after the Forest Temple. After that it is available in both eras.
 
-The Hall of Fallen Foes is a new place in the remake: a dream hall with statues of every enemy you have defeated. It replaces the 3DS version’s Boss Challenge. Nintendo Mexico’s page describes it in Spanish as “el coliseo de los monstruos” (the monster colosseum); the official in-game Spanish name is not verified yet.
+The Hall of Fallen Foes is a new place in the remake: a dream hall with statues of every enemy you have defeated. It replaces the 3DS version’s Boss Challenge. In the Spanish release it is called «Coliseo de los Monstruos».
 
 ## How to unlock it
 
-1. Once you can switch eras, go to Kakariko Village as a child from Hyrule Field.
-2. Just before you enter, Kaepora Gaebora stops you and explains how the hall works.
-3. Find a bed or bedroll that glows green. The owl points you to the nearest one, in the south of Kakariko.
-4. Choose to sleep and dream: you wake up in the Hall of Fallen Foes.
+1. Finish the Forest Temple and turn back into a child at the Temple of Time.
+2. Find a bed or bedroll that glows green. There is one in Castle Town, and another in the south of Kakariko.
+3. Choose to sleep and dream: you wake up in the Hall of Fallen Foes.
+
+If you enter Kakariko Village as a child from Hyrule Field, Kaepora Gaebora stops you and explains how it works; you do not need to talk to him to get in.
 
 From then on you enter from any green-glowing bed or bedroll, as a child or as an adult. To leave, talk to Kaepora Gaebora.
 

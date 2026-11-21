@@ -102,7 +102,7 @@
   {"id": "hp-01", "type": "heart-piece", "name": "Piece of Heart #1", "area": "Lost Woods", "location": "Play Saria’s Song for the Skull Kid who asks for it", "how": "As a child"},
   {"id": "hp-02", "type": "heart-piece", "name": "Piece of Heart #2", "area": "Lost Woods", "location": "Win the ocarina memory game against two Skull Kids", "how": "As a child"},
   {"id": "hp-03", "type": "heart-piece", "name": "Piece of Heart #3", "area": "Hyrule Castle Town", "location": "The white dog follows you at night to a back-alley door", "how": "As a child", "missable": true, "note": "night only"},
-  {"id": "hp-04", "type": "heart-piece", "name": "Piece of Heart #4", "area": "Hyrule Castle Town", "location": "Win the Treasure Chest Game (the Lenses of Truth help)", "how": "As a child"},
+  {"id": "hp-04", "type": "heart-piece", "name": "Piece of Heart #4", "area": "Hyrule Castle Town", "location": "Win the Treasure Chest Game in the Market (open only at night): in each of the five rooms pick the chest with the key; wearing the Lenses of Truth shows you which one. The chest in the sixth room holds the piece.", "how": "As a child"},
   {"id": "hp-05", "type": "heart-piece", "name": "Piece of Heart #5", "area": "Hyrule Castle Town", "location": "Win at Bombchu Bowling", "how": "As a child"},
   {"id": "hp-06", "type": "heart-piece", "name": "Piece of Heart #6", "area": "Lon Lon Ranch", "location": "Pull a crate in the silo and crawl through the hole behind it", "how": "As a child"},
   {"id": "hp-07", "type": "heart-piece", "name": "Piece of Heart #7", "area": "Kakariko Village", "location": "The owl flies you down from Death Mountain onto a ledge near a caged cow", "how": "As a child"},
@@ -142,5 +142,11 @@
   {"id": "hc-05", "type": "heart-container", "name": "Heart Container #5", "area": "Fire Temple", "location": "Defeat Volvagia"},
   {"id": "hc-06", "type": "heart-container", "name": "Heart Container #6", "area": "Water Temple", "location": "Defeat Morpha"},
   {"id": "hc-07", "type": "heart-container", "name": "Heart Container #7", "area": "Shadow Temple", "location": "Defeat Bongo Bongo"},
-  {"id": "hc-08", "type": "heart-container", "name": "Heart Container #8", "area": "Spirit Temple", "location": "Defeat Twinrova", "note": "last dungeon before Ganondorf's Castle"}
+  {"id": "hc-08", "type": "heart-container", "name": "Heart Container #8", "area": "Spirit Temple", "location": "Defeat Twinrova", "note": "last dungeon before Ganondorf's Castle"},
+  {"id": "gf-01", "type": "great-fairy", "name": "Great Fairy Fountain #1", "chapter": "side-great-fairies", "area": "Death Mountain Summit", "location": "After climbing the Skulltula wall, bomb the wall to the left of Kaepora Gaebora.", "how": "As a child (or adult) · Magic meter and Din's Fire (in the remake, according to Zelda Wiki)"},
+  {"id": "gf-02", "type": "great-fairy", "name": "Great Fairy Fountain #2", "chapter": "side-great-fairies", "area": "Hyrule Castle", "location": "Past the gatehouse, where the path turns left, bomb the rock in the corner.", "how": "As a child · Improved spin attack"},
+  {"id": "gf-03", "type": "great-fairy", "name": "Great Fairy Fountain #3", "chapter": "side-great-fairies", "area": "Zora's Fountain", "location": "Bomb the cracked wall in the south corner.", "how": "As a child · Farore's Wind"},
+  {"id": "gf-04", "type": "great-fairy", "name": "Great Fairy Fountain #4", "chapter": "side-great-fairies", "area": "Death Mountain Crater", "location": "Cross the bridge south of the exit to Goron City and break the rocks in the cave on the right with the Megaton Hammer.", "how": "As an adult · Doubled magic"},
+  {"id": "gf-05", "type": "great-fairy", "name": "Great Fairy Fountain #5", "chapter": "side-great-fairies", "area": "Desert Colossus", "location": "Bomb the cracked wall on the north side.", "how": "As a child or adult · Nayru's Love"},
+  {"id": "gf-06", "type": "great-fairy", "name": "Great Fairy Fountain #6", "chapter": "side-great-fairies", "area": "Outside Ganon's Castle", "location": "With the Golden Gauntlets (Shadow trial inside the castle), go back out, turn left after the bridge and lift the pillar at the end.", "how": "As an adult · Doubled defence: you take half damage"}
 ]

@@ -35,4 +35,4 @@ En el juego original se usan el Gancho Largo, las Botas de Aire, las Botas de Hi
 
 ## Las Flechas de Hielo
 
-Congelan a los enemigos unos segundos y, contra los que se pueden congelar, hacen el doble de daño que una flecha normal (datos del juego original). Gastan magia como las Flechas de Fuego. No son obligatorias, pero las estatuas del Hall of Fallen Foes dan pistas sobre su uso: el aliento de Volvagia se corta si le congelas la boca, y Bongo Bongo toca peor el tambor si le congelas las manos.
+Congelan a los enemigos unos segundos y, contra los que se pueden congelar, hacen el doble de daño que una flecha normal (datos del juego original). Gastan magia como las Flechas de Fuego. No son obligatorias, pero las estatuas del Coliseo de los Monstruos dan pistas sobre su uso: el aliento de Volvagia se corta si le congelas la boca, y Bongo Bongo toca peor el tambor si le congelas las manos.

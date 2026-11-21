@@ -1,6 +1,6 @@
 ---
 number: 'S11'
-title: 'Hall of Fallen Foes'
+title: 'Coliseo de los Monstruos (Hall of Fallen Foes)'
 part: 'side'
 order: 111
 summary: 'Novedad del remake: un salón de sueños con estatuas de los enemigos vencidos, revanchas de jefes contrarreloj y desafíos encadenados'
@@ -12,14 +12,15 @@ pills:
 
 > **Orden:** se desbloquea cuando ya has sido adulto y puedes volver a ser niño, es decir, tras el Templo del Bosque. Después está disponible en las dos épocas.
 
-El Hall of Fallen Foes es un lugar nuevo del remake: un salón de sueños donde aparecen estatuas de todos los enemigos que has derrotado. Sustituye al Boss Challenge de la versión de 3DS. El nombre oficial en español aún no está verificado; la página de Nintendo México lo describe como «el coliseo de los monstruos».
+El Coliseo de los Monstruos es un lugar nuevo del remake: un salón de sueños donde aparecen estatuas de todos los enemigos que has derrotado. Sustituye al Boss Challenge de la versión de 3DS. En inglés se llama Hall of Fallen Foes; muchas guías usan ese nombre.
 
 ## Cómo desbloquearlo
 
-1. Cuando ya puedas cambiar de época, ve de niño a la Aldea Kakariko desde el Campo de Hyrule.
-2. Justo antes de entrar, Kaepora Gaebora te detiene y te explica cómo funciona el salón.
-3. Busca una cama o un petate que brille en verde. El búho te señala el más cercano, en el sur de Kakariko.
-4. Elige dormir y soñar: despiertas en el Hall of Fallen Foes.
+1. Termina el Templo del Bosque y vuelve a ser niño en el Templo del Tiempo.
+2. Busca una cama o un petate que brille en verde. Hay una en Villa Castillo, y otra en el sur de Kakariko.
+3. Elige dormir y soñar: despiertas en el Coliseo de los Monstruos.
+
+Si entras de niño en la Aldea Kakariko desde el Campo de Hyrule, Kaepora Gaebora te detiene y te explica cómo funciona; no hace falta hablar con él para entrar.
 
 A partir de entonces entras desde cualquier cama o petate con brillo verde, de niño o de adulto. Para salir, habla con Kaepora Gaebora.
 
@@ -47,4 +48,4 @@ Las descripciones dan consejos útiles para la revancha:
 
 > 💡 Una reseña considera que las recompensas del salón no valen mucho. Juégalo por el reto y por los tiempos, no por los premios.
 
-La app ZELDA NOTES de Nintendo Switch también tiene una sección del Hall of Fallen Foes.
+La app ZELDA NOTES de Nintendo Switch también tiene una sección del Coliseo de los Monstruos.

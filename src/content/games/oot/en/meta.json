@@ -5,5 +5,6 @@
   {"id": "side", "kind": "part", "label": "Side quests", "note": "Optional quests: trading chains, masks, Great Fairies, minigames and rewards."},
   {"id": "skulltula", "kind": "collectible", "label": "Gold Skulltulas", "total": 100, "reward": "At the House of Skulltula in Kakariko Village: 10 = Adult's Wallet (500 Rupees) · 20 = Echo Gem (replaces the Stone of Agony) · 30 = Giant's Wallet (1,000 Rupees) · 40 = 20 Bombchus · 50 = Piece of Heart · 100 = Gold Rupee.", "note": "Still 100 in the remake. Map positions come from the earlier game and some moved: those in Kakariko Village, Zora Fountain, the market, Zora's River and the Forest and Water Temples are marked unconfirmed. Many only appear at night."},
   {"id": "heart-piece", "kind": "collectible", "label": "Pieces of Heart", "total": 36, "reward": "Every four pieces add up to a heart container.", "note": "List from the 3DS version, pending confirmation for the remake."},
-  {"id": "heart-container", "kind": "collectible", "label": "Heart Containers", "total": 8, "note": "One per dungeon boss."}
+  {"id": "heart-container", "kind": "collectible", "label": "Heart Containers", "total": 8, "note": "One per dungeon boss."},
+  {"id": "great-fairy", "kind": "collectible", "label": "Great Fairies", "total": 6, "reward": "Magic meter and doubled magic, three spells (Din's Fire, Farore's Wind, Nayru's Love), the improved spin attack and doubled defence.", "note": "In the remake each one asks for a Rupee offering that rises from fountain to fountain."}
 ]

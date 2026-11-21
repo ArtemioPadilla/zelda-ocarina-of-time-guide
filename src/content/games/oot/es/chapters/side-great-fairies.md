@@ -14,6 +14,14 @@ pills:
 
 En cada fuente, ponte sobre el símbolo de la Trifuerza y toca el Arrullo de Zelda (Y X A Y X A). La Gran Hada te da su regalo y, en visitas posteriores, te cura corazones y magia. Las entradas están tapadas por paredes o rocas agrietadas, que en el remake se ven a simple vista.
 
+## ¿Cuáles ya visité?
+
+Marca cada fuente en la lista de esta página: se guarda en tu navegador, igual que las Skulltulas. En el juego lo compruebas así:
+
+- **Hechizos:** el Fuego de Din, el Viento de Farore y el Amor de Nayru aparecen en tu inventario si ya tienes su fuente.
+- **Magia:** si tienes barra de magia, visitaste la primera fuente; si es el doble de larga, también la del Cráter.
+- **Mejoras:** el ataque giratorio mejorado, la doble magia y la doble defensa salen en la pantalla **Collection**.
+
 ## La novedad: las ofrendas
 
 En el remake cada Gran Hada pide una ofrenda de rupias antes de darte su regalo, y la cantidad sube con cada fuente. Una guía da estas cifras para el orden habitual: 25, 50, 100, 200, 300 y 500, es decir, 1.175 rupias en total. Esa misma guía avisa de que el precio podría depender de cuántas fuentes llevas visitadas (cifras sin confirmar en el remake). Para las de 300 y 500 necesitas la Billetera Adulta (10 Skulltulas doradas, guarda 500).

@@ -33,11 +33,16 @@ const meta = JSON.parse(readFileSync(join(CONTENT, 'es', 'meta.json'), 'utf8')) 
 }[];
 
 describe('OoT collectibles', () => {
-  it('declares the Skulltula and heart types with their totals', () => {
+  it('declares the Skulltula, heart and Great Fairy types with their totals', () => {
     const totals = Object.fromEntries(
       meta.filter((m) => m.kind === 'collectible').map((m) => [m.id, m.total]),
     );
-    expect(totals).toEqual({ skulltula: 100, 'heart-piece': 36, 'heart-container': 8 });
+    expect(totals).toEqual({
+      skulltula: 100,
+      'heart-piece': 36,
+      'heart-container': 8,
+      'great-fairy': 6,
+    });
   });
 
   it('has the 100 Gold Skulltulas numbered 1-100, 36 Pieces of Heart and 8 Heart Containers', () => {
@@ -56,6 +61,7 @@ describe('OoT collectibles', () => {
       ['gold-skulltula', 100],
       ['piece-of-heart', 36],
       ['heart-container', 8],
+      ['great-fairy-fountain', 6],
     ]);
   });
 });

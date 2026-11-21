@@ -17,7 +17,7 @@ With the Kokiri Emerald, the Goron Ruby and the Zora Sapphire, head back to Cast
 
 ## Before you grow up: what only child Link does
 
-You can turn back into a child whenever you like by returning the sword to its pedestal, so none of this is lost. Still, it is worth doing now rather than going back and forth later:
+> ⚠️ **Once you draw the sword you cannot become a child again until you finish the Forest Temple.** After that you can go back and forth whenever you like, so none of this is lost, but it is worth doing now:
 
 - **Pieces of Heart #19 and #20:** both need time travel. The password for the #19 Business Scrub and the hint for the #20 chest are read as an adult from Fairy Thoughts, but the piece is collected as a child. Note them for your first trip back to childhood.
 - **Plant Magic Beans** in every patch of soft soil. As an adult, those plants are platforms that take you to several Pieces of Heart (#11, #23, #32 and #35) and to **Gold Skulltula #23**.
@@ -50,11 +50,11 @@ When you step outside for the first time, Link and Navi turn towards Hyrule Cast
 - The adult green tunic is now called the **Hero’s Clothes**. The Kokiri Sword and the Slingshot are child items; you now use the Master Sword, and the inventory separates child, adult and shared items.
 - Masks can be used as an adult too.
 - The Deku Shield no longer fits: equip the Hylian Shield.
-- **Time travel:** put the sword back in its pedestal to become a child, and draw it again to grow up. After the Forest Temple, Sheik teaches you the Prelude of Light, which brings you here from anywhere.
+- **Time travel:** after the Forest Temple, put the sword back in its pedestal to become a child, and draw it again to grow up. At that point, Sheik teaches you the Prelude of Light, which brings you here from anywhere.
 
 ## The Hall of Fallen Foes
 
-This new area unlocks now: after first reaching the adult era, return to Kakariko Village **as a child** and talk to Kaepora Gaebora. From then on, resting in any bed or bedroll lets you enter this dream gallery to rematch the bosses and mini-bosses you have defeated, with a timer and gauntlet challenges that pay out Rupees. The rewards do not matter much, but the statues double as a bestiary.
+This new area opens when you become a child again after the Forest Temple: sleep in a bed that glows green (there is one in Castle Town). From then on, resting in those beds or bedrolls lets you enter this dream gallery to rematch the bosses and mini-bosses you have defeated, with a timer and gauntlet challenges that pay out Rupees. The rewards do not matter much, but the statues double as a bestiary.
 
 ## Next step
 

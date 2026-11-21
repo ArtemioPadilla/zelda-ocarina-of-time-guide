@@ -63,7 +63,7 @@ multi-game shape internally — content rows carry a `game`, components take a
 **Content** (Zod-validated, `src/content.config.ts`):
 `src/content/games/oot/<es|en>/` holds `meta.json` (parts = chapter groups:
 `child` «Niño», `adult` «Adulto», `end` «Final»; collectible types with
-totals: `skulltula` 100, `heart-piece` 36, `heart-container` 8),
+totals: `skulltula` 100, `heart-piece` 36, `heart-container` 8, `great-fairy` 6),
 `collectibles.json`, and, as they get written, `cards.json` (sections:
 `rules`/`lore` on the home, `faq`/`mechanics`/`survival` on `/guide/`,
 `modes`/`dlc`/`unlocks`/`endings`/`secrets` on `/extras/`), `weapons`,

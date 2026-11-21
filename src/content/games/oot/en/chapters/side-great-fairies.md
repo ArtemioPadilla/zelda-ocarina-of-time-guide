@@ -14,6 +14,14 @@ pills:
 
 At each fountain, stand on the Triforce symbol and play Zelda’s Lullaby (Y X A Y X A). The Great Fairy gives you her gift and, on later visits, refills your hearts and magic. The entrances are hidden behind cracked walls or rocks, which in the remake are visible to the naked eye.
 
+## Which ones have I visited?
+
+Tick each fountain in the list on this page: it is saved in your browser, like the Skulltulas. In the game you can check like this:
+
+- **Spells:** Din’s Fire, Farore’s Wind and Nayru’s Love show up in your inventory once you have their fountain.
+- **Magic:** if you have a magic meter you have visited the first fountain; if it is twice as long, the Crater one too.
+- **Upgrades:** the improved spin attack, doubled magic and doubled defence appear on the **Collection** screen.
+
 ## What’s new: offerings
 
 In the remake each Great Fairy asks for a Rupee offering before she gives you her gift, and the amount goes up with each fountain. One guide gives these figures for the usual order: 25, 50, 100, 200, 300 and 500, that is 1,175 Rupees in total. The same guide warns that the price may depend on how many fountains you have already visited (figures not yet confirmed for the remake). For the 300 and 500 offerings you need the Adult’s Wallet (10 Gold Skulltulas, holds 500).

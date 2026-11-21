@@ -16,7 +16,7 @@ Hay 10 Big Poes repartidos por el Campo de Hyrule. Cada alma que embotellas se v
 
 ## Encontrarlos
 
-- En el remake cada punto de aparición tiene un **farol morado brillante** bien visible. La estatua del Big Poe en el Hall of Fallen Foes lo resume: un farol sospechoso lo delata.
+- En el remake cada punto de aparición tiene un **farol morado brillante** bien visible. La estatua del Big Poe en el Coliseo de los Monstruos lo resume: un farol sospechoso lo delata.
 - Llama a Epona con la Canción de Epona (X Y A X Y A) y cabalga cerca del farol. Una guía del remake recomienda saltar las vallas y troncos iluminados de morado para que salga. A pie suele aparecer un Poe normal en su lugar.
 - El Campo de Hyrule del remake tiene ríos, ruinas y arboledas nuevas, así que no te fíes de los mapas de Big Poes del juego original.
 
