@@ -17,6 +17,8 @@ Ganondorf has revived Volvagia and dragged the Gorons into the Fire Temple to fe
 
 > **Order:** empty Goron City → stop Link the Goron (Goron Tunic) → Darunia’s room → Death Mountain Crater → Bolero of Fire → Fire Temple → the Goron cells → Megaton Hammer → Volvagia → Fire Medallion.
 
+> 💡 **Arriving with a full wallet?** The temple has plenty of Rupees and you will lose them. Spend first: as an adult, the summit Great Fairy if you do not have it yet; or turn back into a child for a moment (Prelude of Light) to buy Magic Beans at Zora's River and the crater Deku's Piece of Heart. Then come back with the Bolero of Fire. The crater Great Fairy has to wait for the Hammer, which you win here.
+
 ## Goron City and the Goron Tunic
 
 The city is almost empty. On the middle floor a Goron keeps rolling around: it is Darunia’s son, named **Link** after you. Throw a bomb (or a Bomb Flower) in his path to stop him. He tells you what happened, gives you the **Goron Tunic** and opens his father’s room. In the remake there is no heat timer anymore: with the tunic on you can stay in the crater and the temple as long as you like, and without it you lose health very quickly.

@@ -17,6 +17,8 @@ Ganondorf ha resucitado a Volvagia y se ha llevado a los goron al Templo del Fue
 
 > **Orden:** Ciudad Goron vacía → detener a Link el goron (Túnica Goron) → sala de Darunia → Cráter de la Montaña de la Muerte → Bolero del Fuego → Templo del Fuego → celdas de los goron → Martillo Megatón → Volvagia → Medallón del Fuego.
 
+> 💡 **¿Llegas con la billetera llena?** El templo tiene muchas rupias y las perderás. Antes de entrar, gástalas: de adulto, la Gran Hada de la cumbre si aún no la tienes; o vuelve un momento a ser niño (Preludio de la Luz) para comprar Habichuelas Mágicas en el Río Zora y la Pieza de Corazón del Deku del cráter. Luego vuelves con el Bolero del Fuego. La Gran Hada del cráter tendrá que esperar al Martillo, que ganas aquí.
+
 ## Ciudad Goron y la Túnica Goron
 
 La ciudad está casi vacía. En el piso central rueda un goron sin parar: es el hijo de Darunia, que se llama **Link** en tu honor. Lánzale una bomba en su camino (o una Flor Bomba) para pararlo. Te cuenta lo ocurrido, te da la **Túnica Goron** y abre la sala de su padre. En el remake ya no hay temporizador de calor: con la túnica puesta aguantas en el cráter y en el templo todo lo que quieras, y sin ella pierdes vida muy rápido.
